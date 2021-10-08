@@ -1,0 +1,45 @@
+if (populationCible)
+	//- VARIABLES
+	-var title = 'Population ciblée par l\'équipe mobile', id = 'populationCible'
+	//- LAYOUTS
+	.col-12
+		.card
+			.card-body
+				.d-flex.align-items-center.justify-content-between
+					.d-flex.align-items-center.fw-bold
+						ion-icon.text-1.fs-6.me-2(name='people-circle-outline')
+						span.fs-7.text-dark= title
+					//- download pdf / excel
+					.btn-group.shadow-0(role='group')
+						button.btn.btn-sm.btn-light(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+							<ion-icon class="fs-5" name="download-outline"></ion-icon>
+						ul.dropdown-menu.shadow.border
+							li
+								button.dropdown-item.downloadSortiePdf(type='button' data-id=id data-region=document.region data-province=document.province data-csr=document.csr data-category=document.category data-trimestre=trimestre data-createdat=data.sortie ? data.sortie.createdAt : data.trimestre.createdAt data-updatedat= data.sortie ? data.sortie.updatedAt : '' data-submit=data.sortie ? data.sortie.submit : '')
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/pdf.svg", alt="pdf" width="20px")
+										span PDF
+							li
+								button.dropdown-item.downloadExcel(type='button' data-title=title data-id=id)
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/excel.svg", alt="pdf" width="20px")
+										span Excel
+			.card-body
+				.table-responsive
+					table.table.thisTable.table-bordered(id=id data-id=id data-title=title data-align='left')
+						tbody
+							tr
+								th Population cible
+								td.text-center= populationCible.populationCible
+							tr
+								th Femmes mariées en age de reproduction
+								td.text-center= populationCible.fmar
+							tr
+								th Naissances attendus
+								td.text-center= populationCible.enfant.naissanceAttendu
+							tr
+								th Enfants moins de 1ans
+								td.text-center= populationCible.enfant.moins1ans
+							tr
+								th Enfants moins de 5ans
+								td.text-center= populationCible.enfant.moins5ans

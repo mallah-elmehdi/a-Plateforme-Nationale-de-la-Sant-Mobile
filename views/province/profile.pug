@@ -1,0 +1,11 @@
+extends ../util/base
+
+block body
+	.d-flex.min-vh-100.align-items-stretch
+		include aside
+		#content.w-100
+			include header
+			include ../util/snippet/identity
+			main.p-3.min-vh-100
+				block main
+			include ../util/snippet/footer

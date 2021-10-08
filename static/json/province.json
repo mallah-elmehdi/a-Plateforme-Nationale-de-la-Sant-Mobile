@@ -1,0 +1,452 @@
+[
+	{
+		"province": "Agadir Ida Ou Tanane",
+		"codeProvince": 15,
+		"codeRegion": 9,
+		"region": "Souss-Massa"
+	},
+	{
+		"province": "Al Haouz",
+		"codeProvince": 65,
+		"codeRegion": 7,
+		"region": "Marrakech-Safi"
+	},
+	{
+		"province": "Al Hoceima",
+		"codeProvince": 32,
+		"codeRegion": 1,
+		"region": "Tanger-Tetouan-Al Hoceima"
+	},
+	{
+		"province": "Aousserd",
+		"region": "Eddakhla-Oued Eddahab",
+		"codeProvince": 2,
+		"codeRegion": 12
+	},
+	{
+		"province": "Assa-zag",
+		"codeProvince": 10,
+		"codeRegion": 10,
+		"region": "Guelmim-Oued Noun"
+	},
+	{
+		"province": "Azilal",
+		"codeProvince": 59,
+		"codeRegion": 5,
+		"region": "Béni Mellal-Khénifra"
+	},
+	{
+		"province": "Beni Mellal",
+		"codeProvince": 56,
+		"codeRegion": 5,
+		"region": "Béni Mellal-Khénifra"
+	},
+	{
+		"province": "Benslimane",
+		"codeProvince": 73,
+		"codeRegion": 6,
+		"region": "Casablanca-Settat"
+	},
+	{
+		"province": "Berkane",
+		"codeProvince": 24,
+		"codeRegion": 2,
+		"region": "Oriental"
+	},
+	{
+		"province": "Berrechid",
+		"codeProvince": 58,
+		"codeRegion": 6,
+		"region": "Casablanca-Settat"
+	},
+	{
+		"province": "Boujdour",
+		"region": "Laayoune-Sakia El Hamra",
+		"codeProvince": 4,
+		"codeRegion": 11
+	},
+	{
+		"province": "Boulemane",
+		"codeProvince": 46,
+		"codeRegion": 3,
+		"region": "Fès-Meknès"
+	},
+	{
+		"province": "Casablanca",
+		"codeProvince": 74,
+		"codeRegion": 6,
+		"region": "Casablanca-Settat"
+	},
+	{
+		"province": "Chefchaouen",
+		"codeProvince": 34,
+		"codeRegion": 1,
+		"region": "Tanger-Tetouan-Al Hoceima"
+	},
+	{
+		"province": "Chichaoua",
+		"codeProvince": 66,
+		"codeRegion": 7,
+		"region": "Marrakech-Safi"
+	},
+	{
+		"province": "Chtouka Ait Baha",
+		"codeProvince": 14,
+		"codeRegion": 9,
+		"region": "Souss-Massa"
+	},
+	{
+		"province": "Driouch",
+		"codeProvince": 31,
+		"codeRegion": 2,
+		"region": "Oriental"
+	},
+	{
+		"province": "El Hajeb",
+		"codeProvince": 48,
+		"codeRegion": 3,
+		"region": "Fès-Meknès"
+	},
+	{
+		"province": "El Jadida",
+		"codeProvince": 61,
+		"codeRegion": 6,
+		"region": "Casablanca-Settat"
+	},
+	{
+		"province": "El Kelaa Des Sraghna",
+		"codeProvince": 60,
+		"codeRegion": 7,
+		"region": "Marrakech-Safi"
+	},
+	{
+		"province": "Errachidia",
+		"codeProvince": 20,
+		"codeRegion": 8,
+		"region": "Drâa-Tafilalet"
+	},
+	{
+		"province": "Es Semara",
+		"region": "Laayoune-Sakia El Hamra",
+		"codeProvince": 5,
+		"codeRegion": 11
+	},
+	{
+		"province": "Essaouira",
+		"codeProvince": 68,
+		"codeRegion": 7,
+		"region": "Marrakech-Safi"
+	},
+	{
+		"province": "Fahs-Anjra",
+		"codeProvince": 28,
+		"codeRegion": 1,
+		"region": "Tanger-Tetouan-Al Hoceima"
+	},
+	{
+		"province": "Fes",
+		"codeProvince": 40,
+		"codeRegion": 3,
+		"region": "Fès-Meknès"
+	},
+	{
+		"province": "Figuig",
+		"codeProvince": 19,
+		"codeRegion": 2,
+		"region": "Oriental"
+	},
+	{
+		"province": "Fkih Ben Saleh",
+		"codeProvince": 55,
+		"codeRegion": 5,
+		"region": "Béni Mellal-Khénifra"
+	},
+	{
+		"province": "Guelmim",
+		"codeProvince": 9,
+		"codeRegion": 10,
+		"region": "Guelmim-Oued Noun"
+	},
+	{
+		"province": "Guercif",
+		"codeProvince": 39,
+		"codeRegion": 2,
+		"region": "Oriental"
+	},
+	{
+		"province": "Ifrane",
+		"codeProvince": 50,
+		"codeRegion": 3,
+		"region": "Fès-Meknès"
+	},
+	{
+		"province": "Inezgane Ait Melloul",
+		"codeProvince": 13,
+		"codeRegion": 9,
+		"region": "Souss-Massa"
+	},
+	{
+		"province": "Jerada",
+		"codeProvince": 21,
+		"codeRegion": 2,
+		"region": "Oriental"
+	},
+	{
+		"province": "Kenitra",
+		"codeProvince": 37,
+		"codeRegion": 4,
+		"region": "Rabat-Salé-Kénitra"
+	},
+	{
+		"province": "Khenifra",
+		"codeProvince": 51,
+		"codeRegion": 5,
+		"region": "Béni Mellal-Khénifra"
+	},
+	{
+		"province": "Khouribga",
+		"codeProvince": 54,
+		"codeRegion": 5,
+		"region": "Béni Mellal-Khénifra"
+	},
+	{
+		"province": "Khémisset",
+		"codeProvince": 52,
+		"codeRegion": 4,
+		"region": "Rabat-Salé-Kénitra"
+	},
+	{
+		"province": "Laayoune",
+		"region": "Laayoune-Sakia El Hamra",
+		"codeProvince": 3,
+		"codeRegion": 11
+	},
+	{
+		"province": "Larache",
+		"codeProvince": 35,
+		"codeRegion": 1,
+		"region": "Tanger-Tetouan-Al Hoceima"
+	},
+	{
+		"province": "Marrakech",
+		"codeProvince": 69,
+		"codeRegion": 7,
+		"region": "Marrakech-Safi"
+	},
+	{
+		"province": "Mdiq-Fnideq",
+		"codeProvince": 26,
+		"codeRegion": 1,
+		"region": "Tanger-Tetouan-Al Hoceima"
+	},
+	{
+		"province": "Mediouna",
+		"codeProvince": 72,
+		"codeRegion": 6,
+		"region": "Casablanca-Settat"
+	},
+	{
+		"province": "Meknès",
+		"codeProvince": 43,
+		"codeRegion": 3,
+		"region": "Fès-Meknès"
+	},
+	{
+		"province": "Midelt",
+		"codeProvince": 49,
+		"codeRegion": 8,
+		"region": "Drâa-Tafilalet"
+	},
+	{
+		"province": "Mohammedia",
+		"codeProvince": 71,
+		"codeRegion": 6,
+		"region": "Casablanca-Settat"
+	},
+	{
+		"province": "Moulay Yacoub",
+		"codeProvince": 41,
+		"codeRegion": 3,
+		"region": "Fès-Meknès"
+	},
+	{
+		"province": "Nador",
+		"codeProvince": 25,
+		"codeRegion": 2,
+		"region": "Oriental"
+	},
+	{
+		"province": "Nouaceur",
+		"codeProvince": 75,
+		"codeRegion": 6,
+		"region": "Casablanca-Settat"
+	},
+	{
+		"province": "Ouarzazate",
+		"codeProvince": 18,
+		"codeRegion": 8,
+		"region": "Drâa-Tafilalet"
+	},
+	{
+		"province": "Oued Ed-Dahab",
+		"region": "Eddakhla-Oued Eddahab",
+		"codeProvince": 1,
+		"codeRegion": 12
+	},
+	{
+		"province": "Ouezzane",
+		"codeProvince": 33,
+		"codeRegion": 1,
+		"region": "Tanger-Tetouan-Al Hoceima"
+	},
+	{
+		"province": "Oujda Angad",
+		"codeProvince": 22,
+		"codeRegion": 2,
+		"region": "Oriental"
+	},
+	{
+		"province": "Rabat",
+		"codeProvince": 45,
+		"codeRegion": 4,
+		"region": "Rabat-Salé-Kénitra"
+	},
+	{
+		"province": "Rehamena",
+		"codeProvince": 63,
+		"codeRegion": 7,
+		"region": "Marrakech-Safi"
+	},
+	{
+		"province": "Safi",
+		"codeProvince": 64,
+		"codeRegion": 7,
+		"region": "Marrakech-Safi"
+	},
+	{
+		"province": "Salé",
+		"codeProvince": 44,
+		"codeRegion": 4,
+		"region": "Rabat-Salé-Kénitra"
+	},
+	{
+		"province": "Sefrou",
+		"codeProvince": 47,
+		"codeRegion": 3,
+		"region": "Fès-Meknès"
+	},
+	{
+		"province": "Settat",
+		"codeProvince": 57,
+		"codeRegion": 6,
+		"region": "Casablanca-Settat"
+	},
+	{
+		"province": "Sidi Bennour",
+		"codeProvince": 62,
+		"codeRegion": 6,
+		"region": "Casablanca-Settat"
+	},
+	{
+		"province": "Sidi Ifni",
+		"codeProvince": 11,
+		"codeRegion": 10,
+		"region": "Guelmim-Oued Noun"
+	},
+	{
+		"province": "Sidi Kacem",
+		"codeProvince": 38,
+		"codeRegion": 4,
+		"region": "Rabat-Salé-Kénitra"
+	},
+	{
+		"province": "Sidi Slimane",
+		"codeProvince": 42,
+		"codeRegion": 4,
+		"region": "Rabat-Salé-Kénitra"
+	},
+	{
+		"province": "Skhirate-Temara",
+		"codeProvince": 70,
+		"codeRegion": 4,
+		"region": "Rabat-Salé-Kénitra"
+	},
+	{
+		"province": "Tan Tan",
+		"codeProvince": 7,
+		"codeRegion": 10,
+		"region": "Guelmim-Oued Noun"
+	},
+	{
+		"province": "Tanger Assilah",
+		"codeProvince": 29,
+		"codeRegion": 1,
+		"region": "Tanger-Tetouan-Al Hoceima"
+	},
+	{
+		"province": "Taounate",
+		"codeProvince": 36,
+		"codeRegion": 3,
+		"region": "Fès-Meknès"
+	},
+	{
+		"province": "Taourirt",
+		"codeProvince": 23,
+		"codeRegion": 2,
+		"region": "Oriental"
+	},
+	{
+		"province": "Tarfaya",
+		"region": "Laayoune-Sakia El Hamra",
+		"codeProvince": 6,
+		"codeRegion": 11
+	},
+	{
+		"province": "Taroudant",
+		"codeProvince": 16,
+		"codeRegion": 9,
+		"region": "Souss-Massa"
+	},
+	{
+		"province": "Tata",
+		"codeProvince": 8,
+		"codeRegion": 9,
+		"region": "Souss-Massa"
+	},
+	{
+		"province": "Taza",
+		"codeProvince": 30,
+		"codeRegion": 3,
+		"region": "Fès-Meknès"
+	},
+	{
+		"province": "Tetouan",
+		"codeProvince": 27,
+		"codeRegion": 1,
+		"region": "Tanger-Tetouan-Al Hoceima"
+	},
+	{
+		"province": "Tinghir",
+		"codeProvince": 53,
+		"codeRegion": 8,
+		"region": "Drâa-Tafilalet"
+	},
+	{
+		"province": "Tiznit",
+		"codeProvince": 12,
+		"codeRegion": 9,
+		"region": "Souss-Massa"
+	},
+	{
+		"province": "Youssoufia",
+		"codeProvince": 67,
+		"codeRegion": 7,
+		"region": "Marrakech-Safi"
+	},
+	{
+		"province": "Zagora",
+		"codeProvince": 17,
+		"codeRegion": 8,
+		"region": "Drâa-Tafilalet"
+	}
+]

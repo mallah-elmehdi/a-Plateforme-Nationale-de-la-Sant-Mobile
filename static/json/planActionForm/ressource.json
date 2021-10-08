@@ -1,0 +1,85 @@
+{
+	"vehicule": {
+		"dataType": "arrayJs",
+		"title": "Informations sur le véhicule",
+		"data": [
+			{
+				"name": "type",
+				"id": "vehiculeType",
+				"title": "Type",
+				"type": "text",
+				"col": "col-md-4 col-sm-6",
+				"data": [
+					"Choisissez le type du véhicule",
+					"Unité Sanitaire Mobile (USM)",
+					"Véhicule Tout Terrain (VTT)",
+					"Ambulance",
+					"Camion Mobile"
+				],
+				"select": true
+			},
+			{
+				"name": "age",
+				"id": "vehiculeAge",
+				"title": "Age",
+				"type": "number",
+				"col": "col-md-4 col-sm-6"
+			},
+			{
+				"name": "appartenance",
+				"id": "vehiculeAppartenance",
+				"title": "Appartenance",
+				"type": "text",
+				"col": "col-md-4 col-sm-6",
+				"data": [
+					"Choisissez l'appartenance du véhicule",
+					"Ministère de la Santé",
+					"Commune",
+					"Organisation Non Gouvernementale (ONG)"
+				],
+				"select": true
+			}
+		]
+	},
+	"budget": {
+		"dataType": "array",
+		"title": "Budget",
+		"data": [
+			{
+				"name": "budget[kmsParcourir]",
+				"id": "budgetKmsParcourir",
+				"title": "Kilométrage annuel total à parcourir",
+				"type": "number",
+				"col": "col-sm-6"
+			},
+			{
+				"name": "budget[besoinCarburant]",
+				"id": "budgetBesoinCarburant",
+				"title": "Budget en carburant (MAD)",
+				"col": "col-sm-6",
+				"js": true
+			}
+		]
+	},
+	"besoin": {
+		"dataType": "array",
+		"title": "Besoins",
+		"data": [
+			{
+				"name": "besoinUsm",
+				"id": "besoinUsm",
+				"title": "Besoins en Unités Sanitaires Mobiles (USM)",
+				"type": "number",
+				"col": "col-12"
+			},
+			{
+				"name": "observation",
+				"id": "observation",
+				"title": "Observation",
+				"type": "text",
+				"col": "col-12",
+				"textarea": true
+			}
+		]
+	}
+}

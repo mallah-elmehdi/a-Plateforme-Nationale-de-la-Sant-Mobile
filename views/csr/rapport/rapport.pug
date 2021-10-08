@@ -1,0 +1,50 @@
+extends ../profile
+
+//- BLOCKS
+block head
+block tail
+	script(src="../../js/util/tablePdf.js")
+	script(src="../../js/util/tableExcel.js")
+block main
+	//- FUNCTIONS
+	-function trimestreDead() {var today = new Date();var month = today.getMonth();if (month < 2) return 1;else if (month < 5) return 2;else if (month < 8) return 3;else return 4;}
+	//- VARIABLES
+	-var document = data.document
+	-var rapport = data.rapport
+	//- LAYOUTS
+	.row.g-3
+		.col-12
+			.card.bg-grd.p-2.fs-7.text-white.fw-bold.text-center Rapport des activités des Unités Médical Mobile (UMM)
+		.col-12
+			.card
+				.card-body
+					.d-flex.align-items-center.fw-bold
+						<ion-icon name="reader-outline" class="text-1 me-2"></ion-icon>
+						.fs-7.text-dark La liste des rapports de sortie
+				.card-body
+					.table-responsive
+						table.table.table-hover
+							thead
+								tr
+									th(scope='col')
+									th.text-center(scope='col') Rapport de sortie
+									th.text-center(scope='col') Action
+							tbody
+								each tri in [1, 2, 3, 4]
+									tr
+										th(scope='row')= 'Trimestre ' + tri 
+										if (rapport['trimestre' + tri] && rapport['trimestre' + tri].sortie.length)
+											td.text-center
+												span.text-success= rapport['trimestre' + tri].sortie.length
+											td.text-center
+												a.link-primary.text-decoration-none(href='/csr/' + document._id + '/trimestre/' + tri) Details
+										else
+											td.text-center
+												span.text-danger 0 
+											//- if (trimestreDead() <= tri)
+											td.text-center
+													a.link-primary.text-decoration-none(href='/csr/' + document._id + '/trimestre/' + tri) Ajouter
+											//- else
+												td.text-center
+													span.badge.bg-danger
+														a.text-decoration-none.text-white.text-decoration-none(href='/csr/' + document._id + '/trimestre/' + tri) Délai dépassé

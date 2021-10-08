@@ -1,0 +1,28 @@
+aside#aside.bg-aside
+	.text-center.p-3
+		a(href="/") 
+			img(src="/../../image/logo-test.png", alt="umm" width="200px")
+	ul.nav.flex-column.p-3
+		li.nav-item.mb-3
+			.d-flex.flex-column.lh-1.text-white.fs-8
+				span.fw-bold UMM
+				span Unité Médical Mobile
+		li.nav-item.mb-3
+			a.nav-link.card.fs-7.text-dark(href= '/csr/' + data.document.id + '/plan-action')
+				.d-flex.align-items-center
+					ion-icon.fs-6.me-2.text-1(name='reader-outline')
+					span.fs-7.text-dark Plan d'action
+		li.nav-item.mb-3
+			a.nav-link.card.fs-7.text-dark(href= '/csr/' + data.document.id +'/rapport')
+				.d-flex.align-items-center
+					ion-icon.fs-6.me-2.text-1(name='list-outline')
+					span.fs-7.text-dark Rapport
+		li.nav-item.mb-3
+			.d-flex.flex-column.lh-1.text-white.fs-8
+				span.fw-bold CMS
+				span Caravane Médicale Spécialisée
+		li.nav-item
+			a.nav-link.card.fs-7.text-dark(href= '/csr/' + data.document.id +'/cms')
+				.d-flex.align-items-center
+					ion-icon.fs-6.me-2.text-1(name='information-circle-outline')
+					span.fs-7.text-dark Voir plus

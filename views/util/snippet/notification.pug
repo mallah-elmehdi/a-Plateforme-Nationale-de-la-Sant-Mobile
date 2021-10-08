@@ -1,0 +1,23 @@
+- var messages = getMessages()
+
+if messages.err
+	<div class="w-100 notifAlert fixed-top">
+		<div class="text-white alert fs-6 rounded-0 fw-bold border-0 bg-danger p-2 text-center alert-dismissible fade show" role="alert">
+			span= messages.err
+			<button type="button" class="p-3 pt-2 fs-8 btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	</div>
+if messages.succ
+	<div class="w-100 notifAlert fixed-top">
+		<div class="alert fs-6 rounded-0 fw-bold border-0 bg-success p-2 text-white text-center alert-dismissible fade show" role="alert">
+			span= messages.succ
+			<button type="button" class="p-3 pt-2 fs-8 btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	</div>
+if messages.info
+	<div class="w-100 notifAlert fixed-top">
+		<div class="alert fs-6 rounded-0 fw-bold border-0 bg-info p-2 text-white text-center alert-dismissible fade show" role="alert">
+			span= messages.info
+			<button type="button" class="p-3 pt-2 fs-8 btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	</div>

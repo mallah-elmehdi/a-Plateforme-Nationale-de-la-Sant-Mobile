@@ -1,0 +1,278 @@
+{
+    "diabete": {
+        "title": "Diabète",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "diabete[cas]",
+				"id": "diabeteCas",
+                "title": "Nombre de cas dépistés",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "diabete[casPec]",
+				"id": "diabeteCasPec",
+                "title": "Nombre de cas pris en charge",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "diabete[reference]",
+				"id": "diabeteReference",
+                "title": "Références",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            }
+        ]
+    },
+    "hta": {
+        "title": "HTA",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "hta[cas]",
+				"id": "htaCas",
+                "title": "Nombre de cas dépistés",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "hta[casPec]",
+				"id": "htaCasPec",
+                "title": "Nombre de cas pris en charge",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "hta[reference]",
+				"id": "htaReference",
+                "title": "Références",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            }
+        ]
+    },
+    "angine": {
+        "title": "Angine",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "angine[cas]",
+				"id": "angineCas",
+                "title": "Nombre de cas dépistés",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "angine[casPec]",
+				"id": "angineCasPec",
+                "title": "Nombre de cas pris en charge",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "angine[reference]",
+				"id": "angineReference",
+                "title": "Références",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            }
+        ]
+    },
+    "carie": {
+        "title": "Caries",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "carie[cas]",
+				"id": "carieCas",
+                "title": "Nombre de cas dépistés",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "carie[casPec]",
+				"id": "carieCasPec",
+                "title": "Nombre de cas pris en charge",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "carie[reference]",
+				"id": "carieReference",
+                "title": "Références",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            }
+        ]
+    },
+    "parodontopathie": {
+        "title": "Parodontopathie",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "parodontopathie[cas]",
+				"id": "parodontopathieCas",
+                "title": "Nombre de cas dépistés",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "parodontopathie[casPec]",
+				"id": "parodontopathieCasPec",
+                "title": "Nombre de cas pris en charge",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "parodontopathie[reference]",
+				"id": "parodontopathieReference",
+                "title": "Références",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            }
+        ]
+    },
+    "maladieMentale": {
+        "title": "Maladies mentales",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "maladieMentale[cas]",
+				"id": "maladieMentaleCas",
+                "title": "Nombre de cas dépistés",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "maladieMentale[casPec]",
+				"id": "maladieMentaleCasPec",
+                "title": "Nombre de cas pris en charge",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "maladieMentale[reference]",
+				"id": "maladieMentaleReference",
+                "title": "Références",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            }
+        ]
+    },
+    "ist": {
+        "title": "IST",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "ist[cas]",
+				"id": "istCas",
+                "title": "Nombre de cas dépistés",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "ist[casPec]",
+				"id": "istCasPec",
+                "title": "Nombre de cas pris en charge",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "ist[reference]",
+				"id": "istReference",
+                "title": "Références",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            }
+        ]
+    },
+	"tuberculosePolmonaire": {
+		"title": "Tuberculose Pulmonaire",
+		"dataType": "array",
+		"data": [
+			{
+				"name": "tuberculosePolmonaire[cas]",
+				"id": "tuberculosePolmonaireCas",
+				"title": "Nombre de cas dépistés",
+				"type": "number",
+				"col": "col-md-4 col-sm-6"
+			},
+			{
+				"name": "tuberculosePolmonaire[casPec]",
+				"id": "tuberculosePolmonaireCasPec",
+				"title": "Nombre de cas pris en charge",
+				"type": "number",
+				"col": "col-md-4 col-sm-6"
+			},
+			{
+				"name": "tuberculosePolmonaire[reference]",
+				"id": "tuberculosePolmonaireReference",
+				"title": "Références",
+				"type": "number",
+				"col": "col-md-4 col-sm-6"
+			}
+		]
+    },
+    "raa": {
+        "title": "RAA",
+        "dataType": "object",
+        "data": {
+            "avecCardites": {
+                "title": "Avec cardites",
+                "dataType": "array",
+                "data": [
+                    {
+                        "name": "raa[avecCardites][cas]",
+						"id": "raaAvecCarditesCas",
+                        "title": "Nombre de cas dépistés",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "raa[avecCardites][casPec]",
+						"id": "raaAvecCarditesCasPec",
+                        "title": "Nombre de cas pris en charge",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "raa[avecCardites][reference]",
+						"id": "raaAvecCarditesReference",
+                        "title": "Références",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    }
+                ]
+            },
+            "sansCardites": {
+                "title": "Sans cardites",
+                "dataType": "array",
+                "data": [
+                    {
+                        "name": "raa[sansCardites][cas]",
+						"id": "raaSansCarditesCas",
+                        "title": "Nombre de cas dépistés",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "raa[sansCardites][casPec]",
+						"id": "raaSansCarditesCasPec",
+                        "title": "Nombre de cas pris en charge",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "raa[sansCardites][reference]",
+						"id": "raaSansCarditesReference",
+                        "title": "Références",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "emOperationnelle": {
+        "title": "Équipe mobile opérationnelle",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "emOperationnelle",
+                "id": "emOperationnelle",
+                "title": "Nombre d’équipe mobile opérationnelle",
+                "type": "number",
+                "col": "col-md-6"
+            }
+        ]
+    },
+    "ressourcesHumaineMobilise": {
+        "title": "Ressources humaines mobilisées",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "ressourcesHumaineMobilise[medecin]",
+				"id": "ressourcesHumaineMobiliseMedecin",
+                "title": "Médecin",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "ressourcesHumaineMobilise[infirmier]",
+				"id": "ressourcesHumaineMobiliseInfirmier",
+                "title": "Infirmier",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "ressourcesHumaineMobilise[sageFemme]",
+				"id": "ressourcesHumaineMobiliseSageFemme",
+                "title": "Sage femme",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "ressourcesHumaineMobilise[technicien]",
+				"id": "ressourcesHumaineMobiliseTechnicien",
+                "title": "Technicien",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "ressourcesHumaineMobilise[chauffeur]",
+				"id": "ressourcesHumaineMobiliseChauffeur",
+                "title": "Chauffeur",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "ressourcesHumaineMobilise[appuie]",
+				"id": "ressourcesHumaineMobiliseAppuie",
+                "title": "Ressources humaines d'appuie",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            }
+        ]
+    }
+}

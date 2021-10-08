@@ -1,0 +1,123 @@
+{
+	"rural": {
+		"title": "Population rurale totale",
+		"dataType": "array",
+		"data": [
+			{
+				"name": "population[rurale]",
+				"id": "populationRurale",
+				"title": "Population rurale",
+				"col": "col-12",
+				"type": "number"
+			}
+		]
+	},
+	"population": {
+		"dataType": "array",
+		"title": "Population cible de l'équipe mobile",
+		"data": [
+			{
+				"name": "population[habitantMoins3km]",
+				"id": "populationHabitantMoins3km",
+				"title": "Population habitant à moins de 3km",
+				"col": "col-sm-6",
+				"type": "number"
+			},
+			{
+				"name": "population[habitantEntre3km6km]",
+				"id": "populationHabitantEntre3km6km",
+				"title": "Population habitant entre 3km et 6km",
+				"col": "col-sm-6",
+				"type": "number"
+			},
+			{
+				"name": "population[habitantEntre6km10km]",
+				"id": "populationHabitantEntre6km10km",
+				"title": "Population habitant entre 6km et 10km",
+				"col": "col-sm-6",
+				"type": "number"
+			},
+			{
+				"name": "population[habitantPlus10km]",
+				"id": "populationHabitantPlus10km",
+				"title": "Population habitant à plus de 10km",
+				"col": "col-sm-6",
+				"type": "number"
+			},
+			{
+				"name": "population[cible]",
+				"id": "populationCible",
+				"title": "Population cible de l'équipe mobile",
+				"col": "col-12",
+				"type": "number",
+				"sum": true
+			}
+		]
+	},
+	"autre": {
+		"dataType": "array",
+		"data": [
+			{
+				"name": "distanceMoyenneRouteProche",
+				"id": "distanceMoyenneRouteProche",
+				"title": "Distance moyenne entre le centre de santé et la route goudronnée la plus proche",
+				"col": "col-sm-6",
+				"type": "number"
+			}
+		]
+	},
+	"enfant": {
+		"title": "Enfants",
+		"dataType": "array",
+		"data": [
+			{
+				"name": "enfant[naissancesAttendues]",
+				"id": "enfantNaissancesAttendues",
+				"title": "Naissances attendues",
+				"col": "col-md-4 col-sm-6",
+				"type": "number"
+			},
+			{
+				"name": "enfant[moins1ans]",
+				"id": "enfantMoins1ans",
+				"title": "Enfants moins de 1ans",
+				"col": "col-md-4 col-sm-6",
+				"type": "number"
+			},
+			{
+				"name": "enfant[moins5ans]",
+				"id": "enfantMoins5ans",
+				"title": "Enfants moins de 5ans",
+				"col": "col-md-4 col-sm-6",
+				"type": "number"
+			}
+		]
+	},
+	"femmes": {
+		"title": "Femmes",
+		"dataType": "array",
+		"data": [
+			{
+				"name": "femme[far]",
+				"id": "far",
+				"title": "Nombre de FAR",
+				"col": "col-md-4 col-sm-6",
+				"type": "number"
+			},
+			{
+				"name": "femme[fmar]",
+				"id": "fmar",
+				"title": "Nombre de FMAR",
+				"col": "col-md-4 col-sm-6",
+				"type": "number"
+			},
+			{
+				"name": "femme[femmeEnceinte]",
+				"id": "femmeEnceinte",
+				"title": "Femmes enceintes",
+				"col": "col-md-4 col-sm-6",
+				"type": "number"
+			}
+		]
+	}
+}

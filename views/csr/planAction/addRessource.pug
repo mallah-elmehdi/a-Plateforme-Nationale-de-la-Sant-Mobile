@@ -1,0 +1,170 @@
+extends ../profile
+
+block head
+
+block tail
+	script(type="module" src="/../../js/util/validation.js")
+	script(type="module" src="/../../js/csr/disabledInput.js")
+	script(type="module" src="/../../js/csr/changeBtn.js")
+	//- ---
+	script(type="module" src="/../../js/csr/ressourceInputValidation.js")
+	//- ---
+	script(type="module" src="/../../js/csr/addDataVehicule.js")
+
+block main
+	//- FUNCTION
+	-function getValue(object, key) {var list = key.split('[');if (!object) return '';for (let i = 0; i < list.length; i++) {if (list[i].includes(']')) {list[i] = list[i].slice(0, -1);}object = object[list[i]];}return object;}
+	//- VARIABLES
+	-var document = data.document
+	-var ressource = data.ressource
+	-var id = ressource ? '?id=' + ressource._id : '' 
+	//- LAYOUTS
+	.row.g-3#dataElement(data-element=data.ressource)
+		.col-12
+			include ../../util/snippet/titlePlanAction
+		.col-12
+			a.btn.btn-sm.bg-8.text-dark.px-2(href='/csr/' + data.document._id + '/plan-action')
+				.d-flex.align-items-center
+					<ion-icon name="chevron-back-outline" class="me-2"></ion-icon>
+					span retour au plan d'action
+		.col-12
+			section.card.card-body
+				//- *** form *** -//
+				form(action=url+id, method="post")
+					.row.g-3
+						//- *** title *** -//
+						.col-12
+							.d-flex.align-items-center
+								<ion-icon name="car-outline" class="fs-5 me-2 text-1"></ion-icon>
+								.fs-6.text-dark Situation des moyens de mobilité
+						//- *** inputs *** -//
+						-for (var key in form)
+							-var data = form[key].data
+							-var title = form[key].title
+							-var dataType = form[key].dataType
+							if (dataType === 'array')   
+								.col-12
+									if (title)
+										.d-flex.align-items-center.mb-2
+											.d-flex.align-items-center.me-2
+												<ion-icon name="ellipse" class="text-1 me-1 fs-9"></ion-icon>
+												.badge.p-0.text-dark.fs-7= title
+											hr.my-1.w-100
+									else
+										.d-flex.align-items-center.mb-2
+											<ion-icon name="ellipse" class="text-1 me-2 fs-9"></ion-icon>
+											hr.my-1.w-100
+									.row.g-3
+										each item in data
+											div(class=item.col)
+												//- item's variable
+												-var value = getValue(ressource, item.name)
+												//- input
+												label.form-label.text-dark.fs-7(for=item.id)= item.title
+												if (item.js)
+													.d-flex.align-items-center
+														span#besoinCarburantShow.badge.bg-5= value || '0'
+												else if (item.select)
+													select.form-select.form-select-sm(id=item.id type='text' name=item.name required)
+														-for(var i = 0; i < item.data.length; i++)
+															if (i === 0)
+																option(disabled selected)= item.data[i]
+															else
+																option(value=item.data[i])= item.data[i]
+												else if (item.textarea)
+													textarea.lenghtValidationTextarea.form-control.form-control-sm(rows="3" type=item.type id=item.id placeholder=item.title name=item.name)= value
+												else
+													input.form-control.form-control-sm(type=item.type id=item.id placeholder=item.title name=item.name value=value required)
+												.invalid-feedback.fs-8
+							else if (dataType === 'arrayJs')   
+								.col-12
+									if (title)
+										.d-flex.align-items-center.mb-2
+											.d-flex.align-items-center.me-2
+												<ion-icon name="ellipse" class="text-1 me-1 fs-9"></ion-icon>
+												.badge.p-0.text-dark.fs-7= title
+											hr.my-1.w-100
+									else
+										.d-flex.align-items-center.mb-2
+											<ion-icon name="ellipse" class="text-1 me-2 fs-9"></ion-icon>
+											hr.my-1.w-100
+									.row.g-3
+										.col-12#addVehiculeMessage(style= ressource ? 'display:none;' : '')
+											.card.card-body.bg-body
+												.d-flex.align-items-center
+													<ion-icon name="information-circle-outline" class="fs-6 me-2"></ion-icon>
+													.fs-7.text-dark Veuillez ajouter la liste des véhicules
+										.col-12#addVehiculeCol(style= ressource ? 'display:none;' : '')
+											button.btn.btn-sm.btn-success#addVehicule(type='button') ajouter
+											.invalid-feedback.fs-8(style="margin-top:.1px;")
+										.col-12#tableVehicule(style= ressource ? '' : "display:none;")
+											.mb-3.text-dark.fs-8#sumVehicule Vous avez ajouté 
+												span.fw-bold.text-1= (ressource && ressource.vehicule.length) ? ressource.vehicule.length : 0 
+												span= ressource && ressource.vehicule.length === 1 ? ' véhicule' : ' véhicules'
+
+											.table-responsive.rounded.border.border-bottom-0
+												table.table.table-sm
+													thead
+														tr
+															th.fs-7 Type
+															th.fs-7 Age
+															th.fs-7 Appartenance
+															th
+													tbody#addRowVehicule
+														if (ressource)
+															each vehicule in ressource.vehicule
+																tr(id='rowVehicule-'+vehicule._id)
+																	td= vehicule.type
+																	td= vehicule.age
+																	td= vehicule.appartenance
+																	td
+																		.text-end
+																			button.btn.btn-sm.p-0.deletVehicule(type='button' data-id=vehicule._id style='display:none;')
+																				ion-icon.text-danger.fs-6.align-middle(name='close-circle-outline')
+
+										.col-12#formVehicule(style="display:none;")
+											.card-body.border.rounded
+												.d-flex.align-items-center.mb-2
+													.d-flex.align-items-center.me-2
+														<ion-icon name="ellipse" class="text-1 me-1 fs-9"></ion-icon>
+														.badge.p-0.text-dark.fs-7 Ajouter un véhicule
+													hr.my-1.w-100
+													#inputVehicule.d-none
+														if (ressource)
+															-for(let i = 0; i < ressource.vehicule.length; i++)
+																-var vehicule = ressource.vehicule[i]
+																input(id='type-'+vehicule._id type='text' name='vehicule['+ i +'][type]' value=vehicule.type)
+																input(id='age-'+vehicule._id type='number' name='vehicule['+ i +'][age]' value=vehicule.age)
+																input(id='appartenance-'+vehicule._id type='text' name='vehicule['+ i +'][appartenance]' value=vehicule.appartenance)
+
+												.row.g-3
+													each item in data
+														div(class=item.col)
+															//- item's variable
+															-var value = getValue(ressource, item.name)
+															//- input
+															label.form-label.text-dark.fs-7(for=item.id)= item.title
+															if (item.select)
+																select.form-select.form-select-sm(id=item.id type='text' name=item.name)
+																	-for(var i = 0; i < item.data.length; i++)
+																		if (i === 0)
+																			option(disabled selected)= item.data[i]
+																		else
+																			option(value=item.data[i])= item.data[i]
+															else
+																input.form-control.form-control-sm(type=item.type id=item.id placeholder=item.title name=item.name value=value)
+															.invalid-feedback.fs-8
+													.col-12
+														button.btn.btn-sm.btn-success#addDataVehicule(type='button') ajouter
+						//- *** submit button *** -//
+						.col-12
+							if (ressource)
+								button.btn.btn-sm.bg-gray.text-white.me-2#editBtn(type="button") Modifier
+								button.btn.btn-sm.btn-success.d-none.me-2#saveBtn(type="submit") Enregistrer
+								button.btn.btn-sm.btn-light.d-none#cancelBtn(type="button") Annuler
+							else
+								button.btn.btn-sm.bg-grd(type="submit") Enregistrer 
+		if (ressource)
+			.col-12
+				a.btn.btn-sm.bg-8.text-dark.me-2(href='/csr/' + document._id + '/add-programme') précédent
+				a.btn.btn-sm.bg-8.text-dark(href='/csr/' + document._id + '/add-ressource-humain') suivant

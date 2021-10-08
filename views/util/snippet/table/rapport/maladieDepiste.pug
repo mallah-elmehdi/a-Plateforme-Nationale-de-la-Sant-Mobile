@@ -1,0 +1,86 @@
+if (maladieDepiste)
+	//- VARIABLES
+	-var title = 'Maladies dépistées', id = 'maladieDepiste'
+	//- LAYOUTS
+	.col-12
+		.card
+			.card-body
+				.d-flex.align-items-center.justify-content-between
+					.d-flex.align-items-center.fw-bold
+						ion-icon.text-1.fs-6.me-2(name='clipboard-outline')
+						span.fs-7.text-dark= title
+					//- download pdf / excel
+					.btn-group.shadow-0(role='group')
+						button.btn.btn-sm.btn-light(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+							<ion-icon class="fs-5" name="download-outline"></ion-icon>
+						ul.dropdown-menu.shadow.border
+							li
+								button.dropdown-item.downloadSortiePdf(type='button' data-id=id data-region=document.region data-province=document.province data-csr=document.csr data-category=document.category data-trimestre=trimestre data-createdat=data.sortie ? data.sortie.createdAt : data.trimestre.createdAt data-updatedat= data.sortie ? data.sortie.updatedAt : '' data-submit=data.sortie ? data.sortie.submit : '')
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/pdf.svg", alt="pdf" width="20px")
+										span PDF
+							li
+								button.dropdown-item.downloadExcel(type='button' data-title=title data-id=id)
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/excel.svg", alt="pdf" width="20px")
+										span Excel
+			.card-body
+				.table-responsive
+					table.table.thisTable.table-bordered(id=id data-title=title data-id=id data-align='center')
+						tbody
+							tr
+								th(colspan="2")
+								th(style="text-align: center;") Nombre de cas dépistés
+								th(style="text-align: center;") Nombre de cas pris en charge
+								th(style="text-align: center;") Références
+							tr
+								th(colspan="2") Diabète
+								td(style="text-align: center;")= maladieDepiste.diabete.cas
+								td(style="text-align: center;")= maladieDepiste.diabete.casPec
+								td(style="text-align: center;")= maladieDepiste.diabete.reference
+							tr
+								th(colspan="2") HTA
+								td(style="text-align: center;")= maladieDepiste.hta.cas
+								td(style="text-align: center;")= maladieDepiste.hta.casPec
+								td(style="text-align: center;")= maladieDepiste.hta.reference
+							tr
+								th(colspan="2") Angine
+								td(style="text-align: center;")= maladieDepiste.angine.cas
+								td(style="text-align: center;")= maladieDepiste.angine.casPec
+								td(style="text-align: center;")= maladieDepiste.angine.reference
+							tr
+								th(colspan="2") Caries
+								td(style="text-align: center;")= maladieDepiste.carie.cas
+								td(style="text-align: center;")= maladieDepiste.carie.casPec
+								td(style="text-align: center;")= maladieDepiste.carie.reference
+							tr
+								th(colspan="2") Parodontopathie
+								td(style="text-align: center;")= maladieDepiste.parodontopathie.cas
+								td(style="text-align: center;")= maladieDepiste.parodontopathie.casPec
+								td(style="text-align: center;")= maladieDepiste.parodontopathie.reference
+							tr
+								th(colspan="2") Maladies mentales
+								td(style="text-align: center;")= maladieDepiste.maladieMentale.cas
+								td(style="text-align: center;")= maladieDepiste.maladieMentale.casPec
+								td(style="text-align: center;")= maladieDepiste.maladieMentale.reference
+							tr
+								th(colspan="2") IST
+								td(style="text-align: center;")= maladieDepiste.ist.cas
+								td(style="text-align: center;")= maladieDepiste.ist.casPec
+								td(style="text-align: center;")= maladieDepiste.ist.reference
+							tr
+								th(rowspan="2" style="vertical-align:middle;") RAA
+								th Avec cardites
+								td(style="text-align: center;")= maladieDepiste.raa.avecCardites.cas
+								td(style="text-align: center;")= maladieDepiste.raa.avecCardites.casPec
+								td(style="text-align: center;")= maladieDepiste.raa.avecCardites.reference
+							tr
+								th Sans cardites
+								td(style="text-align: center;")= maladieDepiste.raa.sansCardites.cas
+								td(style="text-align: center;")= maladieDepiste.raa.sansCardites.casPec
+								td(style="text-align: center;")= maladieDepiste.raa.sansCardites.reference
+							tr
+								th(colspan="2") Tuberculose pulmonaire
+								td(style="text-align: center;")= maladieDepiste.tuberculosePolmonaire.cas
+								td(style="text-align: center;")= maladieDepiste.tuberculosePolmonaire.casPec
+								td(style="text-align: center;")= maladieDepiste.tuberculosePolmonaire.reference

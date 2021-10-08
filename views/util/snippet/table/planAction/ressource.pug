@@ -1,0 +1,75 @@
+mixin observationModal(observation)
+	//- get an id
+	-var id = idGen()
+	//- button
+	a.link-primary.text-decoration-none(type='button' data-bs-toggle='modal' data-bs-target='#'+id)= observation.substr(0, 20) + '...'
+	.modal.fade(tabindex='-1' id=id aria-labelledby='exampleModalLabel' aria-hidden='true')
+		.modal-dialog.modal-dialog-centered
+			.modal-content
+				.modal-header
+					.text-dark.fs-7 Observations
+					button.btn.btn-sm(type='button' data-bs-dismiss='modal' aria-label='Close')
+						<ion-icon name="close-outline" class="align-middle fs-5"></ion-icon>
+				.modal-body.text-start
+					span(style="white-space: pre-line;")=observation
+if (ressource)
+	//- FUNCTIONS
+	-function idGen() { return 'id-' + Math.random().toString(36).substr(2, 9);}
+	//- VARIABLES
+	-var title = 'Situation des moyens de mobilité', id = 'ressource'
+	//- LAYOUTS
+	.col-12
+		.card
+			.card-body
+				.d-flex.align-items-center.justify-content-between
+					.d-flex.align-items-center.fw-bold
+						ion-icon.text-1.fs-6.me-2(name='car-outline')
+						span.fs-7.text-dark= title
+					//- download pdf / excel
+					.btn-group.shadow-0(role='group')
+						button.btn.btn-sm.btn-light(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+							<ion-icon class="fs-5" name="download-outline"></ion-icon>
+						ul.dropdown-menu.shadow.border
+							li
+								button.dropdown-item.downloadPlanActionPdf(type='button' data-id=id data-region=data.document.region data-province=data.document.province data-csr=document.csr data-category=data.document.category  data-createdat=data.planAction.createdAt data-updatedat=data.planAction.updatedAt data-submit=data.planAction.submit)
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/pdf.svg", alt="pdf" width="20px")
+										span PDF
+							li
+								button.dropdown-item.downloadExcel(type='button' data-title=title data-id=id)
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/excel.svg", alt="pdf" width="20px")
+										span Excel
+			.card-body
+				.table-responsive
+					table.table.thisTable.table-bordered(id=id data-title=title data-id=id data-align='center')
+						tbody
+							tr
+								th(colspan="3") Informations sur le véhicule
+								th(rowspan="2") Kilométrage annuel total à parcourir
+								th(rowspan="2") Besoin en carburant (MAD)
+								th(rowspan="2") Besoins en Unités Sanitaires Mobiles (USM)
+							tr
+								th Type
+								th Age
+								th Appartenance
+							tr
+								td= ressource.vehicule[0].type
+								td= ressource.vehicule[0].age
+								td= ressource.vehicule[0].appartenance
+								td(rowspan=ressource.vehicule.length)= ressource.budget.kmsParcourir
+								td(rowspan=ressource.vehicule.length)= ressource.budget.besoinCarburant
+								td(rowspan=ressource.vehicule.length)= ressource.besoinUsm
+							-for(let i = 1; i < ressource.vehicule.length; i++)
+								tr
+									td= ressource.vehicule[i].type
+									td= ressource.vehicule[i].age
+									td= ressource.vehicule[i].appartenance
+							tr
+								th(colspan="6") Observation
+							tr
+								td(colspan="6")
+									if (ressource.observation.length)
+										+observationModal(ressource.observation)
+									else
+										span Aucune

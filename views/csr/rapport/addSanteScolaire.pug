@@ -1,0 +1,110 @@
+extends ../profile
+
+block head
+
+block tail
+	script(type="module" src="/../../js/util/validation.js")
+	script(type="module" src="/../../js/csr/disabledInputRapport.js")
+	script(type="module" src="/../../js/csr/changeBtn.js")
+
+	script(type="module" src="/../../js/csr/ignoreStep.js")
+
+
+block main
+	//- FUNCTION
+	-function getValue(object, key) {var list = key.split('[');if (!object) return '';for (let i = 0; i < list.length; i++) {if (list[i].includes(']')) {list[i] = list[i].slice(0, -1);}object = object[list[i]];}return object;}
+	//- VARIABLES
+	-var document = data.document
+	-var santeScolaire = data.santeScolaire
+	-var id = santeScolaire ? '?id=' + santeScolaire._id : '' 
+	//- LAYOUTS
+	.row.g-3#dataElement(data-element=santeScolaire)
+		.col-12
+			include ../../util/snippet/titleRapport
+		.col-12
+			.alert.alert-warning.alert-dismissible.m-0.fade.show(role='alert')
+				span Si vous voulez ignorer cette étape.
+				button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+				br
+				button#ignoreStep.btn.btn-sm.btn-warning.mt-3.text-dark(type="button") Ignorer cette étape
+		.col-12
+			a.btn.btn-sm.bg-8.text-dark.px-2(href='/csr/' + data.document._id + '/trimestre/' + trimestre + '/sortie/' + sortie)
+				.d-flex.align-items-center
+					<ion-icon name="chevron-back-outline" class="me-2"></ion-icon>
+					span retour au rapport de la sortie
+		.col-12
+			.card.card-body
+				//- *** form *** -//
+				form#santeScolaireForm(action=url+id, method="post")
+					.row.g-3
+						//- *** title *** -//
+						.col-12
+							.d-flex.align-items-center
+								<ion-icon name="school-outline" class="fs-5 me-2 text-1"></ion-icon>
+								.fs-6.text-dark Santé scolaire 
+						//- *** inputs *** -//
+						-for (var key in form)
+							-var data = form[key].data
+							-var title = form[key].title
+							-var dataType = form[key].dataType
+							if (dataType === 'array')   
+								.col-12
+									if (title)
+										.d-flex.align-items-center.mb-2
+											.d-flex.align-items-center.me-2
+												<ion-icon name="ellipse" class="text-1 me-1 fs-9"></ion-icon>
+												.badge.p-0.text-dark.fs-7= title
+											hr.my-1.w-100
+									else
+										.d-flex.align-items-center.mb-2
+											<ion-icon name="ellipse" class="text-1 me-2 fs-9"></ion-icon>
+											hr.my-1.w-100
+									.row.g-3
+										each item in data
+											div(class=item.col)
+												//- item's variable
+												-var value = getValue(santeScolaire, item.name)
+												//- input
+												label.form-label.text-dark.fs-7(for=item.id)= item.title
+												input.form-control.form-control-sm(type=item.type id=item.id placeholder=item.title name=item.name value=value required)
+												.invalid-feedback.fs-8
+							else if (dataType === 'object')
+								.col-12
+									span.badge.bg-5= title
+								-for (var key1 in data)
+									-var data1 = data[key1].data
+									-var title1 = data[key1].title
+									-var dataType1 = data[key1].dataType
+									if (dataType1 === 'array')   
+										.col-12
+											if (title1)
+												.d-flex.align-items-center.mb-2
+													.d-flex.align-items-center.me-2
+														<ion-icon name="ellipse" class="text-1 me-1 fs-9"></ion-icon>
+														.badge.p-0.text-dark.fs-7= title1
+													hr.my-1.w-100
+											else
+												.d-flex.align-items-center.mb-2
+													<ion-icon name="ellipse" class="text-1 me-2 fs-9"></ion-icon>
+													hr.my-1.w-100
+											.row.g-3
+												each item in data1
+													div(class=item.col)
+														//- item's variable
+														-var value = getValue(santeScolaire, item.name)
+														//- input
+														label.form-label.text-dark.fs-7(for=item.id)= item.title
+														input.form-control.form-control-sm(type=item.type id=item.id placeholder=item.title name=item.name value=value required)
+														.invalid-feedback.fs-8
+						//- *** submit button *** -//
+						.col-12
+							if (santeScolaire)
+								button.btn.btn-sm.bg-gray.text-white#editBtn(type="button") Modifier
+								button.btn.btn-sm.btn-success.d-none.me-2#saveBtn(type="submit") Enregistrer
+								button.btn.btn-sm.btn-light.d-none#cancelBtn(type="button") Annuler
+							else
+								button.btn.btn-sm.bg-grd(type="submit") Enregistrer
+		if (santeScolaire)
+			.col-12
+				a.btn.btn-sm.bg-8.text-dark.me-2(href='/csr/' + document._id + '/trimestre/' + trimestre + '/sortie/' + sortie + '/planification-familiale') précédent
+				a.btn.btn-sm.bg-8.text-dark(href='/csr/' + document._id + '/trimestre/' + trimestre + '/sortie/' + sortie + '/consultation-medical') suivant

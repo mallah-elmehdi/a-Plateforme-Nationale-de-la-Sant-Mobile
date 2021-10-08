@@ -1,0 +1,128 @@
+{
+    "femmePriseCharge": {
+        "title": "Santé maternelle",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "femmePriseCharge",
+                "id": "femmePriseCharge",
+                "title": "Nombre de femmes prises en charge",
+                "type": "number",
+                "col": "col-12",
+                "js": true
+            }
+        ]
+    },
+    "cpn": {
+        "title": "Nombre de consultations prénatales (CPN)",
+        "dataType": "object",
+        "data": {
+            "nouvelleInscrite": {
+                "title": "Nouvelles inscrites",
+                "dataType": "array",
+                "data": [
+                    {
+                        "name": "cpn[nouvelleInscrite][t1]",
+						"id": "cpnNouvelleInscriteT1",
+                        "title": "1er Trimestre de grossesse",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "cpn[nouvelleInscrite][t2]",
+						"id": "cpnNouvelleInscriteT2",
+                        "title": "2ème Trimestre de grossesse",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "cpn[nouvelleInscrite][t3]",
+						"id": "cpnNouvelleInscriteT3",
+                        "title": "3ème Trimestre de grossesse",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    }
+                ]
+            },
+            "ancienneInscrite": {
+                "title": "Anciennes inscrites",
+                "dataType": "array",
+                "data": [
+                    {
+                        "name": "cpn[ancienneInscrite][t1]",
+						"id": "cpnAncienneInscriteT1",
+                        "title": "1er Trimestre de grossesse",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "cpn[ancienneInscrite][t2]",
+						"id": "cpnAncienneInscriteT2",
+                        "title": "2ème Trimestre de grossesse",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "cpn[ancienneInscrite][t3]",
+						"id": "cpnAncienneInscriteT3",
+                        "title": "3ème Trimestre de grossesse",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    }
+                ]
+            }
+        }
+    },
+    "autreConsultation": {
+        "dataType": "array",
+		"title": "Autres consultations",
+        "data": [
+            {
+                "name": "autreConsultation",
+				"id": "autreConsultation",
+                "title": "Nombre d'autres consultations",
+                "type": "number",
+                "col": "col-sm-6"
+            }
+        ]
+    },
+    "autre": {
+        "dataType": "array",
+        "data": [
+            {
+                "name": "garDepiste",
+				"id": "garDepiste",
+                "title": "Nombre de Grossesses à risque (GAR) dépistées",
+                "type": "number",
+                "col": "col-sm-6"
+            },
+            {
+                "name": "femmeExaminePostNatal",
+				"id": "femmeExaminePostNatal",
+                "title": "Nombre de femmes examinées en post natal",
+                "type": "number",
+                "col": "col-md-6"
+            },
+            {
+                "name": "vat",
+				"id": "vat",
+                "title": "Vaccination antitétanique (VAT)",
+                "type": "number",
+                "col": "col-sm-6"
+            }
+        ]
+    },
+    "reference": {
+        "dataType": "array",
+		"title": "Références",
+        "data": [
+            {
+                "name": "reference",
+				"id": "reference",
+                "title": "Nombre de femmes référées",
+                "type": "number",
+                "col": "col-sm-6"
+            }
+        ]
+    }
+}

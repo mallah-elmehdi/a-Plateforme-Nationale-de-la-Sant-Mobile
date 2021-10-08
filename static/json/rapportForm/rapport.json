@@ -1,0 +1,68 @@
+[
+	{
+		"icon": "location-outline",
+		"key": "pdrVisite",
+		"title": "PDR visité",
+		"link": "/pdr-visite"
+	},
+	{
+		"icon": "people-circle-outline",
+		"key": "populationCible",
+		"title": "Population ciblée par l’équipe mobile",
+		"link": "/population-cible"
+	},
+	{
+		"icon": "people-outline",
+		"key": "ressourceHumainMobile",
+		"title": "Ressources humaines mobilisées",
+		"link": "/ressource-humain-mobile"
+	},
+	{
+		"icon": "woman-outline",
+		"key": "santeMaternelle",
+		"title": "Santé maternelle",
+		"link": "/sante-maternelle"
+	},
+	{
+		"icon": "accessibility-outline",
+		"key": "santeInfantile",
+		"title": "Santé infantile",
+		"link": "/sante-infantile"
+	},
+	{
+		"icon": "people-circle-outline",
+		"key": "planificationFamiliale",
+		"title": "Planification familiale",
+		"link": "/planification-familiale"
+	},
+	{
+		"icon": "school-outline",
+		"key": "santeScolaire",
+		"title": "Santé scolaire",
+		"link": "/sante-scolaire"
+	},
+	{
+		"icon": "pulse-outline",
+		"key": "consultationMedical",
+		"title": "Consultations médicales",
+		"link": "/consultation-medical"
+	},
+	{
+		"icon": "pulse-outline",
+		"key": "detectionPrecoceCancer",
+		"title": "Détection précoce des cancers du sein et du col de l’utérus",
+		"link": "/detection-precoce-cancer"
+	},
+	{
+		"icon": "clipboard-outline",
+		"key": "maladieDepiste",
+		"title": "Maladies dépistées",
+		"link": "/maladie-depiste"
+	},
+	{
+		"icon": "clipboard-outline",
+		"key": "autreActivite",
+		"title": "Autre activités",
+		"link": "/autre-activite"
+	}
+]

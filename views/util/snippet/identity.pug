@@ -1,0 +1,12 @@
+-var today = new Date()
+-var thisYear = today.getFullYear()
+.bg-white.px-2.pt-2.d-flex.align-items-center.border-top.border-bottom.flex-wrap
+	if (data.document.region)
+		.rounded.badge.bg-7.mb-2.fs-8.text-white.me-2= 'Direction Régionale : ' + data.document.region 
+	else
+		.rounded.badge.bg-7.mb-2.fs-8.text-white.me-2= 'Direction de la Population'  
+	if (data.document.province)
+		.rounded.badge.bg-7.mb-2.fs-8.text-white.me-2= 'Délégation : ' + data.document.province
+	if (data.document.csr)
+		.rounded.badge.bg-7.mb-2.fs-8.text-white.me-2= 'Centre de santé : ' + data.document.csr
+	.rounded.badge.bg-7.mb-2.fs-8.text-white= 'Année : ' + thisYear

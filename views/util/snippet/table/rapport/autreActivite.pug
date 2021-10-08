@@ -1,0 +1,81 @@
+mixin observationModal(observation)
+	//- get an id
+	-var id = idGen()
+	//- button
+	a.link-primary.text-decoration-none(type='button' data-bs-toggle='modal' data-bs-target='#'+id)= observation.substr(0, 20) + '...'
+	.modal.fade(tabindex='-1' id=id aria-labelledby='exampleModalLabel' aria-hidden='true')
+		.modal-dialog.modal-dialog-centered
+			.modal-content
+				.modal-header
+					.text-dark.fs-7 Observations
+					button.btn.btn-sm(type='button' data-bs-dismiss='modal' aria-label='Close')
+						<ion-icon name="close-outline" class="align-middle fs-5"></ion-icon>
+				.modal-body.text-start
+					span(style="white-space: pre-line;")=observation
+					
+if (autreActivite && autreActivite.activity.length)
+	//- FUNCTION
+	-function idGen() { return 'id-' + Math.random().toString(36).substr(2, 9);}
+	-function dataTable() {var objOut = { acte: { activity: [] }, beneficier: { activity: [] } };for (let j = 0; j < autreActivite.activity.length; j++) {const ele = autreActivite.activity[j];if (ele.typeBeneficier == 'Bénéficiaire') {objOut.beneficier.activity.push(ele);} else {objOut.acte.activity.push(ele);}};return objOut;}
+	//- VARIABLES
+	-var title = 'Autre activités', id = 'autreActivite'
+	-var autreActiviteData = dataTable()
+	//- LAYOUTS
+	.col-12
+		.card.text-center
+			.card-body
+				.d-flex.align-items-center.justify-content-between
+					.d-flex.align-items-center.fw-bold
+						ion-icon.text-1.fs-6.me-2(name='clipboard-outline')
+						span.text-dark.fs-7= title
+					//- download pdf / excel
+					.btn-group.shadow-0(role='group')
+						button.btn.btn-sm.btn-light(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+							<ion-icon class="fs-5" name="download-outline"></ion-icon>
+						ul.dropdown-menu.shadow.border
+							li
+								button.dropdown-item.downloadSortiePdf(type='button' data-id=id data-region=document.region data-province=document.province data-csr=document.csr data-category=document.category data-trimestre=trimestre data-createdat=data.sortie ? data.sortie.createdAt : data.trimestre.createdAt data-updatedat= data.sortie ? data.sortie.updatedAt : '' data-submit=data.sortie ? data.sortie.submit : '')
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/pdf.svg", alt="pdf" width="20px")
+										span PDF
+							li
+								button.dropdown-item.downloadExcel(type='button' data-title=title data-id=id)
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/excel.svg", alt="pdf" width="20px")
+										span Excel
+			if (autreActiviteData.beneficier.activity.length)
+				.card-body
+					.table-responsive
+						table.table.thisTable.table-bordered(id=id data-title=title data-id=id data-align='center')
+							tbody
+								tr
+									th Type d’activité
+									th Nombre de bénéficiaires
+									th Observations
+								each item in autreActiviteData.beneficier.activity
+									tr
+										td= item.type
+										td= item.beneficier
+										td
+											if (item.observation.length)
+												+observationModal(item.observation)
+											else
+												span Aucune
+			if (autreActiviteData.acte.activity.length)
+				.card-body
+					.table-responsive
+						table.table.thisTable.table-bordered(id=id data-title=title data-id=id data-align='center')
+							tbody
+								tr
+									th Type d’activité
+									th Nombre d’actes
+									th Observations
+								each item in autreActiviteData.acte.activity
+									tr
+										td= item.type
+										td= item.beneficier
+										td
+											if (item.observation.length)
+												+observationModal(item.observation)
+											else
+												span Aucune

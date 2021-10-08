@@ -1,0 +1,27 @@
+table td,
+table th {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+table#programme,
+table#ressource,
+table#ressourceHumain,
+table#listOfLocalite,
+table#planificationFamiliale,
+table#consultationMedical,
+table#ressourceHumainMobile,
+table#sortie,
+table#santeScolaire, 
+table#pdrCover,
+table#ressourceMs,
+table#ressourceCommune,
+table#pdrProgrammeVisite,
+table#autreActivity,
+table#pdrVisite,
+table#detectionPrecoceCancer
+{
+	text-align: center;
+	vertical-align: middle;
+}

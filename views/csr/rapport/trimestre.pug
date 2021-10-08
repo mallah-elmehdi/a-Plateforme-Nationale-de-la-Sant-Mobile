@@ -1,0 +1,160 @@
+extends ../profile
+						
+//- BLOCKS
+block head
+block tail
+	script(src="/../../js/csr/pdf/rapportAll.js")
+	script(src="/../../js/csr/pdf/rapportOne.js")
+	script(src="/../../js/util/tableExcel.js")
+block main
+	//- FUNCTIONS
+	-function remplissage(item) {var i = 0;if (item.pdrVisite) i +=9.1;if (item.populationCible) i +=9.1;if (item.ressourceHumainMobile) i +=9.1;if (item.santeMaternelle) i +=9.1;if (item.santeInfantile) i +=9.1;if (item.planificationFamiliale) i +=9.1;if (item.santeScolaire) i +=9.1;if (item.consultationMedical) i +=9.1;if (item.maladieDepiste) i +=9.1;if (item.detectionPrecoceCancer) i +=9.1;if (item.autreActivite) i +=9.1;return  Math.floor(i) ;}
+	-function trimestreDead() {var today = new Date();var month = today.getMonth();if (month < 2) return 1;else if (month < 5) return 2;else if (month < 8) return 3;else return 4;}
+
+	//- VARIABLES
+	-var document = data.document
+	-var sortie = data.trimestre ? data.trimestre.sortie : []
+	//- LAYOUTS
+	.row.g-3
+		.col-12
+			include ../../util/snippet/titleRapport
+		//- ====================== ADD THIS TO SORTIE
+		//- if (submit)
+			.col-12
+				.card.bg-success.card-body.text-white.fw-bold
+					.d-flex.align-items-center
+						<ion-icon name="checkmark-circle-sharp" class="fs-5 me-2"></ion-icon>
+						span Vous avez soumis votre rapport de suivi des activités de l’équipe mobile de cette trimestre
+		//- ====================== 
+		//- if (trimestreDead() > trimestre)
+			.col-12
+				.card.bg-danger.p-2.text-white.fw-bold
+					.d-flex.align-items-center.justify-content-center
+						<ion-icon name="warning" class="fs-6 me-2"></ion-icon>
+						span.fs-7 La date limite de remplissage du rapport est dépassée
+		.col-12
+			.dropdown
+				a#dropdownTrimestre.btn.bg-8.btn-sm.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+					| Choisissez trimestre
+				ul.dropdown-menu(aria-labelledby='dropdownTrimestre')
+					a.dropdown-item.list-group-item.list-group-item-action(href='/csr/'+document._id+'/trimestre/1') Trimestre 1
+					a.dropdown-item.list-group-item.list-group-item-action(href='/csr/'+document._id+'/trimestre/2') Trimestre 2
+					a.dropdown-item.list-group-item.list-group-item-action(href='/csr/'+document._id+'/trimestre/3') Trimestre 3
+					a.dropdown-item.list-group-item.list-group-item-action(href='/csr/'+document._id+'/trimestre/4') Trimestre 4
+		.col-12
+			//- ------------------------------ DEADLINE COUNTER (TEST MODE)
+
+			//- variables
+			-var today = new Date(), bg, text, progress
+			-var timeRemaining = 30 - today.getDate()
+			//- background
+			if (timeRemaining <= 5)
+				-bg = 'bg-danger'
+			else if (timeRemaining <= 10)
+				-bg = 'bg-warning'
+			else
+				-bg = 'bg-success'
+			//- text
+			-var text = timeRemaining + ' jours restants'
+			//- progress
+			-progress = today.getDate() * 100 / 30
+			//- card
+			.card.text-dark.card-body.mb-1
+				.d-flex.align-items-center
+					<ion-icon name="time-outline" class="me-2"></ion-icon>
+					.d-flex.align-items-center
+						.fs-7.me-2 Délai de remplissage du plan d'action
+						.badge(class=bg)= text
+			.progress.bg-white.rounded(style='height: 15px;')
+				.progress-bar(role='progressbar' class=bg style=`width: ${progress}%;` aria-valuenow='100' aria-valuemin='0' aria-valuemax='100')
+
+			//- ------------------------------ DEADLINE COUNTER (TEST MODE)
+		.col-12
+			section.card.card-body
+				.row.g-3
+					.col-12
+						.d-flex.align-items-center
+							<ion-icon name="list-outline" class="fs-5 me-2 text-1"></ion-icon>
+							.fs-6 Rapport des sorties réalisées durant le trimestre
+					.col-12
+						.card.card-body.bg-body
+							.d-flex.align-items-center
+								<ion-icon name="information-circle-outline" class="fs-6 me-2"></ion-icon>
+								.fs-7 Veuillez rapporter les sorties réalisées durant le trimestre.
+					if (sortie.length)
+						.col-12.fs-7
+							span Vous avez ajouté
+							span.fw-bold.text-1= ' ' + sortie.length + ' '
+							span Sorties
+						.col-12
+							.table-responsive.border.border-bottom-0.rounded
+								table.table.table-hover
+									thead
+										tr
+											th(scope='col') Liste des rapports des sorties
+											th.text-center(scope='col') Remplissage
+											th.text-center(scope='col') Statut
+											th.text-center(scope='col') Action
+									tbody
+										each item in sortie
+											-var itemTime = item.createdAt
+											-var rempli = remplissage(item)
+											tr
+												th(scope='row')= 'Rapport de sortie : '+ itemTime.getDate() + '/' + itemTime.getMonth() + '/' + itemTime.getFullYear()
+												td.text-center
+													if (rempli === 100)
+														span.badge.bg-success= rempli + ' %'
+													else if (rempli === 0)
+														span.badge.bg-danger= rempli + ' %'
+													else
+														span.badge.bg-warning= rempli + ' %'
+												td.text-center
+													if (item.submit)
+														span.text-success Soumis 
+													else 
+														span.text-danger Non soumis
+												td.text-center
+													a.link-primary.text-decoration-none(href='/csr/' + document._id + '/trimestre/' + trimestre + '/sortie/' + item._id)= item.submit ? 'Details' : 'modifier'
+					//- if (trimestreDead() <= trimestre)
+					.col-12
+							form(action=url+'/sortie', method="post") 
+								button.btn.btn-success.btn-sm ajouter
+					//- else if (trimestreDead() > trimestre)
+						.col-12
+							.card.card-body.bg-body.text-danger
+								.d-flex.align-items-center
+									<ion-icon name="information-circle-outline" class="fs-6 me-2"></ion-icon>
+									.fs-7 Vous n'avez ajouté aucun rapport de sortie de le trimestre.
+		//- taux de coverture
+		if (sortie.length)
+			-var color='bg-warning'
+			-if (tauxCoverturePdr === 0) color='bg-danger'
+			-else if (tauxCoverturePdr >= 100) color='bg-success'
+			.col-12
+				.card.card-body
+					.d-flex.align-items-center
+						<ion-icon name="golf-outline" class="fs-6 text-1 me-2"></ion-icon>
+						span.me-2.fs-7 Taux de couverture des PDR
+						span.badge.fs-9(class=color)= tauxCoverturePdr + '%'
+				.progress.rounded.mt-1.bg-white(style="height: 15px;")
+					.progress-bar.fw-bold(role='progressbar' class=color style=`width: ${tauxCoverturePdr}%;` aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')= tauxCoverturePdr + '%'
+
+		if (sortie.length)
+			.col-12
+				.d-flex.align-items-center.justify-content-between
+					span.fs-8.bg-8.text-dark.badge Rapport global des activités des UMM du trimestre
+					button.btn.btn-sm.btn-light#downloadRapportAllPdf(type="button" data-region=document.region data-province=document.province data-csr=document.csr data-category=document.category data-trimestre=trimestre data-createdat=data.trimestre.createdAt)
+						.d-flex.align-items-center
+							img.me-2(src="/../../image/pdf.svg", alt="pdf" width="20px")
+							span PDF
+		include ../../util/snippet/table/rapport/pdrVisite
+		include ../../util/snippet/table/rapport/populationCible
+		include ../../util/snippet/table/rapport/ressourceHumainMobile
+		include ../../util/snippet/table/rapport/santeMaternelle
+		include ../../util/snippet/table/rapport/santeInfantile
+		include ../../util/snippet/table/rapport/planificationFamiliale
+		include ../../util/snippet/table/rapport/santeScolaire
+		include ../../util/snippet/table/rapport/consultationMedical
+		include ../../util/snippet/table/rapport/detectionPrecoceCancer
+		include ../../util/snippet/table/rapport/maladieDepiste
+		include ../../util/snippet/table/rapport/autreActivite

@@ -1,0 +1,103 @@
+{
+    "enfantPrisesCharge": {
+        "title": "Santé infantile ",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "enfantPrisesCharge",
+				"id": "enfantPrisesCharge",
+                "title": "Nombre d’enfants pris en charge",
+                "type": "number",
+                "col": "col-12",
+                "js": true
+            }
+        ]
+    },
+    "vaccination": {
+        "title": "Vaccination",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "vaccination[pentavalent]",
+				"id": "vaccinationPentavalent",
+                "title": "DTC3-Hib3-HB3 (pentavalent)",
+                "type": "number",
+                "col": "col-sm-4"
+            },
+            {
+                "name": "vaccination[rr]",
+				"id": "vaccinationRr",
+                "title": "RR",
+                "type": "number",
+                "col": "col-sm-4"
+            },
+            {
+                "name": "vaccination[bcg]",
+				"id": "vaccinationBcg",
+                "title": "BCG",
+                "type": "number",
+                "col": "col-sm-4"
+            }
+        ]
+    },
+    "autre": {
+        "dataType": "array",
+        "data": [
+            {
+                "name": "vitamineA",
+				"id": "vitamineA",
+                "title": "Vitamine A (2ème prise)",
+                "type": "number",
+                "col": "col-md-6"
+            },
+            {
+                "name": "vitamineD",
+				"id": "vitamineD",
+                "title": "Vitamine D (2ème prise)",
+                "type": "number",
+                "col": "col-md-6"
+            },
+            {
+                "name": "enfantsAvecInsuffisancePonderale",
+				"id": "enfantsAvecInsuffisancePonderale",
+                "title": "Nombre d’enfants avec insuffisance Pondérale (P/A<-2DS)",
+                "type": "number",
+                "col": "col-md-6"
+            },
+            {
+                "name": "enfantsAvecRetardCroissance",
+				"id": "enfantsAvecRetardCroissance",
+                "title": "Nombre d’enfants avec retard de croissance (T/A<-2DS)",
+                "type": "number",
+                "col": "col-md-6"
+            },
+            {
+                "name": "diarrhe",
+				"id": "diarrhe",
+                "title": "Nombre de cas de diarrhée",
+                "type": "number",
+                "col": "col-md-6"
+            },
+            {
+                "name": "ira",
+				"id": "ira",
+                "title": "Nombre de cas d’infections respiratoires aiguës (IRA)",
+                "type": "number",
+                "col": "col-md-6"
+            }
+        ]
+    },
+    "reference": {
+        "dataType": "array",
+        "title": "Références",
+        "data": [
+            {
+                "name": "reference",
+				"id": "reference",
+                "title": "Nombre des enfants référées",
+                "type": "number",
+                "col": "col-sm-6"
+            }
+        ]
+    }
+}

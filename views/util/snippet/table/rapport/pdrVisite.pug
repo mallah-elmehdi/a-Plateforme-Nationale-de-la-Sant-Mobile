@@ -1,0 +1,92 @@
+mixin observationModal(observation)
+	//- get an id
+	-var id = idGen()
+	//- button
+	a.link-primary.text-decoration-none(type='button' data-bs-toggle='modal' data-bs-target='#'+id)= observation.substr(0, 6) + '...'
+	.modal.fade(tabindex='-1' id=id aria-labelledby='exampleModalLabel' aria-hidden='true')
+		.modal-dialog.modal-dialog-centered
+			.modal-content
+				.modal-header
+					.text-dark.fs-7 Observations
+					button.btn.btn-sm(type='button' data-bs-dismiss='modal' aria-label='Close')
+						<ion-icon name="close-outline" class="align-middle fs-5"></ion-icon>
+				.modal-body.text-start
+					span(style="white-space: pre-line;")=observation
+
+if (pdrVisite)
+	//- FUNCTION
+	-function lenAll() { var length = 0; for(var i = 0; i < pdrVisite.pdr.length; i++) { length += pdrVisite.pdr[i].observation.length }; return length }
+	-function idGen() { return 'id-' + Math.random().toString(36).substr(2, 9);}
+	//- VARIABLES
+	-var title = 'PDR visité', id = 'pdrVisite'
+	//- LAYOUTS
+	.col-12
+		.card
+			.card-body
+				.d-flex.align-items-center.justify-content-between
+					.d-flex.align-items-center.fw-bold
+						ion-icon.text-1.fs-6.me-2(name='location-outline')
+						span.fs-7.text-dark= title
+					//- download pdf / excel
+					.btn-group.shadow-0(role='group')
+						button.btn.btn-sm.btn-light(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+							<ion-icon class="fs-5" name="download-outline"></ion-icon>
+						ul.dropdown-menu.shadow.border
+							li
+								button.dropdown-item.downloadSortiePdf(type='button' data-id=id data-region=document.region data-province=document.province data-csr=document.csr data-category=document.category data-trimestre=trimestre data-createdat=data.sortie ? data.sortie.createdAt : data.trimestre.createdAt data-updatedat= data.sortie ? data.sortie.updatedAt : '' data-submit=data.sortie ? data.sortie.submit : '')
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/pdf.svg", alt="pdf" width="20px")
+										span PDF
+							li
+								button.dropdown-item.downloadExcel(type='button' data-title=title data-id=id)
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/excel.svg", alt="pdf" width="20px")
+										span Excel
+			.card-body
+				.table-responsive
+					table.text-center.table.thisTable.table-bordered(id=id data-title=title data-id=id data-align='center')
+						tbody
+							tr
+								th PDR visité
+								th Sortie programmée
+								th Sortie réalisée
+								th Observation
+								th Kilométrage total parcourus
+								th Budget en carburant (MAD)
+							tr
+								td(rowspan=pdrVisite.pdr[0].observation.length)=pdrVisite.pdr[0].pdr
+								td(rowspan=pdrVisite.pdr[0].observation.length)=pdrVisite.pdr[0].sortieProgramme
+								td(rowspan=pdrVisite.pdr[0].observation.length)=pdrVisite.pdr[0].sortieEffectue
+								td
+									if (pdrVisite.pdr[0].observation[0] != 'Aucune')
+										+observationModal(pdrVisite.pdr[0].observation[0])
+									else
+										span=pdrVisite.pdr[0].observation[0]
+								td(rowspan=lenAll())=pdrVisite.kmParcouru
+								td(rowspan=lenAll())=pdrVisite.budgetCarburantEmConsomme
+								
+							-for(var j = 1; j < pdrVisite.pdr[0].observation.length; j++)
+								tr
+									td
+										if (pdrVisite.pdr[0].observation[j] != 'Aucune')
+											+observationModal(pdrVisite.pdr[0].observation[j])
+										else
+											span=pdrVisite.pdr[0].observation[j]
+
+							-for(var i = 1; i < pdrVisite.pdr.length; i++)
+								tr
+									td(rowspan=pdrVisite.pdr[i].observation.length)=pdrVisite.pdr[i].pdr
+									td(rowspan=pdrVisite.pdr[i].observation.length)=pdrVisite.pdr[i].sortieProgramme
+									td(rowspan=pdrVisite.pdr[i].observation.length)=pdrVisite.pdr[i].sortieEffectue
+									td 
+										if (pdrVisite.pdr[i].observation[0] != 'Aucune')
+											+observationModal(pdrVisite.pdr[i].observation[0])
+										else
+											span=pdrVisite.pdr[i].observation[0]
+								-for(var j = 1; j < pdrVisite.pdr[i].observation.length; j++)
+									tr
+										td
+											if (pdrVisite.pdr[i].observation[j] != 'Aucune')
+												+observationModal(pdrVisite.pdr[i].observation[j])
+											else
+												span=pdrVisite.pdr[i].observation[j]

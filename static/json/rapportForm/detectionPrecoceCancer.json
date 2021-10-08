@@ -1,0 +1,42 @@
+{
+	"femmeExamine": {
+		"title": "Nombre de femmes examinées",
+		"dataType": "array",
+		"data": [
+			{
+				"name": "femmeExamine[cancerSein]",
+				"id": "femmeExamineCancerSein",
+				"title": "Détection précoce du cancer du sein",
+				"type": "number",
+				"col": "col-md-6"
+			},
+			{
+				"name": "femmeExamine[cancerCol]",
+				"id": "femmeExamineCancerCol",
+				"title": "Détection précoce du Cancer du col",
+				"type": "number",
+				"col": "col-md-6"
+			}
+		]
+	},
+	"femmeRefere": {
+		"title": "Nombre de femmes référées",
+		"dataType": "array",
+		"data": [
+			{
+				"name": "femmeRefere[cancerSein]",
+				"id": "femmeRefereCancerSein",
+				"title": "Détection précoce du cancer du sein",
+				"type": "number",
+				"col": "col-md-6"
+			},
+			{
+				"name": "femmeRefere[cancerCol]",
+				"id": "femmeRefereCancerCol",
+				"title": "Détection précoce du Cancer du col",
+				"type": "number",
+				"col": "col-md-6"
+			}
+		]
+	}
+}

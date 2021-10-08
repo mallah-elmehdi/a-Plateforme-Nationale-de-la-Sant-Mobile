@@ -1,0 +1,14 @@
+header
+	nav.bg-white.p-2.w-100
+		.container-fluid.d-flex.justify-content-between
+			button#aside-btn.btn.p-0.m-0.text-1
+				ion-icon.fs-4(name='menu-outline')
+			div
+				a.btn.btn-sm.bg-5.me-2(href= '/central/' + data.document.id + '/settings')
+					.d-flex.align-items-center.text-white
+						ion-icon.fs-7(name='cog-outline')
+						span.ms-1.fs-8.rm-mobile paramètres
+				a.btn.btn-sm.bg-5(href='/sign-out')
+					.d-flex.align-items-center.text-white
+						ion-icon.fs-7(name='log-out-outline')
+						span.ms-1.fs-8.rm-mobile se déconnecter

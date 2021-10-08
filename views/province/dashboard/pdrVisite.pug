@@ -1,0 +1,29 @@
+extends ../profile
+ 
+block tail
+	//- LIBRARY
+	script(src='/../../js/province/jquery-jvectormap-2.0.5.min.js')
+	script(src='/../../js/province/toggleMap.js')
+	//- MAP
+	script(src='/../../js/province/province/map.js')
+	//- CARTE
+	script(src='/../../js/province/province/carte/pdrVisite.js')
+
+block main
+	//- variable
+	-var today = new Date()
+	//- layout
+	.row.g-3#data(data-code=codeProvince)
+		.col-12
+			include ../../util/snippet/titleDashboard
+		//- ---------------- map
+		.col-12
+			.card.card-body
+				.row.g-3
+					.col-12
+						.d-flex.align-items-center.fs-7
+							<ion-icon name="stats-chart-outline"  class="me-2 text-1"></ion-icon>
+							span.text-dark.fs-bold= 'Taux de couverture des PDR de l\'année ' + today.getFullYear()
+					.col-12
+						#dataProvince(data-carte=JSON.stringify(data.carte.province))
+							#province-map(style="width: 100%; height: 400px;")

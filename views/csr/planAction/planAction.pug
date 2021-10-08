@@ -1,0 +1,130 @@
+extends ../profile
+//- MIXINS
+//- BLOCKS
+block head
+block tail
+	script(src="/../../js/csr/pdf/planActionAll.js")
+	script(src="/../../js/csr/pdf/planActionOne.js")
+	script(src="/../../js/util/tableExcel.js")
+block main
+	//- FUNCTIONS
+	//- -function planActionDeadLineOver() { var today = new Date(); return today.getMonth() != 0 }
+	//- -function planActionAdditionalDeadLineOver() { var today = new Date(); if (today.getMonth() != 1) {return true;} return today.getDate() > 7 }
+	//- VARIABLES
+	-var document = data.document
+	-var planAction = data.planAction
+	//- --------------
+	-var population = planAction ? planAction.population : null
+	-var programme = planAction ? planAction.programme : []
+	-var ressource = planAction ? planAction.ressource : null
+	-var ressourceHumain = planAction ? planAction.ressourceHumain : null
+	//- --------------
+	-var submit = planAction ? planAction.submit : false
+	//- -var deadLineOver = planActionDeadLineOver()
+	//- -var additionalDeadLineOver = planActionAdditionalDeadLineOver()
+	//- LAYOUTS
+	.row.g-3
+		.col-12
+			include ../../util/snippet/titlePlanAction
+		if (submit)
+			.col-12
+				.card.bg-success.p-2.text-white.fw-bold
+					.d-flex.align-items-center.justify-content-center
+						<ion-icon name="checkmark-circle-sharp" class="fs-6 me-2"></ion-icon>
+						span.fs-7 Vous avez soumis votre plan d'action
+		//- else if (deadLineOver)
+			.col-12
+				.card.text-white.p-2.bg-danger.fw-bold
+					.d-flex.align-items-center.justify-content-center
+						<ion-icon name="warning" class="me-2"></ion-icon>
+						span.fs-7 La date limite pour terminer le plan d'action est déjà passée.
+		else
+			//- ------------------------------ DEADLINE COUNTER (TEST MODE)
+
+			//- if (!deadLineOver)
+			.col-12
+				//- variables
+				-var today = new Date(), bg, text, progress
+				-var timeRemaining = ((30 - today.getDate())< 0) ? 0 : 30 - today.getDate() 
+				//- background
+				if (timeRemaining <= 5)
+					-bg = 'bg-danger'
+				else if (timeRemaining <= 10)
+					-bg = 'bg-warning'
+				else
+					-bg = 'bg-success'
+				//- text
+				-var text = timeRemaining === 0 ? 'délai dépassé' : timeRemaining + ' jours restants'
+				//- progress
+				-progress = (today.getDate() * 100 / 30 > 100) ? 100 : today.getDate() * 100 / 30
+				//- card
+				.card.text-dark.card-body.mb-1
+					.d-flex.align-items-center
+						<ion-icon name="time-outline" class="me-2"></ion-icon>
+						.d-flex.align-items-center
+							.fs-7.me-2 Délai de remplissage du plan d'action
+							.badge(class=bg)= text
+				.progress.bg-white.rounded(style='height: 15px;')
+					.progress-bar(role='progressbar' class=bg style=`width: ${progress}%;` aria-valuenow='100' aria-valuemin='0' aria-valuemax='100')
+			//- if (!additionalDeadLineOver)
+				//- variables
+				-var today = new Date(), text, progress
+				-var timeRemaining = 7 - today.getDate()
+				//- text
+				-var text = additionalDeadLineOver ? 'délai dépassé' : timeRemaining + ' jours restants'
+				//- progress
+				-progress = additionalDeadLineOver ? 100 : (today.getDate() * 100 / 7)
+				//- card
+				.col-12
+					.card.card-body.bg-warning.text-dark.mb-1
+						.d-flex.align-items-center.fw-bold
+							<ion-icon name="warning" class="me-2"></ion-icon>
+							.d-flex.align-items-center
+								.fs-7.me-2 Semaine supplémentaire
+								.badge.bg-white.text-danger= text
+					.progress.bg-white.rounded(style='height: 10px;')
+						.progress-bar.bg-danger(role='progressbar' style=`width: ${progress}%;` aria-valuenow='100' aria-valuemin='0' aria-valuemax='100')
+
+			//- ------------------------------ DEADLINE COUNTER (TEST MODE) - END
+			.col-12
+				.card
+					.card-body
+						.d-flex.align-items-center.fw-bold
+							<ion-icon name="reader-outline" class="text-1 me-2"></ion-icon>
+							.fs-7.text-dark le taux de remplissage du plan d'action
+						include ../../util/snippet/table/planAction/planAction
+			//- SUBMIT FORM
+			if (population && programme.length && ressource && ressourceHumain)
+				.col-12.sticky-top
+					.card.alert-warning
+						.card-body
+							.d-flex.align-items-center
+								<ion-icon name="information-circle-outline" class="fs-5 me-2"></ion-icon>
+								span Si vous avez terminé de remplir votre plan d'action, veuillez vérifier les informations et le soumettre
+						.card-body
+							button.btn.btn-lg.bg-5.text-white(type='button' data-bs-toggle='modal' data-bs-target='#submitPlanAction') Soumettre le plan d'action
+				#submitPlanAction.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='submitPlanActionLabel' aria-hidden='true')
+					.modal-dialog.modal-dialog-centered
+						.modal-content
+							.modal-header
+								.text-dark.fs-7#submitPlanActionLabel Veuillez confirmer
+								button.btn.btn-sm(type='button' data-bs-dismiss='modal' aria-label='Close')
+									<ion-icon name="close-outline" class="align-middle fs-5"></ion-icon>
+							.modal-body
+								.text-danger Veuillez noter que cette action est irréversible, après votre soumission, vous ne pouvez plus modifier le plan d'action
+							.modal-footer
+								button.btn.btn-light.btn-sm(type='button' data-bs-dismiss='modal') Annuler
+								form(action=url+'/submit' method="post")
+									button.btn.btn-sm.bg-5.text-white(type='submit') Soumettre
+		if (population || programme.length || ressource || ressourceHumain)
+			.col-12
+				.d-flex.align-items-center.justify-content-between
+					span.fs-8.bg-8.text-dark.badge Détails du plan d'action
+					button#downloadPlanActionAllPdf.btn.btn-sm.bg-white(type="button" data-region=document.region data-province=document.province data-csr=document.csr data-category=document.category data-createdat=data.planAction.createdAt data-updatedat=data.planAction.updatedAt data-submit=submit)
+						.d-flex.align-items-center
+							img.me-2(src="/../../image/pdf.svg", alt="pdf" width="20px")
+							span PDF
+		include ../../util/snippet/table/planAction/population
+		include ../../util/snippet/table/planAction/programme
+		include ../../util/snippet/table/planAction/ressource
+		include ../../util/snippet/table/planAction/ressourceHumain

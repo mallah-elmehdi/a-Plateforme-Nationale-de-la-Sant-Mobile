@@ -1,0 +1,122 @@
+extends ../profile
+//- MIXINS
+//- BLOCKS
+block head
+block tail
+	script(src="/../../js/csr/pdf/sortieAll.js")
+	script(src="/../../js/csr/pdf/sortieOne.js")
+	script(src="/../../js/util/tableExcel.js")
+block main
+	//- FUNCTIONS
+	//- -function trimestreDead() {var today = new Date();var month = today.getMonth();if (month < 2) return 1;else if (month < 5) return 2;else if (month < 8) return 3;else return 4;}
+	-function sortieDone(sortie) { if (!pdrVisite) return false; if (!populationCible) return false; if (!ressourceHumainMobile) return false; if (!santeMaternelle) return false; if (!santeInfantile) return false; if (!planificationFamiliale) return false; if (!santeScolaire) return false; if (!consultationMedical) return false; if (!detectionPrecoceCancer) return false; if (!maladieDepiste) return false; if (!autreActivite) return false;return true}
+	-function format(pdrVisite) { if (!pdrVisite) return null; var objOut = {pdr: []}; objOut._id = pdrVisite._id; objOut.kmParcouru = pdrVisite.kmParcouru; objOut.budgetCarburantEmConsomme = pdrVisite.budgetCarburantEmConsomme; objOut.pdr.push({pdr: pdrVisite.pdrVisite.pdr, sortieProgramme: pdrVisite.pdrVisite['t'+trimestre], sortieEffectue:1, observation:[pdrVisite.observation.length ? pdrVisite.observation : 'Aucune']}); return objOut }
+	//- VARIABLES
+	-var document = data.document
+	-var sortie = data.sortie
+	-var pdrVisite = sortie ?  format(sortie.pdrVisite) : null
+	-var populationCible = sortie ?  sortie.populationCible : null
+	-var ressourceHumainMobile = sortie ?  sortie.ressourceHumainMobile : null
+	-var santeMaternelle = sortie ?  sortie.santeMaternelle : null
+	-var santeInfantile = sortie ?  sortie.santeInfantile : null
+	-var planificationFamiliale = sortie ?  sortie.planificationFamiliale : null
+	-var santeScolaire = sortie ?  sortie.santeScolaire : null
+	-var consultationMedical = sortie ?  sortie.consultationMedical : null
+	-var detectionPrecoceCancer = sortie ?  sortie.detectionPrecoceCancer : null
+	-var maladieDepiste = sortie ?  sortie.maladieDepiste : null
+	-var autreActivite = sortie ?  sortie.autreActivite : null
+	-var sortieTime = sortie ? new Date(sortie.createdAt) : Date.now()
+	-var submit = sortie ? sortie.submit : false
+	//- LAYOUTS
+	.row.g-3
+		.col-12
+			include ../../util/snippet/titleRapport
+		//- if (!submit && trimestreDead() > trimestre)
+			.col-12
+				.card.bg-danger.p-2.text-white.fw-bold
+					.d-flex.align-items-center.justify-content-center
+						<ion-icon name="warning" class="fs-6 me-2"></ion-icon>
+						span.fs-7 La date limite de remplissage du rapport de la sortie est dépassée
+		//- else if (submit)
+		if (submit)
+			.col-12
+				.card.bg-success.p-2.text-white.fw-bold
+					.d-flex.align-items-center.justify-content-center
+						<ion-icon name="checkmark-circle-sharp" class="fs-6 me-2"></ion-icon>
+						span.fs-7 Vous avez soumis votre rapport de la sortie
+		.col-12
+			a.btn.btn-sm.bg-8.text-dark.px-2(href='/csr/' + document._id + '/trimestre/' + trimestre)
+				.d-flex.align-items-center
+					<ion-icon name="chevron-back-outline" class="me-2"></ion-icon>
+					span retour a la liste des rapports des sorties
+		if (!submit && sortieDone())
+			.col-12.sticky-top
+				.card.alert-warning
+					.card-body
+						.d-flex.align-items-center
+							<ion-icon name="information-circle-outline" class="fs-5 me-2"></ion-icon>
+							span Si vous avez terminé de remplir votre rapport, veuillez vérifier les informations et soumettre
+					.card-body
+						button.btn.btn-lg.bg-5.text-white(type='button' data-bs-toggle='modal' data-bs-target='#submitSortie') Soumettre le rapport
+			#submitSortie.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='submitSortieLabel' aria-hidden='true')
+				.modal-dialog.modal-dialog-centered
+					.modal-content
+						.modal-header
+							span#submitSortieLabel.modal-title Veuillez confirmer
+							button.btn.btn-sm(type='button' data-bs-dismiss='modal' aria-label='Close')
+								<ion-icon name="close-outline" class="align-middle fs-5"></ion-icon>
+						.modal-body
+							.text-danger Veuillez noter que cette action est irréversible, après votre soumission, vous ne pouvez plus modifier le rapport
+						.modal-footer
+							button.btn.btn-light.btn-sm(type='button' data-bs-dismiss='modal') Annuler
+							form(action=url+'/submit' method="post")
+								button.btn.btn-sm.bg-5.text-white(type='submit') Soumettre
+		//- if (!submit && trimestreDead() <= trimestre)
+		if (!submit)
+			.col-12
+				section.card.card-body
+					.row.g-3
+						.col-12
+							.d-flex.align-items-center
+								<ion-icon name="reader-outline" class="fs-5 me-2 text-1"></ion-icon>
+								.fs-6 Taux de remplissage du rapport de la sortie
+						.col-12
+							.card.card-body.bg-body
+								.d-flex.align-items-center
+									<ion-icon name="information-circle-outline" class="fs-6 me-2"></ion-icon>
+									.fs-7 Veuillez remplir le rapport de la sortie.
+						.col-12
+							include ../../util/snippet/table/rapport/sortie
+						.col-12
+							button.btn-sm.btn.link-danger.p-0(type='button' data-bs-toggle='modal' data-bs-target='#deleteSortie') Supprimer le rapport de la sortie
+							#deleteSortie.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='deleteSortie' aria-hidden='true')
+								.modal-dialog.modal-dialog-centered
+									.modal-content
+										.modal-header.border-0
+											span#deleteSortie.modal-title.text-danger.fs-7 Voulez-vous supprimer le rapport de la sortie ?
+											button.btn.btn-sm(type='button' data-bs-dismiss='modal' aria-label='Close')
+												<ion-icon name="close-outline" class="align-middle fs-5"></ion-icon>
+										.modal-footer
+											button.btn.btn-light.btn-sm(type='button' data-bs-dismiss='modal') Annuler
+											form(action=url+'/delete', method="post")
+												button.btn.btn-sm.btn-danger(type="submit") Supprimer
+
+		if (pdrVisite || populationCible || ressourceHumainMobile || santeMaternelle || santeInfantile || planificationFamiliale || santeScolaire || consultationMedical || detectionPrecoceCancer || maladieDepiste || autreActivite)
+			.col-12
+				.d-flex.align-items-center.justify-content-between
+					span.fs-8.bg-8.text-dark.badge Rapport des activités des UMM de la sortie
+					button.btn.btn-sm.btn-light#downloadSortieAllPdf(type="button" data-region=document.region data-province=document.province data-csr=document.csr data-category=document.category data-trimestre=trimestre data-createdat=data.sortie.createdAt data-updatedat=data.sortie.updatedAt data-submit=submit)
+						.d-flex.align-items-center
+							img.me-2(src="/../../image/pdf.svg", alt="pdf" width="20px")
+							span PDF
+		include ../../util/snippet/table/rapport/pdrVisite
+		include ../../util/snippet/table/rapport/populationCible
+		include ../../util/snippet/table/rapport/ressourceHumainMobile
+		include ../../util/snippet/table/rapport/santeMaternelle
+		include ../../util/snippet/table/rapport/santeInfantile
+		include ../../util/snippet/table/rapport/planificationFamiliale
+		include ../../util/snippet/table/rapport/santeScolaire
+		include ../../util/snippet/table/rapport/consultationMedical
+		include ../../util/snippet/table/rapport/detectionPrecoceCancer
+		include ../../util/snippet/table/rapport/maladieDepiste
+		include ../../util/snippet/table/rapport/autreActivite

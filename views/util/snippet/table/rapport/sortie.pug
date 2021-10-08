@@ -1,0 +1,142 @@
+.table-responsive.border.border-bottom-0.rounded
+	table.table.table-hover
+		thead
+			tr
+				th(scope='col')
+				th.text-center(scope='col') Remplissage
+				th.text-center(scope='col') Action
+		tbody
+			tr
+				th(scope='row') Point de rassemblement (PDR) visité
+				if (pdrVisite)
+					td.text-center
+						span.text-success Rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/pdr-visite/' + pdrVisite._id) modifier
+				else
+					td.text-center
+						span.text-danger Non rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/pdr-visite') ajouter
+			tr
+				th(scope='row') Population ciblée par l’équipe mobile
+				if (populationCible)
+					td.text-center
+						span.text-success Rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/population-cible/' + populationCible._id) modifier
+				else
+					td.text-center
+						span.text-danger Non rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/population-cible') ajouter
+			tr
+				th(scope='row') Ressources humaines mobilisées
+				if (ressourceHumainMobile)
+					td.text-center
+						span.text-success Rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/ressource-humain-mobile/' + ressourceHumainMobile._id) modifier
+				else
+					td.text-center
+						span.text-danger Non rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/ressource-humain-mobile') ajouter
+			tr
+				th(scope='row') Santé maternelle
+				if (santeMaternelle)
+					td.text-center
+						span.text-success Rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/sante-maternelle/' + santeMaternelle._id) modifier
+				else
+					td.text-center
+						span.text-danger Non rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/sante-maternelle') ajouter
+			tr
+				th(scope='row') Santé infantile
+				if (santeInfantile)
+					td.text-center
+						span.text-success Rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/sante-infantile/' + santeInfantile._id) modifier
+				else
+					td.text-center
+						span.text-danger Non rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/sante-infantile') ajouter
+			tr
+				th(scope='row') Planification familiale
+				if (planificationFamiliale)
+					td.text-center
+						span.text-success Rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/planification-familiale/' + planificationFamiliale._id) modifier
+				else
+					td.text-center
+						span.text-danger Non rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/planification-familiale') ajouter
+			tr
+				th(scope='row') Santé scolaire
+				if (santeScolaire)
+					td.text-center
+						span.text-success Rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/sante-scolaire/' + santeScolaire._id) modifier
+				else
+					td.text-center
+						span.text-danger Non rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/sante-scolaire') ajouter
+			tr
+				th(scope='row') Consultations médicales
+				if (consultationMedical)
+					td.text-center
+						span.text-success Rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/consultation-medical/' + consultationMedical._id) modifier
+				else
+					td.text-center
+						span.text-danger Non rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/consultation-medical') ajouter
+			tr
+				th(scope='row') Détection précoce des cancers du sein et du col de l’utérus
+				if (detectionPrecoceCancer)
+					td.text-center
+						span.text-success Rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/detection-precoce-cancer/' + detectionPrecoceCancer._id) modifier
+				else
+					td.text-center
+						span.text-danger Non rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/detection-precoce-cancer') ajouter
+			tr
+				th(scope='row') Maladies dépistées
+				if (maladieDepiste)
+					td.text-center
+						span.text-success Rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/maladie-depiste/' + maladieDepiste._id) modifier
+				else
+					td.text-center
+						span.text-danger Non rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/maladie-depiste') ajouter
+			tr
+				th(scope='row') Autre activités
+				if (autreActivite)
+					-var listId = []
+					-for(var i = 0; i < autreActivite.length; i++) listId.push(autreActivite[i]._id)
+					td.text-center
+						span.text-success Rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/autre-activite/' + autreActivite._id) modifier
+				else
+					td.text-center
+						span.text-danger Non rempli
+					td.text-center
+						a.link-primary.text-decoration-none(href=url+'/autre-activite') ajouter

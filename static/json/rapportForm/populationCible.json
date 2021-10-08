@@ -1,0 +1,54 @@
+{
+    "autre": {
+        "dataType": "array",
+        "data": [
+            {
+                "name": "populationCible",
+				"id": "populationCible",
+                "title": "Population Rurale Desservie par l'équipe mobile",
+                "type": "number",
+                "col": "col-md-6"
+            }
+        ]
+    },
+    "femmes": {
+        "dataType": "array",
+        "title": "Femmes",
+        "data": [
+            {
+                "name": "fmar",
+				"id": "fmar",
+                "title": "Femmes mariées en age de reproduction",
+                "type": "number",
+                "col": "col-md-6"
+            }
+        ]
+    },
+    "enfant": {
+        "title": "Enfants",
+        "dataType": "array",
+        "data": [
+            {
+				"name": "enfant[naissanceAttendu]",
+				"id": "enfantNaissanceAttendu",
+                "title": "Naissances attendues",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "enfant[moins1ans]",
+				"id": "enfantMoins1ans",
+                "title": "moins de 1ans",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "enfant[moins5ans]",
+				"id": "enfantMoins5ans",
+                "title": "moins de 5ans",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            }
+        ]
+    }
+}

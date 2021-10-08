@@ -1,0 +1,215 @@
+{
+    "consultationRealise": {
+        "title": "Consultations réalisées",
+        "dataType": "object",
+        "data": {
+            "m": {
+                "title": "Masculin",
+                "dataType": "array",
+                "data": [
+                    {
+                        "name": "consultationRealise[m][moins5ans]",
+						"id": "consultationRealiseMMoins5ans",
+                        "title": "Moins de 5 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "consultationRealise[m][entre5ans18ans]",
+						"id": "consultationRealiseMEntre5ans18ans",
+                        "title": "Entre 5 ans et 18 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "consultationRealise[m][plus18ans]",
+						"id": "consultationRealiseMPlus18ans",
+                        "title": "Plus de 18 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    }
+                ]
+            },
+            "f": {
+                "title": "Féminin",
+                "dataType": "array",
+                "data": [
+                    {
+                        "name": "consultationRealise[f][moins5ans]",
+						"id": "consultationRealiseFMoins5ans",
+                        "title": "Moins de 5 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "consultationRealise[f][entre5ans18ans]",
+						"id": "consultationRealiseFEntre5ans18ans",
+                        "title": "Entre 5 ans et 18 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "consultationRealise[f][plus18ans]",
+						"id": "consultationRealiseFPlus18ans",
+                        "title": "Plus de 18 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    }
+                ]
+            }
+        }
+    },
+    "pecParPem": {
+        "title": "Nombre de patients pris en charge par l'équipe mobile",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "pecParPem[moins5ans]",
+				"id": "pecParPemMoins5ans",
+                "title": "Moins de 5 ans",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "pecParPem[entre5ans18ans]",
+				"id": "pecParPemEntre5ans18ans",
+                "title": "Entre 5 ans et 18 ans",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            },
+            {
+                "name": "pecParPem[plus18ans]",
+				"id": "pecParPemPlus5ans",
+                "title": "Plus de 18 ans",
+                "type": "number",
+                "col": "col-md-4 col-sm-6"
+            }
+        ]
+    },
+    "reference": {
+        "title": "Nombre de patients Référés",
+        "dataType": "object",
+        "data": {
+            "consSpec": {
+                "title": "Consultation spécialisée",
+                "dataType": "array",
+                "data": [
+                    {
+                        "name": "reference[consSpec][moins5ans]",
+						"id": "referenceConsSpecMoins5ans",
+                        "title": "Moins de 5 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "reference[consSpec][entre5ans18ans]",
+						"id": "referenceConsSpecEntre5ans18ans",
+                        "title": "Entre 5 ans et 18 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "reference[consSpec][plus18ans]",
+						"id": "referenceConsSpecPlus5ans",
+                        "title": "Plus de 18 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    }
+                ]
+            },
+            "urgence": {
+                "title": "Urgence",
+                "dataType": "array",
+                "data": [
+                    {
+                        "name": "reference[urgence][moins5ans]",
+						"id": "referenceUrgenceMoins5ans",
+                        "title": "Moins de 5 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+					{
+                        "name": "reference[urgence][entre5ans18ans]",
+						"id": "referenceUrgenceEntre5ans18ans",
+                        "title": "Entre 5 ans et 18 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "reference[urgence][plus18ans]",
+						"id": "referenceUrgencePlus5ans",
+                        "title": "Plus de 18 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    }
+                ]
+            },
+            "exLabo": {
+                "title": "Examen De laboratoire",
+                "dataType": "array",
+                "data": [
+                    {
+                        "name": "reference[exLabo][moins5ans]",
+						"id": "referenceExLaboMoins5ans",
+                        "title": "Moins de 5 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "reference[exLabo][entre5ans18ans]",
+						"id": "referenceExLaboEntre5ans18ans",
+                        "title": "Entre 5 ans et 18 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "reference[exLabo][plus18ans]",
+						"id": "referenceExLaboPlus5ans",
+                        "title": "Plus de 18 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    }
+                ]
+            },
+            "exRadio": {
+                "title": "Examen radiologique",
+                "dataType": "array",
+                "data": [
+                    {
+                        "name": "reference[exRadio][moins5ans]",
+						"id": "referenceExRadioMoins5ans",
+                        "title": "Moins de 5 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "reference[exRadio][entre5ans18ans]",
+						"id": "referenceExRadioEntre5ans18ans",
+                        "title": "Entre 5 ans et 18 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    },
+                    {
+                        "name": "reference[exRadio][plus18ans]",
+						"id": "referenceExRadioPlus5ans",
+                        "title": "Plus de 18 ans",
+                        "type": "number",
+                        "col": "col-md-4 col-sm-6"
+                    }
+                ]
+            }
+        }
+    },
+    "autre": {
+        "dataType": "array",
+        "data": [
+            {
+                "name": "budgetMedicamentDispenseEm",
+                "id": "budgetMedicamentDispenseEm",
+                "title": "Budget estimé en médicaments dispensés",
+                "type": "number",
+                "col": "col-md-6"
+            }
+        ]
+    }
+}

@@ -1,0 +1,59 @@
+aside#aside.bg-aside
+	.text-center.p-3
+		img(src="/../../image/ms-logo.png", alt="umm" width="80px")
+	nav.nav.flex-column.p-3.text-2
+		a.list-group-item-action.rounded.bg-white.nav-link.py-2.d-flex.align-items-center(data-bs-toggle='collapse' href='#dashboardCollapse' role='button' aria-expanded='false' aria-controls='dashboardCollapse')
+			ion-icon.fs-6.me-2.text-1(name='tv-outline')
+			span.fs-7.text-dark  Tableau de bord 		
+		#dashboardCollapse.mt-1.collapse(class=(page === 'dashboard') ? 'show' : '')
+
+			.list-group.list-group-flush.rounded
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/tableau-de-bord/taux-de-couverture-des-pdr' class=(listItem === 'pdrVisite') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Couverture des PDR
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/tableau-de-bord/population-cible' class=(listItem === 'populationCible') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Population cible
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/tableau-de-bord/ressource' class=(listItem === 'ressource') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Ressources mobilisable
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/tableau-de-bord/sante-maternelle' class=(listItem === 'santeMaternelle') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Santé maternelle
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/tableau-de-bord/sante-infantile' class=(listItem === 'santeInfantile') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Santé infantile
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/tableau-de-bord/planification-familiale' class=(listItem === 'planificationFamiliale') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Planification familiale
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/tableau-de-bord/sante-scolaire' class=(listItem === 'santeScolaire') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Santé scolaire
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/tableau-de-bord/consultation-medical' class=(listItem === 'consultationMedical') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Consultations médicales
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/tableau-de-bord/maladie-depiste' class=(listItem === 'maladieDepiste') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Maladies dépistées
+
+		a.list-group-item-action.rounded.bg-white.nav-link.py-2.my-3.d-flex.align-items-center(href= '/central/' + data.document.id + '/plan-action')
+			ion-icon.fs-6.me-2.text-1(name='document-outline')
+			span.fs-7.text-dark Plan d'action
+
+		a.list-group-item-action.rounded.bg-white.nav-link.py-2.d-flex.align-items-center(data-bs-toggle='collapse' href='#rapportCollapse' role='button' aria-expanded='false' aria-controls='rapportCollapse')
+			ion-icon.fs-6.me-2.text-1(name='document-outline')
+			span.fs-7.text-dark Rapport 		
+		#rapportCollapse.mt-1.collapse(class=(page === 'rapport') ? 'show' : '')
+			.list-group.list-group-flush.rounded
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/trimestre/1' class=(listItem === '1') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Trimestre 1
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/trimestre/2' class=(listItem === '2') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Trimestre 2
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/trimestre/3' class=(listItem === '3') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Trimestre 3
+				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/central/' + data.document._id + '/trimestre/4' class=(listItem === '4') ? 'active' : '')
+					ion-icon.fs-10.me-2.text-1(name='ellipse')
+					span.fs-8.text-dark Trimestre 4

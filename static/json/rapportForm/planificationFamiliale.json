@@ -1,0 +1,102 @@
+{
+    "pilule": {
+        "title": "Pilule",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "pilule[na]",
+				"id": "piluleNa",
+                "title": "Nouvelles acceptantes",
+                "type": "number",
+                "col": "col-sm-6"
+            },
+            {
+                "name": "pilule[aa]",
+				"id": "piluleAa",
+                "title": "Anciennes acceptantes",
+                "type": "number",
+                "col": "col-sm-6"
+            }
+        ]
+    },
+    "injectable": {
+        "title": "Progestatifs Injectables",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "injectable[na]",
+				"id": "injectableNa",
+                "title": "Nouvelles acceptantes",
+                "type": "number",
+                "col": "col-sm-6"
+            },
+            {
+                "name": "injectable[aa]",
+				"id": "injectableAa",
+                "title": "Anciennes acceptantes",
+                "type": "number",
+                "col": "col-sm-6"
+            }
+        ]
+    },
+    "diu": {
+        "title": "Dispositif Intra Utérin (DIU)",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "diu[na]",
+				"id": "diuNa",
+                "title": "Nouvelles acceptantes",
+                "type": "number",
+                "col": "col-sm-6"
+            },
+            {
+                "name": "diu[aa]",
+				"id": "diuAa",
+                "title": "Anciennes acceptantes",
+                "type": "number",
+                "col": "col-sm-6"
+            }
+        ]
+    },
+    "condom": {
+        "title": "condom",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "condom[na]",
+				"id": "condomNa",
+                "title": "Nouvelles acceptantes",
+                "type": "number",
+                "col": "col-sm-6"
+            },
+            {
+                "name": "condom[aa]",
+				"id": "condomAa",
+                "title": "Anciennes acceptantes",
+                "type": "number",
+                "col": "col-sm-6"
+            }
+        ]
+    },
+    "reference": {
+        "title": "Références",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "reference[diu]",
+				"id": "referenceDiu",
+                "title": "Dispositif Intra Utérin (DIU)",
+                "type": "number",
+                "col": "col-sm-6"
+            },
+            {
+                "name": "reference[lt]",
+				"id": "referenceLt",
+                "title": "Ligature Tubaire (LT)",
+                "type": "number",
+                "col": "col-sm-6"
+            }
+        ]
+    }
+}

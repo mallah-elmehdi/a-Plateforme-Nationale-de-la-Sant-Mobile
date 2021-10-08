@@ -1,0 +1,26 @@
+[
+    {
+        "icon": "people-circle-outline",
+        "key": "population",
+        "title": "Population à couvrir",
+        "link": "/add-population"
+    },
+    {
+        "icon": "list-outline",
+        "key": "programme",
+        "title": "Programme prévisionnel des UMM",
+        "link": "/add-programme"
+    },
+    {
+        "icon": "car-outline",
+        "key": "ressource",
+        "title": "Situation des moyens de mobilité",
+        "link": "/add-ressource"
+    },
+    {
+        "icon": "people-outline",
+        "key": "ressourceHumain",
+        "title": "Ressources humaines à mobiliser",
+        "link": "/add-ressource-humain"
+    }
+]

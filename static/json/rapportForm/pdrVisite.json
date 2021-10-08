@@ -1,0 +1,39 @@
+{
+    "autre": {
+        "dataType": "array",
+        "data": [
+            {
+                "name": "pdrVisite",
+				"id": "pdrVisite",
+                "title": "Point de rassemblement (PDR) visité",
+                "type": "text",
+                "col": "col-12",
+                "list": true
+            },
+            {
+                "name": "kmParcouru",
+				"id": "kmParcouru",
+                "title": "Kilométrage total parcourus",
+                "type": "number",
+                "col": "col-md-6"
+            },
+            {
+                "name": "budgetCarburantEmConsomme",
+				"id": "budgetCarburantEmConsomme",
+                "title": "Budget en carburant (MAD)",
+                "type": "number",
+                "col": "col-md-6",
+				"js": true
+
+            },
+			{
+				"name": "observation",
+				"id": "observation",
+				"title": "Observation",
+				"type": "text",
+				"col": "col-12",
+				"textarea": true
+			}
+        ]
+    }
+}

@@ -1,0 +1,7388 @@
+[
+	{
+		"Province": "Agadir Ida Ou Tanan",
+		"Commune": "Amskroud",
+		"Nom Etab": "Amskroud",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Agadir Ida Ou Tanan",
+		"Commune": "Drargua",
+		"Nom Etab": "Drarga",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Agadir Ida Ou Tanan",
+		"Commune": "Imouzzer",
+		"Nom Etab": "Immouzzer",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Agadir Ida Ou Tanan",
+		"Commune": "Tadrart",
+		"Nom Etab": "Tadrarte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Agadir Ida Ou Tanan",
+		"Commune": "Tiqqi",
+		"Nom Etab": "Isk Ntiki",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Agadir Ida Ou Tanan",
+		"Commune": "Aourir",
+		"Nom Etab": "Tamraghte",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Agadir Ida Ou Tanan",
+		"Commune": "Imsouane",
+		"Nom Etab": "Assaka",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Agadir Ida Ou Tanan",
+		"Commune": "Tamri",
+		"Nom Etab": "Tamri",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Ait Sidi Daoud",
+		"Nom Etab": "Boukhoubza",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Ait Faska",
+		"Nom Etab": "Ait Faska",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Tighedouine",
+		"Nom Etab": "Tighedouine",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Tidili Mesfioua",
+		"Nom Etab": "Tidili Mesfioua",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Sidi Abdallah Ghiat",
+		"Nom Etab": "S.Abdellah Ghiat",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Tamazouzte",
+		"Nom Etab": "Tamazouzt",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Iguerferouane",
+		"Nom Etab": "Ait Ouanga",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Ghmate",
+		"Nom Etab": "Ghmate",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Ait Aadel",
+		"Nom Etab": "Ait Aadel",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Ait Hkim Ait Yzid",
+		"Nom Etab": "Ait Hkim-Ait Izid",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Abadou",
+		"Nom Etab": "Abadou",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Tazart",
+		"Nom Etab": "Tazart",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Tamaguert",
+		"Nom Etab": "Taguert",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Touama",
+		"Nom Etab": "Touama",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Zerkten",
+		"Nom Etab": "Tazlida (Zerkten)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Asni",
+		"Nom Etab": "Asni",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Ighil",
+		"Nom Etab": "Ighil",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Aghbar",
+		"Nom Etab": "Aghbar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Talat N'yaaqoub",
+		"Nom Etab": "Tlat N'yaaqoub",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Ijoukak",
+		"Nom Etab": "Ijoukak",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Imgdal",
+		"Nom Etab": "Imegdal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Ouirgane",
+		"Nom Etab": "Ouirgane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Amghras",
+		"Nom Etab": "Amghras",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Anougal",
+		"Nom Etab": "Anougal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Azgour",
+		"Nom Etab": "Azgour",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Tizguine",
+		"Nom Etab": "Tizguine",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Dar Jamaa",
+		"Nom Etab": "Dar Jamaa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Sidi Badhaj",
+		"Nom Etab": "Sidi Badhaj",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Oulad Mtaa",
+		"Nom Etab": "Igoudar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Lalla Takarkoust",
+		"Nom Etab": "Lalla Takarkoust",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Ouazguita",
+		"Nom Etab": "Ouzguita (Frass )",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Sti Fadma",
+		"Nom Etab": "Ahmed Chefquaoui",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Ourika",
+		"Nom Etab": "Ourika",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Oukaimden",
+		"Nom Etab": "Tikhfiste (Oukaimden)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Moulay Brahim",
+		"Nom Etab": "Moulay Brahim",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Haouz",
+		"Commune": "Tameslohte",
+		"Nom Etab": "Tameslohte",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Bni Boufrah",
+		"Nom Etab": "Bni Boufrah",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Senada",
+		"Nom Etab": "Senada  ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Bni Gmil Maksouline",
+		"Nom Etab": "Maksouline",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Bni Gmil",
+		"Nom Etab": "B. Gmil Mestassa",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Chakrane",
+		"Nom Etab": "Chakrane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Arbaa Taourirt",
+		"Nom Etab": "Arbaa Taourirt",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Tifarouine",
+		"Nom Etab": "Ait Taa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Nekkour",
+		"Nom Etab": "Nekkour",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Bni Abdallah",
+		"Nom Etab": "Bni Abdellah",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Zaouiat Sidi Abdelkader",
+		"Nom Etab": "S.Abdelkader",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Bni Hadifa",
+		"Nom Etab": "Bni Hadifa",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Ait Youssef Ou Ali",
+		"Nom Etab": "At YOUSSEF OU ALI",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Imrabten",
+		"Nom Etab": "Tamassint  ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Louta",
+		"Nom Etab": "Louta",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Izemmouren",
+		"Nom Etab": "Izemmouren",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Rouadi",
+		"Nom Etab": "Rouadi  ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Ait Kamra",
+		"Nom Etab": "Ait Kamra",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Sidi Bouzineb",
+		"Nom Etab": "Sidi Bouzineb",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Bni Ammart",
+		"Nom Etab": "Bni Ammart",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Abdelghaya Souahel",
+		"Nom Etab": "Ikaouen  ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Moulay Ahmed Cherif",
+		"Nom Etab": "My Ahmed cherif",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Issaguen",
+		"Nom Etab": "Issaguen",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Tamsaout",
+		"Nom Etab": "Tamsaout",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Ketama",
+		"Nom Etab": "Tlet Ketama",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Bni Bouchibet",
+		"Nom Etab": "Tabarrant",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Bni Ahmed Imoukzan",
+		"Nom Etab": "Admam",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Taghzout",
+		"Nom Etab": "Taghzout",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Sidi Boutmim",
+		"Nom Etab": "Sidi Boutmim",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Zarkt",
+		"Nom Etab": "Zarkat",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Bni Bounsar",
+		"Nom Etab": "Bni Bounsar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Al Hoceima",
+		"Commune": "Bni Bchir",
+		"Nom Etab": "Bab Stot",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Aousserd",
+		"Commune": "C.R. Bir Gandouz",
+		"Nom Etab": "Bir Gandouz",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Aousserd",
+		"Commune": "C.R. Aghouinite",
+		"Nom Etab": "Aghouinite",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Aousserd",
+		"Commune": "C.R. Aousserd",
+		"Nom Etab": "Aousserd",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Assa Zag",
+		"Commune": "Aouint Lahna",
+		"Nom Etab": "Aouint Lahna",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Assa Zag",
+		"Commune": "Aouint Yghomane",
+		"Nom Etab": "Aouint Yghomane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Assa Zag",
+		"Commune": "Touizgui",
+		"Nom Etab": "Touizgui (1)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Assa Zag",
+		"Commune": "Labouirat",
+		"Nom Etab": "Labouirat",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Assa Zag",
+		"Commune": "Al Mahbass",
+		"Nom Etab": "Al Mahbass",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ait M'hamed",
+		"Nom Etab": "Ait M'hamed",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ait Abbas",
+		"Nom Etab": "Sguatt",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Tabant",
+		"Nom Etab": "Bouguemaz",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ait Bou Oulli",
+		"Nom Etab": "Abachkou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Agoudi N'lkhair",
+		"Nom Etab": "Agoudid",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Tamda Noumercid",
+		"Nom Etab": "Tamda",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Zaouiat Ahansal",
+		"Nom Etab": "Z.Ahansal",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Tisqi",
+		"Nom Etab": "Tisqi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Taounza",
+		"Nom Etab": "Taounza",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Moulay Aissa Ben Driss",
+		"Nom Etab": "Ait Attab",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Bni Ayat",
+		"Nom Etab": "Tizgui-N'bni Ayat",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Bzou",
+		"Nom Etab": "Bzou",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Rfala",
+		"Nom Etab": "Bouazier  ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Foum Jemaa",
+		"Nom Etab": "Foum Jemaa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Bni Hassane",
+		"Nom Etab": "Tirst",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Tabia",
+		"Nom Etab": "Tabia",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ait Taguella",
+		"Nom Etab": "Ouzoud",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Tanant",
+		"Nom Etab": "Tanant",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ait Blal",
+		"Nom Etab": "Tizi Noubadou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ouaoula",
+		"Nom Etab": "Ouaoula",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ait Majden",
+		"Nom Etab": "Ait Majden",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Sidi Boulkhalf",
+		"Nom Etab": "Iwariden",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Tifni",
+		"Nom Etab": "Iminifri",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Imlil",
+		"Nom Etab": "Imlil",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ait Oumdis",
+		"Nom Etab": "Issoulane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ait Tamlil",
+		"Nom Etab": "Ait Tamlil",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Anzou",
+		"Nom Etab": "Bouachiba",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Tidili Fetouaka",
+		"Nom Etab": "Tidili",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Sidi Yacoub",
+		"Nom Etab": "Ait Maala",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Afourar",
+		"Nom Etab": "Afourar",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Timoulilt",
+		"Nom Etab": "Timoulilt",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Anergui",
+		"Nom Etab": "Anergui",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Bin El Ouidane",
+		"Nom Etab": "Bin El Ouidane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Isseksi",
+		"Nom Etab": "Isseksi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ouaouizeght",
+		"Nom Etab": "Ouaouizeght",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ait Ouaarda",
+		"Nom Etab": "Ait Guirt",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Tiffert N'ait Hamza",
+		"Nom Etab": "Tiffert At Hamza",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ait Ouqabli",
+		"Nom Etab": "Ait Ouqabli",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Tagleft",
+		"Nom Etab": "Tagleft",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Tabaroucht",
+		"Nom Etab": "Tabaroucht",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Ait Mazigh",
+		"Nom Etab": "Ait Boukhouch",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Azilal",
+		"Commune": "Tilougguite",
+		"Nom Etab": "Tillougguite",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Oulad M'barek",
+		"Nom Etab": "Ouled M'barek",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Oulad Yaich",
+		"Nom Etab": "Ouled Yaich",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Sidi Jaber",
+		"Nom Etab": "Sidi Jaber",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Aghbala",
+		"Nom Etab": "Aghbala",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Tizi N'isly",
+		"Nom Etab": "Tizi N'isly",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Boutferda",
+		"Nom Etab": "Boutferda",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Naour",
+		"Nom Etab": "Naour",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Dir El Ksiba",
+		"Nom Etab": "Ait Ikkou (Ait Ali Ouhammou)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Foum El Anceur",
+		"Nom Etab": "Foum El Anceur",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Taghzirt",
+		"Nom Etab": "Taghzirt",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Ait Oum El Bekht",
+		"Nom Etab": "Tibihit(Ait Oum L'bekht)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Guettaya",
+		"Nom Etab": "Kamoune",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Oulad Youssef",
+		"Nom Etab": "Ouled Youssef",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Oulad Said L'oued",
+		"Nom Etab": "Ouled Said Loued",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Beni Mellal",
+		"Commune": "Semguet",
+		"Nom Etab": "Charikat Rbah",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Benslimane",
+		"Commune": "Fdalate",
+		"Nom Etab": "Laamour",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Benslimane",
+		"Commune": "Oulad Yahya Louta",
+		"Nom Etab": "Od YAHIA LOUTA",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Benslimane",
+		"Commune": "Moualine El Oued",
+		"Nom Etab": "Moualine L'oued",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Benslimane",
+		"Commune": "Ahlaf",
+		"Nom Etab": "Ahlaf",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Benslimane",
+		"Commune": "Mellila",
+		"Nom Etab": "Mellila",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Benslimane",
+		"Commune": "Oulad Ali Toualaa",
+		"Nom Etab": "Toualaa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Benslimane",
+		"Commune": "Rdadna Oulad Malek",
+		"Nom Etab": "Rdadna (Laabadla)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Benslimane",
+		"Commune": "Ziaida",
+		"Nom Etab": "Ziaida",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Benslimane",
+		"Commune": "Ain Tizgha",
+		"Nom Etab": "Laayoune",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Benslimane",
+		"Commune": "Cherrat",
+		"Nom Etab": "Cherrat (Sidi Khdim)",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Benslimane",
+		"Commune": "Sidi Bettache",
+		"Nom Etab": "Sidi Bettach",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Benslimane",
+		"Commune": "Bir Ennasr",
+		"Nom Etab": "Bir Ennasr",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berkane",
+		"Commune": "Fezouane",
+		"Nom Etab": "Fezouane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Berkane",
+		"Commune": "Aghbal",
+		"Nom Etab": "Lamriss (Od Al Bali)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berkane",
+		"Commune": "Laatamna",
+		"Nom Etab": "Laatamna       ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berkane",
+		"Commune": "Madagh",
+		"Nom Etab": "Madagh",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Berkane",
+		"Commune": "Chouihia",
+		"Nom Etab": "Chouihiya  ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berkane",
+		"Commune": "Boughriba",
+		"Nom Etab": "Dzayest  ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berkane",
+		"Commune": "Zegzel",
+		"Nom Etab": "Zegzel",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berkane",
+		"Commune": "Rislane",
+		"Nom Etab": "Rislane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berkane",
+		"Commune": "Sidi Bouhria",
+		"Nom Etab": "Sidi Bouhria",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berkane",
+		"Commune": "Tafoughalt",
+		"Nom Etab": "Tafoughalt",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Lahsasna",
+		"Nom Etab": "Lahsasna",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Sidi El Mekki",
+		"Nom Etab": "Sidi El Mekki",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Zaouiat Sidi  Ben Hamdoun",
+		"Nom Etab": "Od RAHOU",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Laghnimyine",
+		"Nom Etab": "Ghnimyine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Ben Maachou",
+		"Nom Etab": "Maachou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Sidi Abdelkhaleq",
+		"Nom Etab": "Zranna",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Sahel Oulad H'riz",
+		"Nom Etab": "Mouaning",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Ouled Cebbah",
+		"Nom Etab": "Oulad Sebbah",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Ouled Zidane",
+		"Nom Etab": "Oulad Zidane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Kasbat Ben Mchich",
+		"Nom Etab": "Battioua",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Jaqma",
+		"Nom Etab": "Bir Tor",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Lambarkiyine",
+		"Nom Etab": "Lambarkiyine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Riah",
+		"Nom Etab": "Riah",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Berrechid",
+		"Commune": "Foqra Oulad Aameur",
+		"Nom Etab": "Foqra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Boujdour",
+		"Commune": "Jraifia",
+		"Nom Etab": "Jraifia",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Guigou",
+		"Nom Etab": "Guigou",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Serghina",
+		"Nom Etab": "Ifkiren",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Enjil",
+		"Nom Etab": "Enjil Akhatar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Ait El Mane",
+		"Nom Etab": "Ait El Mane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Ait Bazza",
+		"Nom Etab": "Ait Bazza",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Almis Marmoucha",
+		"Nom Etab": "Almis Marmoucha",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Talzemt",
+		"Nom Etab": "Ahachad",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Skoura M'daz",
+		"Nom Etab": "Skoura",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "El Mers",
+		"Nom Etab": "El Mers",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Ksabi Moulouya",
+		"Nom Etab": "Ksabi",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Ouizeght",
+		"Nom Etab": "Ouizeght",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Sidi Boutayeb",
+		"Nom Etab": "Ouled Bouzazia",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Oulad Ali Youssef",
+		"Nom Etab": "Ouled Ali",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "El Orjane",
+		"Nom Etab": "El Orjane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Tissaf",
+		"Nom Etab": "Tissaf",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Ermila",
+		"Nom Etab": "Ouled Mellouk",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Boulemane",
+		"Commune": "Fritissa",
+		"Nom Etab": "Tendite",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Bab Berred",
+		"Nom Etab": "Bab Berred",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Iounane",
+		"Nom Etab": "Iounane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Tamorot",
+		"Nom Etab": "Tamorot",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Bni Ahmed Cherqia",
+		"Nom Etab": "Bni Ahmed",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Mansoura",
+		"Nom Etab": "Mansoura",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Bni Ahmed Gharbia",
+		"Nom Etab": "Ksibat     ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Oued Malha",
+		"Nom Etab": "Malha",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Amtar",
+		"Nom Etab": "Amtar       ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Bni Rzine",
+		"Nom Etab": "Bni Rzine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Bni Smih",
+		"Nom Etab": "Bni Smih",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "M'tioua",
+		"Nom Etab": "Jabha        ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Ouaouzgane",
+		"Nom Etab": "Ouaouzgane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Bab Taza",
+		"Nom Etab": "Bab Taza",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Bni Salah",
+		"Nom Etab": "Barkok",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Bni Darkoul",
+		"Nom Etab": "Bni Darkoul",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Bni Faghloum",
+		"Nom Etab": "Doukala",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Fifi",
+		"Nom Etab": "Fifi",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Derdara",
+		"Nom Etab": "Derdara",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Tanaqoub",
+		"Nom Etab": "Tanaqoub    ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Laghdir",
+		"Nom Etab": "Souk Lhad",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Bni Selmane",
+		"Nom Etab": "Assifane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Bni Mansour",
+		"Nom Etab": "Ain Lahjar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Bni Bouzra",
+		"Nom Etab": "Bou Ahmed     ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Steha",
+		"Nom Etab": "Steha  ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Tizgane",
+		"Nom Etab": "Kaa Assrass",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Tassift",
+		"Nom Etab": "Tasift",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chefchaouen",
+		"Commune": "Talambote",
+		"Nom Etab": "Talambot",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Ait Hadi",
+		"Nom Etab": "Ait Hadi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Sidi Bouzid Arragragui",
+		"Nom Etab": "Sidi Bouzid",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Lamzoudia",
+		"Nom Etab": "Lamzoudia",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Ahdil",
+		"Nom Etab": "Houggate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Oulad Moumna",
+		"Nom Etab": "Oulad Moumna",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Sid L'mokhtar",
+		"Nom Etab": "Sid Lmoukhtar",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Sidi M'hamed Dalil",
+		"Nom Etab": "S. Mhamed Dalil (Rouafia)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Saidate",
+		"Nom Etab": "Agouidir",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Nfifa",
+		"Nom Etab": "Nfifa (Aratal)",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Oued L'bour",
+		"Nom Etab": "Ouad L'bour (Imi N'laine)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Irohalen",
+		"Nom Etab": "Irohalen",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Ain Tazitounte",
+		"Nom Etab": "Ain Tazitounte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Afalla Issen",
+		"Nom Etab": "Afella Issen",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Timezgadiouine",
+		"Nom Etab": "Timezgadiouine",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Sidi Ghanem",
+		"Nom Etab": "Sidi Ghanem",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Ait Haddou Youssef",
+		"Nom Etab": "Ait Hadou Youssef",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Lalla Aaziza",
+		"Nom Etab": "Lalla Aaziza",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Bouabout Amdlane",
+		"Nom Etab": "Souk Anzammer",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Rahhala",
+		"Nom Etab": "Rahhala",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Bouabout",
+		"Nom Etab": "Bouabout",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Kouzemt",
+		"Nom Etab": "Kouzemt",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Timlilt",
+		"Nom Etab": "Timlilte",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Ichamraren",
+		"Nom Etab": "Ichamraren",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Sidi Abdelmoumen",
+		"Nom Etab": "S. Abdelmoumen",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Taouloukoult",
+		"Nom Etab": "Taouloukoult",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Gmassa",
+		"Nom Etab": "Gmassa",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Majjat",
+		"Nom Etab": "Majjat",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Douirane",
+		"Nom Etab": "Douirane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Zaouia Annahlia",
+		"Nom Etab": "Borj",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "M'zouda",
+		"Nom Etab": "M'zouda",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Assif El Mal",
+		"Nom Etab": "Assif El Mal",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Adassil",
+		"Nom Etab": "Adassil",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chichaoua",
+		"Commune": "Imindounit",
+		"Nom Etab": "Imi N'dounite",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Sidi Bibi",
+		"Nom Etab": "Sidi Bibi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Ait Amira",
+		"Nom Etab": "Ait Amira",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Imi Mqourn",
+		"Nom Etab": "Imi Mqourn",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Sidi Boushab",
+		"Nom Etab": "Sidi Boushab",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Ouad Essafa",
+		"Nom Etab": "Oued Essafa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Belfaa",
+		"Nom Etab": "Belfaa",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Inchaden",
+		"Nom Etab": "Inchaden",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Massa",
+		"Nom Etab": "Massa",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Sidi Ouassay",
+		"Nom Etab": "Aghbalou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Ait Milk",
+		"Nom Etab": "Ait Milk",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Ait Mzal",
+		"Nom Etab": "Ait M'zal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Hilala",
+		"Nom Etab": "Hilala",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Tassegdelt",
+		"Nom Etab": "Hellate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Ait Ouadrim",
+		"Nom Etab": "Ait Ouadrim",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Sidi Abdallah  El Bouchouari",
+		"Nom Etab": "S.Abdellah",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Tanalt",
+		"Nom Etab": "Tanalt",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Aouguenz",
+		"Nom Etab": "Ouagnez",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Targua Ntouchka",
+		"Nom Etab": "Targa Ntouchka",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Ida Ougnidif",
+		"Nom Etab": "Ida Ougnidif",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Chtouka Ait Baha",
+		"Commune": "Tizi Ntakoucht",
+		"Nom Etab": "Takoucht",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Talilit",
+		"Nom Etab": "Talilit    ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "M'hajer",
+		"Nom Etab": "M'hajer",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Iferni",
+		"Nom Etab": "Midar Haut",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Tafersit",
+		"Nom Etab": "Tafersit",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Azlaf",
+		"Nom Etab": "Azlef",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Tsaft",
+		"Nom Etab": "Kassita",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Ijermaouas",
+		"Nom Etab": "Ijermaouas",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Oulad Amghar",
+		"Nom Etab": "Oulad Amghar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Boudinar",
+		"Nom Etab": "Boudinar  ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Bni Marghnine",
+		"Nom Etab": "Trifa B.Marghnine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Temsamane",
+		"Nom Etab": "Khmiss Temsamane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Trougout",
+		"Nom Etab": "Trougout",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Ain Zohra",
+		"Nom Etab": "Ain Zohra",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Oulad Boubker",
+		"Nom Etab": "Oulad Boubker",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Dar El Kebdani",
+		"Nom Etab": "Dar Elkebdani",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Tazaghine",
+		"Nom Etab": "Tazaghine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Amejjaou",
+		"Nom Etab": "Tkhabacht (Ihmidaten)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Ait Mait",
+		"Nom Etab": "Ait Mait",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Driouch",
+		"Commune": "Ouardana",
+		"Nom Etab": "Ouardana",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Hajeb",
+		"Commune": "Ait Naamane",
+		"Nom Etab": "Abdelkrim El Khattabi (Ait Naamane)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Hajeb",
+		"Commune": "Iqaddar",
+		"Nom Etab": "Amane Sayarnine (Iqaddar)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Hajeb",
+		"Commune": "Ait Bourzouine",
+		"Nom Etab": "Rabil (Dalkouss)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Hajeb",
+		"Commune": "Ait Harz Allah",
+		"Nom Etab": "Ait Harz Allah",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Hajeb",
+		"Commune": "Ait Boubidmane",
+		"Nom Etab": "Bouderbala",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Hajeb",
+		"Commune": "Bitit",
+		"Nom Etab": "Ait Ouallal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Hajeb",
+		"Commune": "Laqsir",
+		"Nom Etab": "Laqsir",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Hajeb",
+		"Commune": "Tamchachate",
+		"Nom Etab": "Med ZERKTOUNI (SAADA)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Hajeb",
+		"Commune": "Ait Yaazem",
+		"Nom Etab": "Ait Yaazem",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Hajeb",
+		"Commune": "Ait Ouikhalfen",
+		"Nom Etab": "Youssoufia",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Hajeb",
+		"Commune": "Jahjouh",
+		"Nom Etab": "Souk Sebt",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Hajeb",
+		"Commune": "Ras Ijerri",
+		"Nom Etab": "Ras Ijerri",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Lamharza Essahel",
+		"Nom Etab": "Lamharza",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Laghdira",
+		"Nom Etab": "Laghdira",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Sidi Ali Ben  Hamdouche",
+		"Nom Etab": "Sidi Ali",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Chtouka",
+		"Nom Etab": "Tnine Chtouka",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Haouzia",
+		"Nom Etab": "Tikni",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Oulad Rahmoune",
+		"Nom Etab": "Oulad Rahmoune",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Oulad Hcine",
+		"Nom Etab": "Ouled Hcine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Moulay Abdallah",
+		"Nom Etab": "My ABDELLAH",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Sidi Abed",
+		"Nom Etab": "Sidi Abed",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Sidi M'hamed  Akhdim",
+		"Nom Etab": "S.M'hamed Akhdim",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Oulad Aissa",
+		"Nom Etab": "Ouled Aissa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Oulad Ghanem",
+		"Nom Etab": "Ouled Ghanem",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Oulad Sidi Ali  Ben Youssef",
+		"Nom Etab": "S.Ali B.Youssef(El Aoujate)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Si Hsaien Ben  Abderrahmane",
+		"Nom Etab": "S.Hsain B.Abderah (Bir Babouche)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Oulad Frej",
+		"Nom Etab": "Ouled Frej",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Zaouiat Lakouacem",
+		"Nom Etab": "Kouacem",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Chaibate",
+		"Nom Etab": "Chaibate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Oulad Hamdane",
+		"Nom Etab": "Ouled Hamdane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Mettouh",
+		"Nom Etab": "Mettouh",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Boulaouane",
+		"Nom Etab": "Boulaouane Kasba(Od Ali Boulaouane)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Sebt Saiss",
+		"Nom Etab": "Sebt Saiss",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Zaouiat Saiss",
+		"Nom Etab": "Zaouiat Saiss",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Mogress",
+		"Nom Etab": "Mogress",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Jadida",
+		"Commune": "Sidi Smail",
+		"Nom Etab": "Sidi Smail",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Oulad Aarrad",
+		"Nom Etab": "Oulad Aarrad(Falah)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Choara",
+		"Nom Etab": "Choaara(Od Amara)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Dzouz",
+		"Nom Etab": "Dzouz (Sidi Brahim )",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Fraita",
+		"Nom Etab": "Freita",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Laatamna",
+		"Nom Etab": "Laatamna (Od Ayoub)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Laattaouia  Ech-Chaybia",
+		"Nom Etab": "Attaouia Echchaybia",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Ouargui",
+		"Nom Etab": "Ouargui",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Bouya Omar",
+		"Nom Etab": "Bouya Omar (Bourouta)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Assahrij",
+		"Nom Etab": "Sahrij",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Sour El Aaz",
+		"Nom Etab": "Sour El Aaz",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Oulad Khallouf",
+		"Nom Etab": "Zouitina",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Loued Lakhdar",
+		"Nom Etab": "Louad Lakhdar(Madiaque)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "M'zem Sanhaja",
+		"Nom Etab": "Tlata Mzem",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Sidi Aissa Ben  Slimane",
+		"Nom Etab": "S.Aissa B.Slimane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Zemrane",
+		"Nom Etab": "Zemrane (Lakrarma)",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Zemrane Charqia",
+		"Nom Etab": "Z. Charqia (Od Naceur)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Jouala",
+		"Nom Etab": "Jouala",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Jbiel",
+		"Nom Etab": "Jbiel (Chlihate)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Oulad Sbih",
+		"Nom Etab": "Oulad Sbih (Od Ali)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Hiadna",
+		"Nom Etab": "Hiadna",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Oulad Zarrad",
+		"Nom Etab": "Od Zarrad (Od Bouhmad)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Oulad Cherki",
+		"Nom Etab": "Oulad Cherki",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "El Marbouh",
+		"Nom Etab": "El Marbouh",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Mayate",
+		"Nom Etab": "Od SABEUR",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Errafiaya",
+		"Nom Etab": "Errafiaya (Qant. Tassaout)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Oulad Aamer",
+		"Nom Etab": "Oulad Aamer",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Taouzint",
+		"Nom Etab": "Taouzint (Ait Si Abdellah)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Oulad Bouali Loued",
+		"Nom Etab": "Od Bouali Loued (Od Klib)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "El Aamria",
+		"Nom Etab": "El Amria (Larbaa Ghazet )",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Oulad Msabbel",
+		"Nom Etab": "Oulad Msabbel",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Oulad Massaoud",
+		"Nom Etab": "Od Massaoud (Hal L'qoba)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Eddachra",
+		"Nom Etab": "Dechra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Sidi Moussa",
+		"Nom Etab": "Sidi Moussa (Oulad Saaid)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Sidi El Hattab",
+		"Nom Etab": "Sidi  Hattab (Laazaba)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Chtaiba",
+		"Nom Etab": "Chtaiba",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Znada",
+		"Nom Etab": "Znada (Draoua)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Oulad Yaacoub",
+		"Nom Etab": "Ouled Yaacoub",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Oulad El Garne",
+		"Nom Etab": "Od El Garne (Souk Sebt)",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "El Kelaa Des Sraghna",
+		"Commune": "Lounasda",
+		"Nom Etab": "Lounasda",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Aarab Sebbah Ziz",
+		"Nom Etab": "Oulad Maatallah",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Es-Sifa",
+		"Nom Etab": "Es-Sifa",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Aarab Sebbah Gheris",
+		"Nom Etab": "Hannabou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Fezna",
+		"Nom Etab": "Fezna",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Er-Rissani",
+		"Nom Etab": "Mezguida",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Es-Sfalat",
+		"Nom Etab": "Es-Falat",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Et-Taous",
+		"Nom Etab": "Merzouga",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Sidi Ali",
+		"Nom Etab": "Sidi Ali(Tafraoute)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Aoufous",
+		"Nom Etab": "Aoufous",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Oued Naam",
+		"Nom Etab": "Sahli",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Chorfa M'daghra",
+		"Nom Etab": "Bni Moussi (Chorfa M'daghra)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Lkheng",
+		"Nom Etab": "Lkheng",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Aghbalou N'kerdous",
+		"Nom Etab": "Aghbalou N'kerdous",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Gheris Es-Soufli",
+		"Nom Etab": "Ouakka",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Gheris El Ouloui",
+		"Nom Etab": "Ait Ihya Ou Atmane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Tadighoust",
+		"Nom Etab": "Tadighoust",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Melaab",
+		"Nom Etab": "Melaab",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Ferkla Es-Soufla",
+		"Nom Etab": "Ketaa El Oued",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Ferkla El Oulia",
+		"Nom Etab": "Asrir",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Amellagou",
+		"Nom Etab": "Amellagou",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Bni M'hamed  Sijelmassa",
+		"Nom Etab": "El Mansouria",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Errachidia",
+		"Commune": "Er-Rteb",
+		"Nom Etab": "Zaouia Jdida",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Es Semara",
+		"Commune": "Sidi Ahmed Laaroussi",
+		"Nom Etab": "S.Ahmed Laaroussi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Es Semara",
+		"Commune": "Amgala",
+		"Nom Etab": "Sidi Khattari (Amgala)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Es Semara",
+		"Commune": "Haouza",
+		"Nom Etab": "Haouza",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Mzilate",
+		"Nom Etab": "Mzilate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi M'hamed Ou Marzouq",
+		"Nom Etab": "S.Mhamed Oumarzouq",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "M'ramer",
+		"Nom Etab": "M'ramer",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi Boulaalam",
+		"Nom Etab": "Fej Rih",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi Aissa Regragui",
+		"Nom Etab": "Nairat",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Takate",
+		"Nom Etab": "Takate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Oulad M'rabet",
+		"Nom Etab": "Oulad Said",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Tafetachte",
+		"Nom Etab": "Tafetachte",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Mejji",
+		"Nom Etab": "Mejji",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Kechoula",
+		"Nom Etab": "Sidi Larbi (Kechoula)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Moulay Bouzarqtoune",
+		"Nom Etab": "Ait Tahria",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Ounagha",
+		"Nom Etab": "Ounagha",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Had Dra",
+		"Nom Etab": "Had Dra",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Meskala",
+		"Nom Etab": "Meskala",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Mouarid",
+		"Nom Etab": "Mouarid",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Korimate",
+		"Nom Etab": "Korimate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Lahsinate",
+		"Nom Etab": "Lahsinate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Ait Said",
+		"Nom Etab": "Ait El Haj",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Lagdadra",
+		"Nom Etab": "Lagdadra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi Ishaq",
+		"Nom Etab": "Souk Aame",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi Ali El Korati",
+		"Nom Etab": "Sidi Ali El Korati",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Aquermoud",
+		"Nom Etab": "Akermoud",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Zaouiat Ben Hmida",
+		"Nom Etab": "Zaouiat Ben Hmida",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "M'khalif",
+		"Nom Etab": "Berrakt Radi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi Abdeljalil",
+		"Nom Etab": "Sidi Abdeljalil",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi Laaroussi",
+		"Nom Etab": "Sidi Laaroussi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Adaghas",
+		"Nom Etab": "Adaghas",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Assais",
+		"Nom Etab": "Assais Akrarou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Bouzemmour",
+		"Nom Etab": "Bouzemmour  ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Aglif",
+		"Nom Etab": "Aglif",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Takoucht",
+		"Nom Etab": "Takoucht",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi Ghaneme",
+		"Nom Etab": "Ait Zelten",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Ezzaouite",
+		"Nom Etab": "Ezzaouite Issoukine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Tahelouante",
+		"Nom Etab": "Tahelouante",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Bizdad",
+		"Nom Etab": "Bizdad",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi Kaouki",
+		"Nom Etab": "Sidi Kaouki",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Aguerd",
+		"Nom Etab": "Ida Ougourd",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi Hmad Ou Hamed",
+		"Nom Etab": "S.H'mad Ou Hmed",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Tidzi",
+		"Nom Etab": "Tigoudar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi El Jazouli",
+		"Nom Etab": "Neknafa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Imi N'tlit",
+		"Nom Etab": "Imi-N'tlit",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Smimou",
+		"Nom Etab": "Smimou",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Tafedna",
+		"Nom Etab": "Tafedna",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi Ahmed Essayeh",
+		"Nom Etab": "S.Ahmed Essayeh",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Ida Ou Aazza",
+		"Nom Etab": "Toughniste (Ida Ouaazza)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Timizguida Ouftas",
+		"Nom Etab": "Imerdidsene",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Ait Aissi Ihahane",
+		"Nom Etab": "Ait Aissi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Ida Ou Kazzou",
+		"Nom Etab": "Ida Ou Kazzou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Ida Ou Guelloul",
+		"Nom Etab": "Ida Ouguilloul",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Sidi H'mad  Ou M'barek",
+		"Nom Etab": "Idaoutrouma",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Imgrade",
+		"Nom Etab": "Dhar  ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Essaouira",
+		"Commune": "Targante",
+		"Nom Etab": "Targante",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fahs Anjra",
+		"Commune": "Al Bahraoyine",
+		"Nom Etab": "Nouinouich",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fahs Anjra",
+		"Commune": "Malloussa",
+		"Nom Etab": "Malloussa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fahs Anjra",
+		"Commune": "Ksar Sghir",
+		"Nom Etab": "Ksar Sghir",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Fahs Anjra",
+		"Commune": "Jouamaa",
+		"Nom Etab": "Hakkama",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fahs Anjra",
+		"Commune": "Anjra",
+		"Nom Etab": "Khmiss Anjra",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Fahs Anjra",
+		"Commune": "Ksar El Majaz",
+		"Nom Etab": "Ksar El Majaz",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fahs Anjra",
+		"Commune": "Taghramt",
+		"Nom Etab": "Taghramt",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Fes",
+		"Commune": "Oulad Tayeb",
+		"Nom Etab": "Oulad Tayeb Ii",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Fes",
+		"Commune": "Sidi Harazem",
+		"Nom Etab": "Sidi Harazem",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Fes",
+		"Commune": "Ain Bida",
+		"Nom Etab": "Ain Bida",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Figuig",
+		"Commune": "Bni Tadjite",
+		"Nom Etab": "Bni Tadjite",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Figuig",
+		"Commune": "Bouanane",
+		"Nom Etab": "Bouanane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Figuig",
+		"Commune": "Ain Chouater",
+		"Nom Etab": "Ain Chouater",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Figuig",
+		"Commune": "Boumerieme",
+		"Nom Etab": "Taoura",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Figuig",
+		"Commune": "Talsint",
+		"Nom Etab": "Talsint",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Figuig",
+		"Commune": "Bouchaouene",
+		"Nom Etab": "Anoual",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Figuig",
+		"Commune": "Bni Guil",
+		"Nom Etab": "Bni Guil",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Figuig",
+		"Commune": "Abbou Lakhal",
+		"Nom Etab": "Abbou Lakhal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Figuig",
+		"Commune": "Maatarka",
+		"Nom Etab": "Maatarka",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Figuig",
+		"Commune": "Tendrara",
+		"Nom Etab": "Tendrara",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Fkih Ben Saleh",
+		"Commune": "Dar Ould Zidouh",
+		"Nom Etab": "Dar Ouald Zidouh",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Fkih Ben Saleh",
+		"Commune": "Had Boumoussa",
+		"Nom Etab": "Had Boumoussa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fkih Ben Saleh",
+		"Commune": "Oulad Bourahmoune",
+		"Nom Etab": "Od BOUAZZA",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fkih Ben Saleh",
+		"Commune": "Oulad Nacer",
+		"Nom Etab": "Ait Rami",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fkih Ben Saleh",
+		"Commune": "Sidi Aissa Ben Ali",
+		"Nom Etab": "S. Aissa Ben Ali",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Fkih Ben Saleh",
+		"Commune": "Oulad Zmam",
+		"Nom Etab": "Od ZMAME",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fkih Ben Saleh",
+		"Commune": "Hel Merbaa",
+		"Nom Etab": "Hel Merbaa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fkih Ben Saleh",
+		"Commune": "Krifate",
+		"Nom Etab": "Krifate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fkih Ben Saleh",
+		"Commune": "Al Khalfia",
+		"Nom Etab": "Oulad Hassoun",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fkih Ben Saleh",
+		"Commune": "Bradia",
+		"Nom Etab": "Bradia",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Fkih Ben Saleh",
+		"Commune": "Bni Chegdale",
+		"Nom Etab": "Bni Chegdale",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Fkih Ben Saleh",
+		"Commune": "Bni Oukil",
+		"Nom Etab": "Bni Oukil",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Ait Boufoulen",
+		"Nom Etab": "Ait Boufoulne",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Ifrane Atlas Saghir",
+		"Nom Etab": "Ifrane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Taghjijt",
+		"Nom Etab": "Taghjicht",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Aday",
+		"Nom Etab": "Aday",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Amtdi",
+		"Nom Etab": "Amtoudi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Asrir",
+		"Nom Etab": "Asrir",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Fask",
+		"Nom Etab": "Fask",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Laqsabi Tagoust",
+		"Nom Etab": "Ksabi",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Abaynou",
+		"Nom Etab": "Abainou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Labyar",
+		"Nom Etab": "Labiar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Rass Oumlil",
+		"Nom Etab": "Ras Oumlil",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Targa Wassay",
+		"Nom Etab": "Targa Ouassay",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Echatea El Abied",
+		"Nom Etab": "Chatia Labyad",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guelmim",
+		"Commune": "Taliouine Assaka",
+		"Nom Etab": "Taliouine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guercif",
+		"Commune": "Oulad Bourima",
+		"Nom Etab": "Oulad Bourima",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guercif",
+		"Commune": "Mazguitam",
+		"Nom Etab": "Mazguitam  ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Guercif",
+		"Commune": "Ras Laksar",
+		"Nom Etab": "Ras Laksar (Zebzit)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guercif",
+		"Commune": "Assebbab",
+		"Nom Etab": "Sebab",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guercif",
+		"Commune": "Barkine",
+		"Nom Etab": "Barkine",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Guercif",
+		"Commune": "Houara Oulad Raho",
+		"Nom Etab": "Houara",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Guercif",
+		"Commune": "Taddart",
+		"Nom Etab": "Taddart",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Guercif",
+		"Commune": "Lamrija",
+		"Nom Etab": "Lamrija",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Guercif",
+		"Commune": "Saka",
+		"Nom Etab": "Saka",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ifrane",
+		"Commune": "Tizguite",
+		"Nom Etab": "Sidi Abdeslam",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ifrane",
+		"Commune": "Dayat Aoua",
+		"Nom Etab": "Dayat Aoua",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ifrane",
+		"Commune": "Tigrigra",
+		"Nom Etab": "A. Yahia Ou Alla",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ifrane",
+		"Commune": "Timahdite",
+		"Nom Etab": "Timahdite",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ifrane",
+		"Commune": "Ain Leuh",
+		"Nom Etab": "Ain-Leuh",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ifrane",
+		"Commune": "Oued Ifrane",
+		"Nom Etab": "Oued Ifrane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ifrane",
+		"Commune": "Sidi El Makhfi",
+		"Nom Etab": "Sidi El Makhfi",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Inezgane Ait Melloul",
+		"Commune": "Temsia",
+		"Nom Etab": "Temsia",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Inezgane Ait Melloul",
+		"Commune": "Oulad Dahou",
+		"Nom Etab": "Oulad Dahou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Jerada",
+		"Commune": "Bni Mathar",
+		"Nom Etab": "Bni Mathar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Jerada",
+		"Commune": "Oulad Ghziyel",
+		"Nom Etab": "Oulad Ghziyel",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Jerada",
+		"Commune": "Mrija",
+		"Nom Etab": "Mrija",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Jerada",
+		"Commune": "Guenfouda",
+		"Nom Etab": "Guenfouda",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Jerada",
+		"Commune": "Gafait",
+		"Nom Etab": "Gafait        ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Jerada",
+		"Commune": "Lebkhata",
+		"Nom Etab": "Lebkhata",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Jerada",
+		"Commune": "Tiouli",
+		"Nom Etab": "Tiouli",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Jerada",
+		"Commune": "Ras Asfour",
+		"Nom Etab": "Ras Asfour",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Jerada",
+		"Commune": "Sidi Boubker",
+		"Nom Etab": "Sidi Boubker",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Jerada",
+		"Commune": "Oulad Sidi  Abdelhakem",
+		"Nom Etab": "Od Sidi Abdelhakem",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Arbaoua",
+		"Nom Etab": "Arbaoua",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Oued El Makhazine",
+		"Nom Etab": "Blad Lanjri",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Kariat Ben Aouda",
+		"Nom Etab": "Kariat Ben Aouda (1)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Beni Malek",
+		"Nom Etab": "Lalla Ghanou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Sidi Allal Tazi",
+		"Nom Etab": "Sidi Allal Tazi (2)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Souk Tlet El Gharb",
+		"Nom Etab": "Souk Tlat",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Sidi Mohamed Lahmar",
+		"Nom Etab": "S.Mohamed Lahmer",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Moulay Bousselham",
+		"Nom Etab": "My BOUSSELHAM (3)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Lalla Mimouna",
+		"Nom Etab": "Lalla Mimouna",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Chouafaa",
+		"Nom Etab": "Dar El Harrak",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Sidi Boubker El Haj",
+		"Nom Etab": "S.Boubker El Haj",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Ameur Seflia",
+		"Nom Etab": "Dhor Lokbar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Bahhara Oulad Ayad",
+		"Nom Etab": "Od MESBAH ROUIF  ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Mnasra",
+		"Nom Etab": "Od LASSAL",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Ben Mansour",
+		"Nom Etab": "Had Od Jelloul",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Sidi Taibi",
+		"Nom Etab": "Sidi Taibi",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Haddada",
+		"Nom Etab": "Mgadid",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Kenitra",
+		"Commune": "Mograne",
+		"Nom Etab": "Mograne",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ait Siberne",
+		"Nom Etab": "Ait Siberne",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ait Mimoune",
+		"Nom Etab": "Ait Mimoune",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ait Ouribel",
+		"Nom Etab": "Had Khammouja",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Majmaa Tolba",
+		"Nom Etab": "Majmaa Tolba",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "El Ganzra",
+		"Nom Etab": "El Ganzra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ait Yadine",
+		"Nom Etab": "Ait Yadine",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Sfassif",
+		"Nom Etab": "Sfassif",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Sidi Allal Lamsadder",
+		"Nom Etab": "S.Allal Lamsadder",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Sidi El Ghandour",
+		"Nom Etab": "Sidi El Rhandour",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Houderrane",
+		"Nom Etab": "Houderrane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Maaziz",
+		"Nom Etab": "Maaziz",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ait Ikkou",
+		"Nom Etab": "Ait Ikkou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Bouqachmir",
+		"Nom Etab": "Bouqachmir",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ait Ichou",
+		"Nom Etab": "Tiliouine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Oulmes",
+		"Nom Etab": "Oulmes  ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Tiddas",
+		"Nom Etab": "Tiddas",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Brachoua",
+		"Nom Etab": "Brachoua",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Moulay Driss Aghbal",
+		"Nom Etab": "My DRISS AGHBAL",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Jemaat Moul Blad",
+		"Nom Etab": "Jemaat Moul Blad",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Laghoualem",
+		"Nom Etab": "Laghoualem",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Marchouch",
+		"Nom Etab": "Marchouch",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ain Sbit",
+		"Nom Etab": "Ain Sbit",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ezzhiliga",
+		"Nom Etab": "Ezzhiliga",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "M'qam Tolba",
+		"Nom Etab": "Mqam Tolba",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Sidi Abderrazak",
+		"Nom Etab": "Sidi Abderrazak",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ait Malek",
+		"Nom Etab": "Tnine Moughane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ain johra -sidi Boukhalkhal",
+		"Nom Etab": "Ain Johra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ain johra -sidi Boukhalkhal",
+		"Nom Etab": "S.Boukhalkhal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ait Belkacem",
+		"Nom Etab": "Ait Belkacem",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Khemis Sidi Yahya",
+		"Nom Etab": "Khemis Sidi Yahya",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khémisset",
+		"Commune": "Ait Bouyahya  El Hajjama",
+		"Nom Etab": "Hajjama",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "El Hammam",
+		"Nom Etab": "Tighza",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Ouaoumana",
+		"Nom Etab": "Ouaoumana",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Ait Ishaq",
+		"Nom Etab": "Ait Ishaq",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "El Kbab",
+		"Nom Etab": "El Kbab",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Tighassaline",
+		"Nom Etab": "Tighassaline",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Sidi Yahya Ou Saad",
+		"Nom Etab": "S.Yahya Ou Saad",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Ait Saadelli",
+		"Nom Etab": "Tamakaidoute",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Kerrouchen",
+		"Nom Etab": "Kerrouchen",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Sidi Hcine",
+		"Nom Etab": "Lagouida",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Aguelmous",
+		"Nom Etab": "Aguelmous",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Sidi Amar",
+		"Nom Etab": "Sidi Amar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Sidi Lamine",
+		"Nom Etab": "Kaf N'sour",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "El Borj",
+		"Nom Etab": "El Borj",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Lehri",
+		"Nom Etab": "Lehri",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Moha Ou Hammou Zayani",
+		"Nom Etab": "Amalou I",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Had Bouhssoussen",
+		"Nom Etab": "Had Bouhssoussen",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Moulay Bouazza",
+		"Nom Etab": "My BOUAZZA",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Sebt Ait Rahou",
+		"Nom Etab": "Sebt Ait Rahou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Oum Rabia",
+		"Nom Etab": "Tanafnite",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khenifra",
+		"Commune": "Aguelmam Azegza",
+		"Nom Etab": "Ajdir",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Rouached",
+		"Nom Etab": "Rouached",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Chougrane",
+		"Nom Etab": "Chougrane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Tachrafat",
+		"Nom Etab": "Tachrafat",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Ain Kaicher",
+		"Nom Etab": "Ain Kaicher",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Bni Bataou",
+		"Nom Etab": "Bni Batao",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Boukhrisse",
+		"Nom Etab": "Boukhrisse",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Bni Zrantel",
+		"Nom Etab": "Bni Zrantel",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Oulad Gouaouch",
+		"Nom Etab": "Oulad Gouaouch",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Bni Ykhlef",
+		"Nom Etab": "Bni Ykhlef",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Boulanouare",
+		"Nom Etab": "Boulanouare",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Bir Mezoui",
+		"Nom Etab": "Bir Mezoui",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Lagfaf",
+		"Nom Etab": "Lagfaf",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "El Foqra",
+		"Nom Etab": "El Foqra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "M'fassis",
+		"Nom Etab": "M'fassis",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Oulad Abdoune",
+		"Nom Etab": "Oulad Abdoune",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Oulad Azzouz",
+		"Nom Etab": "Oulad Azzouz",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Ait Ammar",
+		"Nom Etab": "Ait Ammar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Oulad Ftata",
+		"Nom Etab": "Oulad Ftata",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Lagnadiz",
+		"Nom Etab": "Lagnadiz",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Oulad Boughadi",
+		"Nom Etab": "Oulad Boughadi",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Bni Smir",
+		"Nom Etab": "Bni Smir",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Kasbat Troch",
+		"Nom Etab": "Troch",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Maadna",
+		"Nom Etab": "Maadna",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Oulad Fennane",
+		"Nom Etab": "Oulad Fennane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Braksa",
+		"Nom Etab": "Braksa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Khouribga",
+		"Commune": "Oulad Aissa",
+		"Nom Etab": "Oulad Aissa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Zouada",
+		"Nom Etab": "Zouada",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Laouamra",
+		"Nom Etab": "Laouamra",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Bou Jedyane",
+		"Nom Etab": "Bou-Jedyane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Souk L'qolla",
+		"Nom Etab": "L'qolla",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Tatoft",
+		"Nom Etab": "Tatoft",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Oulad Ouchih",
+		"Nom Etab": "Oulad Ouchih",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Ksar Bjir",
+		"Nom Etab": "Ksar Bjir",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Souaken",
+		"Nom Etab": "Souaken",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Ayacha",
+		"Nom Etab": "Ayacha",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Bni Arouss",
+		"Nom Etab": "Bni Arouss",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Tazroute",
+		"Nom Etab": "Tazroute",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Bni Garfett",
+		"Nom Etab": "Bni Garfett",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Zaaroura",
+		"Nom Etab": "Zaaroura",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Sahel",
+		"Nom Etab": "Sahel",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Rissana Chamalia",
+		"Nom Etab": "Rissana Chamalia",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Rissana Janoubia",
+		"Nom Etab": "Rissana Janoubia",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Larache",
+		"Commune": "Souk Tolba",
+		"Nom Etab": "Oulad Lharti",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "Souihla",
+		"Nom Etab": "Souihla",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "Loudaya",
+		"Nom Etab": "Loudaya",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "Tassoultante",
+		"Nom Etab": "Sidi Moussa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "Saada",
+		"Nom Etab": "SAADA I (Taaouniat El Fath)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "Sid Zouine",
+		"Nom Etab": "Sid Zouine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "Agafay",
+		"Nom Etab": "Ait Daoud (Agafai)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "Ait Imour",
+		"Nom Etab": "Ait Imour",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "Harbil",
+		"Nom Etab": "Harbil (Nzalt Lharmel )",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "M'nabha",
+		"Nom Etab": "Kettara",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "Oulad Hassoune",
+		"Nom Etab": "Ouahat S.Brahim (Oulad Belaaguid)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "Ouled Dlim",
+		"Nom Etab": "Centre 44  ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "Alouidane",
+		"Nom Etab": "Chouiter",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Marrakech",
+		"Commune": "Oulad Hassoune",
+		"Nom Etab": "Ouad Lahjar  ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Mdiq-Fnideq",
+		"Commune": "ALLYENE",
+		"Nom Etab": "Allyine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Mediouna",
+		"Commune": "Sidi Hajjaj Oued Hassar",
+		"Nom Etab": "Sidi Hajjaj (Ouled Bouaziz)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Mediouna",
+		"Commune": "Al Majjatia Oulad Taleb",
+		"Nom Etab": "Majjatia",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Oualili",
+		"Nom Etab": "Beni Maraaz ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Mrhassiyine",
+		"Nom Etab": "Mrhassiyine",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Sidi Abdallah Al Khayat",
+		"Nom Etab": "S.Abdellah Khayat",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Charqaoua",
+		"Nom Etab": "Charqaoua",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "N'zalat Bni Amar",
+		"Nom Etab": "Nzalat Bni Amar",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Dkhissa",
+		"Nom Etab": "Zoualet",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Oued Jdida",
+		"Nom Etab": "Ouad Jdida",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "M'haya",
+		"Nom Etab": "Mhaya",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Majjate",
+		"Nom Etab": "Majjate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Sidi Slimane  Moul Al Kifane",
+		"Nom Etab": "Sidi Slimane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Ain Orma",
+		"Nom Etab": "Ain Orma",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Dar Oum Soltane",
+		"Nom Etab": "Dar oum Soltane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Ait Ouallal",
+		"Nom Etab": "Ait Aissa Addi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Ain Karma-Oued Rommane",
+		"Nom Etab": "Ain Karma",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Meknès",
+		"Commune": "Ain Jemaa",
+		"Nom Etab": "Ain Jemaa",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Amouguer",
+		"Nom Etab": "Amouguer",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Ait Yahya",
+		"Nom Etab": "Tazarine (A.Hatab)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Imilchil",
+		"Nom Etab": "Imilchil",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Bou Azmou",
+		"Nom Etab": "Bou-Azmou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Outerbat",
+		"Nom Etab": "Outerbat",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Guers Tiaallaline",
+		"Nom Etab": "Kerrandou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "En-Nzala",
+		"Nom Etab": "En-Nzala",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "M'zizel",
+		"Nom Etab": "M'zizel",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Sidi Aayad",
+		"Nom Etab": "Tillichte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Zaouiat Sidi Hamza",
+		"Nom Etab": "Zaouiat S.Hamza",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Gourrama",
+		"Nom Etab": "Gourrama",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Guir",
+		"Nom Etab": "Toulal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Ait Izdeg",
+		"Nom Etab": "Ait Izdeg",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Ait Ayach",
+		"Nom Etab": "Ait Oumghar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Mibladen",
+		"Nom Etab": "Mibladen",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Amersid",
+		"Nom Etab": "Amersid",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Tanourdi",
+		"Nom Etab": "Tanourdi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Tizi N'ghachou",
+		"Nom Etab": "Tizi N'ghachou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Boumia",
+		"Nom Etab": "Boumia",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Aghbalou",
+		"Nom Etab": "Aghbalou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Ait Ben Yacoub",
+		"Nom Etab": "Tamayouste",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Zaida",
+		"Nom Etab": "Zaida",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Itzer",
+		"Nom Etab": "Itzer",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Anemzi",
+		"Nom Etab": "Anemzi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Agoudim",
+		"Nom Etab": "Agoudim",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Sidi Yahya Ou Youssef",
+		"Nom Etab": "Bouadel",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Midelt",
+		"Commune": "Tounfite",
+		"Nom Etab": "Tounfite",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Mohammedia",
+		"Commune": "Bni Yakhlef",
+		"Nom Etab": "Bni Yakhlef",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Mohammedia",
+		"Commune": "Sidi Moussa Ben Ali",
+		"Nom Etab": "S.Moussa Ben Ali",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Mohammedia",
+		"Commune": "Sidi Moussa Majdoub",
+		"Nom Etab": "S.Moussa L'majdoub",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Mohammedia",
+		"Commune": "Ech-Challalate",
+		"Nom Etab": "Ech-Challalate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Moulay Yacoub",
+		"Commune": "Sebaa Rouadi",
+		"Nom Etab": "Ain Allah",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Moulay Yacoub",
+		"Commune": "Mikkes",
+		"Nom Etab": "Mikkes",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Moulay Yacoub",
+		"Commune": "Sebt Loudaya",
+		"Nom Etab": "Sebt Loudaya",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Moulay Yacoub",
+		"Commune": "Ain Chkef",
+		"Nom Etab": "Ain Chkef",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Moulay Yacoub",
+		"Commune": "Laajajra",
+		"Nom Etab": "Laajajra",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Moulay Yacoub",
+		"Commune": "Sidi Daoud",
+		"Nom Etab": "Sidi Daoud",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Moulay Yacoub",
+		"Commune": "Oulad Mimoun",
+		"Nom Etab": "Oulad Mimoun (Sebt Od Jamaa)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Moulay Yacoub",
+		"Commune": "Louadaine",
+		"Nom Etab": "Hamria",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Moulay Yacoub",
+		"Commune": "Ain Bou Ali",
+		"Nom Etab": "S. Ahmed Bernoussi",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Moulay Yacoub",
+		"Commune": "Ain Kansra",
+		"Nom Etab": "Ain Kansara",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Bni Bouifrour",
+		"Nom Etab": "Bni Bouyafrour",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Ihaddadene",
+		"Nom Etab": "Bouzarzaren (Ihaddaden)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Iksane",
+		"Nom Etab": "Ihajamane (Iksane)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Bouarg",
+		"Nom Etab": "Taouima",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Iaazzanene",
+		"Nom Etab": "Iaazzanene",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Bni Chiker",
+		"Nom Etab": "Bni Chiker  ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Bni Sidel Jbel",
+		"Nom Etab": "Bni Sidel Jbel",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Bni Sidel Louta",
+		"Nom Etab": "Bni Sidel-Louta",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Hassi Berkane",
+		"Nom Etab": "Hassi-Berkane   ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Afsou",
+		"Nom Etab": "Afsou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Tiztoutine",
+		"Nom Etab": "Tistoutine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Bni Oukil  Oulad M'hand",
+		"Nom Etab": "Bni Oukil",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Arekmane",
+		"Nom Etab": "Kariat Arkmane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Al Barkanyene",
+		"Nom Etab": "Ouled Youssef",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Oulad Settout",
+		"Nom Etab": "Oulad Settout",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Nador",
+		"Commune": "Oulad Daoud Zkhanine",
+		"Nom Etab": "Ouled Daoud",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Nouaceur",
+		"Commune": "Oulad Salah",
+		"Nom Etab": "Ouled Salah",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Amerzgane",
+		"Nom Etab": "Amerzgane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Ait Zineb",
+		"Nom Etab": "Timedline",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Telouet",
+		"Nom Etab": "Telouet",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Ighrem N'ougdal",
+		"Nom Etab": "Ighrem",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Tidli",
+		"Nom Etab": "Sour",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Ouisselsate",
+		"Nom Etab": "Timjichte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Siroua",
+		"Nom Etab": "Anzal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Khouzama",
+		"Nom Etab": "Tachoukchte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Aznaguen (Asdif)",
+		"Nom Etab": "Souk Asdif",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Tarmigt",
+		"Nom Etab": "Tarmigte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Idelsane",
+		"Nom Etab": "Idelsane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Skoura Ahl El Oust",
+		"Nom Etab": "Skoura",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Toundoute",
+		"Nom Etab": "Toundoute",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Ghassate",
+		"Nom Etab": "Ghassate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouarzazate",
+		"Commune": "Imi N'oulaoune",
+		"Nom Etab": "Imi N'oulaoune",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Oued Ed-Dahab",
+		"Commune": "El Argoub",
+		"Nom Etab": "El Argoub",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Oued Ed-Dahab",
+		"Commune": "C.R. Bir Anzarane",
+		"Nom Etab": "Bir Anzarane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Mzefroune",
+		"Nom Etab": "Mzefroune",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Masmouda",
+		"Nom Etab": "Masmouda",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Bni Quolla",
+		"Nom Etab": "Bni Quolla",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Sidi Redouane",
+		"Nom Etab": "Sidi Redouane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Ounnana",
+		"Nom Etab": "Ouled Bder",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Lamjaara",
+		"Nom Etab": "Ain Dorrij",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Teroual",
+		"Nom Etab": "Teroual",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Zghira",
+		"Nom Etab": "Zghira",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Sidi Ahmed Cherif",
+		"Nom Etab": "Sidi Ahmed Cherif",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Sidi Bousber",
+		"Nom Etab": "Sidi Bousber",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Brikcha",
+		"Nom Etab": "Brikcha   ",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Asjen",
+		"Nom Etab": "Asjen",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Moqrisset",
+		"Nom Etab": "Moqrissat",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Ain Beida",
+		"Nom Etab": "Ain Beida  ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Kalaat Bouqorra",
+		"Nom Etab": "Bouqorra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Ouezzane",
+		"Commune": "Zoumi",
+		"Nom Etab": "Zoumi",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Oujda Angad",
+		"Commune": "Ain Sfa",
+		"Nom Etab": "Ain Sfa",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Oujda Angad",
+		"Commune": "Bni Khaled",
+		"Nom Etab": "Bni Khaled",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Oujda Angad",
+		"Commune": "Bsara",
+		"Nom Etab": "Bsara",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Oujda Angad",
+		"Commune": "Mestferki",
+		"Nom Etab": "Mestferki",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Oujda Angad",
+		"Commune": "Sidi Boulenouar",
+		"Nom Etab": "S.Boulenouar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Oujda Angad",
+		"Commune": "Ahl Angad",
+		"Nom Etab": "Ahl Angad   ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Oujda Angad",
+		"Commune": "Isly",
+		"Nom Etab": "Isly",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Oujda Angad",
+		"Commune": "Sidi Moussa Lemhaya",
+		"Nom Etab": "S.Moussa Lemhaya",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Bourrous",
+		"Nom Etab": "Bourrous",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Sidi Boubker",
+		"Nom Etab": "Sidi Boubker",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Nzalat Laadam",
+		"Nom Etab": "Nzalat Laadam",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Lamharra",
+		"Nom Etab": "Lamharra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Oulad Imloul",
+		"Nom Etab": "Oulad Imloul",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Akarma",
+		"Nom Etab": "Akarma",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Tlauh",
+		"Nom Etab": "Tlauh",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Jaidate",
+		"Nom Etab": "Jaidate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Ras Ain Rhamna",
+		"Nom Etab": "Ras  El Ain",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Jaafra",
+		"Nom Etab": "Jaafra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Sidi Abdallah",
+		"Nom Etab": "Sidi Abdellah",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Skoura Lhadra",
+		"Nom Etab": "Skoura Lhadra (Od Z. Nass)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Sidi Ghanem",
+		"Nom Etab": "S. Ghanem (Ouled Abbou)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Sidi Mansour",
+		"Nom Etab": "Sidi  Mansour",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Skhour Rhamna",
+		"Nom Etab": "Skhour Rhamna",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Sidi Ali Labrahla",
+		"Nom Etab": "S.Ali Labrahla",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Oulad Hassoune Hamri",
+		"Nom Etab": "Od HASSOUNE",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Labrikiyne",
+		"Nom Etab": "Labrikiyne",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Oulad Aamer  Tizmarine",
+		"Nom Etab": "Od AMER TIZMARINE",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Ait Hammou",
+		"Nom Etab": "Ait Hammou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Bouchane",
+		"Nom Etab": "Bouchane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Rehamena",
+		"Commune": "Ait Taleb",
+		"Nom Etab": "Mabared",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Lamrasla",
+		"Nom Etab": "Lamrasla",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Sidi Ettiji",
+		"Nom Etab": "Sidi Ettiji",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Bouguedra",
+		"Nom Etab": "Bouguedra",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Lahdar",
+		"Nom Etab": "Lahdar (Laghoual)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Labkhati",
+		"Nom Etab": "Labkhati",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Lamsabih",
+		"Nom Etab": "Lamsabih",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "El Gouraani",
+		"Nom Etab": "El Gouraani (Douar Jdid)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Sidi Aissa",
+		"Nom Etab": "Sidi Aissa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Hrara",
+		"Nom Etab": "Hrara",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Moul El Bergui",
+		"Nom Etab": "Moul El Bergui",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Dar Si Aissa",
+		"Nom Etab": "Dar El Caid",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "El Beddouza",
+		"Nom Etab": "El Beddouza",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Ayir",
+		"Nom Etab": "Laakarta",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Khatazakane",
+		"Nom Etab": "Khatazakane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Oulad Salmane",
+		"Nom Etab": "Od SALMAN (SIDI SAID)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Saadla",
+		"Nom Etab": "Loulad",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Laamamra",
+		"Nom Etab": "Bouderaa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Nagga",
+		"Nom Etab": "Mostafa Zargui",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Lamaachate",
+		"Nom Etab": "Souiria Kdima",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "Atouabet",
+		"Nom Etab": "Dar Lamine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Safi",
+		"Commune": "El Ghiate",
+		"Nom Etab": "El Ghiate",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Salé",
+		"Commune": "Shoul",
+		"Nom Etab": "Arjat",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Kandar Sidi Khiar",
+		"Nom Etab": "Kandar S.Khiar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Laanoussar",
+		"Nom Etab": "Ayoun  Snam",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Tazouta",
+		"Nom Etab": "Tazouta",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Azzaba",
+		"Nom Etab": "Azzaba",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Ahl Sidi Lahcen",
+		"Nom Etab": "Sidi Lahcen",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Aghbalou Aqorar",
+		"Nom Etab": "Aghbalou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Ain Timguenai",
+		"Nom Etab": "Zaouia",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Mtarnagha",
+		"Nom Etab": "Mtarnagha",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Oulad Mkoudou",
+		"Nom Etab": "Ouled Mkoudou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Tafajight",
+		"Nom Etab": "Tafajight",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Adrej",
+		"Nom Etab": "Adrej",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Dar El Hamra",
+		"Nom Etab": "Dar El Hamra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Ighzrane",
+		"Nom Etab": "Ighzerane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Ras Tabouda",
+		"Nom Etab": "Ras Tabouda",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Bir Tam Tam",
+		"Nom Etab": "Bir Tam-Tam",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Ain Cheggag",
+		"Nom Etab": "Ain Cheggag",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sefrou",
+		"Commune": "Ait Sebaa Lajrouf",
+		"Nom Etab": "Ain Chifa",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Oulad Fares El Halla",
+		"Nom Etab": "Od GHALEM",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Oulad Bouali Nouaja",
+		"Nom Etab": "Od BOUALI",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Meskoura",
+		"Nom Etab": "Meskoura",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Oulad Amer",
+		"Nom Etab": "Ait Hachem",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Laqraqra",
+		"Nom Etab": "Laqraqra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Bni Khloug",
+		"Nom Etab": "Bni Khloug",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Sidi Ahmed El Khadir",
+		"Nom Etab": "Od SI MOUSSA",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Dar Chaffai",
+		"Nom Etab": "Dar Chaffai",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Ain Blal",
+		"Nom Etab": "Ain Blal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Oulad Freiha",
+		"Nom Etab": "Oulad Freiha",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Lakhzazra",
+		"Nom Etab": "Ain Baida",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "M'garto",
+		"Nom Etab": "M'garto",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Sidi Dahbi",
+		"Nom Etab": "Sidi Dahbi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Oulad M'hamed",
+		"Nom Etab": "Ouled M'hammed",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Ain Dorbane-Lahlaf",
+		"Nom Etab": "Ain Dorbane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Ain Dorbane-Lahlaf",
+		"Nom Etab": "Lahlaf",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Bouguargouh",
+		"Nom Etab": "Bouguargouh",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Sidi Abdelkrim",
+		"Nom Etab": "Laghzaouna",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Mrizigue",
+		"Nom Etab": "Mrizigue",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Oulad Fares",
+		"Nom Etab": "Oulad Fares",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Oulad Chbana",
+		"Nom Etab": "Oulad Chbana",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Oued Naanaa",
+		"Nom Etab": "Chraouka",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Ras El Ain Chaouia",
+		"Nom Etab": "Ras El Ain",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Sidi El Aidi",
+		"Nom Etab": "Sidi El Aidi",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Bni Yagrine",
+		"Nom Etab": "Bni Yagrine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Guisser",
+		"Nom Etab": "Guisser",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Rima",
+		"Nom Etab": "Rima",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Oulad Sghir",
+		"Nom Etab": "Oulad Sghir",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Machraa Ben Abbou",
+		"Nom Etab": "Mechraa B. Abbou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Sidi Mohammed  Ben Rahal",
+		"Nom Etab": "Od BOUZIRI",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Toualet",
+		"Nom Etab": "Tnine Toualet",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Mzoura",
+		"Nom Etab": "Mzoura",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Khemisset Chaouia",
+		"Nom Etab": "Khemisset",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Gdana",
+		"Nom Etab": "Gdana",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Oulad Said",
+		"Nom Etab": "Oulad Said",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Lahouaza",
+		"Nom Etab": "Lahouaza",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "N'khila",
+		"Nom Etab": "N'khila",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Settat",
+		"Commune": "Sidi Hajjaj",
+		"Nom Etab": "Ouled  Hajjaj",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Oulad Si Bouhya",
+		"Nom Etab": "Oulad Si Bouhya",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Loualidia",
+		"Nom Etab": "Loualidia",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Lgharbia",
+		"Nom Etab": "Lgharbia",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Oulad Sbaita",
+		"Nom Etab": "Oulad Sbaita",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Laghnadra",
+		"Nom Etab": "Lghnadra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Saniat Berguig",
+		"Nom Etab": "Saniat Berguig",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Lmechrek",
+		"Nom Etab": "Riouni",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Laamria",
+		"Nom Etab": "Laamria",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Bni Hilal",
+		"Nom Etab": "Bni Hilal",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Bni Tsiriss",
+		"Nom Etab": "Bni Tsiriss",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Laaounate",
+		"Nom Etab": "Laaounate",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Oulad Boussaken",
+		"Nom Etab": "Od Boussaken(Od Nacer)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Khmis Ksiba",
+		"Nom Etab": "Ksiba",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Metrane",
+		"Nom Etab": "Metrane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Kridid",
+		"Nom Etab": "Kridid",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Laagagcha",
+		"Nom Etab": "Laagagcha",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Koudiat Bni Dghough",
+		"Nom Etab": "Koudiat B.Dghough",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Tamda",
+		"Nom Etab": "Tamda(S.Abdellah)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Oulad Amrane",
+		"Nom Etab": "Oulad Amrane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Laatatra",
+		"Nom Etab": "Laatatra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Jabria",
+		"Nom Etab": "Jabria",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "M'tal",
+		"Nom Etab": "Mtal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Bennour",
+		"Commune": "Bouhmame",
+		"Nom Etab": "Bouhmame",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Mesti",
+		"Nom Etab": "Mesti",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Sbouya",
+		"Nom Etab": "Sbouya",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Imi N'fast",
+		"Nom Etab": "Imi N'fast",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Tnine Amellou",
+		"Nom Etab": "Amellou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Tangarfa",
+		"Nom Etab": "Tangarfa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Arbaa Ait Abdellah",
+		"Nom Etab": "Ait Abdellah",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Tioughza",
+		"Nom Etab": "Tiougza   ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Mirleft",
+		"Nom Etab": "Mirleft",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Sidi M'bark",
+		"Nom Etab": "Sidi M'barek",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Sidi H'saine Ou Ali",
+		"Nom Etab": "Mirghte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Ait Erkha",
+		"Nom Etab": "Ait Erkha",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Sidi Abdallah  Ou Belaid",
+		"Nom Etab": "Id Ouali",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Boutrouch",
+		"Nom Etab": "Ait Moussa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Ibdar",
+		"Nom Etab": "Ibder",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Tighirt",
+		"Nom Etab": "Tighirt",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Sebt Ennabour",
+		"Nom Etab": "Tajjajte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Ifni",
+		"Commune": "Anfeg",
+		"Nom Etab": "Anfeg",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Bni Oual",
+		"Nom Etab": "Rhamna Sedra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Ain Dfali",
+		"Nom Etab": "Ain Dfali",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Moulay Abdelkader",
+		"Nom Etab": "El Ayach",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Sidi Azzouz",
+		"Nom Etab": "Azib Cherradi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Sidi Ahmed Benaissa",
+		"Nom Etab": "Roua",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Sidi Ameur Al Hadi",
+		"Nom Etab": "S.Ameur Al Hadi",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Lamrabih",
+		"Nom Etab": "Lamrabih",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Sidi M'hamed Chelh",
+		"Nom Etab": "S.M'hamed Chelh",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Oulad Nouel",
+		"Nom Etab": "Oulad Nouel",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Taoughilt",
+		"Nom Etab": "Taoughilt",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Khnichet",
+		"Nom Etab": "Khnichet",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Nouirate",
+		"Nom Etab": "Nouirate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Sidi Al Kamel",
+		"Nom Etab": "Sidi Al Kamel (Kratt)",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Ermilate",
+		"Nom Etab": "Oulad Soltane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Al Haouafate",
+		"Nom Etab": "Al Haouafate",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Sefsaf",
+		"Nom Etab": "Sefsaf",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Dar Laaslouji",
+		"Nom Etab": "Oulad Moussa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Bab Tiouka",
+		"Nom Etab": "Bab Tiouka",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Zirara",
+		"Nom Etab": "Zirara",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Zaggota",
+		"Nom Etab": "Zaggota",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Selfat",
+		"Nom Etab": "Azib Nihi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Tekna",
+		"Nom Etab": "Tekna",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Bir Taleb",
+		"Nom Etab": "Bir Taleb",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Kacem",
+		"Commune": "Chbanate",
+		"Nom Etab": "Chbanate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Slimane",
+		"Commune": "Oulad Ben Hammadi",
+		"Nom Etab": "Ouled Boutabet",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Slimane",
+		"Commune": "Boumaiz",
+		"Nom Etab": "Od S. ABDELGHAYATI  (ZIAINA)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Slimane",
+		"Commune": "Sfafaa",
+		"Nom Etab": "Mradsa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Slimane",
+		"Commune": "Kceibya",
+		"Nom Etab": "Ouled Hannoune",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Slimane",
+		"Commune": "Azghar",
+		"Nom Etab": "Lahouarta",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Slimane",
+		"Commune": "Dar Bel Amri",
+		"Nom Etab": "Dar Bel Amri",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Sidi Slimane",
+		"Commune": "M'saada",
+		"Nom Etab": "Baggara",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Sidi Slimane",
+		"Commune": "Oulad H'cine",
+		"Nom Etab": "Laabyat",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Skhirate-Temara",
+		"Commune": "Mers El Kheir",
+		"Nom Etab": "Mers El Kheir",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Skhirate-Temara",
+		"Commune": "Sabbah",
+		"Nom Etab": "Sebbah",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Skhirate-Temara",
+		"Commune": "El Menzeh",
+		"Nom Etab": "El Menzeh",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Skhirate-Temara",
+		"Commune": "Oumazza",
+		"Nom Etab": "Oumazza",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Skhirate-Temara",
+		"Commune": "Sidi Yahya Zaer",
+		"Nom Etab": "Sidi Yahya Zaers",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tan Tan",
+		"Commune": "Ben Khlil",
+		"Nom Etab": "Ben Khlil",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tan Tan",
+		"Commune": "Chbika",
+		"Nom Etab": "Chbika",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tan Tan",
+		"Commune": "Abteh",
+		"Nom Etab": "Abteh",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tan Tan",
+		"Commune": "Msied",
+		"Nom Etab": "Msied",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tan Tan",
+		"Commune": "Tilemzoun",
+		"Nom Etab": "Tilemzoun",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tanger Assilah",
+		"Commune": "Dar Chaoui",
+		"Nom Etab": "Dar Chaoui",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tanger Assilah",
+		"Commune": "Azzinate",
+		"Nom Etab": "Zinate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tanger Assilah",
+		"Commune": "Had Al Gharbia",
+		"Nom Etab": "Had Gharbia",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tanger Assilah",
+		"Commune": "Sahel Chamali",
+		"Nom Etab": "Mejlaou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tanger Assilah",
+		"Commune": "Sidi Lyamani",
+		"Nom Etab": "Sidi Lyamani",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tanger Assilah",
+		"Commune": "Al Manzla",
+		"Nom Etab": "Barrage Elhachef",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tanger Assilah",
+		"Commune": "Aquouass Briech",
+		"Nom Etab": "Briech",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tanger Assilah",
+		"Commune": "Laaouama",
+		"Nom Etab": "Gouaret",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Bouchabel",
+		"Nom Etab": "Bouchabel",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Jbabra",
+		"Nom Etab": "Jbabra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Sidi El Abed",
+		"Nom Etab": "Sidi El Abed (Rhrasla)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Loulja",
+		"Nom Etab": "Oulja",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Moulay Abdelkrim",
+		"Nom Etab": "My ABDELKRIM",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Bni Snous",
+		"Nom Etab": "Bni Snous",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Moulay Bouchta",
+		"Nom Etab": "Moulay Bouchta",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Mkansa",
+		"Nom Etab": "Mkansa",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Ghouazi",
+		"Nom Etab": "Rhouazi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Galaz",
+		"Nom Etab": "Galaz",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Ourtzagh",
+		"Nom Etab": "Ourtzarh",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Sidi Haj M'hamed",
+		"Nom Etab": "S.Haj M'hamed (Bab Mansoura)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Ratba",
+		"Nom Etab": "Ratba",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "El Bibane",
+		"Nom Etab": "El Bibane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Oudka",
+		"Nom Etab": "Oudka (Souk  El Had)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Sidi Yahya  Bni Zeroual",
+		"Nom Etab": "Oulad Salah ( S.Yahia Bni Zeroual)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Sidi Mokhfi",
+		"Nom Etab": "Sidi Mokhfi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Timezgana",
+		"Nom Etab": "Timzgana",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Kissane",
+		"Nom Etab": "Kissane (Kallaline)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Tabouda",
+		"Nom Etab": "Tabouda",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Tafrant",
+		"Nom Etab": "Tafrant",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Ain Mediouna",
+		"Nom Etab": "Ain Mediouna",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Bni Oulid",
+		"Nom Etab": "Bni Oulid",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Bouadel",
+		"Nom Etab": "Bouadel Lemrouj",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Bouhouda",
+		"Nom Etab": "Bouhouda",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Zrizer",
+		"Nom Etab": "Zrizer",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Khlalfa",
+		"Nom Etab": "Khlalfa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Rghioua",
+		"Nom Etab": "Bab Ouender",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Mezraoua",
+		"Nom Etab": "Oulad Tahar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Tamedit",
+		"Nom Etab": "Tamedit",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Bni Ounjel Tafraout",
+		"Nom Etab": "S.Abderrahman",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Fennassa Bab El Hit",
+		"Nom Etab": "Beni Ouenjel",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "El Bsabsa",
+		"Nom Etab": "El Bsabsa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Oued Jemaa",
+		"Nom Etab": "Oued Jemaa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Ras El Oued",
+		"Nom Etab": "Ras El Oued",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Sidi M'hamed  Ben Lahcen",
+		"Nom Etab": "S. M'hamed B. Lahcen (Gaada Rouichyine)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Ain Maatouf",
+		"Nom Etab": "Ain Maatouf (Ain Khmis)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Ain Aicha",
+		"Nom Etab": "Ain Aicha",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Oulad Daoud",
+		"Nom Etab": "Oulad Daoud",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Bouarouss",
+		"Nom Etab": "Bouarouss",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Ain Legdah",
+		"Nom Etab": "Ain Legdah",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Messassa",
+		"Nom Etab": "Messassa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Outabouabane",
+		"Nom Etab": "Outabouabane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taounate",
+		"Commune": "Oulad Ayyad",
+		"Nom Etab": "Oulad Ayyad",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taourirt",
+		"Commune": "Gteter",
+		"Nom Etab": "Gteter   ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taourirt",
+		"Commune": "Ahl Oued Za",
+		"Nom Etab": "Ahl Ouad Za",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taourirt",
+		"Commune": "Melg El Ouidane",
+		"Nom Etab": "Melg El Ouidane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taourirt",
+		"Commune": "Mechraa Hammadi",
+		"Nom Etab": "Machraa  Hammadi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taourirt",
+		"Commune": "Mestegmer",
+		"Nom Etab": "Mestegmer",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taourirt",
+		"Commune": "Tancherfi",
+		"Nom Etab": "Tancherfi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taourirt",
+		"Commune": "Sidi Ali Belkassem",
+		"Nom Etab": "Beni Reiss",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taourirt",
+		"Commune": "Sidi Lahsen",
+		"Nom Etab": "Sidi Lahsen",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taourirt",
+		"Commune": "Oulad M'hammed",
+		"Nom Etab": "Oulad M'hammed",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tarfaya",
+		"Commune": "C.R. Tah",
+		"Nom Etab": "Tah",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Ait Abdallah",
+		"Nom Etab": "A. Abdellah",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Toufelaazt",
+		"Nom Etab": "Toufelaazt",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tabia",
+		"Nom Etab": "Tabia",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Toumliline",
+		"Nom Etab": "Imlil",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Imaouen",
+		"Nom Etab": "Aguerd Noualous(Tasserga)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tindine",
+		"Nom Etab": "Tindine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Sidi Boaal",
+		"Nom Etab": "Anzergue",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Amalou",
+		"Nom Etab": "Tayert",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tataoute",
+		"Nom Etab": "Indouzal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Azaghar N'irs",
+		"Nom Etab": "Azaghar N'irs",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tisfane",
+		"Nom Etab": "Jemaa Tafraout",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Nihit",
+		"Nom Etab": "Nihit",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Oualqadi",
+		"Nom Etab": "Oualqadi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Imi N'tayart",
+		"Nom Etab": "Berguen",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Adar",
+		"Nom Etab": "Tignatine",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Argana",
+		"Nom Etab": "Argana",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Bigoudine",
+		"Nom Etab": "Bigoudine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Talmakante",
+		"Nom Etab": "Talmakante",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Imilmaiss",
+		"Nom Etab": "Tanoute",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Sidi Boumoussa",
+		"Nom Etab": "S.Boumoussa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Issen",
+		"Nom Etab": "Tnine Od Teima",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Sidi Ahmed Ou Amar",
+		"Nom Etab": "S.A. Ou Aamar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Lagfifat",
+		"Nom Etab": "Lagfifat",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Sidi Moussa Lhamri",
+		"Nom Etab": "Brahim Roudani (Ait Hmida)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Eddir",
+		"Nom Etab": "D'kheila",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Ahl Ramel",
+		"Nom Etab": "Ksiba",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Assads",
+		"Nom Etab": "Assads",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tidsi Nissendalene",
+		"Nom Etab": "Imighzer",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "El Koudia El Beida",
+		"Nom Etab": "El Koddia",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Lakhnafif",
+		"Nom Etab": "Lakhnafif",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Machraa El Ain",
+		"Nom Etab": "Machraa El Ain",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Lamhadi",
+		"Nom Etab": "Ouled Rahou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Ida Ou Moumen",
+		"Nom Etab": "Ahmer",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Ahmar Laglalcha",
+		"Nom Etab": "Bouida",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Zaouia Sidi Tahar",
+		"Nom Etab": "Zt. S.TAHER (DECHRA)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Lamnizla",
+		"Nom Etab": "Lamnizla",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tamaloukte",
+		"Nom Etab": "Tamaloukte",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Imoulass",
+		"Nom Etab": "Imoulass",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Ait Makhlouf",
+		"Nom Etab": "Boulaajlat",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tafraouten",
+		"Nom Etab": "Tafraouten",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Sidi Dahmane",
+		"Nom Etab": "Sidi Dahmane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Sidi Borja",
+		"Nom Etab": "Sidi Borja",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Freija",
+		"Nom Etab": "Freija",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tazemmourt",
+		"Nom Etab": "Tazemmourt",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Bounrar",
+		"Nom Etab": "Migrane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tiout",
+		"Nom Etab": "20 Aout (Tiout)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Sidi Ahmed Ou Abdallah",
+		"Nom Etab": "S.A.Ou Abdellah (Tamquerte)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Ait Igas",
+		"Nom Etab": "Ait Ouaarab",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Oulad Aissa",
+		"Nom Etab": "Oulad Aissa",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Igli",
+		"Nom Etab": "Igli",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Arazane",
+		"Nom Etab": "Arazane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Toughmart",
+		"Nom Etab": "Magnoune",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Igoudar Mnabha",
+		"Nom Etab": "Igoudar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Ida Ou Gailal",
+		"Nom Etab": "Ida Ou Gailal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tinzart",
+		"Nom Etab": "Ait Hamd",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Lamhara",
+		"Nom Etab": "Tassoukte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Sidi Abdellah Ou Said",
+		"Nom Etab": "S.Abdellah Ou Said",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Talgjount",
+		"Nom Etab": "Talgjount",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tizi N'test",
+		"Nom Etab": "Chafarni",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Ouneine",
+		"Nom Etab": "Ouneine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tafingoult",
+		"Nom Etab": "Tafingoult",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Sidi Ouaaziz",
+		"Nom Etab": "Ait Oussaih",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tigouga",
+		"Nom Etab": "Tigouga",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Ida Ougoummad",
+		"Nom Etab": "Ida Ougoummad",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "El Faid",
+		"Nom Etab": "El Faid",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tisrasse",
+		"Nom Etab": "Boutouga (Tisrasse)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Ouzioua",
+		"Nom Etab": "Ouzioua",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Toubkal",
+		"Nom Etab": "Toubkal (Imlil)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Ahl Tifnoute",
+		"Nom Etab": "Assarague",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Iguidi",
+		"Nom Etab": "Tifnoute",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Taouyalte",
+		"Nom Etab": "Taouiyalte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Askaouen",
+		"Nom Etab": "Askaouen",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Azrar",
+		"Nom Etab": "Amzlou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Agadir Melloul",
+		"Nom Etab": "Agadir Melloul",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tizgzaouine",
+		"Nom Etab": "Tirit",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Sidi Hsaine",
+		"Nom Etab": "Ighri (S. Hsaine)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Tassousfi",
+		"Nom Etab": "Imgoune",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Assaisse",
+		"Nom Etab": "Assaise",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Zagmouzen",
+		"Nom Etab": "Agadir N'ait Taleb",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taroudant",
+		"Commune": "Assaki",
+		"Nom Etab": "Assaki",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Ait Ouabelli",
+		"Nom Etab": "Ait Ouabelli",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Kasbat Sidi Abdellah Ben M'barek",
+		"Nom Etab": "K S.Abd B.M'barek",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Tizounine",
+		"Nom Etab": "Touzounine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Tamanarte",
+		"Nom Etab": "Tamanarte (Aguerd)",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Adis",
+		"Nom Etab": "Addis",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Oum El Guerdane",
+		"Nom Etab": "Oum Lguerdane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Tigzmerte",
+		"Nom Etab": "Tigzmerte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Tagmout",
+		"Nom Etab": "Tagmoute",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Issafen",
+		"Nom Etab": "Issafen",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Tizaghte",
+		"Nom Etab": "Tizaghte (Tizgui)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Akka Ighane",
+		"Nom Etab": "Akka-Ighane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Aguinane",
+		"Nom Etab": "Aguinane (Fiferd)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Ibn Yacoub",
+		"Nom Etab": "Ibn Yacoub (Imintatelt)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Allougoum",
+		"Nom Etab": "Allougoum",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Tlite",
+		"Nom Etab": "Tlite",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tata",
+		"Commune": "Tissint",
+		"Nom Etab": "Tissint",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Ait Saghrouchen",
+		"Nom Etab": "Bouzemlane",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Maghraoua",
+		"Nom Etab": "Maghraoua",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Tazarine",
+		"Nom Etab": "Tazarine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Bouyablane",
+		"Nom Etab": "Bouyablane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Matmata",
+		"Nom Etab": "Matmata",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Smià",
+		"Nom Etab": "Smia",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Zrarda",
+		"Nom Etab": "Zrarda",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Bni Ftah",
+		"Nom Etab": "Bni Ftah",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Traiba",
+		"Nom Etab": "Tlata Traiba",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Taifa",
+		"Nom Etab": "Bab Elmrouj",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Kaf El Ghar",
+		"Nom Etab": "Kaf El Ghar",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Msila",
+		"Nom Etab": "Had Msila",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Brarha",
+		"Nom Etab": "Brarha",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "El Gouzate",
+		"Nom Etab": "El Gouzate  ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Tainaste",
+		"Nom Etab": "Tainaste",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Bab Boudir",
+		"Nom Etab": "Bab Boudir",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Bab Marzouka",
+		"Nom Etab": "Bab Marzouka",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Galdamane",
+		"Nom Etab": "Galdamane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Meknassa Acharqia",
+		"Nom Etab": "Meknassa Cherkia",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Meknassa Al Gharbia",
+		"Nom Etab": "Meknassa Rharbia",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Bni Lent",
+		"Nom Etab": "Bni Lent",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Oulad Chrif",
+		"Nom Etab": "Od Cherif (Bab Ramla)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Oulad Zbair",
+		"Nom Etab": "Oulad Zbair",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Bouhlou",
+		"Nom Etab": "Bouhlou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Bouchfaa",
+		"Nom Etab": "Bouchfaa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Ghiata Al Gharbia",
+		"Nom Etab": "Gaada  Lhamra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Rbaa El Fouki",
+		"Nom Etab": "Rbaa El Fouki (El Fahsse)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Bni Frassen",
+		"Nom Etab": "Bni Frassen",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Bourd",
+		"Nom Etab": "Boured",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Ajdir",
+		"Nom Etab": "Ajdir",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Gzenaya Al Janoubia",
+		"Nom Etab": "Malal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Jbarna",
+		"Nom Etab": "Jbarna",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Sidi Ali Bourakba",
+		"Nom Etab": "S.Ali Bourakba",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Taza",
+		"Commune": "Tizi Ouasli",
+		"Nom Etab": "Tizi Ouasli",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Ain Lahsan",
+		"Nom Etab": "Fondaq",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Souk Kdim",
+		"Nom Etab": "Souk Kdim",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Jbel Lahbib",
+		"Nom Etab": "Jbel Hbib",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Bni Harchen",
+		"Nom Etab": "Bni Harchen",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Mallalienne",
+		"Nom Etab": "Mallalienne",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Saddina",
+		"Nom Etab": "Saddina",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Al Hamra",
+		"Nom Etab": "Beni Hassan",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Bni Leit",
+		"Nom Etab": "Timizar",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Al Oued",
+		"Nom Etab": "Khazzan Laou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Oulad Ali Mansour",
+		"Nom Etab": "Ichouchen",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Dar Bni Karrich",
+		"Nom Etab": "Ben Karrich",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Bni Idder",
+		"Nom Etab": "Bni Idder",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Sahtryine",
+		"Nom Etab": "Amzal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Bghaghza",
+		"Nom Etab": "Had Bghaghza",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Al Khrroub",
+		"Nom Etab": "Dchar Tnine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Zaitoune",
+		"Nom Etab": "Zaitoun (Beni Salah)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Azla",
+		"Nom Etab": "Azla    ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Zinat",
+		"Nom Etab": "Zinate (Dar En-Nia)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Bni Said",
+		"Nom Etab": "Bni Said (Chrouda)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tetouan",
+		"Commune": "Zaouiat Sidi Kacem",
+		"Nom Etab": "Tassift (Amsa)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Ait Sedrate Jbel  El Soufla",
+		"Nom Etab": "Ait Idir",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Ait Sedrate Jbel  El Oulia",
+		"Nom Etab": "Ait Hammou Osaid (Tizguine)",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Ait Youl",
+		"Nom Etab": "Ait Youl",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Ait Sedrate Sahl Charkia",
+		"Nom Etab": "Tassouite",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Ait Sedrate Sahl El Gharbia",
+		"Nom Etab": "A.Tazarine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Ait Ouassif",
+		"Nom Etab": "Azrou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Ighil N'oumgoun",
+		"Nom Etab": "Ait Hmad",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Souk Lakhmis Dades",
+		"Nom Etab": "Khmis",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Ait El Farsi",
+		"Nom Etab": "Ait El Farsi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Ikniouen",
+		"Nom Etab": "Ikniouen",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "M'semrir",
+		"Nom Etab": "M'semrir",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Tilmi",
+		"Nom Etab": "Tilmi",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Imider",
+		"Nom Etab": "Imider",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Ouaklim",
+		"Nom Etab": "Ouaklim",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Taghzoute N'ait Atta",
+		"Nom Etab": "Taghzoute",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Toudgha El Oulia",
+		"Nom Etab": "Tizgui",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Toudgha Essoufla",
+		"Nom Etab": "Ait Iala",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Alnif",
+		"Nom Etab": "Alnif",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "M'ssici",
+		"Nom Etab": "M'ssici",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "H'ssyia",
+		"Nom Etab": "Ait Saadane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Assoul",
+		"Nom Etab": "Assoul",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tinghir",
+		"Commune": "Ait Hani",
+		"Nom Etab": "Ait Hani",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Arbaa Rasmouka",
+		"Nom Etab": "Ras Mouka",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "El Maader El Kabir",
+		"Nom Etab": "El Maader",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Reggada",
+		"Nom Etab": "Reggada",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Sidi Bouabdelli",
+		"Nom Etab": "Sidi Bouabdlli",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Bounaamane",
+		"Nom Etab": "Bounaamane   ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Ouijjane",
+		"Nom Etab": "Ouijjane",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Tnine Aglou",
+		"Nom Etab": "Aglou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Arbaa Sahel",
+		"Nom Etab": "Sahel",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Ammelne",
+		"Nom Etab": "Amelne",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Tarsouat",
+		"Nom Etab": "Tarsouat",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Tassrirt",
+		"Nom Etab": "Tassrirt",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Afella Ighir",
+		"Nom Etab": "Afella Ighir",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Irigh N'tahala",
+		"Nom Etab": "Tahala",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Ait Ouafqa",
+		"Nom Etab": "Ait Ouafqa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Tnine Aday",
+		"Nom Etab": "Aday",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Tafraout El Mouloud",
+		"Nom Etab": "Taf.El Mouloud",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Anzi",
+		"Nom Etab": "Anzi",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Tighmi",
+		"Nom Etab": "Tighmi   ",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Arbaa Ait Ahmed",
+		"Nom Etab": "Ait Ahmed",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Tizoughrane",
+		"Nom Etab": "Idaousemllal",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Ait Issafen",
+		"Nom Etab": "Ighir Mouss",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Ida Ou Gougmar",
+		"Nom Etab": "Tifrmit",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Tiznit",
+		"Commune": "Sidi Ahmed Ou Moussa",
+		"Nom Etab": "Tazeroualte",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Youssoufia",
+		"Commune": "Atiamim",
+		"Nom Etab": "Atiamim",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Youssoufia",
+		"Commune": "Jdour",
+		"Nom Etab": "Jdour",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Youssoufia",
+		"Commune": "Jnane Bouih",
+		"Nom Etab": "Jnane Bouih",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Youssoufia",
+		"Commune": "Lakhoualqa",
+		"Nom Etab": "Lakhoualqa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Youssoufia",
+		"Commune": "Ras El Ain",
+		"Nom Etab": "Ras El Ain",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Youssoufia",
+		"Commune": "Sidi Chiker",
+		"Nom Etab": "Sidi Chiker",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Youssoufia",
+		"Commune": "Ighoud",
+		"Nom Etab": "Ighoud",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Youssoufia",
+		"Commune": "Esbiaat",
+		"Nom Etab": "Fouraa",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Youssoufia",
+		"Commune": "El Gantour",
+		"Nom Etab": "Sidi Ahmed",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Tamezmoute",
+		"Nom Etab": "Tamezmoute",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Afella N'dra",
+		"Nom Etab": "Taghrote",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Mezguita",
+		"Nom Etab": "Tamnougalte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Tansifte",
+		"Nom Etab": "Tasla",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Oulad Yahia Lagraire",
+		"Nom Etab": "Od SLIMANE",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Afra",
+		"Nom Etab": "Afra",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Tazarine",
+		"Nom Etab": "Tazarine",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Taghbalte",
+		"Nom Etab": "Taghbalte",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Ait Boudaoud",
+		"Nom Etab": "Amrad",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "N'kob",
+		"Nom Etab": "N'kob",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Ait Ouallal",
+		"Nom Etab": "Ait Chrou",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Tinzouline",
+		"Nom Etab": "Tinzouline",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Taftechna",
+		"Nom Etab": "Taftechna",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Bni Zoli",
+		"Nom Etab": "Bni Zoli",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Bouzeroual",
+		"Nom Etab": "Akhellouf",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Bleida",
+		"Nom Etab": "Blida Mine",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Errouha",
+		"Nom Etab": "Boukhlal",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Ternata",
+		"Nom Etab": "Tissergate",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Fezouata",
+		"Nom Etab": "Bni Ali",
+		"categorie": "CSC"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Tamegroute",
+		"Nom Etab": "Tamegroute",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "M'hamid El Ghizlane",
+		"Nom Etab": "M'hamid",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Tagounite",
+		"Nom Etab": "Tagounite",
+		"categorie": "CSCA"
+	},
+	{
+		"Province": "Zagora",
+		"Commune": "Ktaoua",
+		"Nom Etab": "Blida",
+		"categorie": "CSC"
+	}
+]

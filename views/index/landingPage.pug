@@ -1,0 +1,46 @@
+extends ../util/base
+
+block body
+	header.landing-page-img
+		.container
+			nav.card.card-body.bg-5-opacity.rounded-0
+				.d-flex.justify-content-between.align-items-center
+					a(href="/")
+						img.img-logo(src="/../../image/logo-test.png", alt="umm")
+					a.btn.btn-sm.bg-5.text-white(href='/sign-in')= data.user ? 'mon profil' : 'se connecter'
+			.py-md-5.py-3.text-white.text-center
+				h1.display-6.fw-bold.mb-3 Lancement de la Plateforme Nationale de la Santé Mobile - Ministère de la santé.
+				span Le Ministère de la Santé en collaboration avec l’Université Mohammed VI Polytechnique lance la nouvelle plateforme nationale digitale pour la santé mobile, visant l’optimisation et l’amélioration de l’offre de soin en relation avec la santé mobile dans la zone rurale.
+	section.card-body
+		.container
+			.row.g-3
+				if (data.articles.docs.length)
+					.col-12
+						.card.bg-grd.p-2.fs-7.text-white.fw-bold.text-center Actualités et Articles
+					//- article card
+					each article in data.articles.docs
+						.col-lg-4.col-md-6
+							.card.w-100
+								img.card-img-top(src='/../../image/news/'+article.image alt='title')
+								.card-body
+									.fs-6.card-title.fw-bold.text-1= article.title
+									.fs-7.card-title.text-dark= article.text.length > 200 ? article.text.substring(0,200) + '...' : article.text
+									a.btn.btn-sm.text-dark.bg-8(href='/article/'+article._id) Détails
+					//- pagination
+					.col-12.text-center
+						.btn-group.shadow-0
+							if (data.articles.hasPrevPage)
+								a.btn.btn-sm.bg-5.text-white(href='#')
+									<ion-icon name="chevron-back-outline" class="align-middle"></ion-icon>
+							a.btn.btn-sm.bg-5.text-white(href='#')= data.articles.page
+							if (data.articles.hasNextPage)
+								a.btn.btn-sm.bg-5.text-white(href='#')
+									<ion-icon name="chevron-forward-outline" class="align-middle"></ion-icon>
+	footer.bg-dark.card-body
+		.container
+			.row.g-3
+				.col-12.text-center
+					a(href="/")
+						img.img-logo(src="/../../image/logo-test.png", alt="umm")
+				.col-12
+					include ../util/snippet/footer

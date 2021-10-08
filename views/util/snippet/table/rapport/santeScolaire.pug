@@ -1,0 +1,50 @@
+
+if (santeScolaire)
+	//- VARIABLES
+	-var title = 'Santé scolaire', id = 'santeScolaire'
+	//- LAYOUTS
+	.col-12
+		.card
+			.card-body
+				.d-flex.align-items-center.justify-content-between
+					.d-flex.align-items-center.fw-bold
+						ion-icon.text-1.fs-6.me-2(name='school-outline')
+						span.fs-7.text-dark= title
+					//- download pdf / excel
+					.btn-group.shadow-0(role='group')
+						button.btn.btn-sm.btn-light(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+							<ion-icon class="fs-5" name="download-outline"></ion-icon>
+						ul.dropdown-menu.shadow.border
+							li
+								button.dropdown-item.downloadSortiePdf(type='button' data-id=id data-region=document.region data-province=document.province data-csr=document.csr data-category=document.category data-trimestre=trimestre data-createdat=data.sortie ? data.sortie.createdAt : data.trimestre.createdAt data-updatedat= data.sortie ? data.sortie.updatedAt : '' data-submit=data.sortie ? data.sortie.submit : '')
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/pdf.svg", alt="pdf" width="20px")
+										span PDF
+							li
+								button.dropdown-item.downloadExcel(type='button' data-title=title data-id=id)
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/excel.svg", alt="pdf" width="20px")
+										span Excel
+			.card-body
+				.table-responsive
+					table.table.thisTable.table-bordered(id=id data-title=title data-id=id data-align='left')
+						tbody
+							tr
+								th(rowspan="2") Etablissements visités
+								th(rowspan="2")
+								th(rowspan="2") Elèves examinés lors de la VMS
+								th(colspan="2") Lutte contre les déficiences visuelles
+							tr
+								th Echelle Métrique
+								th Réfraction automatique
+							tr
+								td(rowspan="2")= santeScolaire.etablissementVisite
+								th cible
+								td= santeScolaire.eleveExamineVms.cible
+								td= santeScolaire.lutteContreDeficienceVisuelle.echelleMetrique.cible
+								td= santeScolaire.lutteContreDeficienceVisuelle.refractionAutomatique.cible
+							tr
+								th réalisation
+								td= santeScolaire.eleveExamineVms.realisation
+								td= santeScolaire.lutteContreDeficienceVisuelle.echelleMetrique.realisation
+								td= santeScolaire.lutteContreDeficienceVisuelle.refractionAutomatique.realisation

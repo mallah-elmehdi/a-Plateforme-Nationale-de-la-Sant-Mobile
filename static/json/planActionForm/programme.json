@@ -1,0 +1,85 @@
+{
+    "pdr": {
+        "dataType": "array",
+        "title": "Point de rassemblement (PDR)",
+        "data": [
+            {
+				"name": "pdr",
+				"id": "pdrVal",
+                "title": "PDR à couvrir",
+                "type": "text",
+                "col": "col-12"
+            },
+			{
+                "name": "distance",
+                "id": "distance",
+                "title": "Distance entre le centre de santé et le PDR",
+                "type": "number",
+                "col": "col-sm-6"
+            },
+            {
+                "name": "accessibility",
+                "id": "accessibility",
+                "title": "Accessibilité au PDR",
+                "type": "text",
+                "col": "col-sm-6",
+                "select": true,
+                "data": [
+                    "Choisissez une option",
+                    "Goudron",
+                    "Piste",
+                    "Toufna",
+                    "Mixte"
+                ]
+            }
+        ]
+    },
+    "localite": {
+        "title": "Localités",
+        "dataType": "array",
+        "data": [
+            {
+				"name": "localite",
+				"id": "localite",
+                "title": "Liste des localités par PDR",
+                "col": "col-12",
+                "type": "text",
+                "selectCheckbox": true
+            }
+        ]
+    },
+    "umm": {
+        "dataType": "array",
+        "title": "Nombre des UMM programmées",
+        "data": [
+            {
+				"name": "t1",
+				"id": "t1Val",
+                "title": "Trimestre 1",
+                "type": "number",
+                "col": "col-lg-3 col-md-6 col-sm-6"
+            },
+            {
+				"name": "t2",
+				"id": "t2Val",
+                "title": "Trimestre 2",
+                "type": "number",
+                "col": "col-lg-3 col-md-6 col-sm-6"
+            },
+            {
+				"name": "t3",
+				"id": "t3Val",
+                "title": "Trimestre 3",
+                "type": "number",
+                "col": "col-lg-3 col-md-6 col-sm-6"
+            },
+            {
+				"name": "t4",
+				"id": "t4Val",
+                "title": "Trimestre 4",
+                "type": "number",
+                "col": "col-lg-3 col-md-6 col-sm-6"
+            }
+        ]
+    }
+}

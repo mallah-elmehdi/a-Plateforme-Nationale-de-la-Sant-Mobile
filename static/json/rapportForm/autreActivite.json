@@ -1,0 +1,46 @@
+{
+    "type": {
+        "dataType": "array",
+        "data": [
+            {
+                "name": "activity[typeBeneficier]",
+				"id": "activityTypeBeneficier",
+                "title": "Type de bénéficiaire",
+                "type": "text",
+                "col": "col-md-6",
+                "list": true,
+                "data": [
+					"Bénéficiaire",
+					"Acte"
+                ]
+            }
+        ]
+    },
+    "autre": {
+        "dataType": "array",
+        "data": [
+            {
+                "name": "activity[type]",
+				"id": "activityType",
+                "title": "Type d’activité",
+                "type": "text",
+                "col": "col-sm-6"
+            },
+            {
+                "name": "activity[beneficier]",
+				"id": "activityBeneficier",
+                "title": "Nombre de bénéficiaires / Actes",
+                "type": "number",
+                "col": "col-sm-6"
+            },
+            {
+                "name": "activity[observation]",
+				"id": "activityObservation",
+                "title": "Observation",
+                "type": "text",
+                "col": "col-12",
+                "textarea": true
+            }
+        ]
+    }
+}

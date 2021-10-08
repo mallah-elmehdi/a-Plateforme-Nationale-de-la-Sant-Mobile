@@ -1,0 +1,56 @@
+.table-responsive
+	table.table.table-hover
+		thead
+			tr
+				th(scope='col')
+				th(scope='col') Remplissage
+				th(scope='col') Action
+		tbody
+			tr
+				th(scope='row') Population à couvrir par l'équipe mobile
+				if (population)
+					td
+						span.text-success rempli
+					td
+						a.link-primary.text-decoration-none(href='/csr/' + document._id + '/add-population') modifier
+				else
+					td
+						span.text-danger non rempli
+					td
+						a.link-primary.text-decoration-none(href='/csr/' + document._id + '/add-population') ajouter
+			tr
+				th(scope='row') Programme prévisionnel des UMM
+				if (programme.length > 0)
+					td
+						span.text-success rempli
+					td
+						a.link-primary.text-decoration-none(href='/csr/' + document._id + '/add-programme') modifier
+				else
+					td
+						span.text-danger non rempli
+					td
+						a.link-primary.text-decoration-none(href='/csr/' + document._id + '/add-programme') ajouter
+			tr
+				th(scope='row') Situation des moyens de mobilité
+				if (ressource)
+					td
+						span.text-success rempli
+					td
+						a.link-primary.text-decoration-none(href='/csr/' + document._id + '/add-ressource') modifier
+				else
+					td
+						span.text-danger non rempli
+					td
+						a.link-primary.text-decoration-none(href='/csr/' + document._id + '/add-ressource') ajouter
+			tr
+				th(scope='row') Ressources humaines
+				if (ressourceHumain)
+					td
+						span.text-success rempli
+					td
+						a.link-primary.text-decoration-none(href='/csr/' + document._id + '/add-ressource-humain') modifier
+				else
+					td
+						span.text-danger non rempli
+					td
+						a.link-primary.text-decoration-none(href='/csr/' + document._id + '/add-ressource-humain') ajouter

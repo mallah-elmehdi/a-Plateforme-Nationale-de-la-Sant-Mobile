@@ -1,0 +1,105 @@
+{
+	"fix": {
+		"dataType": "array",
+		"title": "Mode Fixe",
+		"data": [
+			{
+				"name": "fixe[medecin]",
+				"id": "fixeMedecin",
+				"col": "col-md-4 col-sm-6",
+				"type": "number",
+				"title": "Médecin"
+			},
+			{
+				"name": "fixe[infirmier]",
+				"id": "fixeInfirmier",
+				"col": "col-md-4 col-sm-6",
+				"type": "number",
+				"title": "Infirmière(er)"
+			},
+			{
+				"name": "fixe[sageFemme]",
+				"id": "fixeSageFemme",
+				"col": "col-md-4 col-sm-6",
+				"type": "number",
+				"title": "Sage Femme"
+			},
+			{
+				"name": "fixe[technicien]",
+				"id": "fixeTechnicien",
+				"col": "col-md-4 col-sm-6",
+				"type": "number",
+				"title": "Technicien"
+			},
+			{
+				"name": "fixe[chauffeur]",
+				"id": "fixeChauffeur",
+				"col": "col-md-4 col-sm-6",
+				"type": "number",
+				"title": "Chauffeur"
+			},
+			{
+				"name": "fixe[appuie]",
+				"id": "fixeAppuie",
+				"col": "col-md-4 col-sm-6",
+				"type": "number",
+				"title": "Ressources humaines d'appuie"
+			}
+		]
+	},
+	"mobile": {
+		"title": "Mode Mobile",
+		"dataType": "array",
+		"data": [
+			{
+				"name": "mobile[medecin]",
+				"id": "mobileMedecin",
+				"col": "col-md-4 col-sm-6",
+				"type": "number",
+				"title": "Médecin"
+			},
+			{
+				"name": "mobile[infirmier]",
+				"id": "mobileInfirmier",
+				"col": "col-md-4 col-sm-6",
+				"type": "number",
+				"title": "Infirmière(er)"
+			},
+			{
+				"name": "mobile[sageFemme]",
+				"id": "mobileSageFemme",
+				"col": "col-md-4 col-sm-6",
+				"type": "number",
+				"title": "Sage Femme"
+			},
+			{
+				"name": "mobile[technicien]",
+				"id": "mobileTechnicien",
+				"col": "col-md-4 col-sm-6",
+				"type": "number",
+				"title": "Technicien"
+			},
+			{
+				"name": "mobile[chauffeur]",
+				"id": "mobileChauffeur",
+				"col": "col-md-4 col-sm-6",
+				"type": "number",
+				"title": "Chauffeur"
+			},
+			{
+				"name": "mobile[appuie]",
+				"id": "mobileAppuie",
+				"col": "col-md-4 col-sm-6",
+				"type": "number",
+				"title": "Ressources humaines d'appuie"
+			},
+			{
+				"name": "mobile[emOperationnelle]",
+				"id": "mobileEmOperationnelle",
+				"title": "Nombre d’équipes mobile opérationnelle ",
+				"type": "number",
+				"col": "col-12"
+			}
+		]
+	}
+}

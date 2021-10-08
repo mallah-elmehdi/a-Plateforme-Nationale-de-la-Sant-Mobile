@@ -1,0 +1,50 @@
+[
+    {
+        "codeRegion": 1,
+        "region": "Tanger-Tetouan-Al Hoceima"
+    },
+    {
+        "codeRegion": 2,
+        "region": "Oriental"
+    },
+    {
+        "codeRegion": 3,
+        "region": "Fès-Meknès"
+    },
+    {
+        "codeRegion": 4,
+        "region": "Rabat-Salé-Kénitra"
+    },
+    {
+        "codeRegion": 5,
+        "region": "Béni Mellal-Khénifra"
+    },
+    {
+        "codeRegion": 6,
+        "region": "Casablanca-Settat"
+    },
+    {
+        "codeRegion": 7,
+        "region": "Marrakech-Safi"
+    },
+    {
+        "codeRegion": 8,
+        "region": "Drâa-Tafilalet"
+    },
+    {
+        "codeRegion": 9,
+        "region": "Souss-Massa"
+    },
+    {
+        "codeRegion": 10,
+        "region": "Guelmim-Oued Noun"
+    },
+    {
+        "region": "Laayoune-Sakia El Hamra",
+        "codeRegion": 11
+    },
+    {
+        "region": "Eddakhla-Oued Eddahab",
+        "codeRegion": 12
+    }
+]

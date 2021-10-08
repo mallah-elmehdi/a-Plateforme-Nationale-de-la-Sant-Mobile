@@ -1,0 +1,166 @@
+extends ../profile
+
+block head
+
+block tail
+	script(type="module" src="/../../js/csr/validationCheckBox.js")
+	script(type="module" src="/../../js/csr/toggleElement.js")
+	script(type="module" src="/../../js/csr/changeBtnMultiple.js")
+	script(type="module" src="/../../js/util/validation.js")
+
+block main
+	//- FUNCTION
+	-function getValue(object, key) {var list = key.split('[');if (!object) return '';for (let i = 0; i < list.length; i++) {if (list[i].includes(']')) {list[i] = list[i].slice(0, -1);}object = object[list[i]];}return object;}
+	//- VARIABLES
+	-var document = data.document
+	-var autreActivite = data.autreActivite
+	//- LAYOUTS
+	.row.g-3
+		.col-12
+			include ../../util/snippet/titleRapport
+		.col-12
+			.alert.alert-warning.alert-dismissible.m-0.fade.show(role='alert')
+				span Si vous voulez ignorer cette étape.
+				button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+				br
+				form#ignoreForm(action='/csr/'+document._id+'/trimestre/'+trimestre+'/sortie/'+sortie+'/autre-activite/ignore', method="post") 
+					button.btn.btn-sm.btn-warning.mt-3.text-dark(form="ignoreForm") Ignorer cette étape
+		.col-12
+			a.btn.btn-sm.bg-8.text-dark.px-2(href='/csr/' + data.document._id + '/trimestre/' + trimestre + '/sortie/' + sortie)
+				.d-flex.align-items-center
+					<ion-icon name="chevron-back-outline" class="me-2"></ion-icon>
+					span retour au rapport de la sortie
+		.col-12#addStep(style=ignore ?  "display:none;" : "")
+			section.card.card-body
+				.row.g-3
+					//- *** title *** -//
+					.col-12
+						.d-flex.align-items-center
+							<ion-icon name="clipboard-outline" class="fs-5 me-2 text-1"></ion-icon>
+							.fs-6.text-dark Autre activités
+					.col-12
+						.card.card-body.bg-body
+							.d-flex.align-items-center
+								<ion-icon name="information-circle-outline" class="fs-6 me-2"></ion-icon>
+								.fs-7 Veuillez ajouter d'autres activités effectuées
+					//- *** add autreActivite button *** -//
+					.col-12
+						button.btn.btn-success.btn-sm#toggleBtn ajouter
+					//- *** SHOW ALL autreActivite *** -//  
+					if (autreActivite && autreActivite.activity.length && !autreActivite.ignore)
+						.col-12#toggleElementOne
+							.row.g-3
+								//- *** ALL autreActivite *** -//
+								.col-12.fs-7
+									span Vous avez ajouté
+									span.fw-bold.text-1= ' ' + autreActivite.activity.length + ' '
+									span autre activité
+								.col-12
+									#autreActiviteListAccordion.accordion
+										each activity in autreActivite.activity
+											- var autre = { activity }
+											.accordion-item
+												h2.accordion-header(id=`header-${autre.activity._id}`)
+													button.accordion-button.collapsed.fs-7(type='button' data-bs-toggle='collapse' data-bs-target=`#title-${autre.activity._id}` aria-expanded='true' aria-controls=`title-${autre.activity._id}`)= autre.activity.type
+												.accordion-collapse.collapse(id=`title-${autre.activity._id}` aria-labelledby=`header-${autre.activity._id}` data-bs-parent='#autreActiviteListAccordion')
+													.accordion-body
+														form(action=url+'/edit?id='+autre.activity._id method="post")
+															.row.g-3
+																//- *** inputs *** -//
+																- for (var key in form)
+																	-var data = form[key].data
+																	-var title = form[key].title
+																	-var dataType = form[key].dataType
+																	if (dataType === 'array')   
+																		.col-12
+																			if (title)
+																				.d-flex.align-items-center.mb-2
+																					.d-flex.align-items-center.me-2
+																						<ion-icon name="ellipse" class="text-1 me-1 fs-9"></ion-icon>
+																						.badge.p-0.text-dark.fs-7= title
+																					hr.my-1.w-100
+																			else
+																				.d-flex.align-items-center.mb-2
+																					<ion-icon name="ellipse" class="text-1 me-2 fs-9"></ion-icon>
+																					hr.my-1.w-100
+																			.row.g-3
+																				each item in data
+																					div(class=item.col)
+																						//- item's variable
+																						-var value = getValue(autre, item.name)
+																						//- input
+																						label.form-label.text-dark.fs-7(for=item.id)= item.title
+																						if (item.textarea)
+																							textarea.lenghtValidationTextarea.form-control.form-control-sm(class='textarea-'+autre.activity._id type=item.type id=item.id rows="4" disabled placeholder=item.title name=item.name)=value
+																						else if (item.list)
+																							ul.list-group.radioList
+																								each setData in item.data
+																									li.list-group-item.list-group-item-sm
+																										if (setData === value)
+																											input.form-check-input.me-2(type='radio' class='input-'+autre.activity._id disabled checked id=item.id name=item.name value=setData required )
+																										else
+																											input.form-check-input.me-2(type='radio' class='input-'+autre.activity._id disabled id=item.id name=item.name value=setData required)
+																										span.fs-7= setData
+																						else
+																							input.form-control.form-control-sm(class='input-'+autre.activity._id type=item.type id=item.id placeholder=item.title disabled name=item.name value=value required)
+																						.invalid-feedback.fs-8
+																.col-12
+																	button.btn.btn-sm.btn-info.me-2.editBtn(type="button" data-id=autre.activity._id) Modifier
+																	button.btn.btn-sm.btn-danger.deleteBtn(type="button" data-id=autre.activity._id data-bs-toggle='modal' data-bs-target=`#deleteRessource-${autre.activity._id}`) Supprimer
+																	button.btn.btn-sm.btn-success.d-none.me-2.saveBtn(type="submit") Enregistrer
+																	button.btn.btn-sm.btn-light.d-none.cancelBtn(type="button" data-id=autre.activity._id) Annuler
+																	//- Modal delete
+																	.modal.fade(id=`deleteRessource-${autre.activity._id}` data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby=`deleteRessourceLabel-${autre.activity._id}` aria-hidden='true')
+																		.modal-dialog.modal-dialog-centered
+																			.modal-content
+																				.modal-header.border-0
+																					span.text-danger.modal-title.fs-7(id=`deleteRessourceLabel-${autre.activity._id}`) Voulez-vous supprimer cette activité ?
+																					button.btn.btn-sm(type='button' data-bs-dismiss='modal' aria-label='Close')
+																						<ion-icon name="close-outline" class="align-middle fs-5"></ion-icon>
+																				.modal-footer
+																					button.btn.btn-sm.btn-light(type='button' data-bs-dismiss='modal') Annuler
+																					button.btn.btn-sm.btn-danger(form="deleteForm") Supprimer
+														form#deleteForm(action=url+'/delete?activityId='+autre.activity._id, method="post")
+
+					//- *** FORM *** -//
+					.col-12#toggleElementTwo(style="display:none;")
+						form(action=url, method="post")
+							.row.g-3
+								//- *** inputs *** -//
+								-for (var key in form)
+									-var data = form[key].data
+									-var title = form[key].title
+									-var dataType = form[key].dataType
+									if (dataType === 'array')   
+										.col-12
+											if (title)
+												.d-flex.align-items-center.mb-2
+													.d-flex.align-items-center.me-2
+														<ion-icon name="ellipse" class="text-1 me-1 fs-9"></ion-icon>
+														.badge.p-0.text-dark.fs-7= title
+													hr.my-1.w-100
+											else
+												.d-flex.align-items-center.mb-2
+													<ion-icon name="ellipse" class="text-1 me-2 fs-9"></ion-icon>
+													hr.my-1.w-100
+											.row.g-3
+												each item in data
+													div(class=item.col)
+														label.form-label.text-dark.fs-7(for=item.id)= item.title
+														if (item.textarea)
+															textarea.form-control.form-control-sm(type=item.type id=item.id rows="4" placeholder=item.title name=item.name value=value)
+														else if (item.list)
+															ul.list-group.radioList
+																each setData in item.data
+																	li.list-group-item.list-group-item-sm
+																		input.form-check-input.me-2(type='radio' id=item.id name=item.name value=setData required)
+																		span.fs-7= setData
+														else
+															input.form-control.form-control-sm(type=item.type id=item.id placeholder=item.title name=item.name value=value required)
+														.invalid-feedback.fs-8
+								//- *** submit button *** -//
+								.col-12
+									button.btn.btn-sm.bg-grd(type="submit") Enregistrer
+		if (autreActivite && autreActivite.activity.length && !autreActivite.ignore)
+			.col-12
+				a.btn.btn-sm.bg-8.text-dark.me-2(href='/csr/' + document._id + '/trimestre/' + trimestre + '/sortie/' + sortie + '/maladie-depiste') précédent

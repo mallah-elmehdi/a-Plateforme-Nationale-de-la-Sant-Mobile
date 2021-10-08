@@ -1,0 +1,93 @@
+extends ../profile
+
+block head
+
+block tail
+	script(type="module" src="/../../js/util/validation.js")
+	script(type="module" src="/../../js/csr/validationCheckBox.js")
+	script(type="module" src="/../../js/csr/disabledInputRapport.js")
+	script(type="module" src="/../../js/csr/changeBtn.js")
+
+	script(type="module" src="/../../js/csr/pdrVisiteInputValidation.js")
+
+block main
+	//- FUNCTION
+	-function getValue(object, key) {var list = key.split('[');if (!object) return '';for (let i = 0; i < list.length; i++) {if (list[i].includes(']')) {list[i] = list[i].slice(0, -1);}object = object[list[i]];}return object;}
+	//- VARIABLES
+	-var document = data.document
+	-var pdr = data.pdr
+	-var pdrVisite = data.pdrVisite
+	-var id = pdrVisite ? '?id=' + pdrVisite._id : '' 
+	//- LAYOUTS
+	.row.g-3#dataElement(data-element=data.pdrVisite)
+		.col-12
+			include ../../util/snippet/titleRapport
+		.col-12
+			a.btn.btn-sm.bg-8.text-dark.px-2(href='/csr/' + data.document._id + '/trimestre/' + trimestre + '/sortie/' + sortie)
+				.d-flex.align-items-center
+					<ion-icon name="chevron-back-outline" class="me-2"></ion-icon>
+					span retour au rapport de la sortie
+		.col-12
+			section.card.card-body
+				//- *** form *** -//
+				form(action=url+id, method="post")
+					.row.g-3
+						//- *** title *** -//
+						.col-12
+							.d-flex.align-items-center
+								<ion-icon name="location-outline" class="fs-5 me-2 text-1"></ion-icon>
+								.fs-6.text-dark Point de rassemblement visité
+						//- *** inputs *** -//
+						- for (var key in form)
+							-var data = form[key].data
+							-var title = form[key].title
+							-var dataType = form[key].dataType
+							if (dataType === 'array')   
+								.col-12
+									if (title)
+										.d-flex.align-items-center.mb-2
+											.d-flex.align-items-center.me-2
+												<ion-icon name="ellipse" class="text-1 me-1 fs-9"></ion-icon>
+												.fs-7= title
+											hr.my-1.w-100
+									else
+										.d-flex.align-items-center.mb-2
+											<ion-icon name="ellipse" class="text-1 me-2 fs-9"></ion-icon>
+											hr.my-1.w-100
+									.row.g-3
+										each item in data
+											div(class=item.col)
+												//- item's variable
+												-var value = getValue(pdrVisite, item.name)
+												//- input
+												label.form-label.text-dark.fs-7(for=item.id)= item.title
+												if (item.list)
+													ul.list-group.radioList
+														each element in pdr
+															if (pdrVisite && element.id == pdrVisite.pdrVisite.id)
+																li.list-group-item.list-group-item-sm
+																	input.form-check-input.me-2(type='radio' checked name="pdrVisite" value=element._id)
+																	span= element.pdr
+															else
+																li.list-group-item.list-group-item-sm
+																	input.form-check-input.me-2(type='radio' name="pdrVisite" value=element._id)
+																	span= element.pdr
+												else if (item.js)
+													.d-flex.align-items-center
+														span#besoinCarburantShow.badge.bg-5= value || '0'
+												else if (item.textarea)
+													textarea.lenghtValidationTextarea.form-control.form-control-sm(rows="3" type=item.type id=item.id placeholder=item.title name=item.name)= value
+												else
+													input.form-control.form-control-sm(type=item.type id=item.id placeholder=item.title name=item.name value=value required)
+												.invalid-feedback.fs-8
+						//- *** submit button *** -//
+						.col-12
+							if (pdrVisite)
+								button.btn.btn-sm.bg-gray.text-white#editBtn(type="button") Modifier
+								button.btn.btn-sm.btn-success.d-none.me-2#saveBtn(type="submit") Enregistrer
+								button.btn.btn-sm.btn-light.d-none#cancelBtn(type="button") Annuler
+							else
+								button.btn.btn-sm.bg-grd(type="submit") Enregistrer
+		if (pdrVisite)
+			.col-12
+				a.btn.btn-sm.bg-8.text-dark(href='/csr/' + document._id + '/trimestre/' + trimestre + '/sortie/' + sortie + '/population-cible') suivant

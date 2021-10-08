@@ -1,0 +1,53 @@
+if (programme.length)
+	//- VARIABLES
+	-var title = 'Programme prévisionnel des UMM', id = 'programme'
+	//- LAYOUTS
+	.col-12
+		.card
+			.card-body
+				.d-flex.align-items-center.justify-content-between
+					.d-flex.align-items-center.fw-bold
+						ion-icon.text-1.fs-6.me-2(name='list-outline')
+						span.fs-7.text-dark= title
+					//- download pdf / excel
+					.btn-group.shadow-0(role='group')
+						button.btn.btn-sm.btn-light(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+							<ion-icon class="fs-5" name="download-outline"></ion-icon>
+						ul.dropdown-menu.shadow.border
+							li
+								button.dropdown-item.downloadPlanActionPdf(type='button' data-id=id data-region=data.document.region data-province=data.document.province data-csr=document.csr data-category=data.document.category  data-createdat=data.planAction.createdAt data-updatedat=data.planAction.updatedAt data-submit=data.planAction.submit)
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/pdf.svg", alt="pdf" width="20px")
+										span PDF
+							li
+								button.dropdown-item.downloadExcel(type='button' data-title=title data-id=id)
+									.d-flex.align-items-center
+										img.me-2(src="/../../image/excel.svg", alt="pdf" width="20px")
+										span Excel
+			.card-body
+				.table-responsive
+					table.table.thisTable.table-bordered(id=id data-title=title data-id=id data-align='center')
+						tbody
+							tr
+								th PDR à couvrir
+								th Distance entre le centre de santé et le PDR
+								th Accessibilité au PDR
+								th Liste des localités
+								th T1
+								th T2
+								th T3
+								th T4
+							each item in programme
+								tr
+									td(rowspan=item.localite.length)= item.pdr
+									td(rowspan=item.localite.length)= item.distance
+									td(rowspan=item.localite.length)= item.accessibility
+									td= item.localite[0]
+									td(rowspan=item.localite.length)= item.t1
+									td(rowspan=item.localite.length)= item.t2
+									td(rowspan=item.localite.length)= item.t3
+									td(rowspan=item.localite.length)= item.t4
+								-for(var i = 1; i < item.localite.length; i++)
+									tr
+										td= item.localite[i]
+									

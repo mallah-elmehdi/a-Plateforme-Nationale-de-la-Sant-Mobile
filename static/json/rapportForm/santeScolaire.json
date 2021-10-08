@@ -1,0 +1,81 @@
+{
+    "visite": {
+        "title": "Visites des établissements",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "etablissementVisite",
+                "id": "etablissementVisite",
+                "title": "Nombre d’établissements visités",
+                "type": "number",
+                "col": "col-sm-6"
+            }
+        ]
+    },
+    "eleveExamineVms": {
+        "title": "Elèves examinés lors de la VMS",
+        "dataType": "array",
+        "data": [
+            {
+                "name": "eleveExamineVms[cible]",
+				"id": "eleveExamineVmsCible",
+                "title": "cible",
+                "type": "number",
+                "col": "col-sm-6"
+            },
+            {
+                "name": "eleveExamineVms[realisation]",
+				"id": "eleveExamineVmsRealisation",
+                "title": "réalisation",
+                "type": "number",
+                "col": "col-sm-6"
+            }
+        ]
+    },
+    "lutteContreDeficienceVisuelle": {
+        "title": "Lutte contre les déficiences visuelles",
+        "dataType": "object",
+        "data": {
+            "echelleMetrique": {
+                "title": "Echelle Métrique",
+                "dataType": "array",
+                "data": [
+                    {
+                        "name": "lutteContreDeficienceVisuelle[echelleMetrique][cible]",
+						"id": "lutteContreDeficienceVisuelleEchelleMetriqueCible",
+                        "title": "cible",
+                        "type": "number",
+                        "col": "col-sm-6"
+                    },
+                    {
+                        "name": "lutteContreDeficienceVisuelle[echelleMetrique][realisation]",
+						"id": "lutteContreDeficienceVisuelleEchelleMetriqueRealisation",
+                        "title": "réalisation",
+                        "type": "number",
+                        "col": "col-sm-6"
+                    }
+                ]
+            },
+            "refractionAutomatique": {
+                "title": "Réfraction automatique",
+                "dataType": "array",
+                "data": [
+                    {
+                        "name": "lutteContreDeficienceVisuelle[refractionAutomatique][cible]",
+						"id": "lutteContreDeficienceVisuelleRefractionAutomatiqueCible",
+                        "title": "cible",
+                        "type": "number",
+                        "col": "col-sm-6"
+                    },
+                    {
+                        "name": "lutteContreDeficienceVisuelle[refractionAutomatique][realisation]",
+						"id": "lutteContreDeficienceVisuelleRefractionAutomatiqueRealisation",
+                        "title": "réalisation",
+                        "type": "number",
+                        "col": "col-sm-6"
+                    }
+                ]
+            }
+        }
+    }
+}
