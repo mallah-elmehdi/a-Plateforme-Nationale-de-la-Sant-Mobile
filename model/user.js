@@ -4,27 +4,28 @@ const mongoose = require('mongoose');
 // --- CREAT A SCHEMA
 const schema = mongoose.Schema(
 	{
-		region: {
-			type: String,
-			required: true,
-		},
-		codeRegion: String,
-		province: {
-			type: String,
-			required: true,
-		},
-		codeProvince: String,
 		email: {
 			type: String,
-			lowercase: true,
+			unique:true,
 			required: true,
-			unique: true,
+		},
+		password: {
+			type: String,
+			required: true,
+		},
+		type: {
+			type: String,
+			required: true,
+		},
+		document: {
+			type: String,
+			required: true,
 		},
 	},
 	{ timestamps: true }
 );
 
 // --- MODEL
-const province = mongoose.model('province', schema);
+const user = mongoose.model('user', schema);
 
-module.exports = province;
+module.exports = user;

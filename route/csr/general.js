@@ -19,7 +19,13 @@ router
 // SETTINGS
 router
 	.route('/:id/changer-le-mot-de-passe')
-	.get(authHandler.protector, handler.changePassword, errorHandler.throwError);
+	.get(authHandler.protector, handler.changePassword, errorHandler.throwError)
+	.post(
+		authHandler.protector,
+		handler.checkOldPassword,
+		handler.updatePassword,
+		errorHandler.throwError
+	);
 
 // OUTPUT
 module.exports = router;

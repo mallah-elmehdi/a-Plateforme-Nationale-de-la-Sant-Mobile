@@ -22,10 +22,10 @@ router
 	.post(
 		authHandler.signProtector,
 		authHandler.authentication,
-		authHandler.cookie,
+		authHandler.token,
 		errorHandler.throwError
 	);
-	
+
 // redirection
 router
 	.route('/article')

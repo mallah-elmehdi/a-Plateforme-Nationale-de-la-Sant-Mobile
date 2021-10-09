@@ -1,7 +1,6 @@
 // SET UP
 const jwt = require('jsonwebtoken');
 const { tokenOption } = require('../conf')
-const { newError } = require('../util/error')
 
 // CREAT A TOKEN FROM A ID
 async function creatTokenById(id) {   

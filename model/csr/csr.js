@@ -38,7 +38,6 @@ const schema = mongoose.Schema(
 			required: true,
 			unique: true,
 		},
-		password: String,
 	},
 	{ timestamps: true }
 );
