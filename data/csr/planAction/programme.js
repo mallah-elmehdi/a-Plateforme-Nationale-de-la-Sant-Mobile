@@ -48,47 +48,30 @@ async function deleteProgrammeById(id) {
 	}
 }
 
-async function getProgrammeByYear() {
+async function getProgrammeByRegion(region) {
 	try {
-		var today = new Date();
-		return await programme
-			.find({
-				year: today.getFullYear(),
-			})
-			.populate({
-				path: 'csr',
-				select: '-email',
-			});
+		var today = new Date(),
+			all = await programme
+				.find({
+					year: today.getFullYear(),
+				})
+				.populate({
+					path: 'csr',
+					select: '-email',
+				}),
+			out = [];
+		for (let i = 0; i < all.length; i++) {
+			const element = all[i];
+			if (element.csr.region === region) {
+				out.push(element);
+			}
+		}
+		return out
 	} catch (error) {
 		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
 	}
 }
-
-// async function getProgrammeByRegionAndYear(region) {
-// 	try {
-// 		var today = new Date(),
-// 			all = await programme
-// 				.find({
-// 					year: today.getFullYear(),
-// 				})
-// 				.populate({
-// 					path: 'csr',
-// 					select: '-email -password',
-// 				}),
-// 			out = [];
-// 		for (let i = 0; i < all.length; i++) {
-// 			const element = all[i];
-// 			if (element.csr.region === region) {
-// 				out.push(element);
-// 			}
-// 		}
-// 		return out
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
 
 // GET BY PROVINCE
 async function getProgrammeByProvince(province) {
@@ -195,8 +178,8 @@ module.exports = {
 	addUpdateProgramme,
 	deleteProgrammeById,
 	getProgrammeByProvince,
+	getProgrammeByRegion,
 	// getProgrammeByCsrAndLocaliteAndYear,
-	// getProgrammeByRegionAndYear,
 	// getProgrammeByProvinceAndYear,
 	// addUpdateLocalite,
 };

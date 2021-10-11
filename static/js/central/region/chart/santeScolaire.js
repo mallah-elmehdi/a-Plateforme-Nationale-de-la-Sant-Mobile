@@ -4,9 +4,9 @@ $(document).ready(function () {
 		region = $('#region-chart').data('region'),
 		type = '',
 		// init data
-		dataVisiteEtablissementVisite =
-			wholeData.visiteEtablissementVisite.data,
-		dataVisiteEleveVue = wholeData.visiteEleveVue.data,
+		dataEtablissementVisite =
+			wholeData.etablissementVisite.data,
+		
 		dataEleveExamineVmsCible = wholeData.eleveExamineVmsCible.data,
 		dataEleveExamineVmsRealisation =
 			wholeData.eleveExamineVmsRealisation.data,
@@ -30,7 +30,7 @@ $(document).ready(function () {
 	for (let i = 0; i < region.length; i++) {
 		const element = region[i];
 		data.data.push(
-			getData([dataVisiteEtablissementVisite[element.codeRegion]])
+			getData([dataEtablissementVisite[element.codeRegion]])
 		);
 		data.categories.push(element.region);
 	}
@@ -113,11 +113,11 @@ $(document).ready(function () {
 		data.data = [];
 		data.categories = [];
 		// change te data
-		if (this.value === 'visiteEtablissementVisite') {
+		if (this.value === 'etablissementVisite') {
 			for (let i = 0; i < region.length; i++) {
 				var element = region[i];
 				data.data.push(
-					getData([dataVisiteEtablissementVisite[element.codeRegion]])
+					getData([dataEtablissementVisite[element.codeRegion]])
 				);
 				data.categories.push(element.region);
 			}

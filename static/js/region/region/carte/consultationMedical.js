@@ -1,36 +1,65 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataRegion').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		codeRegion = parseInt($('#data').data('code')),
-		// init data
-		dataConsultationRealiseMMoins =
+		// init dat
+
+		dataConsultationRealiseMMoins5ans =
 			wholeData.consultationRealiseMMoins5ans.data,
-		dataConsultationRealiseMPlus =
-			wholeData.consultationRealiseMPlus5ans.data,
-		dataConsultationRealiseFMoins =
+		dataConsultationRealiseMEntre5ans18ans =
+			wholeData.consultationRealiseMEntre5ans18ans.data,
+		dataConsultationRealiseMPlus18ans =
+			wholeData.consultationRealiseMPlus18ans.data,
+		dataConsultationRealiseFMoins5ans =
 			wholeData.consultationRealiseFMoins5ans.data,
-		dataConsultationRealiseFPlus =
-			wholeData.consultationRealiseFPlus5ans.data,
-		dataPecParPemMoins = wholeData.pecParPemMoins5ans.data,
-		dataPecParPemPlus = wholeData.pecParPemPlus5ans.data,
-		dataReferenceConsSpecMoins = wholeData.referenceConsSpecMoins5ans.data,
-		dataReferenceConsSpecPlus = wholeData.referenceConsSpecPlus5ans.data,
-		dataReferenceHospMoins = wholeData.referenceHospMoins5ans.data,
-		dataReferenceHospPlus = wholeData.referenceHospPlus5ans.data,
-		dataReferenceExLaboMoins = wholeData.referenceExLaboMoins5ans.data,
-		dataReferenceExLaboPlus = wholeData.referenceExLaboPlus5ans.data,
-		dataReferenceExRadioMoins = wholeData.referenceExRadioMoins5ans.data,
-		dataReferenceExRadioPlus = wholeData.referenceExRadioPlus5ans.data,
+		dataConsultationRealiseFEntre5ans18ans =
+			wholeData.consultationRealiseFEntre5ans18ans.data,
+		dataConsultationRealiseFPlus18ans =
+			wholeData.consultationRealiseFPlus18ans.data,
+		dataPecParPemMoins5ans = wholeData.pecParPemMoins5ans.data,
+		dataPecParPemEntre5ans18ans = wholeData.pecParPemEntre5ans18ans.data,
+		dataPecParPemPlus18ans = wholeData.pecParPemPlus18ans.data,
+		dataReferenceConsSpecMoins5ans =
+			wholeData.referenceConsSpecMoins5ans.data,
+		dataReferenceConsSpecEntre5ans18ans =
+			wholeData.referenceConsSpecEntre5ans18ans.data,
+		dataReferenceConsSpecPlus18ans =
+			wholeData.referenceConsSpecPlus18ans.data,
+		dataReferenceUrgenceMoins5ans =
+			wholeData.referenceUrgenceMoins5ans.data,
+		dataReferenceUrgenceEntre5ans18ans =
+			wholeData.referenceUrgenceEntre5ans18ans.data,
+		dataReferenceUrgencePlus18ans =
+			wholeData.referenceUrgencePlus18ans.data,
+		dataReferenceExLaboMoins5ans = wholeData.referenceExLaboMoins5ans.data,
+		dataReferenceExLaboEntre5ans18ans =
+			wholeData.referenceExLaboEntre5ans18ans.data,
+		dataReferenceExLaboPlus18ans = wholeData.referenceExLaboPlus18ans.data,
+		dataReferenceExRadioMoins5ans =
+			wholeData.referenceExRadioMoins5ans.data,
+		dataReferenceExRadioEntre5ans18ans =
+			wholeData.referenceExRadioEntre5ans18ans.data,
+		dataReferenceExRadioPlus18ans =
+			wholeData.referenceExRadioPlus18ans.data,
 		dataBudgetMedicamentDispenseEm =
 			wholeData.budgetMedicamentDispenseEm.data,
 		// other
-		scale = ['#BDFFAD', '#187a00'],
+		scale = [
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		],
 		data = getData([
-			dataConsultationRealiseMMoins,
-			dataConsultationRealiseMPlus,
-			dataConsultationRealiseFMoins,
-			dataConsultationRealiseFPlus,
+			dataConsultationRealiseMMoins5ans,
+			dataConsultationRealiseMEntre5ans18ans,
+			dataConsultationRealiseMPlus18ans,
+			dataConsultationRealiseFMoins5ans,
+			dataConsultationRealiseFEntre5ans18ans,
+			dataConsultationRealiseFPlus18ans,
 		]),
 		max = getMax(data),
 		table = 4;
@@ -81,11 +110,11 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-center text-dark">
 						<tbody>
 							<tr>
-								<th colspan="3">${label.html()}</th>
+								<th colspan="3">Région : ${label.html()}</th>
 							</tr>
 							<tr>
 								<th colspan="3">${title} : <span class="fs-7"><span class="badge bg-5">${
-							data[code]
+									data[code]
 						}</span></span></th>
 							</tr>
 							<tr>
@@ -96,34 +125,45 @@ $(document).ready(function () {
 							<tr>
 								<th>Moins de 5ans</th>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataConsultationRealiseMMoins[code]
+									dataConsultationRealiseMMoins5ans[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataConsultationRealiseFMoins[code]
+									dataConsultationRealiseFMoins5ans[code]
 								}</span></td>
 							</tr>
 							<tr>
-								<th>Plus de 5ans</th>
+								<th>Entre 5ans de 18ans</th>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataConsultationRealiseMPlus[code]
+									dataConsultationRealiseMEntre5ans18ans[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataConsultationRealiseFPlus[code]
+									dataConsultationRealiseFEntre5ans18ans[code]
+								}</span></td>
+							</tr>
+							<tr>
+								<th>Plus de 18ans</th>
+								<td class="fs-7"><span class="badge bg-5">${
+									dataConsultationRealiseMPlus18ans[code]
+								}</span></td>
+								<td class="fs-7"><span class="badge bg-5">${
+									dataConsultationRealiseFPlus18ans[code]
 								}</span></td>
 							</tr>
 							<tr>
 								<th>Totale</th>
 								<td class="fs-7"><span class="badge bg-5">${
-									getData([
-										dataConsultationRealiseMPlus,
-										dataConsultationRealiseMMoins,
-									])[code]
+									dataConsultationRealiseMMoins5ans[code] +
+									dataConsultationRealiseMEntre5ans18ans[
+										code
+									] +
+									dataConsultationRealiseMPlus18ans[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									getData([
-										dataConsultationRealiseFPlus,
-										dataConsultationRealiseFMoins,
-									])[code]
+									dataConsultationRealiseFMoins5ans[code] +
+									dataConsultationRealiseFEntre5ans18ans[
+										code
+									] +
+									dataConsultationRealiseFPlus18ans[code]
 								}</span></td>
 							</tr>
 						</tbody>
@@ -138,7 +178,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-center text-dark">
 						<tbody>
 							<tr>
-								<th colspan="3">${label.html()}</th>
+								<th colspan="3">Région : ${label.html()}</th>
 							</tr>
 							<tr>
 								<th colspan="3">${title}</th>
@@ -146,12 +186,20 @@ $(document).ready(function () {
 							<tr>
 								<th>Moins de 5ans</th>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataPecParPemMoins[code]
+									dataPecParPemMoins5ans[code]
 								}</span></td>
 							</tr>
 							<tr>
-								<th>Plus de 5ans</th>
-								<td class="fs-7"><span class="badge bg-5">${dataPecParPemPlus[code]}</span></td>
+								<th>Entre 5ans et 18ans</th>
+								<td class="fs-7"><span class="badge bg-5">${
+									dataPecParPemEntre5ans18ans[code]
+								}</span></td>
+							</tr>
+							<tr>
+								<th>Plus de 18ans</th>
+								<td class="fs-7"><span class="badge bg-5">${
+									dataPecParPemPlus18ans[code]
+								}</span></td>
 							</tr>
 							<tr>
 								<th>Totale</th>
@@ -169,7 +217,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-center text-dark">
 						<tbody>
 							<tr>
-								<th colspan="5">${label.html()}</th>
+								<th colspan="5">Région : ${label.html()}</th>
 							</tr>
 							<tr>
 								<th colspan="5">${title} : <span class="fs-7"><span class="badge bg-5">${
@@ -178,65 +226,76 @@ $(document).ready(function () {
 							<tr>
 								<th></th>
 								<th>Cons spéc</th>
-								<th>hosp</th>
-								<th>Ex labo</th>
-								<th>Ex radio</th>
+								<th>Urgence</th>
+								<th>Examen De laboratoire</th>
+								<th>Examen radiologique</th>
 							</tr>
 							<tr>
 								<th>Moins de 5ans</th>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataReferenceConsSpecMoins[code]
+									dataReferenceConsSpecMoins5ans[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataReferenceHospMoins[code]
+									dataReferenceUrgenceMoins5ans[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataReferenceExLaboMoins[code]
+									dataReferenceExLaboMoins5ans[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataReferenceExRadioMoins[code]
+									dataReferenceExRadioMoins5ans[code]
 								}</span></td>
 							</tr>
 							<tr>
-								<th>Plus de 5ans</th>
+								<th>Entre 5ans et 18ans</th>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataReferenceConsSpecPlus[code]
+									dataReferenceConsSpecEntre5ans18ans[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataReferenceHospPlus[code]
+									dataReferenceUrgenceEntre5ans18ans[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataReferenceExLaboPlus[code]
+									dataReferenceExLaboEntre5ans18ans[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataReferenceExRadioPlus[code]
+									dataReferenceExRadioEntre5ans18ans[code]
+								}</span></td>
+							</tr>
+							<tr>
+								<th>Plus de 18ans</th>
+								<td class="fs-7"><span class="badge bg-5">${
+									dataReferenceConsSpecPlus18ans[code]
+								}</span></td>
+								<td class="fs-7"><span class="badge bg-5">${
+									dataReferenceUrgencePlus18ans[code]
+								}</span></td>
+								<td class="fs-7"><span class="badge bg-5">${
+									dataReferenceExLaboPlus18ans[code]
+								}</span></td>
+								<td class="fs-7"><span class="badge bg-5">${
+									dataReferenceExRadioPlus18ans[code]
 								}</span></td>
 							</tr>
 							<tr>
 								<th>Totale</th>
 								<td class="fs-7"><span class="badge bg-5">${
-									getData([
-										dataReferenceConsSpecMoins,
-										dataReferenceConsSpecPlus,
-									])[code]
+									dataReferenceConsSpecMoins5ans[code] +
+									dataReferenceConsSpecEntre5ans18ans[code] +
+									dataReferenceConsSpecPlus18ans[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									getData([
-										dataReferenceHospMoins,
-										dataReferenceHospPlus,
-									])[code]
+									dataReferenceUrgenceMoins5ans[code] +
+									dataReferenceUrgenceEntre5ans18ans[code] +
+									dataReferenceUrgencePlus18ans[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									getData([
-										dataReferenceExLaboMoins,
-										dataReferenceExLaboPlus,
-									])[code]
+									dataReferenceExLaboMoins5ans[code] +
+									dataReferenceExLaboEntre5ans18ans[code] +
+									dataReferenceExLaboPlus18ans[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									getData([
-										dataReferenceExRadioMoins,
-										dataReferenceExRadioPlus,
-									])[code]
+									dataReferenceExRadioMoins5ans[code] +
+									dataReferenceExRadioEntre5ans18ans[code] +
+									dataReferenceExRadioPlus18ans[code]
 								}</span></td>
 							</tr>
 						</tbody>
@@ -251,7 +310,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-center text-dark">
 						<tbody>
 							<tr>
-								<th colspan="3">${label.html()}</th>
+								<th colspan="3">Région : ${label.html()}</th>
 							</tr>
 							<tr>
 								<th colspan="3">${title} : <span class="fs-7"> <span class="badge bg-5">${
@@ -298,7 +357,7 @@ $(document).ready(function () {
 			var element = data[key];
 			if (element > max) max = element;
 		}
-		return max + 1
+		return max + 1;
 	}
 	// EVENT LISTNER
 	$('input[type=radio][name=data]').change(function () {
@@ -307,27 +366,33 @@ $(document).ready(function () {
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// change te data
 		if (this.value === 'consultationRealise') {
 			data = getData([
-				dataConsultationRealiseMMoins,
-				dataConsultationRealiseMPlus,
-				dataConsultationRealiseFMoins,
-				dataConsultationRealiseFPlus,
+				dataConsultationRealiseMMoins5ans,
+				dataConsultationRealiseMEntre5ans18ans,
+				dataConsultationRealiseMPlus18ans,
+				dataConsultationRealiseFMoins5ans,
+				dataConsultationRealiseFEntre5ans18ans,
+				dataConsultationRealiseFPlus18ans,
 			]);
 			table = 4;
 		} else if (this.value === 'pecParPem') {
-			data = getData([dataPecParPemMoins, dataPecParPemPlus]);
+			data = getData([
+				dataPecParPemMoins5ans,
+				dataPecParPemEntre5ans18ans,
+				dataPecParPemPlus18ans,
+			]);
 			table = 2;
 		} else if (this.value === 'reference') {
 			data = getData([
 				dataReferenceConsSpecMoins,
 				dataReferenceConsSpecPlus,
-				dataReferenceHospMoins,
-				dataReferenceHospPlus,
+				dataReferenceUrgenceMoins,
+				dataReferenceUrgencePlus,
 				dataReferenceExLaboMoins,
 				dataReferenceExLaboPlus,
 				dataReferenceExRadioMoins,
@@ -340,7 +405,7 @@ $(document).ready(function () {
 		}
 		// apply changes
 		map.series.regions[0].params.max = getMax(data);
-		map.series.regions[0].setValues({ [codeRegion]: data[codeRegion] },);
+		map.series.regions[0].setValues({ [codeRegion]: data[codeRegion] });
 		map.series.regions[0].legend.render();
 	});
 });

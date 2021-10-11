@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataProvince').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		// init data
 		dataPopulationCible = wholeData.populationCible.data,
 		dataPopulationHabitantMoins3km =
@@ -20,9 +20,8 @@ $(document).ready(function () {
 		dataFemmeEnceinte = wholeData.femmeEnceinte.data,
 		dataDistanceMoyenneRouteProche =
 			wholeData.distanceMoyenneRouteProche.data,
-		dataIndiceSynthetiqueFecondite =
-			wholeData.indiceSynthetiqueFecondite.data,
-		dataPersonneAge = wholeData.personneAge.data,
+		
+		
 		// other
 		max = undefined,
 		scale = ['#BDFFAD', '#187a00'],
@@ -357,7 +356,7 @@ $(document).ready(function () {
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// ----------------------------------------------------

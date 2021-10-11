@@ -1,7 +1,7 @@
 // SET UP
 const fs = require('fs');
 const regionData = require('../../../data/region');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const planificationFamilialeData = require('../../../data/csr/rapport/planificationFamiliale');
 
 // ERROR
 const { newError } = require('../../../util/error');
@@ -89,9 +89,8 @@ async function dataRegion(region) {
 				},
 			},
 			planificationFamiliale =
-				await rapportData.getRapportByRegionAndYear(
+				await planificationFamilialeData.getPlanificationFamilialeByRegion(
 					region,
-					'planificationFamiliale'
 				);
 		// ------------------------
 		// planificationFamiliale
@@ -160,9 +159,8 @@ async function dataProvince(region, provinceList) {
 				},
 			},
 			planificationFamiliale =
-				await rapportData.getRapportByRegionAndYear(
+				await planificationFamilialeData.getPlanificationFamilialeByRegion(
 					region,
-					'planificationFamiliale'
 				);
 		// ------------------------
 		// province
@@ -224,13 +222,13 @@ async function planificationFamiliale(req, res, next) {
 		// render the page
 		res.status(200).render('region/dashboard/planificationFamiliale', {
 			title:
-				'Tableau de bord | Consultations médicales | ' +
+				'Tableau de bord | Planification Familiale | ' +
 				today.getFullYear(),
 			url: req.originalUrl,
 			data,
 			province,
 			provinceList,
-			page: 'dashboard',
+			page: 'prestation',
 			listItem: 'planificationFamiliale',
 		});
 	} catch (error) {

@@ -34,7 +34,7 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
-				consultationRealiseMPlus5ans: {
+				consultationRealiseMPlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -66,7 +66,7 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
-				consultationRealiseFPlus5ans: {
+				consultationRealiseFPlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -98,7 +98,7 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
-				pecParPemPlus5ans: {
+				pecParPemPlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -130,7 +130,7 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
-				referenceConsSpecPlus5ans: {
+				referenceConsSpecPlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -146,7 +146,7 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
-				referenceHospMoins5ans: {
+				referenceUrgenceMoins5ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -162,7 +162,7 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
-				referenceHospPlus5ans: {
+				referenceUrgencePlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -194,7 +194,7 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
-				referenceExLaboPlus5ans: {
+				referenceExLaboPlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -226,7 +226,7 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
-				referenceExRadioPlus5ans: {
+				referenceExRadioPlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -276,7 +276,7 @@ async function dataRegion() {
 						regionElement.codeRegion
 					] +=
 						consultationMedicalElement.consultationRealise.m.moins5ans;
-					data.consultationRealiseMPlus5ans.data[
+					data.consultationRealiseMPlus18ans.data[
 						regionElement.codeRegion
 					] +=
 						consultationMedicalElement.consultationRealise.m.plus5ans;
@@ -284,36 +284,36 @@ async function dataRegion() {
 						regionElement.codeRegion
 					] +=
 						consultationMedicalElement.consultationRealise.f.moins5ans;
-					data.consultationRealiseFPlus5ans.data[
+					data.consultationRealiseFPlus18ans.data[
 						regionElement.codeRegion
 					] +=
 						consultationMedicalElement.consultationRealise.f.plus5ans;
 					data.pecParPemMoins5ans.data[regionElement.codeRegion] +=
 						consultationMedicalElement.pecParPem.moins5ans;
-					data.pecParPemPlus5ans.data[regionElement.codeRegion] +=
+					data.pecParPemPlus18ans.data[regionElement.codeRegion] +=
 						consultationMedicalElement.pecParPem.plus5ans;
 					data.referenceConsSpecMoins5ans.data[
 						regionElement.codeRegion
 					] +=
 						consultationMedicalElement.reference.consSpec.moins5ans;
-					data.referenceConsSpecPlus5ans.data[
+					data.referenceConsSpecPlus18ans.data[
 						regionElement.codeRegion
 					] += consultationMedicalElement.reference.consSpec.plus5ans;
-					data.referenceHospMoins5ans.data[
+					data.referenceUrgenceMoins5ans.data[
 						regionElement.codeRegion
-					] += consultationMedicalElement.reference.hosp.moins5ans;
-					data.referenceHospPlus5ans.data[regionElement.codeRegion] +=
-						consultationMedicalElement.reference.hosp.plus5ans;
+					] += consultationMedicalElement.reference.urgence.moins5ans;
+					data.referenceUrgencePlus18ans.data[regionElement.codeRegion] +=
+						consultationMedicalElement.reference.urgence.plus5ans;
 					data.referenceExLaboMoins5ans.data[
 						regionElement.codeRegion
 					] += consultationMedicalElement.reference.exLabo.moins5ans;
-					data.referenceExLaboPlus5ans.data[
+					data.referenceExLaboPlus18ans.data[
 						regionElement.codeRegion
 					] += consultationMedicalElement.reference.exLabo.plus5ans;
 					data.referenceExRadioMoins5ans.data[
 						regionElement.codeRegion
 					] += consultationMedicalElement.reference.exRadio.moins5ans;
-					data.referenceExRadioPlus5ans.data[
+					data.referenceExRadioPlus18ans.data[
 						regionElement.codeRegion
 					] += consultationMedicalElement.reference.exRadio.plus5ans;
 					data.budgetMedicamentDispenseEm.data[
@@ -412,7 +412,7 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
-				consultationRealiseMPlus5ans: {
+				consultationRealiseMPlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -570,7 +570,7 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
-				consultationRealiseFPlus5ans: {
+				consultationRealiseFPlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -728,7 +728,7 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
-				pecParPemPlus5ans: {
+				pecParPemPlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -886,7 +886,7 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
-				referenceConsSpecPlus5ans: {
+				referenceConsSpecPlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -965,7 +965,7 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
-				referenceHospMoins5ans: {
+				referenceUrgenceMoins5ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -1044,7 +1044,7 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
-				referenceHospPlus5ans: {
+				referenceUrgencePlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -1202,7 +1202,7 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
-				referenceExLaboPlus5ans: {
+				referenceExLaboPlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -1360,7 +1360,7 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
-				referenceExRadioPlus5ans: {
+				referenceExRadioPlus18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -1535,7 +1535,7 @@ async function dataProvince() {
 						provinceElement.codeProvince
 					] +=
 						consultationMedicalElement.consultationRealise.m.moins5ans;
-					data.consultationRealiseMPlus5ans.data[
+					data.consultationRealiseMPlus18ans.data[
 						provinceElement.codeProvince
 					] +=
 						consultationMedicalElement.consultationRealise.m.plus5ans;
@@ -1543,38 +1543,38 @@ async function dataProvince() {
 						provinceElement.codeProvince
 					] +=
 						consultationMedicalElement.consultationRealise.f.moins5ans;
-					data.consultationRealiseFPlus5ans.data[
+					data.consultationRealiseFPlus18ans.data[
 						provinceElement.codeProvince
 					] +=
 						consultationMedicalElement.consultationRealise.f.plus5ans;
 					data.pecParPemMoins5ans.data[
 						provinceElement.codeProvince
 					] += consultationMedicalElement.pecParPem.moins5ans;
-					data.pecParPemPlus5ans.data[provinceElement.codeProvince] +=
+					data.pecParPemPlus18ans.data[provinceElement.codeProvince] +=
 						consultationMedicalElement.pecParPem.plus5ans;
 					data.referenceConsSpecMoins5ans.data[
 						provinceElement.codeProvince
 					] +=
 						consultationMedicalElement.reference.consSpec.moins5ans;
-					data.referenceConsSpecPlus5ans.data[
+					data.referenceConsSpecPlus18ans.data[
 						provinceElement.codeProvince
 					] += consultationMedicalElement.reference.consSpec.plus5ans;
-					data.referenceHospMoins5ans.data[
+					data.referenceUrgenceMoins5ans.data[
 						provinceElement.codeProvince
-					] += consultationMedicalElement.reference.hosp.moins5ans;
-					data.referenceHospPlus5ans.data[
+					] += consultationMedicalElement.reference.urgence.moins5ans;
+					data.referenceUrgencePlus18ans.data[
 						provinceElement.codeProvince
-					] += consultationMedicalElement.reference.hosp.plus5ans;
+					] += consultationMedicalElement.reference.urgence.plus5ans;
 					data.referenceExLaboMoins5ans.data[
 						provinceElement.codeProvince
 					] += consultationMedicalElement.reference.exLabo.moins5ans;
-					data.referenceExLaboPlus5ans.data[
+					data.referenceExLaboPlus18ans.data[
 						provinceElement.codeProvince
 					] += consultationMedicalElement.reference.exLabo.plus5ans;
 					data.referenceExRadioMoins5ans.data[
 						provinceElement.codeProvince
 					] += consultationMedicalElement.reference.exRadio.moins5ans;
-					data.referenceExRadioPlus5ans.data[
+					data.referenceExRadioPlus18ans.data[
 						provinceElement.codeProvince
 					] += consultationMedicalElement.reference.exRadio.plus5ans;
 					data.budgetMedicamentDispenseEm.data[

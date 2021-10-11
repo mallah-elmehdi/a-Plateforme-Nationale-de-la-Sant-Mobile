@@ -21,9 +21,8 @@ $(document).ready(function () {
 		dataFemmeEnceinte = wholeData.femmeEnceinte.data,
 		dataDistanceMoyenneRouteProche =
 			wholeData.distanceMoyenneRouteProche.data,
-		dataIndiceSynthetiqueFecondite =
-			wholeData.indiceSynthetiqueFecondite.data,
-		dataPersonneAge = wholeData.personneAge.data,
+		
+		
 		data = {
 			data: [],
 			categories: [],

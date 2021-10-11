@@ -1,26 +1,26 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataProvince').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		// init data
 		dataConsultationRealiseMMoins =
 			wholeData.consultationRealiseMMoins5ans.data,
 		dataConsultationRealiseMPlus =
-			wholeData.consultationRealiseMPlus5ans.data,
+			wholeData.consultationRealiseMPlus18ans.data,
 		dataConsultationRealiseFMoins =
 			wholeData.consultationRealiseFMoins5ans.data,
 		dataConsultationRealiseFPlus =
-			wholeData.consultationRealiseFPlus5ans.data,
+			wholeData.consultationRealiseFPlus18ans.data,
 		dataPecParPemMoins = wholeData.pecParPemMoins5ans.data,
-		dataPecParPemPlus = wholeData.pecParPemPlus5ans.data,
+		dataPecParPemPlus = wholeData.pecParPemPlus18ans.data,
 		dataReferenceConsSpecMoins = wholeData.referenceConsSpecMoins5ans.data,
-		dataReferenceConsSpecPlus = wholeData.referenceConsSpecPlus5ans.data,
-		dataReferenceHospMoins = wholeData.referenceHospMoins5ans.data,
-		dataReferenceHospPlus = wholeData.referenceHospPlus5ans.data,
+		dataReferenceConsSpecPlus = wholeData.referenceConsSpecPlus18ans.data,
+		dataReferenceUrgenceMoins = wholeData.referenceUrgenceMoins5ans.data,
+		dataReferenceUrgencePlus = wholeData.referenceUrgencePlus18ans.data,
 		dataReferenceExLaboMoins = wholeData.referenceExLaboMoins5ans.data,
-		dataReferenceExLaboPlus = wholeData.referenceExLaboPlus5ans.data,
+		dataReferenceExLaboPlus = wholeData.referenceExLaboPlus18ans.data,
 		dataReferenceExRadioMoins = wholeData.referenceExRadioMoins5ans.data,
-		dataReferenceExRadioPlus = wholeData.referenceExRadioPlus5ans.data,
+		dataReferenceExRadioPlus = wholeData.referenceExRadioPlus18ans.data,
 		dataBudgetMedicamentDispenseEm =
 			wholeData.budgetMedicamentDispenseEm.data,
 		// other
@@ -177,8 +177,8 @@ $(document).ready(function () {
 						getData([
 							dataReferenceConsSpecMoins,
 							dataReferenceConsSpecPlus,
-							dataReferenceHospMoins,
-							dataReferenceHospPlus,
+							dataReferenceUrgenceMoins,
+							dataReferenceUrgencePlus,
 							dataReferenceExLaboMoins,
 							dataReferenceExLaboPlus,
 							dataReferenceExRadioMoins,
@@ -188,9 +188,9 @@ $(document).ready(function () {
 							<tr>
 								<th></th>
 								<th>Cons spéc</th>
-								<th>hosp</th>
-								<th>Ex labo</th>
-								<th>Ex radio</th>
+								<th>Urgence</th>
+								<th>Examen De laboratoire</th>
+								<th>Examen radiologique</th>
 							</tr>
 							<tr>
 								<th>Moins de 5ans</th>
@@ -198,7 +198,7 @@ $(document).ready(function () {
 									dataReferenceConsSpecMoins[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataReferenceHospMoins[code]
+									dataReferenceUrgenceMoins[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
 									dataReferenceExLaboMoins[code]
@@ -213,7 +213,7 @@ $(document).ready(function () {
 									dataReferenceConsSpecPlus[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
-									dataReferenceHospPlus[code]
+									dataReferenceUrgencePlus[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
 									dataReferenceExLaboPlus[code]
@@ -232,8 +232,8 @@ $(document).ready(function () {
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
 									getData([
-										dataReferenceHospMoins,
-										dataReferenceHospPlus,
+										dataReferenceUrgenceMoins,
+										dataReferenceUrgencePlus,
 									])[code]
 								}</span></td>
 								<td class="fs-7"><span class="badge bg-5">${
@@ -393,8 +393,8 @@ $(document).ready(function () {
 			data = getData([
 				dataReferenceConsSpecMoins,
 				dataReferenceConsSpecPlus,
-				dataReferenceHospMoins,
-				dataReferenceHospPlus,
+				dataReferenceUrgenceMoins,
+				dataReferenceUrgencePlus,
 				dataReferenceExLaboMoins,
 				dataReferenceExLaboPlus,
 				dataReferenceExRadioMoins,

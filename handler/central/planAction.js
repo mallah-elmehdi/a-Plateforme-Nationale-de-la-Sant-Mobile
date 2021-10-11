@@ -684,7 +684,7 @@ async function dataRegion() {
 							}
 						} else if (
 							ressourceElement.appartenance ===
-							'Ministre de la santé'
+							'Ministère de la Santé'
 						) {
 							if (
 								data[regionElement.codeRegion].ressource.ms[
@@ -4459,7 +4459,7 @@ async function dataProvince() {
 							}
 						} else if (
 							ressourceElement.appartenance ===
-							'Ministre de la santé'
+							'Ministère de la Santé'
 						) {
 							if (
 								data[provinceElement.codeProvince].ressource.ms[

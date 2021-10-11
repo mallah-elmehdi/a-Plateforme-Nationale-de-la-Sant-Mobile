@@ -5,26 +5,31 @@ $(document).ready(function () {
 		provinceList = $('#data').data('list'),
 		type = '',
 		// init data
-		dataConsultationRealiseMMoins =
-			wholeData.consultationRealiseMMoins5ans.data,
-		dataConsultationRealiseMPlus =
-			wholeData.consultationRealiseMPlus5ans.data,
-		dataConsultationRealiseFMoins =
-			wholeData.consultationRealiseFMoins5ans.data,
-		dataConsultationRealiseFPlus =
-			wholeData.consultationRealiseFPlus5ans.data,
-		dataPecParPemMoins = wholeData.pecParPemMoins5ans.data,
-		dataPecParPemPlus = wholeData.pecParPemPlus5ans.data,
-		dataReferenceConsSpecMoins = wholeData.referenceConsSpecMoins5ans.data,
-		dataReferenceConsSpecPlus = wholeData.referenceConsSpecPlus5ans.data,
-		dataReferenceHospMoins = wholeData.referenceHospMoins5ans.data,
-		dataReferenceHospPlus = wholeData.referenceHospPlus5ans.data,
-		dataReferenceExLaboMoins = wholeData.referenceExLaboMoins5ans.data,
-		dataReferenceExLaboPlus = wholeData.referenceExLaboPlus5ans.data,
-		dataReferenceExRadioMoins = wholeData.referenceExRadioMoins5ans.data,
-		dataReferenceExRadioPlus = wholeData.referenceExRadioPlus5ans.data,
-		dataBudgetMedicamentDispenseEm =
-			wholeData.budgetMedicamentDispenseEm.data,
+		dataConsultationRealiseMMoins5ans = wholeData.consultationRealiseMMoins5ans.data
+		dataConsultationRealiseMEntre5ans18ans = wholeData.consultationRealiseMEntre5ans18ans.data
+		dataConsultationRealiseMPlus18ans = wholeData.consultationRealiseMPlus18ans.data
+		dataConsultationRealiseFMoins5ans = wholeData.consultationRealiseFMoins5ans.data
+		dataConsultationRealiseFEntre5ans18ans = wholeData.consultationRealiseFEntre5ans18ans.data
+		dataConsultationRealiseFPlus18ans = wholeData.consultationRealiseFPlus18ans.data
+
+		dataPecParPemMoins5ans = wholeData.pecParPemMoins5ans.data
+		dataPecParPemEntre5ans18ans = wholeData.pecParPemEntre5ans18ans.data
+		dataPecParPemPlus18ans = wholeData.pecParPemPlus18ans.data
+		
+		dataReferenceConsSpecMoins5ans = wholeData.referenceConsSpecMoins5ans.data
+		dataReferenceConsSpecEntre5ans18ans = wholeData.referenceConsSpecEntre5ans18ans.data
+		dataReferenceConsSpecPlus18ans = wholeData.referenceConsSpecPlus18ans.data
+		dataReferenceUrgenceMoins5ans = wholeData.referenceUrgenceMoins5ans.data
+		dataReferenceUrgenceEntre5ans18ans = wholeData.referenceUrgenceEntre5ans18ans.data
+		dataReferenceUrgencePlus18ans = wholeData.referenceUrgencePlus18ans.data
+		dataReferenceExLaboMoins5ans = wholeData.referenceExLaboMoins5ans.data
+		dataReferenceExLaboEntre5ans18ans = wholeData.referenceExLaboEntre5ans18ans.data
+		dataReferenceExLaboPlus18ans = wholeData.referenceExLaboPlus18ans.data
+		dataReferenceExRadioMoins5ans = wholeData.referenceExRadioMoins5ans.data
+		dataReferenceExRadioEntre5ans18ans = wholeData.referenceExRadioEntre5ans18ans.data
+		dataReferenceExRadioPlus18ans = wholeData.referenceExRadioPlus18ans.data
+		
+		dataBudgetMedicamentDispenseEm = wholeData.budgetMedicamentDispenseEm.data
 		data = {
 			data: [],
 			categories: [],
@@ -35,10 +40,12 @@ $(document).ready(function () {
 		if (provinceList.includes(element.codeProvince)) {
 			data.data.push(
 				getData([
-					dataConsultationRealiseMMoins[element.codeProvince],
-					dataConsultationRealiseMPlus[element.codeProvince],
-					dataConsultationRealiseFMoins[element.codeProvince],
-					dataConsultationRealiseFPlus[element.codeProvince],
+					dataConsultationRealiseMMoins5ans[element.codeProvince],
+					dataConsultationRealiseMEntre5ans18ans[element.codeProvince],
+					dataConsultationRealiseMPlus18ans[element.codeProvince],
+					dataConsultationRealiseFMoins5ans[element.codeProvince],
+					dataConsultationRealiseFEntre5ans18ans[element.codeProvince],
+					dataConsultationRealiseFPlus18ans[element.codeProvince],
 				])
 			);
 			data.categories.push(element.province);
@@ -145,8 +152,9 @@ $(document).ready(function () {
 				if (provinceList.includes(element.codeProvince)) {
 					data.data.push(
 						getData([
-							dataPecParPemMoins[element.codeProvince],
-							dataPecParPemPlus[element.codeProvince],
+							dataPecParPemMoins5ans[element.codeProvince],
+							dataPecParPemEntre5ans18ans[element.codeProvince],
+							dataPecParPemPlus18ans[element.codeProvince],
 						])
 					);
 					data.categories.push(element.province);
@@ -159,14 +167,18 @@ $(document).ready(function () {
 				if (provinceList.includes(element.codeProvince)) {
 					data.data.push(
 						getData([
-							dataReferenceConsSpecMoins[element.codeProvince],
-							dataReferenceConsSpecPlus[element.codeProvince],
-							dataReferenceHospMoins[element.codeProvince],
-							dataReferenceHospPlus[element.codeProvince],
-							dataReferenceExLaboMoins[element.codeProvince],
-							dataReferenceExLaboPlus[element.codeProvince],
-							dataReferenceExRadioMoins[element.codeProvince],
-							dataReferenceExRadioPlus[element.codeProvince],
+							dataReferenceConsSpecMoins5ans[element.codeProvince],
+							dataReferenceConsSpecEntre5ans18ans[element.codeProvince],
+							dataReferenceConsSpecPlus18ans[element.codeProvince],
+							dataReferenceUrgenceMoins5ans[element.codeProvince],
+							dataReferenceUrgenceEntre5ans18ans[element.codeProvince],
+							dataReferenceUrgencePlus18ans[element.codeProvince],
+							dataReferenceExLaboMoins5ans[element.codeProvince],
+							dataReferenceExLaboEntre5ans18ans[element.codeProvince],
+							dataReferenceExLaboPlus18ans[element.codeProvince],
+							dataReferenceExRadioMoins5ans[element.codeProvince],
+							dataReferenceExRadioEntre5ans18ans[element.codeProvince],
+							dataReferenceExRadioPlus18ans[element.codeProvince],
 						])
 					);
 					data.categories.push(element.province);

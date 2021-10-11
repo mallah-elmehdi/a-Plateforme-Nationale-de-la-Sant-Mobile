@@ -1,11 +1,19 @@
 $(document).ready(function () {
 	// VARIABLES
 	var data = $('#dataRegion').data('carte').pdrVisite.data,
-		title = 'Taux de couverture des PDR',
+		title = $('#title').text(),
 		codeRegion = parseInt($('#data').data('code')),
 		// other
 		max = 100,
-		scale = ['#FE8989', '#FCFE89', '#6ED369'];
+		scale = [
+			'#FF4646',
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		];
 	// MAP
 	$('#region-map').vectorMap({
 		map: 'region',
@@ -52,7 +60,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-center text-dark">
 						<tbody>
 							<tr>
-								<th colspan="3">${label.html()}</th>
+								<th colspan="3">Région : ${label.html()}</th>
 							</tr>
 							<tr>
 								<th colspan="3">${title} : <span class="fs-7"> <span class="badge bg-5">${

@@ -24,8 +24,8 @@ block main
 		.col-12
 			.d-flex.flex-wrap
 				.dropdown.me-2
-					button#dropdownPreview.btn.btn-sm.text-dark.bg-3.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
-						| Preview
+					button#dropdownPreview.btn.btn-sm.text-dark.bg-8.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+						| Division de la carte
 					ul.dropdown-menu(aria-labelledby='dropdownPreview')
 						li.list-group-item.dropdown-item
 							input#previewZone1.form-check-input(type='radio' name='previewZone' value="regional" checked)
@@ -41,12 +41,16 @@ block main
 						.d-flex.align-items-center.fs-7
 							<ion-icon name="stats-chart-outline"  class="me-2 text-1"></ion-icon>
 							span.text-dark.fs-bold= 'Taux de couverture des PDR de l\'année ' + today.getFullYear()
+					.col-12
+						span#title.badge.bg-5 
 					.col-12.thisRegion
 						#dataRegion(data-carte=JSON.stringify(data.carte.region))
 							#region-map(style="width: 100%; height: 400px;")
 					.col-12.thisProvince
 						#dataProvince(data-carte=JSON.stringify(data.carte.province))
 							#province-map(style="width: 100%; height: 400px;")
+					.col-12
+						span#title.badge.bg-5 
 					.col-12.thisRegion
 						#region-chart(data-region=JSON.stringify(region))
 					.col-12.thisProvince

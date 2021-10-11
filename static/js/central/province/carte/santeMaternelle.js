@@ -1,13 +1,13 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataProvince').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		// init data
 		dataFemmePriseCharge = wholeData.femmePriseCharge.data,
 		dataCpnNouvelleInscrite = wholeData.cpnNouvelleInscrite.data,
 		dataCpnAutreConsultation = wholeData.cpnAutreConsultation.data,
 		dataFemmeExaminePostNatal = wholeData.femmeExaminePostNatal.data,
-		dataGahrDepiste = wholeData.gahrDepiste.data,
+		dataGahrDepiste = wholeData.garDepiste.data,
 		dataVat = wholeData.vat.data,
 		dataReference = wholeData.reference.data,
 		// other
@@ -211,7 +211,7 @@ $(document).ready(function () {
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// ----------------------------------------------------
@@ -225,7 +225,7 @@ $(document).ready(function () {
 		} else if (this.value === 'femmeExaminePostNatal') {
 			data = getData([dataFemmeExaminePostNatal]);
 			table = 1;
-		} else if (this.value === 'gahrDepiste') {
+		} else if (this.value === 'garDepiste') {
 			data = getData([dataGahrDepiste]);
 			table = 1;
 		} else if (this.value === 'vat') {

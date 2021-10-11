@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataRegion').data('carte'),
-		title = $('#title').text().split(' - ')[1] || $('#dataRegion').data('title'),
+		title = $('#title').text() || $('#dataRegion').data('title'),
 		type = $('#dataRegion').data('type'),
 		keyOne = Object.keys(wholeData)[0],
 		data = wholeData[keyOne].data,
@@ -83,7 +83,7 @@ $(document).ready(function () {
 				' ' +
 				$(this).next('label').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// change te data

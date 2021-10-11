@@ -57,6 +57,9 @@ async function dataRegion(region) {
 	try {
 		var codeRegion = getRegionCode(region),
 			data = {
+				populationRurale: {
+					data: { [codeRegion]: 0 },
+				},
 				populationCible: {
 					data: { [codeRegion]: 0 },
 				},
@@ -93,43 +96,49 @@ async function dataRegion(region) {
 				distanceMoyenneRouteProche: {
 					data: { [codeRegion]: 0 },
 				},
-				indiceSynthetiqueFecondite: {
-					data: { [codeRegion]: 0 },
-				},
-				personneAge: {
-					data: { [codeRegion]: 0 },
-				},
 			},
-			population = await populationData.getPopulationByRegionYear(region);
+			population = await populationData.getPopulationByRegion(region);
 		// ------------------------
 		// population
 		for (let j = 0; j < population.length; j++) {
 			const populationElement = population[j];
+			data.populationRurale.data[codeRegion] +=
+			populationElement.population.rurale;
+			// --
 			data.populationCible.data[codeRegion] +=
 				populationElement.population.cible;
+			// --
 			data.populationHabitantMoins3km.data[codeRegion] +=
 				populationElement.population.habitantMoins3km;
+			// --
 			data.populationHabitantEntre3km6km.data[codeRegion] +=
 				populationElement.population.habitantEntre3km6km;
+			// --
 			data.populationHabitantEntre6km10km.data[codeRegion] +=
 				populationElement.population.habitantEntre6km10km;
+			// --
 			data.populationHabitantPlus10km.data[codeRegion] +=
 				populationElement.population.habitantPlus10km;
+			// --
 			data.enfantMoins1ans.data[codeRegion] +=
 				populationElement.enfant.moins1ans;
+			// --
 			data.enfantMoins5ans.data[codeRegion] +=
 				populationElement.enfant.moins5ans;
+			// --
 			data.naissancesAttendues.data[codeRegion] +=
-				populationElement.naissancesAttendues;
-			data.far.data[codeRegion] += populationElement.far;
-			data.fmar.data[codeRegion] += populationElement.fmar;
+				populationElement.enfant.naissancesAttendues;
+			// --
+			data.far.data[codeRegion] += populationElement.femme.far;
+			// --
+			data.fmar.data[codeRegion] += populationElement.femme.fmar;
+			// --
 			data.femmeEnceinte.data[codeRegion] +=
-				populationElement.femmeEnceinte;
+				populationElement.femme.femmeEnceinte;
+			// --
 			data.distanceMoyenneRouteProche.data[codeRegion] +=
 				populationElement.distanceMoyenneRouteProche;
-			data.indiceSynthetiqueFecondite.data[codeRegion] +=
-				populationElement.indiceSynthetiqueFecondite;
-			data.personneAge.data[codeRegion] += populationElement.personneAge;
+			// --
 		}
 		return data;
 	} catch (error) {
@@ -143,6 +152,9 @@ async function dataProvince(region, provinceList) {
 	try {
 		var dataInit = getDataInit(provinceList),
 			data = {
+				populationRurale: {
+					data: getDataInit(provinceList),
+				},
 				populationCible: {
 					data: getDataInit(provinceList),
 				},
@@ -179,14 +191,8 @@ async function dataProvince(region, provinceList) {
 				distanceMoyenneRouteProche: {
 					data: getDataInit(provinceList),
 				},
-				indiceSynthetiqueFecondite: {
-					data: getDataInit(provinceList),
-				},
-				personneAge: {
-					data: getDataInit(provinceList),
-				},
 			},
-			population = await populationData.getPopulationByRegionYear(region);
+			population = await populationData.getPopulationByRegion(region);
 		// ------------------------
 		// province
 		for (let i = 0; i < provinceList.length; i++) {
@@ -198,35 +204,47 @@ async function dataProvince(region, provinceList) {
 					provinceListElement ===
 					getProvinceCode(populationElement.csr.province)
 				) {
+					data.populationRurale.data[provinceListElement] +=
+						populationElement.population.rurale;
+					// ---
 					data.populationCible.data[provinceListElement] +=
 						populationElement.population.cible;
+					// --
 					data.populationHabitantMoins3km.data[provinceListElement] +=
 						populationElement.population.habitantMoins3km;
+					// --
 					data.populationHabitantEntre3km6km.data[
 						provinceListElement
 					] += populationElement.population.habitantEntre3km6km;
+					// --
 					data.populationHabitantEntre6km10km.data[
 						provinceListElement
 					] += populationElement.population.habitantEntre6km10km;
+					// --
 					data.populationHabitantPlus10km.data[provinceListElement] +=
 						populationElement.population.habitantPlus10km;
+					// --
 					data.enfantMoins1ans.data[provinceListElement] +=
 						populationElement.enfant.moins1ans;
+					// --
 					data.enfantMoins5ans.data[provinceListElement] +=
 						populationElement.enfant.moins5ans;
+					// --
 					data.naissancesAttendues.data[provinceListElement] +=
-						populationElement.naissancesAttendues;
-					data.far.data[provinceListElement] += populationElement.far;
+						populationElement.enfant.naissancesAttendues;
+					// --
+					data.far.data[provinceListElement] +=
+						populationElement.femme.far;
+					// --
 					data.fmar.data[provinceListElement] +=
-						populationElement.fmar;
+						populationElement.femme.fmar;
+					// --
 					data.femmeEnceinte.data[provinceListElement] +=
-						populationElement.femmeEnceinte;
+						populationElement.femme.femmeEnceinte;
+					// --
 					data.distanceMoyenneRouteProche.data[provinceListElement] +=
 						populationElement.distanceMoyenneRouteProche;
-					data.indiceSynthetiqueFecondite.data[provinceListElement] +=
-						populationElement.indiceSynthetiqueFecondite;
-					data.personneAge.data[provinceListElement] +=
-						populationElement.personneAge;
+					// --
 				}
 			}
 		}
@@ -256,8 +274,7 @@ async function populationCible(req, res, next) {
 		// render the page
 		res.status(200).render('region/dashboard/populationCible', {
 			title:
-				'Tableau de bord | Population ciblée | ' +
-				today.getFullYear(),
+				'Tableau de bord | Population ciblée | ' + today.getFullYear(),
 			url: req.originalUrl,
 			data,
 			province,

@@ -1,9 +1,10 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataProvince').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		provinceList = $('#data').data('list'),
 		// init data
+		dataPopulationRurale = wholeData.populationRurale.data,
 		dataPopulationCible = wholeData.populationCible.data,
 		dataPopulationHabitantMoins3km =
 			wholeData.populationHabitantMoins3km.data,
@@ -21,11 +22,15 @@ $(document).ready(function () {
 		dataFemmeEnceinte = wholeData.femmeEnceinte.data,
 		dataDistanceMoyenneRouteProche =
 			wholeData.distanceMoyenneRouteProche.data,
-		dataIndiceSynthetiqueFecondite =
-			wholeData.indiceSynthetiqueFecondite.data,
-		dataPersonneAge = wholeData.personneAge.data,
 		// other
-		scale = ['#BDFFAD', '#187a00'],
+		scale = [
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		],
 		data = getData([dataPopulationCible]),
 		max = getMax(data),
 		table = 5;
@@ -43,11 +48,11 @@ $(document).ready(function () {
 		series: {
 			regions: [
 				{
-					values:  getValue(data, provinceList),
+					values: getValue(data, provinceList),
 					scale,
 					normalizeFunction: 'polynomial',
 					max,
-min:0,
+					min: 0,
 					legend: {
 						horizontal: true,
 						labelRender: function (v) {
@@ -84,7 +89,7 @@ min:0,
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -92,7 +97,12 @@ min:0,
 							data[code]
 						}</span></span></th>
 							</tr>
-							
+							<tr>
+								<td>Population rurale</td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataPopulationRurale[code]
+								}</span></td>
+							</tr>
 							<tr>
 								<td>Population habitant à moins de 3km</td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
@@ -132,7 +142,7 @@ min:0,
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -141,6 +151,13 @@ min:0,
 						}</span></span></th>
 							</tr>
 							
+							
+							<tr>
+								<td>Naissances attendues</td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataNaissancesAttendues[code]
+								}</span></td>
+							</tr>
 							<tr>
 								<td>Enfants moins de 1ans</td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
@@ -152,13 +169,6 @@ min:0,
 								<td>Enfants moins de 5ans</td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
 									dataEnfantMoins5ans[code]
-								}</span></td>
-							</tr>
-							
-							<tr>
-								<td>Naissances attendues</td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataNaissancesAttendues[code]
 								}</span></td>
 							</tr>
 						</tbody>
@@ -173,7 +183,7 @@ min:0,
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -214,50 +224,12 @@ min:0,
 					<table class="table table-sm table-bordered fs-8 text-center text-dark">
 						<tbody>
 							<tr>
-								<th colspan="3">${label.html()}</th>
+								<th colspan="3">Province : ${label.html()}</th>
 							</tr>
 							<tr>
 								<th colspan="3">${title} : <span class="fs-7"> <span class="badge bg-5">${
-							dataDistanceMoyenneRouteProche[code]
+							data[code]
 						} Km</span></span></th>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-					`
-					);
-				} else if (table === 1.1) {
-					label.html(
-						`
-					<div class="bg-white shadow-sm p-1 rounded">
-					<table class="table table-sm table-bordered fs-8 text-center text-dark">
-						<tbody>
-							<tr>
-								<th colspan="3">${label.html()}</th>
-							</tr>
-							<tr>
-								<th colspan="3">${title} : <span class="fs-7"> <span class="badge bg-5">${
-							dataIndiceSynthetiqueFecondite[code]
-						}</span></span></th>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-					`
-					);
-				} else if (table === 1.2) {
-					label.html(
-						`
-					<div class="bg-white shadow-sm p-1 rounded">
-					<table class="table table-sm table-bordered fs-8 text-center text-dark">
-						<tbody>
-							<tr>
-								<th colspan="3">${label.html()}</th>
-							</tr>
-							<tr>
-								<th colspan="3">${title} : <span class="fs-7"> <span class="badge bg-5">${
-							dataPersonneAge[code]
-						}</span></span></th>
 							</tr>
 						</tbody>
 					</table>
@@ -362,7 +334,7 @@ min:0,
 			var element = data[key];
 			if (element > max) max = element;
 		}
-		return max + 1
+		return max + 1;
 	}
 	// EVENT LISTNER
 	$('input[type=radio][name=data]').change(function () {
@@ -371,7 +343,7 @@ min:0,
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// ----------------------------------------------------

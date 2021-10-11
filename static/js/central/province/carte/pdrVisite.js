@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	// VARIABLES
 	var data = $('#dataProvince').data('carte').pdrVisite.data,
-		title = 'Taux de couverture des PDR',
+		title = $('#title').text(),
 		// other
 		max = 100,
 		scale = ['#FE8989', '#FCFE89', '#6ED369'];

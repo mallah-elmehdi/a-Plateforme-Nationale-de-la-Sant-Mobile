@@ -94,6 +94,33 @@ async function getDetectionPrecoceCancerByProvince(province) {
 	}
 }
 
+// GET BY REGION
+async function getDetectionPrecoceCancerByRegion(region) {
+	try {
+		// variable
+		var today = new Date(),
+			result = [];
+		// get query
+		var query = await detectionPrecoceCancer
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+		// get only result fo the region
+		for (let i = 0; i < query.length; i++) {
+			const element = query[i];
+			if (element.csr.region === region) {
+				result.push(element);
+			}
+		}
+		return result;
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getDetectionPrecoceCancerBySortie,
@@ -101,5 +128,6 @@ module.exports = {
 	getDetectionPrecoceCancerById,
 	editDetectionPrecoceCancerById,
 	deleteDetectionPrecoceCancerById,
-	getDetectionPrecoceCancerByProvince
+	getDetectionPrecoceCancerByProvince,
+	getDetectionPrecoceCancerByRegion
 };

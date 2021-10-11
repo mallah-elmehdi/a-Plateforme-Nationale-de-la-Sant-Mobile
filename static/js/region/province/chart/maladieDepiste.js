@@ -32,23 +32,11 @@ $(document).ready(function () {
 		dataRaaSansCarditesCas = wholeData.raaSansCarditesCas.data,
 		dataRaaSansCarditesCasPec = wholeData.raaSansCarditesCasPec.data,
 		dataRaaSansCarditesReference = wholeData.raaSansCarditesReference.data,
-		dataCancerSeinCas = wholeData.cancerSeinCas.data,
-		dataCancerSeinCasPec = wholeData.cancerSeinCasPec.data,
-		dataCancerSeinReference = wholeData.cancerSeinReference.data,
-		dataCancerColCas = wholeData.cancerColCas.data,
-		dataCancerColCasPec = wholeData.cancerColCasPec.data,
-		dataCancerColReference = wholeData.cancerColReference.data,
 		dataTuberculosePolmonaireCas = wholeData.tuberculosePolmonaireCas.data,
 		dataTuberculosePolmonaireCasPec =
 			wholeData.tuberculosePolmonaireCasPec.data,
 		dataTuberculosePolmonaireReference =
 			wholeData.tuberculosePolmonaireReference.data,
-		dataTuberculoseExtraPolmonaireCas =
-			wholeData.tuberculoseExtraPolmonaireCas.data,
-		dataTuberculoseExtraPolmonaireCasPec =
-			wholeData.tuberculoseExtraPolmonaireCasPec.data,
-		dataTuberculoseExtraPolmonaireReference =
-			wholeData.tuberculoseExtraPolmonaireReference.data,
 		data = {
 			data: [],
 			categories: [],
@@ -57,14 +45,14 @@ $(document).ready(function () {
 	for (let i = 0; i < province.length; i++) {
 		const element = province[i];
 		if (provinceList.includes(element.codeProvince)) {
-		data.data.push(
-			getData([
-				dataDiabeteCas[element.codeProvince],
-				dataDiabeteCasPec[element.codeProvince],
-				dataDiabeteReference[element.codeProvince],
-			])
-		);
-		data.categories.push(element.province);
+			data.data.push(
+				getData([
+					dataDiabeteCas[element.codeProvince],
+					dataDiabeteCasPec[element.codeProvince],
+					dataDiabeteReference[element.codeProvince],
+				])
+			);
+			data.categories.push(element.province);
 		}
 	}
 	// SUM DATA
@@ -146,171 +134,149 @@ $(document).ready(function () {
 		data.data = [];
 		data.categories = [];
 		// change te data
-		
+
 		if (this.value === 'diabete') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataDiabeteCas[element.codeProvince],
-						dataDiabeteCasPec[element.codeProvince],
-						dataDiabeteReference[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataDiabeteCas[element.codeProvince],
+							dataDiabeteCasPec[element.codeProvince],
+							dataDiabeteReference[element.codeProvince],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'hta') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataHtaCas[element.codeProvince],
-						dataHtaCasPec[element.codeProvince],
-						dataHtaReference[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataHtaCas[element.codeProvince],
+							dataHtaCasPec[element.codeProvince],
+							dataHtaReference[element.codeProvince],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'angine') {
-		
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataAngineCas[element.codeProvince],
-						dataAngineCasPec[element.codeProvince],
-						dataAngineReference[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataAngineCas[element.codeProvince],
+							dataAngineCasPec[element.codeProvince],
+							dataAngineReference[element.codeProvince],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
-			type = ''
+			type = '';
 		} else if (this.value === 'carie') {
-		
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataCarieCas[element.codeProvince],
-						dataCarieCasPec[element.codeProvince],
-						dataCarieReference[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataCarieCas[element.codeProvince],
+							dataCarieCasPec[element.codeProvince],
+							dataCarieReference[element.codeProvince],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
-			type = ''
+			type = '';
 		} else if (this.value === 'parodontopathie') {
-
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataParodontopathieCas[element.codeProvince],
-						dataParodontopathieCasPec[element.codeProvince],
-						dataParodontopathieReference[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataParodontopathieCas[element.codeProvince],
+							dataParodontopathieCasPec[element.codeProvince],
+							dataParodontopathieReference[element.codeProvince],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
-			type = ''
+			type = '';
 		} else if (this.value === 'maladieMentale') {
-
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataMaladieMentaleCas[element.codeProvince],
-						dataMaladieMentaleCasPec[element.codeProvince],
-						dataMaladieMentaleReference[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataMaladieMentaleCas[element.codeProvince],
+							dataMaladieMentaleCasPec[element.codeProvince],
+							dataMaladieMentaleReference[element.codeProvince],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
-			type = ''
+			type = '';
 		} else if (this.value === 'ist') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataIstCas[element.codeProvince],
-						dataIstCasPec[element.codeProvince],
-						dataIstReference[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataIstCas[element.codeProvince],
+							dataIstCasPec[element.codeProvince],
+							dataIstReference[element.codeProvince],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
-			type = ''
+			type = '';
 		} else if (this.value === 'raa') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataRaaAvecCarditesCas[element.codeProvince],
-						dataRaaAvecCarditesCasPec[element.codeProvince],
-						dataRaaAvecCarditesReference[element.codeProvince],
-						dataRaaSansCarditesCas[element.codeProvince],
-						dataRaaSansCarditesCasPec[element.codeProvince],
-						dataRaaSansCarditesReference[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataRaaAvecCarditesCas[element.codeProvince],
+							dataRaaAvecCarditesCasPec[element.codeProvince],
+							dataRaaAvecCarditesReference[element.codeProvince],
+							dataRaaSansCarditesCas[element.codeProvince],
+							dataRaaSansCarditesCasPec[element.codeProvince],
+							dataRaaSansCarditesReference[element.codeProvince],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
-			type = ''
-		} else if (this.value === 'cancer') {
-			
-			for (let i = 0; i < province.length; i++) {
-				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataCancerSeinCas[element.codeProvince],
-						dataCancerSeinCasPec[element.codeProvince],
-						dataCancerSeinReference[element.codeProvince],
-						dataCancerColCas[element.codeProvince],
-						dataCancerColCasPec[element.codeProvince],
-						dataCancerColReference[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
-			}
-			type = ''
+			type = '';
 		} else if (this.value === 'tuberculose') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataTuberculosePolmonaireCas[element.codeProvince],
-						dataTuberculosePolmonaireCasPec[element.codeProvince],
-						dataTuberculosePolmonaireReference[element.codeProvince],
-						dataTuberculoseExtraPolmonaireCas[element.codeProvince],
-						dataTuberculoseExtraPolmonaireCasPec[element.codeProvince],
-						dataTuberculoseExtraPolmonaireReference[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataTuberculosePolmonaireCas[element.codeProvince],
+							dataTuberculosePolmonaireCasPec[
+								element.codeProvince
+							],
+							dataTuberculosePolmonaireReference[
+								element.codeProvince
+							],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
-			type = ''
+			type = '';
 		}
 		chart.updateSeries([
 			{

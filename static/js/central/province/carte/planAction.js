@@ -504,7 +504,7 @@ $(document).ready(function () {
 														<th rowspan="2">CS</th>
 														<th colspan="2">CSR</th>
 														<th colspan="2">Informations sur le véhicule</th>
-														<th rowspan="2">kms à parcourir</th>
+														<th rowspan="2">Kilométrage annuel total à parcourir</th>
 														<th rowspan="2">besoin en carburant</th>
 														<th rowspan="2">Besoins en usm</th>
 														<th rowspan="2">Observation</th>
@@ -529,7 +529,7 @@ $(document).ready(function () {
 														<th rowspan="2">CS</th>
 														<th colspan="2">CSR</th>
 														<th colspan="2">Informations sur le véhicule</th>
-														<th rowspan="2">kms à parcourir</th>
+														<th rowspan="2">Kilométrage annuel total à parcourir</th>
 														<th rowspan="2">besoin en carburant</th>
 														<th rowspan="2">Besoins en usm</th>
 														<th rowspan="2">Observation</th>

@@ -82,7 +82,7 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
-				gahrDepiste: {
+				garDepiste: {
 					data: {
 						1: 0,
 						2: 0,
@@ -144,7 +144,7 @@ async function dataRegion() {
 					data.cpnNouvelleInscrite.data[regionElement.codeRegion] += santeMaternelleElement.cpn.nouvelleInscrite
 					data.cpnAutreConsultation.data[regionElement.codeRegion] += santeMaternelleElement.cpn.autreConsultation
 					data.femmeExaminePostNatal.data[regionElement.codeRegion] += santeMaternelleElement.femmeExaminePostNatal
-					data.gahrDepiste.data[regionElement.codeRegion] += santeMaternelleElement.gahrDepiste
+					data.garDepiste.data[regionElement.codeRegion] += santeMaternelleElement.garDepiste
 					data.vat.data[regionElement.codeRegion] += santeMaternelleElement.vat
 					data.reference.data[regionElement.codeRegion] += santeMaternelleElement.reference
 				}
@@ -477,7 +477,7 @@ async function dataProvince() {
 				75: 0,
 					},
 				},
-				gahrDepiste: {
+				garDepiste: {
 					data: {
 				1: 0,
 				2: 0,
@@ -728,7 +728,7 @@ async function dataProvince() {
 					data.cpnNouvelleInscrite.data[provinceElement.codeProvince] += santeMaternelleElement.cpn.nouvelleInscrite
 					data.cpnAutreConsultation.data[provinceElement.codeProvince] += santeMaternelleElement.cpn.autreConsultation
 					data.femmeExaminePostNatal.data[provinceElement.codeProvince] += santeMaternelleElement.femmeExaminePostNatal
-					data.gahrDepiste.data[provinceElement.codeProvince] += santeMaternelleElement.gahrDepiste
+					data.garDepiste.data[provinceElement.codeProvince] += santeMaternelleElement.garDepiste
 					data.vat.data[provinceElement.codeProvince] += santeMaternelleElement.vat
 					data.reference.data[provinceElement.codeProvince] += santeMaternelleElement.reference
 				}

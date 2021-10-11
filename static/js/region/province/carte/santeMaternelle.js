@@ -1,18 +1,30 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataProvince').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		provinceList = $('#data').data('list'),
 		// init data
 		dataFemmePriseCharge = wholeData.femmePriseCharge.data,
-		dataCpnNouvelleInscrite = wholeData.cpnNouvelleInscrite.data,
-		dataCpnAutreConsultation = wholeData.cpnAutreConsultation.data,
+		dataCpnNouvelleInscriteT1 = wholeData.cpnNouvelleInscriteT1.data,
+		dataCpnNouvelleInscriteT2 = wholeData.cpnNouvelleInscriteT2.data,
+		dataCpnNouvelleInscriteT3 = wholeData.cpnNouvelleInscriteT3.data,
+		dataCpnAncienneInscriteT1 = wholeData.cpnAncienneInscriteT1.data,
+		dataCpnAncienneInscriteT2 = wholeData.cpnAncienneInscriteT2.data,
+		dataCpnAncienneInscriteT3 = wholeData.cpnAncienneInscriteT3.data,
+		dataAutreConsultation = wholeData.autreConsultation.data,
 		dataFemmeExaminePostNatal = wholeData.femmeExaminePostNatal.data,
-		dataGahrDepiste = wholeData.gahrDepiste.data,
+		dataGahrDepiste = wholeData.garDepiste.data,
 		dataVat = wholeData.vat.data,
 		dataReference = wholeData.reference.data,
 		// other
-		scale = ['#BDFFAD', '#187a00'],
+		scale = [
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		],
 		data = getData([dataFemmePriseCharge]),
 		max = getMax(data),
 		table = 1;
@@ -30,11 +42,11 @@ $(document).ready(function () {
 		series: {
 			regions: [
 				{
-					values:  getValue(data, provinceList),
+					values: getValue(data, provinceList),
 					scale,
 					normalizeFunction: 'polynomial',
 					max,
-min:0,
+					min: 0,
 					legend: {
 						horizontal: true,
 						labelRender: function (v) {
@@ -62,63 +74,85 @@ min:0,
 				fill: '#000000',
 			},
 		},
-		onRegionTipShow: function (event, label, code) {if (provinceList.includes(parseInt(code))) {
-			if (table === 1) {
-				label.html(
-					`
+		onRegionTipShow: function (event, label, code) {
+			if (provinceList.includes(parseInt(code))) {
+				if (table === 1) {
+					label.html(
+						`
 					<div class="bg-white shadow-sm p-1 rounded">
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
 								<th colspan="2" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
-						data[code]
-					}</span></span></th>
+							data[code]
+						}</span></span></th>
 							</tr>
 						</tbody>
 					</table>
 					</div>
 					`
-				);
-			} else if (table === 2) {
-				label.html(
-					`
+					);
+				} else if (table === 2) {
+					label.html(
+						`
 					<div class="bg-white shadow-sm p-1 rounded">
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="3" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
-								<th colspan="2" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
-						data[code]
-					}</span></span></th>
+								<th colspan="3" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
+							data[code]
+						}</span></span></th>
 							</tr>
 							
 							<tr>
-								<td>Nouvelles inscrites</td>
+								<th></th>
+								<th>Nouvelles inscrites</th>
+								<th>Anciennes inscrites</th>
+							</tr>
+							
+							<tr>
+								<td>T1</td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataCpnNouvelleInscrite[code]
+									dataCpnNouvelleInscriteT1[code]
+								}</span></td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataCpnAncienneInscriteT1[code]
 								}</span></td>
 							</tr>
 							
 							<tr>
-								<td>Autres consultations</td>
+								<td>T2</td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataCpnAutreConsultation[code]
+									dataCpnNouvelleInscriteT2[code]
+								}</span></td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataCpnAncienneInscriteT2[code]
+								}</span></td>
+							</tr>
+							<tr>
+								<td>T3</td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataCpnNouvelleInscriteT3[code]
+								}</span></td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataCpnAncienneInscriteT3[code]
 								}</span></td>
 							</tr>
 						</tbody>
 					</table>
 					</div>
 					`
-				);
+					);
+				}
 			}
-		}
 		},
 	});
 	// GET DATA
@@ -215,7 +249,7 @@ min:0,
 			var element = data[key];
 			if (element > max) max = element;
 		}
-		return max + 1
+		return max + 1;
 	}
 	// EVENT LISTNER
 	$('input[type=radio][name=data]').change(function () {
@@ -224,7 +258,7 @@ min:0,
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// ----------------------------------------------------
@@ -233,21 +267,32 @@ min:0,
 			data = getData([dataFemmePriseCharge]);
 			table = 1;
 		} else if (this.value === 'cpn') {
-			data = getData([dataCpnAutreConsultation, dataCpnNouvelleInscrite]);
+			data = getData([
+				dataCpnNouvelleInscriteT1,
+				dataCpnNouvelleInscriteT2,
+				dataCpnNouvelleInscriteT3,
+				dataCpnAncienneInscriteT1,
+				dataCpnAncienneInscriteT2,
+				dataCpnAncienneInscriteT3,
+			]);
 			table = 2;
 		} else if (this.value === 'femmeExaminePostNatal') {
 			data = getData([dataFemmeExaminePostNatal]);
 			table = 1;
-		} else if (this.value === 'gahrDepiste') {
+		} else if (this.value === 'garDepiste') {
 			data = getData([dataGahrDepiste]);
 			table = 1;
 		} else if (this.value === 'vat') {
 			data = getData([dataVat]);
 			table = 1;
-		} else if (this.value === 'reference') {
+		} else if (this.value === 'autreConsultation') {
+			data = getData([dataAutreConsultation]);
+			table = 1;
+		}else if (this.value === 'reference') {
 			data = getData([dataReference]);
 			table = 1;
 		}
+
 
 		// ----------------------------------------------------
 		// apply changes
@@ -255,5 +300,5 @@ min:0,
 		map.series.regions[0].setValues(getValue(data, provinceList));
 		map.series.regions[0].legend.render();
 	});
-	$('.thisProvince').addClass('d-none')
+	$('.thisProvince').addClass('d-none');
 });

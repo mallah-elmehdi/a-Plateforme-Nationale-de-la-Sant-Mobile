@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataRegion').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		codeRegion = parseInt($('#data').data('code')),
 		// init data
 		dataPiluleNa = wholeData.piluleNa.data,
@@ -15,7 +15,14 @@ $(document).ready(function () {
 		dataReferenceDiu = wholeData.referenceDiu.data,
 		dataReferenceLt = wholeData.referenceLt.data,
 		// other
-		scale = ['#BDFFAD', '#187a00'],
+				scale = [
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		],
 		data = getData([dataPiluleAa, dataPiluleNa]),
 		max = getMax(data),
 		table = 2;
@@ -66,7 +73,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -100,7 +107,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -134,7 +141,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -168,7 +175,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -202,7 +209,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -273,7 +280,7 @@ $(document).ready(function () {
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// ----------------------------------------------------

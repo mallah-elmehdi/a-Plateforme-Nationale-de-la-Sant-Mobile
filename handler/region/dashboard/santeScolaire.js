@@ -1,7 +1,7 @@
 // SET UP
 const fs = require('fs');
 const regionData = require('../../../data/region');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const santeScolaireData = require('../../../data/csr/rapport/santeScolaire');
 
 // ERROR
 const { newError } = require('../../../util/error');
@@ -56,10 +56,7 @@ async function dataRegion(region) {
 	try {
 		var codeRegion = getRegionCode(region),
 			data = {
-				visiteEtablissementVisite: {
-					data: { [codeRegion]: 0 },
-				},
-				visiteEleveVue: {
+				etablissementVisite: {
 					data: { [codeRegion]: 0 },
 				},
 				eleveExamineVmsCible: {
@@ -81,19 +78,17 @@ async function dataRegion(region) {
 					data: { [codeRegion]: 0 },
 				},
 			},
-			santeScolaire = await rapportData.getRapportByRegionAndYear(
+			santeScolaire = await santeScolaireData.getSanteScolaireByRegion(
 				region,
-				'santeScolaire'
 			);
 		// ------------------------
 
 		// santeScolaire
 		for (let j = 0; j < santeScolaire.length; j++) {
 			const santeScolaireElement = santeScolaire[j];
-			data.visiteEtablissementVisite.data[codeRegion] +=
-				santeScolaireElement.visite.etablissementVisite;
-			data.visiteEleveVue.data[codeRegion] +=
-				santeScolaireElement.visite.eleveVue;
+
+			data.etablissementVisite.data[codeRegion] +=
+				santeScolaireElement.etablissementVisite;
 			data.eleveExamineVmsCible.data[codeRegion] +=
 				santeScolaireElement.eleveExamineVms.cible;
 			data.eleveExamineVmsRealisation.data[codeRegion] +=
@@ -127,10 +122,7 @@ async function dataProvince(region, provinceList) {
 	try {
 		var dataInit = getDataInit(provinceList),
 			data = {
-				visiteEtablissementVisite: {
-					data: getDataInit(provinceList),
-				},
-				visiteEleveVue: {
+				etablissementVisite: {
 					data: getDataInit(provinceList),
 				},
 				eleveExamineVmsCible: {
@@ -152,9 +144,8 @@ async function dataProvince(region, provinceList) {
 					data: getDataInit(provinceList),
 				},
 			},
-			santeScolaire = await rapportData.getRapportByRegionAndYear(
+			santeScolaire = await santeScolaireData.getSanteScolaireByRegion(
 				region,
-				'santeScolaire'
 			);
 		// ------------------------
 		// province
@@ -167,10 +158,8 @@ async function dataProvince(region, provinceList) {
 					provinceListElement ===
 					getProvinceCode(santeScolaireElement.csr.province)
 				) {
-					data.visiteEtablissementVisite.data[provinceListElement] +=
-						santeScolaireElement.visite.etablissementVisite;
-					data.visiteEleveVue.data[provinceListElement] +=
-						santeScolaireElement.visite.eleveVue;
+					data.etablissementVisite.data[provinceListElement] +=
+						santeScolaireElement.etablissementVisite;
 					data.eleveExamineVmsCible.data[provinceListElement] +=
 						santeScolaireElement.eleveExamineVms.cible;
 					data.eleveExamineVmsRealisation.data[provinceListElement] +=
@@ -226,7 +215,7 @@ async function santeScolaire(req, res, next) {
 			data,
 			province,
 			provinceList,
-			page: 'dashboard',
+			page: 'prestation',
 			listItem: 'santeScolaire',
 		});
 	} catch (error) {

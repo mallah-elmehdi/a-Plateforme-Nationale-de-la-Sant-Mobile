@@ -1,20 +1,31 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataRegion').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		codeRegion = parseInt($('#data').data('code')),
 		// init data
 		dataEnfantPrisesCharge = wholeData.enfantPrisesCharge.data,
-		dataVaccinationDtc3Hib3 = wholeData.vaccinationDtc3Hib3.data,
-		dataVaccinationVar = wholeData.vaccinationVar.data,
+		dataVaccinationPentavalent = wholeData.vaccinationPentavalent.data,
+		dataVaccinationRr = wholeData.vaccinationRr.data,
+		dataVaccinationBcg = wholeData.vaccinationBcg.data,
 		dataVitamineA = wholeData.vitamineA.data,
 		dataVitamineD = wholeData.vitamineD.data,
-		dataPesee = wholeData.pesee.data,
+		dataEnfantsAvecInsuffisancePonderale =
+			wholeData.enfantsAvecInsuffisancePonderale.data,
+		dataEnfantsAvecRetardCroissance =
+			wholeData.enfantsAvecRetardCroissance.data,
 		dataDiarrhe = wholeData.diarrhe.data,
 		dataIra = wholeData.ira.data,
 		dataReference = wholeData.reference.data,
 		// other
-		scale = ['#BDFFAD', '#187a00'],
+		scale = [
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		],
 		data = getData([dataEnfantPrisesCharge]),
 		max = getMax(data),
 		table = 1;
@@ -65,7 +76,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -85,7 +96,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -95,16 +106,22 @@ $(document).ready(function () {
 							</tr>
 							
 							<tr>
-								<td>DTC3-Hib3</td>
+								<td>DTC3-Hib3-HB3 (pentavalent)</td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataVaccinationDtc3Hib3[code]
+									dataVaccinationPentavalent[code]
 								}</span></td>
 							</tr>
 							
 							<tr>
-								<td>VAR</td>
+								<td>RR</td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataVaccinationVar[code]
+									dataVaccinationRr[code]
+								}</span></td>
+							</tr>
+							<tr>
+								<td>BCG</td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataVaccinationBcg[code]
 								}</span></td>
 							</tr>
 						</tbody>
@@ -156,7 +173,7 @@ $(document).ready(function () {
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// ----------------------------------------------------
@@ -165,7 +182,11 @@ $(document).ready(function () {
 			data = getData([dataEnfantPrisesCharge]);
 			table = 1;
 		} else if (this.value === 'vaccination') {
-			data = getData([dataVaccinationDtc3Hib3, dataVaccinationVar]);
+			data = getData([
+				dataVaccinationPentavalent,
+				dataVaccinationRr,
+				dataVaccinationBcg,
+			]);
 			table = 2;
 		} else if (this.value === 'vitamineA') {
 			data = getData([dataVitamineA]);
@@ -173,8 +194,11 @@ $(document).ready(function () {
 		} else if (this.value === 'vitamineD') {
 			data = getData([dataVitamineD]);
 			table = 1;
-		} else if (this.value === 'pesee') {
-			data = getData([dataPesee]);
+		} else if (this.value === 'enfantsAvecInsuffisancePonderale') {
+			data = getData([dataEnfantsAvecInsuffisancePonderale]);
+			table = 1;
+		} else if (this.value === 'enfantsAvecRetardCroissance') {
+			data = getData([dataEnfantsAvecRetardCroissance]);
 			table = 1;
 		} else if (this.value === 'diarrhe') {
 			data = getData([dataDiarrhe]);

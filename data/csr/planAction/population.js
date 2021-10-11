@@ -79,34 +79,34 @@ async function getPopulationByProvince(province) {
 // 		throw newError(500, "quelque chose s'est mal passé");
 // 	}
 // }
-// // GET
-// async function getPopulationByRegionYear(region) {
-// 	try {
-// 		var today = new Date(),
-// 			all = await population
-// 				.find({ year: today.getFullYear() })
-// 				.populate({
-// 					path: 'csr',
-// 					select: '-password -email',
-// 				}),
-// 			out = [];
-// 		for (let i = 0; i < all.length; i++) {
-// 			const element = all[i];
-// 			if (element.csr.region === region) {
-// 				out.push(element)
-// 			}
-// 		}
-// 		return out
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
+// GET
+async function getPopulationByRegion(region) {
+	try {
+		var today = new Date(),
+			all = await population
+				.find({ year: today.getFullYear() })
+				.populate({
+					path: 'csr',
+					select: '-email',
+				}),
+			out = [];
+		for (let i = 0; i < all.length; i++) {
+			const element = all[i];
+			if (element.csr.region === region) {
+				out.push(element)
+			}
+		}
+		return out
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
 
 // OUTPUT
 module.exports = {
 	getPopulationByCsr,
 	addUpdatePopulation,
-
+	getPopulationByRegion,
 	getPopulationByProvince,
 };

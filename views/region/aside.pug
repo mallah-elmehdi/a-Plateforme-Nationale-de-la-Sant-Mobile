@@ -1,59 +1,111 @@
 aside#aside.bg-aside
 	.text-center.p-3
-		img(src="/../../image/ms-logo.png", alt="umm" width="80px")
-	nav.nav.flex-column.p-3.text-2
-		a.list-group-item-action.rounded.bg-white.nav-link.py-2.d-flex.align-items-center(data-bs-toggle='collapse' href='#dashboardCollapse' role='button' aria-expanded='false' aria-controls='dashboardCollapse')
-			ion-icon.fs-6.me-2.text-1(name='tv-outline')
-			span.fs-7.text-dark  Tableau de bord 		
-		#dashboardCollapse.mt-1.collapse(class=(page === 'dashboard') ? 'show' : '')
+		a(href="/") 
+			img(src="/../../image/logo-test.png", alt="umm" width="200px")
+	ul.nav.flex-column.p-3
+		li.nav-item.mb-3
+			.d-flex.flex-column.lh-1.text-white.fs-8
+				span.fw-bold UMM
+				span Unité Médical Mobile
+		li.nav-item.mb-3
+			a.nav-link.bg-white.rounded.text-dark(data-bs-toggle='collapse' href='#dashboardCollapse' role='button' aria-expanded='false' aria-controls='dashboardCollapse')
+				.d-flex.align-items-center
+					ion-icon.fs-6.me-2.text-1(name='apps-outline')
+					span.fs-7.text-dark Tableau de bord
+			#dashboardCollapse.collapse.mt-1.bg-white.rounded(class=(page === 'dashboard' || page === 'ressource'  || page === 'performance' || page === 'prestation') ? 'show' : '')
+				ul.nav.flex-column
+					li.nav-item
+						a.nav-link.fs-7.border-bottom.text-dark(class=(listItem === 'populationCible') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/population-cible')
+							span.fs-8 Population cible des UMM
+					li.nav-item
+						a.nav-link.border-bottom.fs-7.text-dark(data-bs-toggle='collapse' href='#ressourceMobiliseCollapse' role='button' aria-expanded='false' aria-controls='ressourceMobiliseCollapse')
+							.d-flex.align-items-center
+								ion-icon.fs-10.me-2.text-1(name='chevron-down-outline')
+								span.fs-8 Ressources mobilisées
+						#ressourceMobiliseCollapse.collapse(class=(page === 'ressource') ? 'show' : '')
+							ul.nav.flex-column
+								li.nav-item
+									a.nav-link.fs-7.border-bottom.text-dark(class=(listItem === 'ressource') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/ressource')
+										span.fs-8 Moyens de mobilité
+								li.nav-item
+									a.nav-link.fs-7.border-bottom.text-dark(class=(listItem === 'ressourceHumain') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/ressource-humain')
+										span.fs-8 Ressources humaines
+					li.nav-item
+						a.nav-link.fs-7.text-dark(data-bs-toggle='collapse' href='#performancesCollapse' role='button' aria-expanded='false' aria-controls='performancesCollapse')
+							.d-flex.align-items-center
+								ion-icon.fs-10.me-2.text-1(name='chevron-down-outline')
+								span.fs-8 Performances
+						#performancesCollapse.collapse(class=(page === 'performance' || page === 'prestation') ? 'show' : '')
+							ul.nav.flex-column
+								li.nav-item
+									a.nav-link.fs-7.border-bottom.text-dark.border-top.text-dark(class=(listItem === 'sortieRealise') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/taux-de-realisation-de-sortie-programme')
+										span.fs-8 Taux de réalisation des sorties programmées
+								li.nav-item
+									a.nav-link.fs-7.border-bottom.text-dark(class=(listItem === 'pdrVisite') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/taux-de-couverture-des-pdr')
+										span.fs-8 Taux de couverture des PDR
+											
+								li.nav-item
+									a.nav-link.fs-7.text-dark(data-bs-toggle='collapse' href='#prestationCollapse' role='button' aria-expanded='false' aria-controls='prestationCollapse')
+										.d-flex.align-items-center
+											ion-icon.fs-10.me-2.text-1(name='chevron-down-outline')
+											span.fs-8 Prestation de services
+									#prestationCollapse.collapse(class=(page === 'prestation') ? 'show' : '')
+										ul.nav.flex-column
+											li.nav-item
+												a.nav-link.fs-7.border-bottom.text-dark.border-top(class=(listItem === 'santeMaternelle') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/sante-maternelle')
+													span.fs-8 Santé maternelle
+											li.nav-item
+												a.nav-link.fs-7.border-bottom.text-dark(class=(listItem === 'santeInfantile') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/sante-infantile')
+													span.fs-8 Santé infantile
+											li.nav-item
+												a.nav-link.fs-7.border-bottom.text-dark(class=(listItem === 'planificationFamiliale') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/planification-familiale')
+													span.fs-8 Planification familiale
+											li.nav-item
+												a.nav-link.fs-7.border-bottom.text-dark(class=(listItem === 'santeScolaire') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/sante-scolaire')
+													span.fs-8 Santé scolaire
+											li.nav-item
+												a.nav-link.fs-7.border-bottom.text-dark(class=(listItem === 'detectionPrecoceCancer') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/detection-precoce-cancer')
+													span.fs-8 Détection précoce des cancers du sein et du col de l’utérus
+											li.nav-item
+												a.nav-link.fs-7.border-bottom.text-dark(class=(listItem === 'consultationMedical') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/consultation-medical')
+													span.fs-8 Consultations médicales
+											li.nav-item
+												a.nav-link.fs-7.text-dark(class=(listItem === 'maladieDepiste') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/maladie-depiste')
+													span.fs-8 Maladies dépistées
+											//- li.nav-item
+												a.nav-link.fs-7.text-dark(class=(listItem === 'autreActivite') ? 'active' : '' href='/region/' + data.document.id + '/tableau-de-bord/autre-activite')
+													span.fs-8 Autre activités
+		li.nav-item.mb-3
+			a.nav-link.card.fs-7.text-dark(href= '/region/' + data.document.id +'/plan-action')
+				.d-flex.align-items-center
+					ion-icon.fs-6.me-2.text-1(name='reader-outline')
+					span.fs-7.text-dark Plan d'action
+		li.nav-item.mb-3
+			a.nav-link.card.fs-7.text-dark(data-bs-toggle='collapse' href='#rapportCollapse' role='button' aria-expanded='false' aria-controls='rapportCollapse')
+				.d-flex.align-items-center
+					ion-icon.fs-6.me-2.text-1(name='list-outline')
+					span.fs-7.text-dark Rapport
+			#rapportCollapse.collapse.mt-1.bg-white.rounded(class=(page === 'rapport') ? 'show' : '')
+				ul.nav.flex-column
+					li.nav-item
+						a.nav-link.fs-7.border-bottom.text-dark(class=(listItem === '1') ? 'active' : '' href='/region/' + data.document.id +'/trimestre/1')
+							span.fs-8 Trimestre 1
+					li.nav-item
+						a.nav-link.fs-7.border-bottom.text-dark(class=(listItem === '2') ? 'active' : '' href='/region/' + data.document.id +'/trimestre/2')
+							span.fs-8 Trimestre 2
+					li.nav-item
+						a.nav-link.fs-7.border-bottom.text-dark(class=(listItem === '3') ? 'active' : '' href='/region/' + data.document.id +'/trimestre/3')
+							span.fs-8 Trimestre 3
+					li.nav-item
+						a.nav-link.fs-7.text-dark(class=(listItem === '4') ? 'active' : '' href='/region/' + data.document.id +'/trimestre/4')
+							span.fs-8 Trimestre 4
+		li.nav-item.mb-3
+			.d-flex.flex-column.lh-1.text-white.fs-8
+				span.fw-bold CMS
+				span Caravane Médicale Spécialisée
+		li.nav-item
+			a.nav-link.card.fs-7.text-dark(href= '/region/' + data.document.id +'/cms')
+				.d-flex.align-items-center
+					ion-icon.fs-6.me-2.text-1(name='information-circle-outline')
+					span.fs-7.text-dark Voir plus
 
-			.list-group.list-group-flush.rounded
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/tableau-de-bord/taux-de-couverture-des-pdr' class=(listItem === 'pdrVisite') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Couverture des PDR
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/tableau-de-bord/population-cible' class=(listItem === 'populationCible') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Population cible
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/tableau-de-bord/ressource' class=(listItem === 'ressource') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Ressources mobilisable
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/tableau-de-bord/sante-maternelle' class=(listItem === 'santeMaternelle') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Santé maternelle
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/tableau-de-bord/sante-infantile' class=(listItem === 'santeInfantile') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Santé infantile
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/tableau-de-bord/planification-familiale' class=(listItem === 'planificationFamiliale') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Planification familiale
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/tableau-de-bord/sante-scolaire' class=(listItem === 'santeScolaire') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Santé scolaire
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/tableau-de-bord/consultation-medical' class=(listItem === 'consultationMedical') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Consultations médicales
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/tableau-de-bord/maladie-depiste' class=(listItem === 'maladieDepiste') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Maladies dépistées
-
-		a.list-group-item-action.rounded.bg-white.nav-link.py-2.my-3.d-flex.align-items-center(href= '/region/' + data.document.id + '/plan-action')
-			ion-icon.fs-6.me-2.text-1(name='document-outline')
-			span.fs-7.text-dark Plan d'action
-
-		a.list-group-item-action.rounded.bg-white.nav-link.py-2.d-flex.align-items-center(data-bs-toggle='collapse' href='#rapportCollapse' role='button' aria-expanded='false' aria-controls='rapportCollapse')
-			ion-icon.fs-6.me-2.text-1(name='document-outline')
-			span.fs-7.text-dark Rapport 		
-		#rapportCollapse.mt-1.collapse(class=(page === 'rapport') ? 'show' : '')
-			.list-group.list-group-flush.rounded
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/trimestre/1' class=(listItem === '1') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Trimestre 1
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/trimestre/2' class=(listItem === '2') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Trimestre 2
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/trimestre/3' class=(listItem === '3') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Trimestre 3
-				a.list-group-item.list-group-item-action.d-flex.align-items-center(href='/region/' + data.document._id + '/trimestre/4' class=(listItem === '4') ? 'active' : '')
-					ion-icon.fs-10.me-2.text-1(name='ellipse')
-					span.fs-8.text-dark Trimestre 4

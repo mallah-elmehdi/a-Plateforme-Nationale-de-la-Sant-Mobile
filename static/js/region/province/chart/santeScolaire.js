@@ -5,9 +5,9 @@ $(document).ready(function () {
 		provinceList = $('#data').data('list'),
 		type = '',
 		// init data
-		dataVisiteEtablissementVisite =
-			wholeData.visiteEtablissementVisite.data,
-		dataVisiteEleveVue = wholeData.visiteEleveVue.data,
+		dataEtablissementVisite =
+			wholeData.etablissementVisite.data,
+		
 		dataEleveExamineVmsCible = wholeData.eleveExamineVmsCible.data,
 		dataEleveExamineVmsRealisation =
 			wholeData.eleveExamineVmsRealisation.data,
@@ -32,7 +32,7 @@ $(document).ready(function () {
 		const element = province[i];
 		if (provinceList.includes(element.codeProvince)) {
 		data.data.push(
-			getData([dataVisiteEtablissementVisite[element.codeProvince]])
+			getData([dataEtablissementVisite[element.codeProvince]])
 		);
 		data.categories.push(element.province);
 		}
@@ -116,12 +116,12 @@ $(document).ready(function () {
 		data.data = [];
 		data.categories = [];
 		// change te data
-		if (this.value === 'visiteEtablissementVisite') {
+		if (this.value === 'etablissementVisite') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
 		if (provinceList.includes(element.codeProvince)) {
 				data.data.push(
-					getData([dataVisiteEtablissementVisite[element.codeProvince]])
+					getData([dataEtablissementVisite[element.codeProvince]])
 				);
 				data.categories.push(element.province);
 		}

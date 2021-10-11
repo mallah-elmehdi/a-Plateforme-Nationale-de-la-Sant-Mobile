@@ -8,7 +8,7 @@ $(document).ready(function () {
 		dataCpnNouvelleInscrite = wholeData.cpnNouvelleInscrite.data,
 		dataCpnAutreConsultation = wholeData.cpnAutreConsultation.data,
 		dataFemmeExaminePostNatal = wholeData.femmeExaminePostNatal.data,
-		dataGahrDepiste = wholeData.gahrDepiste.data,
+		dataGahrDepiste = wholeData.garDepiste.data,
 		dataVat = wholeData.vat.data,
 		dataReference = wholeData.reference.data,
 		data = {
@@ -132,7 +132,7 @@ $(document).ready(function () {
 				data.categories.push(element.region);
 			}
 			type = '';
-		} else if (this.value === 'gahrDepiste') {
+		} else if (this.value === 'garDepiste') {
 			for (let i = 0; i < region.length; i++) {
 				var element = region[i];
 				data.data.push(

@@ -7,21 +7,21 @@ $(document).ready(function () {
 		dataConsultationRealiseMMoins =
 			wholeData.consultationRealiseMMoins5ans.data,
 		dataConsultationRealiseMPlus =
-			wholeData.consultationRealiseMPlus5ans.data,
+			wholeData.consultationRealiseMPlus18ans.data,
 		dataConsultationRealiseFMoins =
 			wholeData.consultationRealiseFMoins5ans.data,
 		dataConsultationRealiseFPlus =
-			wholeData.consultationRealiseFPlus5ans.data,
+			wholeData.consultationRealiseFPlus18ans.data,
 		dataPecParPemMoins = wholeData.pecParPemMoins5ans.data,
-		dataPecParPemPlus = wholeData.pecParPemPlus5ans.data,
+		dataPecParPemPlus = wholeData.pecParPemPlus18ans.data,
 		dataReferenceConsSpecMoins = wholeData.referenceConsSpecMoins5ans.data,
-		dataReferenceConsSpecPlus = wholeData.referenceConsSpecPlus5ans.data,
-		dataReferenceHospMoins = wholeData.referenceHospMoins5ans.data,
-		dataReferenceHospPlus = wholeData.referenceHospPlus5ans.data,
+		dataReferenceConsSpecPlus = wholeData.referenceConsSpecPlus18ans.data,
+		dataReferenceUrgenceMoins = wholeData.referenceUrgenceMoins5ans.data,
+		dataReferenceUrgencePlus = wholeData.referenceUrgencePlus18ans.data,
 		dataReferenceExLaboMoins = wholeData.referenceExLaboMoins5ans.data,
-		dataReferenceExLaboPlus = wholeData.referenceExLaboPlus5ans.data,
+		dataReferenceExLaboPlus = wholeData.referenceExLaboPlus18ans.data,
 		dataReferenceExRadioMoins = wholeData.referenceExRadioMoins5ans.data,
-		dataReferenceExRadioPlus = wholeData.referenceExRadioPlus5ans.data,
+		dataReferenceExRadioPlus = wholeData.referenceExRadioPlus18ans.data,
 		dataBudgetMedicamentDispenseEm =
 			wholeData.budgetMedicamentDispenseEm.data,
 		data = {
@@ -153,8 +153,8 @@ $(document).ready(function () {
 					getData([
 						dataReferenceConsSpecMoins[element.codeProvince],
 						dataReferenceConsSpecPlus[element.codeProvince],
-						dataReferenceHospMoins[element.codeProvince],
-						dataReferenceHospPlus[element.codeProvince],
+						dataReferenceUrgenceMoins[element.codeProvince],
+						dataReferenceUrgencePlus[element.codeProvince],
 						dataReferenceExLaboMoins[element.codeProvince],
 						dataReferenceExLaboPlus[element.codeProvince],
 						dataReferenceExRadioMoins[element.codeProvince],

@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataProvince').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		// init data
 		dataBesoinUsm = wholeData.besoinUsm.data,
 		dataBudgetKmsParcourir = wholeData.budgetKmsParcourir.data,
@@ -67,7 +67,7 @@ $(document).ready(function () {
 							
 							<tr>
 								<th></th>
-								<th colspan="2" class="text-center">Ministre de la santé</th>
+								<th colspan="2" class="text-center">Ministère de la Santé</th>
 								<th colspan="2" class="text-center">Commune</th>
 								<th rowspan="2" class="text-center" style="vertical-align:middle;">Total</th>
 							</tr>
@@ -141,31 +141,31 @@ $(document).ready(function () {
 							</tr>
 							
 							<tr>
-								<th>Unité mobile</th>
+								<th>Unité Sanitaire Mobile (USM)</th>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].uniteMobile.appartenance.ms
+									dataType[code].usm.appartenance.ms
 										.age.moins5ans
 								}</span></td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].uniteMobile.appartenance.ms
+									dataType[code].usm.appartenance.ms
 										.age.plus5ans
 								}</span></td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].uniteMobile.appartenance
+									dataType[code].usm.appartenance
 										.commune.age.moins5ans
 								}</span></td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].uniteMobile.appartenance
+									dataType[code].usm.appartenance
 										.commune.age.plus5ans
 								}</span></td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].uniteMobile.appartenance.ms
+									dataType[code].usm.appartenance.ms
 										.age.moins5ans +
-									dataType[code].uniteMobile.appartenance.ms
+									dataType[code].usm.appartenance.ms
 										.age.plus5ans +
-									dataType[code].uniteMobile.appartenance
+									dataType[code].usm.appartenance
 										.commune.age.moins5ans +
-									dataType[code].uniteMobile.appartenance
+									dataType[code].usm.appartenance
 										.commune.age.plus5ans
 								}</span></td>
 							</tr>
@@ -454,7 +454,7 @@ $(document).ready(function () {
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// ----------------------------------------------------

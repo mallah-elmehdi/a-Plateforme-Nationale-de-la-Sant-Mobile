@@ -79,7 +79,7 @@
             },
             {
                 "name": "pecParPem[plus18ans]",
-				"id": "pecParPemPlus5ans",
+				"id": "pecParPemPlus18ans",
                 "title": "Plus de 18 ans",
                 "type": "number",
                 "col": "col-md-4 col-sm-6"
@@ -110,7 +110,7 @@
                     },
                     {
                         "name": "reference[consSpec][plus18ans]",
-						"id": "referenceConsSpecPlus5ans",
+						"id": "referenceConsSpecPlus18ans",
                         "title": "Plus de 18 ans",
                         "type": "number",
                         "col": "col-md-4 col-sm-6"
@@ -137,7 +137,7 @@
                     },
                     {
                         "name": "reference[urgence][plus18ans]",
-						"id": "referenceUrgencePlus5ans",
+						"id": "referenceUrgencePlus18ans",
                         "title": "Plus de 18 ans",
                         "type": "number",
                         "col": "col-md-4 col-sm-6"
@@ -164,7 +164,7 @@
                     },
                     {
                         "name": "reference[exLabo][plus18ans]",
-						"id": "referenceExLaboPlus5ans",
+						"id": "referenceExLaboPlus18ans",
                         "title": "Plus de 18 ans",
                         "type": "number",
                         "col": "col-md-4 col-sm-6"
@@ -191,7 +191,7 @@
                     },
                     {
                         "name": "reference[exRadio][plus18ans]",
-						"id": "referenceExRadioPlus5ans",
+						"id": "referenceExRadioPlus18ans",
                         "title": "Plus de 18 ans",
                         "type": "number",
                         "col": "col-md-4 col-sm-6"

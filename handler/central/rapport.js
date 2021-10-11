@@ -27,7 +27,7 @@ function getGlobalConsultationMedical(item) {
 	objOut.pecParPem = { moins5ans: 0, plus5ans: 0 };
 	objOut.reference = {};
 	objOut.reference.consSpec = { moins5ans: 0, plus5ans: 0 };
-	objOut.reference.hosp = { moins5ans: 0, plus5ans: 0 };
+	objOut.reference.urgence = { moins5ans: 0, plus5ans: 0 };
 	objOut.reference.exLabo = { moins5ans: 0, plus5ans: 0 };
 	objOut.reference.exRadio = { moins5ans: 0, plus5ans: 0 };
 	objOut.budgetMedicamentDispenseEm = 0;
@@ -41,7 +41,7 @@ function getGlobalConsultationMedical(item) {
 			objOut.pecParPem.moins5ans += element.pecParPem.moins5ans;
 			objOut.reference.consSpec.moins5ans +=
 				element.reference.consSpec.moins5ans;
-			objOut.reference.hosp.moins5ans += element.reference.hosp.moins5ans;
+			objOut.reference.urgence.moins5ans += element.reference.urgence.moins5ans;
 			objOut.reference.exLabo.moins5ans +=
 				element.reference.exLabo.moins5ans;
 			objOut.reference.exRadio.moins5ans +=
@@ -53,7 +53,7 @@ function getGlobalConsultationMedical(item) {
 			objOut.pecParPem.plus5ans += element.pecParPem.plus5ans;
 			objOut.reference.consSpec.plus5ans +=
 				element.reference.consSpec.plus5ans;
-			objOut.reference.hosp.plus5ans += element.reference.hosp.plus5ans;
+			objOut.reference.urgence.plus5ans += element.reference.urgence.plus5ans;
 			objOut.reference.exLabo.plus5ans +=
 				element.reference.exLabo.plus5ans;
 			objOut.reference.exRadio.plus5ans +=
@@ -127,7 +127,7 @@ function getGlobalSanteMaternelle(item) {
 		autreConsultation: 0,
 	};
 	objOut.femmeExaminePostNatal = 0;
-	objOut.gahrDepiste = 0;
+	objOut.garDepiste = 0;
 	objOut.vat = 0;
 	objOut.reference = 0;
 	for (let i = 0; i < item.length; i++) {
@@ -137,7 +137,7 @@ function getGlobalSanteMaternelle(item) {
 			objOut.cpn.nouvelleInscrite += element.cpn.nouvelleInscrite;
 			objOut.cpn.autreConsultation += element.cpn.autreConsultation;
 			objOut.femmeExaminePostNatal += element.femmeExaminePostNatal;
-			objOut.gahrDepiste += element.gahrDepiste;
+			objOut.garDepiste += element.garDepiste;
 			objOut.vat += element.vat;
 			objOut.reference += element.reference;
 		}
@@ -379,8 +379,8 @@ function getGlobalSanteScolaire(item) {
 			!JSON.stringify(item[i].santeScolaire).includes('"ignore":true')
 		) {
 			const element = item[i].santeScolaire;
-			objOut.visite.etablissementVisite +=
-				element.visite.etablissementVisite;
+			objOut.etablissementVisite +=
+				element.etablissementVisite;
 			objOut.visite.eleveVue += element.visite.eleveVue;
 			objOut.eleveExamineVms.cible += element.eleveExamineVms.cible;
 			objOut.lutteContreDeficienceVisuelle.echelleMetrique.cible +=

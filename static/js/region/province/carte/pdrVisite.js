@@ -1,11 +1,19 @@
 $(document).ready(function () {
 	// VARIABLES
 	var data = $('#dataProvince').data('carte').pdrVisite.data,
-		title = 'Taux de couverture des PDR',
+		title = $('#title').text(),
 		provinceList = $('#data').data('list'),
 		// other
 		max = 100,
-		scale = ['#FE8989', '#FCFE89', '#6ED369'];
+		scale = [
+			'#FF4646',
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		];
 	function getValue(data, provinceList) {
 		var out = {};
 		for (let i = 0; i < provinceList.length; i++) {
@@ -60,7 +68,7 @@ min:0,
 					<table class="table table-sm table-bordered fs-8 text-center text-dark">
 						<tbody>
 							<tr>
-								<th colspan="3">${label.html()}</th>
+								<th colspan="3">Province : ${label.html()}</th>
 							</tr>
 							<tr>
 								<th colspan="3">${title} : <span class="fs-7"> <span class="badge bg-5">${

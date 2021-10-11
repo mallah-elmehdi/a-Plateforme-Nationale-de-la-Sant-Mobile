@@ -1,11 +1,14 @@
 extends ../util/base
 
 block body
-	.d-flex.min-vh-100.align-items-stretch
+	.d-flex.align-items-stretch
 		include aside
-		#content.w-100
-			include header
-			include ../util/snippet/identity
-			main.p-3.min-vh-100
-				block main
-			include ../util/snippet/footer
+		#content.container-fluid.py-3.min-vh-100.container-cstmz
+			.d-flex.flex-column.h-100
+				.mb-3
+					include header
+				.mb-3
+					main
+						block main
+				.mt-auto
+					include ../util/snippet/footer

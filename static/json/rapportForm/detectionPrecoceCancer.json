@@ -33,7 +33,7 @@
 			{
 				"name": "femmeRefere[cancerCol]",
 				"id": "femmeRefereCancerCol",
-				"title": "Détection précoce du Cancer du col",
+				"title": "Détection précoce du cancer du col",
 				"type": "number",
 				"col": "col-md-6"
 			}

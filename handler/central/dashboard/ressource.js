@@ -53,7 +53,7 @@ async function dataRegion() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -119,7 +119,7 @@ async function dataRegion() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -185,7 +185,7 @@ async function dataRegion() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -251,7 +251,7 @@ async function dataRegion() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -317,7 +317,7 @@ async function dataRegion() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -383,7 +383,7 @@ async function dataRegion() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -449,7 +449,7 @@ async function dataRegion() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -515,7 +515,7 @@ async function dataRegion() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -581,7 +581,7 @@ async function dataRegion() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -647,7 +647,7 @@ async function dataRegion() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -713,7 +713,7 @@ async function dataRegion() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -779,7 +779,7 @@ async function dataRegion() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -883,7 +883,7 @@ async function dataRegion() {
 						// appartenance
 						if (
 							ressourceElement.appartenance ===
-							'Ministre de la santé'
+							'Ministère de la Santé'
 						) {
 							// age
 							if (ressourceElement.age <= 5) {
@@ -913,7 +913,7 @@ async function dataRegion() {
 						// appartenance
 						if (
 							ressourceElement.appartenance ===
-							'Ministre de la santé'
+							'Ministère de la Santé'
 						) {
 							// age
 							if (ressourceElement.age <= 5) {
@@ -939,21 +939,21 @@ async function dataRegion() {
 								].camionMobile.appartenance.commune.age.plus5ans += 1;
 							}
 						}
-					} else if (ressourceElement.type === 'Unité mobile') {
+					} else if (ressourceElement.type === 'Unité Sanitaire Mobile (USM)') {
 						// appartenance
 						if (
 							ressourceElement.appartenance ===
-							'Ministre de la santé'
+							'Ministère de la Santé'
 						) {
 							// age
 							if (ressourceElement.age <= 5) {
 								data.type.data[
 									regionElement.codeRegion
-								].uniteMobile.appartenance.ms.age.moins5ans += 1;
+								].usm.appartenance.ms.age.moins5ans += 1;
 							} else {
 								data.type.data[
 									regionElement.codeRegion
-								].uniteMobile.appartenance.ms.age.plus5ans += 1;
+								].usm.appartenance.ms.age.plus5ans += 1;
 							}
 						} else if (
 							ressourceElement.appartenance === 'Commune'
@@ -962,18 +962,18 @@ async function dataRegion() {
 							if (ressourceElement.age <= 5) {
 								data.type.data[
 									regionElement.codeRegion
-								].uniteMobile.appartenance.commune.age.moins5ans += 1;
+								].usm.appartenance.commune.age.moins5ans += 1;
 							} else {
 								data.type.data[
 									regionElement.codeRegion
-								].uniteMobile.appartenance.commune.age.plus5ans += 1;
+								].usm.appartenance.commune.age.plus5ans += 1;
 							}
 						}
 					} else if (ressourceElement.type === 'VTT') {
 						// appartenance
 						if (
 							ressourceElement.appartenance ===
-							'Ministre de la santé'
+							'Ministère de la Santé'
 						) {
 							// age
 							if (ressourceElement.age <= 5) {
@@ -1049,7 +1049,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1115,7 +1115,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1181,7 +1181,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1247,7 +1247,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1313,7 +1313,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1379,7 +1379,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1445,7 +1445,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1511,7 +1511,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1577,7 +1577,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1643,7 +1643,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1709,7 +1709,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1775,7 +1775,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1841,7 +1841,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1907,7 +1907,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -1973,7 +1973,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2039,7 +2039,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2105,7 +2105,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2171,7 +2171,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2237,7 +2237,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2303,7 +2303,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2369,7 +2369,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2435,7 +2435,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2501,7 +2501,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2567,7 +2567,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2633,7 +2633,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2699,7 +2699,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2765,7 +2765,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2831,7 +2831,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2897,7 +2897,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -2963,7 +2963,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3029,7 +3029,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3095,7 +3095,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3161,7 +3161,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3227,7 +3227,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3293,7 +3293,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3359,7 +3359,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3425,7 +3425,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3491,7 +3491,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3557,7 +3557,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3623,7 +3623,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3689,7 +3689,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3755,7 +3755,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3821,7 +3821,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3887,7 +3887,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -3953,7 +3953,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4019,7 +4019,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4085,7 +4085,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4151,7 +4151,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4217,7 +4217,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4283,7 +4283,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4349,7 +4349,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4415,7 +4415,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4481,7 +4481,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4547,7 +4547,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4613,7 +4613,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4679,7 +4679,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4745,7 +4745,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4811,7 +4811,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4877,7 +4877,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -4943,7 +4943,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5009,7 +5009,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5075,7 +5075,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5141,7 +5141,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5207,7 +5207,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5273,7 +5273,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5339,7 +5339,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5405,7 +5405,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5471,7 +5471,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5537,7 +5537,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5603,7 +5603,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5669,7 +5669,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5735,7 +5735,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5801,7 +5801,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5867,7 +5867,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -5933,7 +5933,7 @@ async function dataProvince() {
 									},
 								},
 							},
-							uniteMobile: {
+							usm: {
 								appartenance: {
 									commune: {
 										age: {
@@ -6229,7 +6229,7 @@ async function dataProvince() {
 						// appartenance
 						if (
 							ressourceElement.appartenance ===
-							'Ministre de la santé'
+							'Ministère de la Santé'
 						) {
 							// age
 							if (ressourceElement.age <= 5) {
@@ -6259,7 +6259,7 @@ async function dataProvince() {
 						// appartenance
 						if (
 							ressourceElement.appartenance ===
-							'Ministre de la santé'
+							'Ministère de la Santé'
 						) {
 							// age
 							if (ressourceElement.age <= 5) {
@@ -6285,21 +6285,21 @@ async function dataProvince() {
 								].camionMobile.appartenance.commune.age.plus5ans += 1;
 							}
 						}
-					} else if (ressourceElement.type === 'Unité mobile') {
+					} else if (ressourceElement.type === 'Unité Sanitaire Mobile (USM)') {
 						// appartenance
 						if (
 							ressourceElement.appartenance ===
-							'Ministre de la santé'
+							'Ministère de la Santé'
 						) {
 							// age
 							if (ressourceElement.age <= 5) {
 								data.type.data[
 									provinceElement.codeProvince
-								].uniteMobile.appartenance.ms.age.moins5ans += 1;
+								].usm.appartenance.ms.age.moins5ans += 1;
 							} else {
 								data.type.data[
 									provinceElement.codeProvince
-								].uniteMobile.appartenance.ms.age.plus5ans += 1;
+								].usm.appartenance.ms.age.plus5ans += 1;
 							}
 						} else if (
 							ressourceElement.appartenance === 'Commune'
@@ -6308,18 +6308,18 @@ async function dataProvince() {
 							if (ressourceElement.age <= 5) {
 								data.type.data[
 									provinceElement.codeProvince
-								].uniteMobile.appartenance.commune.age.moins5ans += 1;
+								].usm.appartenance.commune.age.moins5ans += 1;
 							} else {
 								data.type.data[
 									provinceElement.codeProvince
-								].uniteMobile.appartenance.commune.age.plus5ans += 1;
+								].usm.appartenance.commune.age.plus5ans += 1;
 							}
 						}
 					} else if (ressourceElement.type === 'VTT') {
 						// appartenance
 						if (
 							ressourceElement.appartenance ===
-							'Ministre de la santé'
+							'Ministère de la Santé'
 						) {
 							// age
 							if (ressourceElement.age <= 5) {

@@ -1,7 +1,7 @@
 // SET UP
 const fs = require('fs');
 const regionData = require('../../../data/region');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const santeMaternelleData = require('../../../data/csr/rapport/santeMaternelle');
 
 // ERROR
 const { newError } = require('../../../util/error');
@@ -59,16 +59,31 @@ async function dataRegion(region) {
 				femmePriseCharge: {
 					data: { [codeRegion]: 0 },
 				},
-				cpnNouvelleInscrite: {
+				cpnNouvelleInscriteT1: {
 					data: { [codeRegion]: 0 },
 				},
-				cpnAutreConsultation: {
+				cpnNouvelleInscriteT2: {
+					data: { [codeRegion]: 0 },
+				},
+				cpnNouvelleInscriteT3: {
+					data: { [codeRegion]: 0 },
+				},
+				cpnAncienneInscriteT1: {
+					data: { [codeRegion]: 0 },
+				},
+				cpnAncienneInscriteT2: {
+					data: { [codeRegion]: 0 },
+				},
+				cpnAncienneInscriteT3: {
+					data: { [codeRegion]: 0 },
+				},
+				autreConsultation: {
 					data: { [codeRegion]: 0 },
 				},
 				femmeExaminePostNatal: {
 					data: { [codeRegion]: 0 },
 				},
-				gahrDepiste: {
+				garDepiste: {
 					data: { [codeRegion]: 0 },
 				},
 				vat: {
@@ -78,28 +93,47 @@ async function dataRegion(region) {
 					data: { [codeRegion]: 0 },
 				},
 			},
-			santeMaternelle = await rapportData.getRapportByRegionAndYear(
-				region,
-				'santeMaternelle'
-			);
+			santeMaternelle =
+				await santeMaternelleData.getSanteMaternelleByRegion(region);
 		// ------------------------
 
 		// santeMaternelle
 		for (let j = 0; j < santeMaternelle.length; j++) {
 			const santeMaternelleElement = santeMaternelle[j];
-				data.femmePriseCharge.data[codeRegion] +=
-					santeMaternelleElement.femmePriseCharge;
-				data.cpnNouvelleInscrite.data[codeRegion] +=
-					santeMaternelleElement.cpn.nouvelleInscrite;
-				data.cpnAutreConsultation.data[codeRegion] +=
-					santeMaternelleElement.cpn.autreConsultation;
-				data.femmeExaminePostNatal.data[codeRegion] +=
-					santeMaternelleElement.femmeExaminePostNatal;
-				data.gahrDepiste.data[codeRegion] +=
-					santeMaternelleElement.gahrDepiste;
-				data.vat.data[codeRegion] += santeMaternelleElement.vat;
-				data.reference.data[codeRegion] +=
-					santeMaternelleElement.reference;
+			data.femmePriseCharge.data[codeRegion] +=
+				santeMaternelleElement.femmePriseCharge;
+			// ---
+			data.cpnNouvelleInscriteT1.data[codeRegion] +=
+				santeMaternelleElement.cpn.nouvelleInscrite.t1;
+			// ---
+			data.cpnNouvelleInscriteT2.data[codeRegion] +=
+				santeMaternelleElement.cpn.nouvelleInscrite.t2;
+			// ---
+			data.cpnNouvelleInscriteT3.data[codeRegion] +=
+				santeMaternelleElement.cpn.nouvelleInscrite.t3;
+			// ---
+			data.cpnAncienneInscriteT1.data[codeRegion] +=
+				santeMaternelleElement.cpn.ancienneInscrite.t1;
+			// ---
+			data.cpnAncienneInscriteT2.data[codeRegion] +=
+				santeMaternelleElement.cpn.ancienneInscrite.t2;
+			// ---
+			data.cpnAncienneInscriteT3.data[codeRegion] +=
+				santeMaternelleElement.cpn.ancienneInscrite.t3;
+			// ---
+			data.autreConsultation.data[codeRegion] +=
+				santeMaternelleElement.autreConsultation;
+			// ---
+			data.femmeExaminePostNatal.data[codeRegion] +=
+				santeMaternelleElement.femmeExaminePostNatal;
+			// ---
+			data.garDepiste.data[codeRegion] +=
+				santeMaternelleElement.garDepiste;
+			// ---
+			data.vat.data[codeRegion] += santeMaternelleElement.vat;
+			// ---
+			data.reference.data[codeRegion] += santeMaternelleElement.reference;
+			// ---
 		}
 		return data;
 	} catch (error) {
@@ -116,16 +150,31 @@ async function dataProvince(region, provinceList) {
 				femmePriseCharge: {
 					data: getDataInit(provinceList),
 				},
-				cpnNouvelleInscrite: {
+				cpnNouvelleInscriteT1: {
 					data: getDataInit(provinceList),
 				},
-				cpnAutreConsultation: {
+				cpnNouvelleInscriteT2: {
+					data: getDataInit(provinceList),
+				},
+				cpnNouvelleInscriteT3: {
+					data: getDataInit(provinceList),
+				},
+				cpnAncienneInscriteT1: {
+					data: getDataInit(provinceList),
+				},
+				cpnAncienneInscriteT2: {
+					data: getDataInit(provinceList),
+				},
+				cpnAncienneInscriteT3: {
+					data: getDataInit(provinceList),
+				},
+				autreConsultation: {
 					data: getDataInit(provinceList),
 				},
 				femmeExaminePostNatal: {
 					data: getDataInit(provinceList),
 				},
-				gahrDepiste: {
+				garDepiste: {
 					data: getDataInit(provinceList),
 				},
 				vat: {
@@ -135,10 +184,8 @@ async function dataProvince(region, provinceList) {
 					data: getDataInit(provinceList),
 				},
 			},
-			santeMaternelle = await rapportData.getRapportByRegionAndYear(
-				region,
-				'santeMaternelle'
-			);
+			santeMaternelle =
+				await santeMaternelleData.getSanteMaternelleByRegion(region);
 		// ------------------------
 		// province
 		for (let i = 0; i < provinceList.length; i++) {
@@ -152,21 +199,40 @@ async function dataProvince(region, provinceList) {
 				) {
 					data.femmePriseCharge.data[provinceListElement] +=
 						santeMaternelleElement.femmePriseCharge;
-					data.cpnNouvelleInscrite.data[
-						provinceListElement
-					] += santeMaternelleElement.cpn.nouvelleInscrite;
-					data.cpnAutreConsultation.data[
-						provinceListElement
-					] += santeMaternelleElement.cpn.autreConsultation;
-					data.femmeExaminePostNatal.data[
-						provinceListElement
-					] += santeMaternelleElement.femmeExaminePostNatal;
-					data.gahrDepiste.data[provinceListElement] +=
-						santeMaternelleElement.gahrDepiste;
+					// ---
+					data.cpnNouvelleInscriteT1.data[provinceListElement] +=
+						santeMaternelleElement.cpn.nouvelleInscrite.t1;
+					// ---
+					data.cpnNouvelleInscriteT2.data[provinceListElement] +=
+						santeMaternelleElement.cpn.nouvelleInscrite.t2;
+					// ---
+					data.cpnNouvelleInscriteT3.data[provinceListElement] +=
+						santeMaternelleElement.cpn.nouvelleInscrite.t3;
+					// ---
+					data.cpnAncienneInscriteT1.data[provinceListElement] +=
+						santeMaternelleElement.cpn.ancienneInscrite.t1;
+					// ---
+					data.cpnAncienneInscriteT2.data[provinceListElement] +=
+						santeMaternelleElement.cpn.ancienneInscrite.t2;
+					// ---
+					data.cpnAncienneInscriteT3.data[provinceListElement] +=
+						santeMaternelleElement.cpn.ancienneInscrite.t3;
+					// ---
+					data.autreConsultation.data[provinceListElement] +=
+						santeMaternelleElement.autreConsultation;
+					// ---
+					data.femmeExaminePostNatal.data[provinceListElement] +=
+						santeMaternelleElement.femmeExaminePostNatal;
+					// ---
+					data.garDepiste.data[provinceListElement] +=
+						santeMaternelleElement.garDepiste;
+					// ---
 					data.vat.data[provinceListElement] +=
 						santeMaternelleElement.vat;
+					// ---
 					data.reference.data[provinceListElement] +=
 						santeMaternelleElement.reference;
+					// ---
 				}
 			}
 		}
@@ -196,13 +262,12 @@ async function santeMaternelle(req, res, next) {
 		// render the page
 		res.status(200).render('region/dashboard/santeMaternelle', {
 			title:
-				'Tableau de bord | Santé maternelle | ' +
-				today.getFullYear(),
+				'Tableau de bord | Santé maternelle | ' + today.getFullYear(),
 			url: req.originalUrl,
 			data,
 			province,
 			provinceList,
-			page: 'dashboard',
+			page: 'prestation',
 			listItem: 'santeMaternelle',
 		});
 	} catch (error) {

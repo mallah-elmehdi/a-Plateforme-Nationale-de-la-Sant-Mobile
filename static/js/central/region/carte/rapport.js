@@ -408,7 +408,7 @@ $(document).ready(function () {
 														<td>${rapport[code].santeMaternelle.femmePriseCharge}</td>
 													</tr>
 													<tr>
-														<th rowspan="2" style="vertical-align: middle;">CPN</th>
+														<th rowspan="2" style="vertical-align: middle;">Nombre de consultations prénatales (CPN)</th>
 														<th>Nouvelles inscrites</th>
 														<td>${rapport[code].santeMaternelle.cpn.nouvelleInscrite}</td>
 													</tr>
@@ -421,8 +421,8 @@ $(document).ready(function () {
 														<td>${rapport[code].santeMaternelle.femmeExaminePostNatal}</td>
 													</tr>
 													<tr>
-														<th colspan="2">GAHR dépistées</th>
-														<td>${rapport[code].santeMaternelle.gahrDepiste}</td>
+														<th colspan="2">Nombre de Grossesses à risque (GAR) dépistées</th>
+														<td>${rapport[code].santeMaternelle.garDepiste}</td>
 													</tr>
 													<tr>
 														<th colspan="2">VAT</th>
@@ -460,7 +460,7 @@ $(document).ready(function () {
 													</tr>
 													<tr>
 														<th rowspan="2" style="vertical-align:middle;">Vaccination</th>
-														<th>DTC3-Hib3</th>
+														<th>DTC3-Hib3-HB3 (pentavalent)</th>
 														<td>${rapport[code].santeInfantile.vaccination.dtc3Hib3}</td>
 													</tr>
 													<tr>
@@ -468,11 +468,11 @@ $(document).ready(function () {
 														<td>${rapport[code].santeInfantile.vaccination.var}</td>
 													</tr>
 													<tr>
-														<th colspan="2">Vitamine A</th>
+														<th colspan="2">Vitamine A (2ème prise)</th>
 														<td>${rapport[code].santeInfantile.vitamineA}</td>
 													</tr>
 													<tr>
-														<th colspan="2">Vitamine D</th>
+														<th colspan="2">Vitamine D (2ème prise)</th>
 														<td>${rapport[code].santeInfantile.vitamineD}</td>
 													</tr>
 													<tr>
@@ -480,11 +480,11 @@ $(document).ready(function () {
 														<td>${rapport[code].santeInfantile.pesee}</td>
 													</tr>
 													<tr>
-														<th colspan="2">Cas De Diarrhées</th>
+														<th colspan="2">Nombre de cas de diarrhée</th>
 														<td>${rapport[code].santeInfantile.diarrhe}</td>
 													</tr>
 													<tr>
-														<th colspan="2">Cas D’IRA</th>
+														<th colspan="2">Nombre de cas d’infections respiratoires aiguës (IRA)</th>
 														<td>${rapport[code].santeInfantile.ira}</td>
 													</tr>
 													<tr>
@@ -513,7 +513,7 @@ $(document).ready(function () {
 												<tbody>
 													<tr>
 														<th colspan="2">Pilule</th>
-														<th colspan="2">Injectables</th>
+														<th colspan="2">Progestatifs Injectables</th>
 														<th colspan="2">DIU</th>
 														<th colspan="2">condom</th>
 														<th colspan="2">Références</th>
@@ -575,7 +575,7 @@ $(document).ready(function () {
 														<th>Réfraction automatique</th>
 													</tr>
 													<tr>
-														<td rowspan="2">${rapport[code].santeScolaire.visite.etablissementVisite}</td>
+														<td rowspan="2">${rapport[code].santeScolaire.etablissementVisite}</td>
 														<td rowspan="2">${rapport[code].santeScolaire.visite.eleveVue}</td>
 														<th>cible</th>
 														<td>${rapport[code].santeScolaire.eleveExamineVms.cible}</td>
@@ -612,16 +612,16 @@ $(document).ready(function () {
 													<tr>
 														<th rowspan="2"></th>
 														<th colspan="2">Consultations réalisées</th>
-														<th rowspan="2">PEC par PEM</th>
-														<th colspan="4">Référés</th>
+														<th rowspan="2">Nombre de patients pris en charge par l'équipe mobile</th>
+														<th colspan="4">Nombre de patients Référés</th>
 													</tr>
 													<tr>
 														<th>Masculin</th>
 														<th>Féminin</th>
 														<th>Cons spéc</th>
-														<th>hosp</th>
-														<th>Ex labo</th>
-														<th>Ex radio</th>
+														<th>Urgence</th>
+														<th>Examen De laboratoire</th>
+														<th>Examen radiologique</th>
 													</tr>
 													<tr>
 														<th>Moins de 5 ans</th>
@@ -629,7 +629,7 @@ $(document).ready(function () {
 														<td>${rapport[code].consultationMedical.consultationRealise.f.moins5ans}</td>
 														<td>${rapport[code].consultationMedical.pecParPem.moins5ans}</td>
 														<td>${rapport[code].consultationMedical.reference.consSpec.moins5ans}</td>
-														<td>${rapport[code].consultationMedical.reference.hosp.moins5ans}</td>
+														<td>${rapport[code].consultationMedical.reference.urgence.moins5ans}</td>
 														<td>${rapport[code].consultationMedical.reference.exLabo.moins5ans}</td>
 														<td>${rapport[code].consultationMedical.reference.exRadio.moins5ans}</td>
 													</tr>
@@ -639,7 +639,7 @@ $(document).ready(function () {
 														<td>${rapport[code].consultationMedical.consultationRealise.f.plus5ans}</td>
 														<td>${rapport[code].consultationMedical.pecParPem.plus5ans}</td>
 														<td>${rapport[code].consultationMedical.reference.consSpec.plus5ans}</td>
-														<td>${rapport[code].consultationMedical.reference.hosp.plus5ans}</td>
+														<td>${rapport[code].consultationMedical.reference.urgence.plus5ans}</td>
 														<td>${rapport[code].consultationMedical.reference.exLabo.plus5ans}</td>
 														<td>${rapport[code].consultationMedical.reference.exRadio.plus5ans}</td>
 													</tr>
@@ -649,7 +649,7 @@ $(document).ready(function () {
 														<td>${parseInt(rapport[code].consultationMedical.consultationRealise.f.plus5ans) + parseInt(rapport[code].consultationMedical.consultationRealise.f.moins5ans)}</td>
 														<td>${parseInt(rapport[code].consultationMedical.pecParPem.plus5ans) + parseInt(rapport[code].consultationMedical.pecParPem.moins5ans)}</td>
 														<td>${parseInt(rapport[code].consultationMedical.reference.consSpec.plus5ans) + parseInt(rapport[code].consultationMedical.reference.consSpec.moins5ans)}</td>
-														<td>${parseInt(rapport[code].consultationMedical.reference.hosp.plus5ans) + parseInt(rapport[code].consultationMedical.reference.hosp.moins5ans)}</td>
+														<td>${parseInt(rapport[code].consultationMedical.reference.urgence.plus5ans) + parseInt(rapport[code].consultationMedical.reference.urgence.moins5ans)}</td>
 														<td>${parseInt(rapport[code].consultationMedical.reference.exLabo.plus5ans) + parseInt(rapport[code].consultationMedical.reference.exLabo.moins5ans)}</td>
 														<td>${parseInt(rapport[code].consultationMedical.reference.exRadio.plus5ans) + parseInt(rapport[code].consultationMedical.reference.exRadio.moins5ans)}</td>
 													</tr>

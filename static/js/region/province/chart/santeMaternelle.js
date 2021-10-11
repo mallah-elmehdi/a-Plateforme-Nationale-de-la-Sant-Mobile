@@ -6,10 +6,15 @@ $(document).ready(function () {
 		type = '',
 		// init data
 		dataFemmePriseCharge = wholeData.femmePriseCharge.data,
-		dataCpnNouvelleInscrite = wholeData.cpnNouvelleInscrite.data,
-		dataCpnAutreConsultation = wholeData.cpnAutreConsultation.data,
+		dataCpnNouvelleInscriteT1 = wholeData.cpnNouvelleInscriteT1.data,
+		dataCpnNouvelleInscriteT2 = wholeData.cpnNouvelleInscriteT2.data,
+		dataCpnNouvelleInscriteT3 = wholeData.cpnNouvelleInscriteT3.data,
+		dataCpnAncienneInscriteT1 = wholeData.cpnAncienneInscriteT1.data,
+		dataCpnAncienneInscriteT2 = wholeData.cpnAncienneInscriteT2.data,
+		dataCpnAncienneInscriteT3 = wholeData.cpnAncienneInscriteT3.data,
+		dataAutreConsultation = wholeData.autreConsultation.data,
 		dataFemmeExaminePostNatal = wholeData.femmeExaminePostNatal.data,
-		dataGahrDepiste = wholeData.gahrDepiste.data,
+		dataGahrDepiste = wholeData.garDepiste.data,
 		dataVat = wholeData.vat.data,
 		dataReference = wholeData.reference.data,
 		data = {
@@ -20,8 +25,10 @@ $(document).ready(function () {
 	for (let i = 0; i < province.length; i++) {
 		const element = province[i];
 		if (provinceList.includes(element.codeProvince)) {
-		data.data.push(getData([dataFemmePriseCharge[element.codeProvince]]));
-		data.categories.push(element.province);
+			data.data.push(
+				getData([dataFemmePriseCharge[element.codeProvince]])
+			);
+			data.categories.push(element.province);
 		}
 	}
 	// SUM DATA
@@ -106,74 +113,85 @@ $(document).ready(function () {
 		if (this.value === 'femmePriseCharge') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([dataFemmePriseCharge[element.codeProvince]])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([dataFemmePriseCharge[element.codeProvince]])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'cpn') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataCpnAutreConsultation[element.codeProvince],
-						dataCpnNouvelleInscrite[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataCpnNouvelleInscriteT1[element.codeProvince],
+							dataCpnNouvelleInscriteT2[element.codeProvince],
+							dataCpnNouvelleInscriteT3[element.codeProvince],
+							dataCpnAncienneInscriteT1[element.codeProvince],
+							dataCpnAncienneInscriteT2[element.codeProvince],
+							dataCpnAncienneInscriteT3[element.codeProvince],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'femmeExaminePostNatal') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataFemmeExaminePostNatal[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataFemmeExaminePostNatal[element.codeProvince],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
-		} else if (this.value === 'gahrDepiste') {
+		} else if (this.value === 'autreConsultation') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataGahrDepiste[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([dataAutreConsultation[element.codeProvince]])
+					);
+					data.categories.push(element.province);
+				}
+			}
+			type = '';
+		} else if (this.value === 'garDepiste') {
+			for (let i = 0; i < province.length; i++) {
+				var element = province[i];
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([dataGahrDepiste[element.codeProvince]])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'vat') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataVat[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(getData([dataVat[element.codeProvince]]));
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'reference') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(getData([dataReference[element.codeProvince]]));
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([dataReference[element.codeProvince]])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		}

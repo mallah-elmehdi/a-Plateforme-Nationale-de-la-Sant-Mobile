@@ -1,11 +1,11 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataProvince').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		// init data
-		dataVisiteEtablissementVisite =
-			wholeData.visiteEtablissementVisite.data,
-		dataVisiteEleveVue = wholeData.visiteEleveVue.data,
+		dataEtablissementVisite =
+			wholeData.etablissementVisite.data,
+		
 		dataEleveExamineVmsCible = wholeData.eleveExamineVmsCible.data,
 		dataEleveExamineVmsRealisation =
 			wholeData.eleveExamineVmsRealisation.data,
@@ -24,7 +24,7 @@ $(document).ready(function () {
 		// other
 		max = undefined,
 		scale = ['#BDFFAD', '#187a00'],
-		data = getData([dataVisiteEtablissementVisite]),
+		data = getData([dataEtablissementVisite]),
 		table = 1;
 	// MAP
 	$('#province-map').vectorMap({
@@ -293,13 +293,13 @@ $(document).ready(function () {
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// ----------------------------------------------------
 		// change te data
-		if (this.value === 'visiteEtablissementVisite') {
-			data = getData([dataVisiteEtablissementVisite]);
+		if (this.value === 'etablissementVisite') {
+			data = getData([dataEtablissementVisite]);
 			table = 1;
 		} else if (this.value === 'visiteEleveVue') {
 			data = getData([dataVisiteEleveVue]);

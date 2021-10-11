@@ -1,10 +1,10 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataRegion').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		codeRegion = parseInt($('#data').data('code')),
-	// init data
-	dataDiabeteCas = wholeData.diabeteCas.data,
+		// init data
+		dataDiabeteCas = wholeData.diabeteCas.data,
 		dataDiabeteCasPec = wholeData.diabeteCasPec.data,
 		dataDiabeteReference = wholeData.diabeteReference.data,
 		dataHtaCas = wholeData.htaCas.data,
@@ -18,8 +18,7 @@ $(document).ready(function () {
 		dataCarieReference = wholeData.carieReference.data,
 		dataParodontopathieCas = wholeData.parodontopathieCas.data,
 		dataParodontopathieCasPec = wholeData.parodontopathieCasPec.data,
-		dataParodontopathieReference =
-			wholeData.parodontopathieReference.data,
+		dataParodontopathieReference = wholeData.parodontopathieReference.data,
 		dataMaladieMentaleCas = wholeData.maladieMentaleCas.data,
 		dataMaladieMentaleCasPec = wholeData.maladieMentaleCasPec.data,
 		dataMaladieMentaleReference = wholeData.maladieMentaleReference.data,
@@ -28,32 +27,24 @@ $(document).ready(function () {
 		dataIstReference = wholeData.istReference.data,
 		dataRaaAvecCarditesCas = wholeData.raaAvecCarditesCas.data,
 		dataRaaAvecCarditesCasPec = wholeData.raaAvecCarditesCasPec.data,
-		dataRaaAvecCarditesReference =
-			wholeData.raaAvecCarditesReference.data,
+		dataRaaAvecCarditesReference = wholeData.raaAvecCarditesReference.data,
 		dataRaaSansCarditesCas = wholeData.raaSansCarditesCas.data,
 		dataRaaSansCarditesCasPec = wholeData.raaSansCarditesCasPec.data,
-		dataRaaSansCarditesReference =
-			wholeData.raaSansCarditesReference.data,
-		dataCancerSeinCas = wholeData.cancerSeinCas.data,
-		dataCancerSeinCasPec = wholeData.cancerSeinCasPec.data,
-		dataCancerSeinReference = wholeData.cancerSeinReference.data,
-		dataCancerColCas = wholeData.cancerColCas.data,
-		dataCancerColCasPec = wholeData.cancerColCasPec.data,
-		dataCancerColReference = wholeData.cancerColReference.data,
-		dataTuberculosePolmonaireCas =
-			wholeData.tuberculosePolmonaireCas.data,
+		dataRaaSansCarditesReference = wholeData.raaSansCarditesReference.data,
+		dataTuberculosePolmonaireCas = wholeData.tuberculosePolmonaireCas.data,
 		dataTuberculosePolmonaireCasPec =
 			wholeData.tuberculosePolmonaireCasPec.data,
 		dataTuberculosePolmonaireReference =
 			wholeData.tuberculosePolmonaireReference.data,
-		dataTuberculoseExtraPolmonaireCas =
-			wholeData.tuberculoseExtraPolmonaireCas.data,
-		dataTuberculoseExtraPolmonaireCasPec =
-			wholeData.tuberculoseExtraPolmonaireCasPec.data,
-		dataTuberculoseExtraPolmonaireReference =
-			wholeData.tuberculoseExtraPolmonaireReference.data,
 		// other
-		scale = ['#BDFFAD', '#187a00'],
+		scale = [
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		],
 		data = getData([
 			dataDiabeteCas,
 			dataDiabeteCasPec,
@@ -108,7 +99,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -147,7 +138,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -186,7 +177,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -225,7 +216,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -264,7 +255,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -303,7 +294,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -342,7 +333,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -381,7 +372,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="3" class="text-center">${label.html()}</th>
+								<th colspan="3" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -441,75 +432,6 @@ $(document).ready(function () {
 					</div>
 					`
 					);
-				} else if (table === 6.1) {
-					label.html(
-						`
-					<div class="bg-white shadow-sm p-1 rounded">
-					<table class="table table-sm table-bordered fs-8 text-dark">
-						<tbody>
-							<tr>
-								<th colspan="3" class="text-center">${label.html()}</th>
-							</tr>
-							
-							<tr>
-								<th colspan="3" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
-							data[code]
-						}</span></span></th>
-							</tr>
-							<tr>
-								<th></th>
-								<th>Sein</th>
-								<th>Col</th>
-							</tr>
-							<tr>
-								<td>Nombre de cas</td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataCancerSeinCas[code]
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataCancerColCas[code]
-								}</span></td>
-							</tr>
-							<tr>
-								<td>Nombre de cas PEC</td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataCancerSeinCasPec[code]
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataCancerColCasPec[code]
-								}</span></td>
-							</tr>
-							
-							<tr>
-								<td>Références</td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataCancerSeinReference[code]
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataCancerColReference[code]
-								}</span></td>
-							</tr>
-							
-							<tr>
-								<td>Total</td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataCancerSeinCas[code] +
-									dataCancerSeinCasPec[code] +
-									dataCancerSeinReference[code]
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataCancerColCas[code] +
-									dataCancerColCasPec[code] +
-									dataCancerColReference[code]
-								}</span></td>
-							</tr>
-
-							
-						</tbody>
-					</table>
-					</div>
-					`
-					);
 				} else if (table === 6.2) {
 					label.html(
 						`
@@ -517,26 +439,18 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="3" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
-								<th colspan="3" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
+								<th colspan="2" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
 							data[code]
 						}</span></span></th>
-							</tr>
-							<tr>
-								<th></th>
-								<th>Pulmonaire</th>
-								<th>Extra pulmonaire</th>
 							</tr>
 							<tr>
 								<td>Nombre de cas</td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
 									dataTuberculosePolmonaireCas[code]
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataTuberculoseExtraPolmonaireCas[code]
 								}</span></td>
 							</tr>
 							<tr>
@@ -544,20 +458,12 @@ $(document).ready(function () {
 								<td class="fs-7 text-center"><span class="badge bg-5">${
 									dataTuberculosePolmonaireCasPec[code]
 								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataTuberculoseExtraPolmonaireCasPec[code]
-								}</span></td>
 							</tr>
 							
 							<tr>
 								<td>Références</td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
 									dataTuberculosePolmonaireReference[code]
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataTuberculoseExtraPolmonaireReference[
-										code
-									]
 								}</span></td>
 							</tr>
 							
@@ -567,13 +473,6 @@ $(document).ready(function () {
 									dataTuberculosePolmonaireCas[code] +
 									dataTuberculosePolmonaireCasPec[code] +
 									dataTuberculosePolmonaireReference[code]
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataTuberculoseExtraPolmonaireCas[code] +
-									dataTuberculoseExtraPolmonaireCasPec[code] +
-									dataTuberculoseExtraPolmonaireReference[
-										code
-									]
 								}</span></td>
 							</tr>
 
@@ -617,7 +516,7 @@ $(document).ready(function () {
 			var element = data[key];
 			if (element > max) max = element;
 		}
-		return max + 1
+		return max + 1;
 	}
 	// EVENT LISTNER
 	$('input[type=radio][name=data]').change(function () {
@@ -626,7 +525,7 @@ $(document).ready(function () {
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// change te data
@@ -677,24 +576,11 @@ $(document).ready(function () {
 				dataRaaSansCarditesReference,
 			]);
 			table = 6;
-		} else if (this.value === 'cancer') {
-			data = getData([
-				dataCancerSeinCas,
-				dataCancerSeinCasPec,
-				dataCancerSeinReference,
-				dataCancerColCas,
-				dataCancerColCasPec,
-				dataCancerColReference,
-			]);
-			table = 6.1;
 		} else if (this.value === 'tuberculose') {
 			data = getData([
 				dataTuberculosePolmonaireCas,
 				dataTuberculosePolmonaireCasPec,
 				dataTuberculosePolmonaireReference,
-				dataTuberculoseExtraPolmonaireCas,
-				dataTuberculoseExtraPolmonaireCasPec,
-				dataTuberculoseExtraPolmonaireReference,
 			]);
 			table = 6.2;
 		}

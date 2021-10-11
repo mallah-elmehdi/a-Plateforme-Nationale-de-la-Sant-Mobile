@@ -14,7 +14,7 @@
         ]
     },
     "cpn": {
-        "title": "Nombre de consultations prénatales (CPN)",
+        "title": "Nombre de consultations prénatales (Nombre de consultations prénatales (CPN))",
         "dataType": "object",
         "data": {
             "nouvelleInscrite": {

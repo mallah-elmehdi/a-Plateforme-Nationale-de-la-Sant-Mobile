@@ -65,7 +65,7 @@ const autreActivite = require('./route/csr/rapport/autreActivite');
 const province = require('./route/province');
 
 // // REGION
-// const region = require('./route/region');
+const region = require('./route/region');
 
 // // CENTRAL
 // const central = require('./route/central');
@@ -98,7 +98,7 @@ app.use(
 	autreActivite
 );
 app.use('/province', province);
-// app.use('/region', region);
+app.use('/region', region);
 // app.use('/central', central);
 app.use('*', errorPage);
 

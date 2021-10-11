@@ -1,0 +1,48 @@
+extends ../profile
+ 
+block tail
+	//- LIBRARY
+	script(src='/../../js/util/jquery-jvectormap-2.0.5.min.js')
+	script(src='/../../js/util/toggleMap.js')
+	//- MAP
+	script(src='/../../js/util/mapProvince.js')
+	script(src='/../../js/province/carte/consultationMedical.js')
+	//- CARTE
+	script(src='/../../js/province/chart/consultationMedical.js')
+	//- CHART
+
+block main
+	.row.g-3#data(data-provincedata=JSON.stringify(data.provinceData) data-code=codeProvince data-csrlist=csrList)
+		.col-12
+			include ../../util/snippet/titleDashboard
+		.col-12
+			.dropdown
+				button#dropdownPreview.btn.btn-sm.text-dark.bg-8.dropdown-toggle(type='button' data-bs-toggle='dropdown' data-bs-auto-close="outside" aria-expanded='false')
+					| data
+				ul.dropdown-menu(aria-labelledby='dropdownPreview')
+						li.list-group-item.dropdown-item
+							input.form-check-input.me-1(type='radio' name='data' value='consultationRealise' checked)
+							span Consultations réalisées					
+						li.list-group-item.dropdown-item
+							input.form-check-input.me-1(type='radio' name='data' value='pecParPem')
+							span Nombre de patients pris en charge par l'équipe mobile
+						li.list-group-item.dropdown-item
+							input.form-check-input.me-1(type='radio' name='data' value='reference')
+							span Nombre de patients Référés
+						li.list-group-item.dropdown-item
+							input.form-check-input.me-1(type='radio' name='data' value='budgetMedicamentDispenseEm')
+							span Budget estimé en médicaments dispensés
+		//- ---------------- map
+		.col-12
+			.card.card-body
+				.row.g-3
+					.col-12
+						.d-flex.align-items-center.fs-6
+							<ion-icon name="stats-chart-outline"  class="me-2 text-1"></ion-icon>
+							span.text-dark Consultations médicales
+					.col-12
+						span#title.badge.bg-5 Consultations réalisées
+					.col-12
+						#province-map(style="width: 100%; height: 400px;")
+					.col-12
+						#csr-chart

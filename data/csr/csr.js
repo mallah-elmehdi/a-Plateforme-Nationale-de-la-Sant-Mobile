@@ -22,8 +22,18 @@ async function getCsrByProvince(province) {
     }
 }
 
+// REGION
+async function getCsrByRegion(region) {
+    try {
+        return await csr.find({region}).select('-email');
+    } catch (error) {
+        throw newError(500, 'quelque chose s\'est mal passé')
+    }
+}
+
 // OUTPUT
 module.exports = {
     getDocument,
 	getCsrByProvince,
+	getCsrByRegion
 };

@@ -1,11 +1,11 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataProvince').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		// init data
 		dataEnfantPrisesCharge = wholeData.enfantPrisesCharge.data,
-		dataVaccinationDtc3Hib3 = wholeData.vaccinationDtc3Hib3.data,
-		dataVaccinationVar = wholeData.vaccinationVar.data,
+		dataVaccinationPentavalent = wholeData.vaccinationDtc3Hib3.data,
+		dataVaccinationRr = wholeData.vaccinationVar.data,
 		dataVitamineA = wholeData.vitamineA.data,
 		dataVitamineD = wholeData.vitamineD.data,
 		dataPesee = wholeData.pesee.data,
@@ -91,16 +91,16 @@ $(document).ready(function () {
 							</tr>
 							
 							<tr>
-								<td>DTC3-Hib3</td>
+								<td>DTC3-Hib3-HB3 (pentavalent)</td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataVaccinationDtc3Hib3[code]
+									dataVaccinationPentavalent[code]
 								}</span></td>
 							</tr>
 							
 							<tr>
 								<td>VAR</td>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataVaccinationVar[code]
+									dataVaccinationRr[code]
 								}</span></td>
 							</tr>
 						</tbody>
@@ -213,7 +213,7 @@ $(document).ready(function () {
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// ----------------------------------------------------
@@ -222,7 +222,7 @@ $(document).ready(function () {
 			data = getData([dataEnfantPrisesCharge]);
 			table = 1;
 		} else if (this.value === 'vaccination') {
-			data = getData([dataVaccinationDtc3Hib3, dataVaccinationVar]);
+			data = getData([dataVaccinationPentavalent, dataVaccinationRr]);
 			table = 2;
 		} else if (this.value === 'vitamineA') {
 			data = getData([dataVitamineA]);

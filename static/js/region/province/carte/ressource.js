@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	// VARIABLES
 	var wholeData = $('#dataProvince').data('carte'),
-		title = $('#title').text().split(' - ')[1],
+		title = $('#title').text(),
 		provinceList = $('#data').data('list'),
 		// init data
 		dataBesoinUsm = wholeData.besoinUsm.data,
@@ -9,7 +9,14 @@ $(document).ready(function () {
 		dataBudgetBesoinCarburant = wholeData.budgetBesoinCarburant.data,
 		dataType = wholeData.type.data,
 		// other
-		scale = ['#BDFFAD', '#187a00'],
+		scale = [
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		],
 		data = getDataType([dataType]),
 		max = getMax(data),
 		table = 4;
@@ -27,11 +34,11 @@ $(document).ready(function () {
 		series: {
 			regions: [
 				{
-					values:  getValue(data, provinceList),
+					values: getValue(data, provinceList),
 					scale,
 					normalizeFunction: 'polynomial',
 					max,
-min:0,
+					min: 0,
 					legend: {
 						horizontal: true,
 						labelRender: function (v) {
@@ -66,153 +73,186 @@ min:0,
 						`
 					<div class="bg-white rounded shadow-sm p-1">
 					<table class="table table-sm table-bordered fs-8 text-dark">
-						<tbody>
-							<tr>
-								<th colspan="6" class="text-center">${label.html()}</th>
-							</tr>
-							
-							<tr>
-								<th colspan="6" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
+					<tbody>
+					<tr>
+						<th colspan="8" class="text-center">Région : ${label.html()}</th>
+					</tr>
+					
+					<tr>
+						<th colspan="8" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
 							data[code]
 						}</span></span></th>
-							</tr>
-							
-							<tr>
-								<th></th>
-								<th colspan="2" class="text-center">Ministre de la santé</th>
-								<th colspan="2" class="text-center">Commune</th>
-								<th rowspan="2" class="text-center" style="vertical-align:middle;">Total</th>
-							</tr>
-							
-							<tr>
-								<th></th>
-								<th class="text-center">Moins 5ans</th>
-								<th class="text-center">Plus 5ans</th>
-								<th class="text-center">Moins 5ans</th>
-								<th class="text-center">Plus 5ans</th>
-							</tr>
-							
-							<tr>
-								<th>Ambulance</th>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].ambulance.appartenance.ms.age
-										.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].ambulance.appartenance.ms.age
-										.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].ambulance.appartenance
-										.commune.age.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].ambulance.appartenance
-										.commune.age.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].ambulance.appartenance.ms.age
-										.moins5ans +
-									dataType[code].ambulance.appartenance.ms.age
-										.plus5ans +
-									dataType[code].ambulance.appartenance
-										.commune.age.moins5ans +
-									dataType[code].ambulance.appartenance
-										.commune.age.plus5ans
-								}</span></td>
-							</tr>
-							
-							<tr>
-								<th>Camion mobile</th>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].camionMobile.appartenance.ms
-										.age.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].camionMobile.appartenance.ms
-										.age.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].camionMobile.appartenance
-										.commune.age.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].camionMobile.appartenance
-										.commune.age.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].camionMobile.appartenance.ms
-										.age.moins5ans +
-									dataType[code].camionMobile.appartenance.ms
-										.age.plus5ans +
-									dataType[code].camionMobile.appartenance
-										.commune.age.moins5ans +
-									dataType[code].camionMobile.appartenance
-										.commune.age.plus5ans
-								}</span></td>
-							</tr>
-							
-							<tr>
-								<th>Unité mobile</th>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].uniteMobile.appartenance.ms
-										.age.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].uniteMobile.appartenance.ms
-										.age.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].uniteMobile.appartenance
-										.commune.age.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].uniteMobile.appartenance
-										.commune.age.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].uniteMobile.appartenance.ms
-										.age.moins5ans +
-									dataType[code].uniteMobile.appartenance.ms
-										.age.plus5ans +
-									dataType[code].uniteMobile.appartenance
-										.commune.age.moins5ans +
-									dataType[code].uniteMobile.appartenance
-										.commune.age.plus5ans
-								}</span></td>
-							</tr>
-							
-							<tr>
-								<th>VTT</th>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].vtt.appartenance.ms.age
-										.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].vtt.appartenance.ms.age
-										.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].vtt.appartenance.commune.age
-										.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].vtt.appartenance.commune.age
-										.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].vtt.appartenance.ms.age
-										.moins5ans +
-									dataType[code].vtt.appartenance.ms.age
-										.plus5ans +
-									dataType[code].vtt.appartenance.commune.age
-										.moins5ans +
-									dataType[code].vtt.appartenance.commune.age
-										.plus5ans
-								}</span></td>
-							</tr>
-							
-						</tbody>
+					</tr>
+					
+					<tr>
+						<th></th>
+						<th colspan="2" class="text-center">Ministère de la Santé</th>
+						<th colspan="2" class="text-center">Commune</th>
+						<th colspan="2" class="text-center">Organisation Non Gouvernementale (ONG)</th>
+						<th rowspan="2" class="text-center" style="vertical-align:middle;">Total</th>
+					</tr>
+					
+					<tr>
+						<th></th>
+						<th class="text-center">Moins 5ans</th>
+						<th class="text-center">Plus 5ans</th>
+						<th class="text-center">Moins 5ans</th>
+						<th class="text-center">Plus 5ans</th>
+						<th class="text-center">Moins 5ans</th>
+						<th class="text-center">Plus 5ans</th>
+					</tr>
+					
+					<tr>
+						<th>Ambulance</th>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].ambulance.appartenance.ms.age
+								.moins5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].ambulance.appartenance.ms.age
+								.plus5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].ambulance.appartenance.commune.age
+								.moins5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].ambulance.appartenance.commune.age
+								.plus5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].ambulance.appartenance.ong.age
+								.moins5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].ambulance.appartenance.ong.age
+								.plus5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].ambulance.appartenance.ms.age
+								.moins5ans +
+							dataType[code].ambulance.appartenance.ms.age
+								.plus5ans +
+							dataType[code].ambulance.appartenance.commune.age
+								.moins5ans +
+							dataType[code].ambulance.appartenance.commune.age
+								.plus5ans +
+							dataType[code].ambulance.appartenance.ong.age
+								.moins5ans +
+							dataType[code].ambulance.appartenance.ong.age
+								.plus5ans
+						}</span></td>
+					</tr>
+					
+					<tr>
+						<th>Camion mobile</th>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].camionMobile.appartenance.ms.age
+								.moins5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].camionMobile.appartenance.ms.age
+								.plus5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].camionMobile.appartenance.commune.age
+								.moins5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].camionMobile.appartenance.commune.age
+								.plus5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].camionMobile.appartenance.ong.age
+								.moins5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].camionMobile.appartenance.ong.age
+								.plus5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].camionMobile.appartenance.ms.age
+								.moins5ans +
+							dataType[code].camionMobile.appartenance.ms.age
+								.plus5ans +
+							dataType[code].camionMobile.appartenance.commune.age
+								.moins5ans +
+							dataType[code].camionMobile.appartenance.commune.age
+								.plus5ans +
+							dataType[code].camionMobile.appartenance.ong.age
+								.moins5ans +
+							dataType[code].camionMobile.appartenance.ong.age
+								.plus5ans
+						}</span></td>
+					</tr>
+					
+					<tr>
+						<th>Unité Sanitaire Mobile (USM)</th>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].usm.appartenance.ms.age.moins5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].usm.appartenance.ms.age.plus5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].usm.appartenance.commune.age
+								.moins5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].usm.appartenance.commune.age.plus5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].usm.appartenance.ong.age.moins5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].usm.appartenance.ong.age.plus5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].usm.appartenance.ms.age.moins5ans +
+							dataType[code].usm.appartenance.ms.age.plus5ans +
+							dataType[code].usm.appartenance.commune.age
+								.moins5ans +
+							dataType[code].usm.appartenance.commune.age
+								.plus5ans +
+							dataType[code].usm.appartenance.ong.age.moins5ans +
+							dataType[code].usm.appartenance.ong.age.plus5ans
+						}</span></td>
+					</tr>
+					
+					<tr>
+						<th>Véhicule Tout Terrain (VTT)</th>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].vtt.appartenance.ms.age.moins5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].vtt.appartenance.ms.age.plus5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].vtt.appartenance.commune.age
+								.moins5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].vtt.appartenance.commune.age.plus5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].vtt.appartenance.ong.age.moins5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].vtt.appartenance.ong.age.plus5ans
+						}</span></td>
+						<td class="fs-7 text-center"><span class="badge bg-5">${
+							dataType[code].vtt.appartenance.ms.age.moins5ans +
+							dataType[code].vtt.appartenance.ms.age.plus5ans +
+							dataType[code].vtt.appartenance.commune.age
+								.moins5ans +
+							dataType[code].vtt.appartenance.commune.age
+								.plus5ans +
+							dataType[code].vtt.appartenance.ong.age.moins5ans +
+							dataType[code].vtt.appartenance.ong.age.plus5ans
+						}</span></td>
+					</tr>
+					
+				</tbody>
 					</table>
 					</div>
 					`
@@ -224,7 +264,7 @@ min:0,
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="6" class="text-center">${label.html()}</th>
+								<th colspan="6" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -252,7 +292,7 @@ min:0,
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>							
 							<tr>
-								<th colspan="6" class="text-center">${label.html()}</th>
+								<th colspan="6" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -359,7 +399,9 @@ min:0,
 						dataElement[key][key1].appartenance.commune.age
 							.moins5ans +
 						dataElement[key][key1].appartenance.commune.age
-							.plus5ans;
+							.plus5ans +
+						dataElement[key][key1].appartenance.ong.age.moins5ans +
+						dataElement[key][key1].appartenance.ong.age.plus5ans;
 				}
 			}
 		}
@@ -459,7 +501,7 @@ min:0,
 			var element = data[key];
 			if (element > max) max = element;
 		}
-		return max + 1
+		return max + 1;
 	}
 	// EVENT LISTNER
 	$('input[type=radio][name=data]').change(function () {
@@ -468,7 +510,7 @@ min:0,
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// ----------------------------------------------------

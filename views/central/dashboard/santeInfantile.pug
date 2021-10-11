@@ -21,8 +21,8 @@ block main
 		.col-12
 			.d-flex.flex-wrap
 				.dropdown.me-2
-					button#dropdownPreview.btn.btn-sm.text-dark.bg-3.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
-						| Preview
+					button#dropdownPreview.btn.btn-sm.text-dark.bg-8.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+						| Division de la carte
 					ul.dropdown-menu(aria-labelledby='dropdownPreview')
 						li.list-group-item.dropdown-item
 							input#previewZone1.form-check-input(type='radio' name='previewZone' value="regional" checked)
@@ -31,7 +31,7 @@ block main
 							input#previewZone2.form-check-input(type='radio' name='previewZone' value="provincial")
 							label.form-check-label(for='previewZone2') provincial
 				.dropdown
-					button#dropdownPreview.btn.btn-sm.text-dark.bg-3.dropdown-toggle(type='button' data-bs-toggle='dropdown' data-bs-auto-close="outside" aria-expanded='false')
+					button#dropdownPreview.btn.btn-sm.text-dark.bg-8.dropdown-toggle(type='button' data-bs-toggle='dropdown' data-bs-auto-close="outside" aria-expanded='false')
 						| data
 					ul.dropdown-menu(aria-labelledby='dropdownPreview')
 						li.list-group-item.dropdown-item
@@ -42,19 +42,19 @@ block main
 							span Vaccination
 						li.list-group-item.dropdown-item
 							input.form-check-input.me-1(type='radio' name='data' value='vitamineA')
-							span Vitamine A
+							span Vitamine A (2ème prise)
 						li.list-group-item.dropdown-item
 							input.form-check-input.me-1(type='radio' name='data' value='vitamineD')
-							span Vitamine D
+							span Vitamine D (2ème prise)
 						li.list-group-item.dropdown-item
 							input.form-check-input.me-1(type='radio' name='data' value='pesee')
 							span Nombre de pesées
 						li.list-group-item.dropdown-item
 							input.form-check-input.me-1(type='radio' name='data' value='diarrhe')
-							span Cas De Diarrhées
+							span Nombre de cas de diarrhée
 						li.list-group-item.dropdown-item
 							input.form-check-input.me-1(type='radio' name='data' value='ira')
-							span Cas D’IRA
+							span Nombre de cas d’infections respiratoires aiguës (IRA)
 						li.list-group-item.dropdown-item
 							input.form-check-input.me-1(type='radio' name='data' value='reference')
 							span Référence
@@ -66,13 +66,17 @@ block main
 					.col-12
 						.d-flex.align-items-center.fs-7
 							<ion-icon name="stats-chart-outline"  class="me-2 text-1"></ion-icon>
-							span.text-dark#title Santé maternelle - Nombre de femmes prises en charge
+							span.text-dark  Santé maternelle - Nombre de femmes prises en charge
+					.col-12
+						span#title.badge.bg-5 
 					.col-12.thisRegion
 						#dataRegion(data-carte=JSON.stringify(data.carte.region) )
 							#region-map(style="width: 100%; height: 400px")
 					.col-12.thisProvince
 						#dataProvince(data-carte=JSON.stringify(data.carte.province) )
 							#province-map(style="width: 100%; height: 400px;")
+					.col-12
+						span#title.badge.bg-5 
 					.col-12.thisRegion
 						#region-chart(data-region=JSON.stringify(region))
 					.col-12.thisProvince

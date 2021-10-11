@@ -91,6 +91,32 @@ async function deletePdrVisiteById(id) {
 	}
 }
 
+// GET
+async function getPdrVisiteByRegion(region) {
+	try {
+		var today = new Date(),
+			all = await pdrVisite
+				.find({
+					year: today.getFullYear(),
+				})
+				.populate({
+					path: 'pdrVisite csr',
+					select: '-email',
+				});
+		out = [];
+		for (let i = 0; i < all.length; i++) {
+			const element = all[i];
+			if (element.csr.region === region) {
+				out.push(element);
+			}
+		}
+		return out
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // // GET
 // async function getPdrVisiteByYear() {
 // 	try {
@@ -106,31 +132,7 @@ async function deletePdrVisiteById(id) {
 // 	}
 // }
 
-// // GET
-// async function getPdrVisiteByRegionAndYear(region) {
-// 	try {
-// 		var today = new Date(),
-// 			all = await pdrVisite
-// 				.find({
-// 					year: today.getFullYear(),
-// 				})
-// 				.populate({
-// 					path: 'pdrVisite csr',
-// 					select: '-email -password',
-// 				});
-// 		out = [];
-// 		for (let i = 0; i < all.length; i++) {
-// 			const element = all[i];
-// 			if (element.csr.region === region) {
-// 				out.push(element);
-// 			}
-// 		}
-// 		return out
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
+
 
 // async function getPdrVisiteByProvinceAndYear(province) {
 // 	try {
@@ -182,5 +184,6 @@ module.exports = {
 	getPdrVisiteById,
 	editPdrVisiteById,
 	getPdrVisiteBySortie,
-	deletePdrVisiteById
+	deletePdrVisiteById,
+	getPdrVisiteByRegion
 };

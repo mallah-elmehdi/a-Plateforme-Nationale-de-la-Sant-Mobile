@@ -18,7 +18,7 @@ const province = JSON.parse(
 async function dataRegion() {
 	try {
 		var data = {
-				visiteEtablissementVisite: {
+				etablissementVisite: {
 					data: {
 						1: 0,
 						2: 0,
@@ -156,7 +156,7 @@ async function dataRegion() {
 			for (let j = 0; j < santeScolaire.length; j++) {
 				const santeScolaireElement = santeScolaire[j];
 		if (regionElement.region  === santeScolaireElement.csr.region) {
-					data.visiteEtablissementVisite.data[regionElement.codeRegion] += santeScolaireElement.visite.etablissementVisite
+					data.etablissementVisite.data[regionElement.codeRegion] += santeScolaireElement.etablissementVisite
 					data.visiteEleveVue.data[regionElement.codeRegion] += santeScolaireElement.visite.eleveVue
 					data.eleveExamineVmsCible.data[regionElement.codeRegion] += santeScolaireElement.eleveExamineVms.cible
 					data.eleveExamineVmsRealisation.data[regionElement.codeRegion] += santeScolaireElement.eleveExamineVms.realisation
@@ -178,7 +178,7 @@ async function dataRegion() {
 async function dataProvince() {
 	try {
 		var data = {
-				visiteEtablissementVisite: {
+				etablissementVisite: {
 					data: {
 				1: 0,
 				2: 0,
@@ -820,7 +820,7 @@ async function dataProvince() {
 			for (let j = 0; j < santeScolaire.length; j++) {
 				const santeScolaireElement = santeScolaire[j];
 				if (provinceElement.province  === santeScolaireElement.csr.province) {
-					data.visiteEtablissementVisite.data[provinceElement.codeProvince] += santeScolaireElement.visite.etablissementVisite
+					data.etablissementVisite.data[provinceElement.codeProvince] += santeScolaireElement.etablissementVisite
 					data.visiteEleveVue.data[provinceElement.codeProvince] += santeScolaireElement.visite.eleveVue
 					data.eleveExamineVmsCible.data[provinceElement.codeProvince] += santeScolaireElement.eleveExamineVms.cible
 					data.eleveExamineVmsRealisation.data[provinceElement.codeProvince] += santeScolaireElement.eleveExamineVms.realisation

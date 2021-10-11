@@ -1,7 +1,7 @@
 // SET UP
 const fs = require('fs');
 const regionData = require('../../../data/region');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const santeInfantileData = require('../../../data/csr/rapport/santeInfantile');
 
 // ERROR
 const { newError } = require('../../../util/error');
@@ -59,10 +59,13 @@ async function dataRegion(region) {
 				enfantPrisesCharge: {
 					data: { [codeRegion]: 0 },
 				},
-				vaccinationDtc3Hib3: {
+				vaccinationPentavalent: {
 					data: { [codeRegion]: 0 },
 				},
-				vaccinationVar: {
+				vaccinationRr: {
+					data: { [codeRegion]: 0 },
+				},
+				vaccinationBcg: {
 					data: { [codeRegion]: 0 },
 				},
 				vitamineA: {
@@ -71,7 +74,10 @@ async function dataRegion(region) {
 				vitamineD: {
 					data: { [codeRegion]: 0 },
 				},
-				pesee: {
+				enfantsAvecInsuffisancePonderale: {
+					data: { [codeRegion]: 0 },
+				},
+				enfantsAvecRetardCroissance: {
 					data: { [codeRegion]: 0 },
 				},
 				diarrhe: {
@@ -84,30 +90,31 @@ async function dataRegion(region) {
 					data: { [codeRegion]: 0 },
 				},
 			},
-			santeInfantile = await rapportData.getRapportByRegionAndYear(
-				region,
-				'santeInfantile'
+			santeInfantile = await santeInfantileData.getSanteInfantileByRegion(
+				region
 			);
 		// ------------------------
 
 		// santeInfantile
 		for (let j = 0; j < santeInfantile.length; j++) {
 			const santeInfantileElement = santeInfantile[j];
-				data.enfantPrisesCharge.data[codeRegion] +=
-					santeInfantileElement.enfantPrisesCharge;
-				data.vaccinationDtc3Hib3.data[codeRegion] +=
-					santeInfantileElement.vaccination.dtc3Hib3;
-				data.vaccinationVar.data[codeRegion] +=
-					santeInfantileElement.vaccination.var;
-				data.vitamineA.data[codeRegion] +=
-					santeInfantileElement.vitamineA;
-				data.vitamineD.data[codeRegion] +=
-					santeInfantileElement.vitamineD;
-				data.pesee.data[codeRegion] += santeInfantileElement.pesee;
-				data.diarrhe.data[codeRegion] += santeInfantileElement.diarrhe;
-				data.ira.data[codeRegion] += santeInfantileElement.ira;
-				data.reference.data[codeRegion] +=
-					santeInfantileElement.reference;
+			data.enfantPrisesCharge.data[codeRegion] +=
+				santeInfantileElement.enfantPrisesCharge;
+			data.vaccinationPentavalent.data[codeRegion] +=
+				santeInfantileElement.vaccination.pentavalent;
+			data.vaccinationRr.data[codeRegion] +=
+				santeInfantileElement.vaccination.rr;
+			data.vaccinationBcg.data[codeRegion] +=
+				santeInfantileElement.vaccination.bcg;
+			data.vitamineA.data[codeRegion] += santeInfantileElement.vitamineA;
+			data.vitamineD.data[codeRegion] += santeInfantileElement.vitamineD;
+			data.enfantsAvecInsuffisancePonderale.data[codeRegion] +=
+				santeInfantileElement.enfantsAvecInsuffisancePonderale;
+			data.enfantsAvecRetardCroissance.data[codeRegion] +=
+				santeInfantileElement.enfantsAvecRetardCroissance;
+			data.diarrhe.data[codeRegion] += santeInfantileElement.diarrhe;
+			data.ira.data[codeRegion] += santeInfantileElement.ira;
+			data.reference.data[codeRegion] += santeInfantileElement.reference;
 		}
 		return data;
 	} catch (error) {
@@ -124,10 +131,13 @@ async function dataProvince(region, provinceList) {
 				enfantPrisesCharge: {
 					data: getDataInit(provinceList),
 				},
-				vaccinationDtc3Hib3: {
+				vaccinationPentavalent: {
 					data: getDataInit(provinceList),
 				},
-				vaccinationVar: {
+				vaccinationRr: {
+					data: getDataInit(provinceList),
+				},
+				vaccinationBcg: {
 					data: getDataInit(provinceList),
 				},
 				vitamineA: {
@@ -136,7 +146,10 @@ async function dataProvince(region, provinceList) {
 				vitamineD: {
 					data: getDataInit(provinceList),
 				},
-				pesee: {
+				enfantsAvecInsuffisancePonderale: {
+					data: getDataInit(provinceList),
+				},
+				enfantsAvecRetardCroissance: {
 					data: getDataInit(provinceList),
 				},
 				diarrhe: {
@@ -149,9 +162,8 @@ async function dataProvince(region, provinceList) {
 					data: getDataInit(provinceList),
 				},
 			},
-			santeInfantile = await rapportData.getRapportByRegionAndYear(
-				region,
-				'santeInfantile'
+			santeInfantile = await santeInfantileData.getSanteInfantileByRegion(
+				region
 			);
 		// ------------------------
 		// province
@@ -164,20 +176,24 @@ async function dataProvince(region, provinceList) {
 					provinceListElement ===
 					getProvinceCode(santeInfantileElement.csr.province)
 				) {
-					data.enfantPrisesCharge.data[
-						provinceListElement
-					] += santeInfantileElement.enfantPrisesCharge;
-					data.vaccinationDtc3Hib3.data[
-						provinceListElement
-					] += santeInfantileElement.vaccination.dtc3Hib3;
-					data.vaccinationVar.data[provinceListElement] +=
-						santeInfantileElement.vaccination.var;
+					data.enfantPrisesCharge.data[provinceListElement] +=
+						santeInfantileElement.enfantPrisesCharge;
+					data.vaccinationPentavalent.data[provinceListElement] +=
+						santeInfantileElement.vaccination.pentavalent;
+					data.vaccinationRr.data[provinceListElement] +=
+						santeInfantileElement.vaccination.rr;
+					data.vaccinationBcg.data[provinceListElement] +=
+						santeInfantileElement.vaccination.bcg;
 					data.vitamineA.data[provinceListElement] +=
 						santeInfantileElement.vitamineA;
 					data.vitamineD.data[provinceListElement] +=
 						santeInfantileElement.vitamineD;
-					data.pesee.data[provinceListElement] +=
-						santeInfantileElement.pesee;
+					data.enfantsAvecInsuffisancePonderale.data[
+						provinceListElement
+					] += santeInfantileElement.enfantsAvecInsuffisancePonderale;
+					data.enfantsAvecRetardCroissance.data[
+						provinceListElement
+					] += santeInfantileElement.enfantsAvecRetardCroissance;
 					data.diarrhe.data[provinceListElement] +=
 						santeInfantileElement.diarrhe;
 					data.ira.data[provinceListElement] +=
@@ -212,14 +228,12 @@ async function santeInfantile(req, res, next) {
 		};
 		// render the page
 		res.status(200).render('region/dashboard/santeInfantile', {
-			title:
-				'Tableau de bord | Santé infantile | ' +
-				today.getFullYear(),
+			title: 'Tableau de bord | Santé infantile | ' + today.getFullYear(),
 			url: req.originalUrl,
 			data,
 			province,
 			provinceList,
-			page: 'dashboard',
+			page: 'prestation',
 			listItem: 'santeInfantile',
 		});
 	} catch (error) {

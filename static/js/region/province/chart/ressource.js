@@ -17,8 +17,8 @@ $(document).ready(function () {
 	for (let i = 0; i < province.length; i++) {
 		var element = province[i];
 		if (provinceList.includes(element.codeProvince)) {
-		data.data.push(getDataType([dataType[element.codeProvince]]));
-		data.categories.push(element.province);
+			data.data.push(getDataType([dataType[element.codeProvince]]));
+			data.categories.push(element.province);
 		}
 	}
 	// SUM DATA
@@ -32,7 +32,9 @@ $(document).ready(function () {
 					dataElement[key].appartenance.ms.age.moins5ans +
 					dataElement[key].appartenance.ms.age.plus5ans +
 					dataElement[key].appartenance.commune.age.moins5ans +
-					dataElement[key].appartenance.commune.age.plus5ans;
+					dataElement[key].appartenance.commune.age.moins5ans +
+					dataElement[key].appartenance.ong.age.plus5ans +
+					dataElement[key].appartenance.ong.age.plus5ans;
 			}
 		}
 		return data;
@@ -117,30 +119,36 @@ $(document).ready(function () {
 		if (this.value === 'ressource') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(getDataType([dataType[element.codeProvince]]));
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getDataType([dataType[element.codeProvince]])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'budget') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([dataBudgetBesoinCarburant[element.codeProvince]])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataBudgetBesoinCarburant[element.codeProvince],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = ' DH';
 		} else if (this.value === 'besoinUsm') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(getData([dataBesoinUsm[element.codeProvince]]));
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([dataBesoinUsm[element.codeProvince]])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		}
@@ -150,5 +158,5 @@ $(document).ready(function () {
 			},
 		]);
 	});
-	$('.thisProvince').addClass('d-none')
+	$('.thisProvince').addClass('d-none');
 });

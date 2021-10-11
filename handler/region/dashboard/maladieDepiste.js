@@ -1,7 +1,7 @@
 // SET UP
 const fs = require('fs');
 const regionData = require('../../../data/region');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const maladieDepisteData = require('../../../data/csr/rapport/maladieDepiste');
 
 // ERROR
 const { newError } = require('../../../util/error');
@@ -137,24 +137,6 @@ async function dataRegion(region) {
 				raaSansCarditesReference: {
 					data: { [codeRegion]: 0 },
 				},
-				cancerSeinCas: {
-					data: { [codeRegion]: 0 },
-				},
-				cancerSeinCasPec: {
-					data: { [codeRegion]: 0 },
-				},
-				cancerSeinReference: {
-					data: { [codeRegion]: 0 },
-				},
-				cancerColCas: {
-					data: { [codeRegion]: 0 },
-				},
-				cancerColCasPec: {
-					data: { [codeRegion]: 0 },
-				},
-				cancerColReference: {
-					data: { [codeRegion]: 0 },
-				},
 				tuberculosePolmonaireCas: {
 					data: { [codeRegion]: 0 },
 				},
@@ -164,44 +146,12 @@ async function dataRegion(region) {
 				tuberculosePolmonaireReference: {
 					data: { [codeRegion]: 0 },
 				},
-				tuberculoseExtraPolmonaireCas: {
-					data: { [codeRegion]: 0 },
-				},
-				tuberculoseExtraPolmonaireCasPec: {
-					data: { [codeRegion]: 0 },
-				},
-				tuberculoseExtraPolmonaireReference: {
-					data: { [codeRegion]: 0 },
-				},
 
-				visiteEtablissementVisite: {
-					data: { [codeRegion]: 0 },
-				},
-				visiteEleveVue: {
-					data: { [codeRegion]: 0 },
-				},
-				eleveExamineVmsCible: {
-					data: { [codeRegion]: 0 },
-				},
-				eleveExamineVmsRealisation: {
-					data: { [codeRegion]: 0 },
-				},
-				lutteContreDeficienceVisuelleEchelleMetriqueCible: {
-					data: { [codeRegion]: 0 },
-				},
-				lutteContreDeficienceVisuelleEchelleMetriqueRealisation: {
-					data: { [codeRegion]: 0 },
-				},
-				lutteContreDeficienceVisuelleRefractionAutomatiqueCible: {
-					data: { [codeRegion]: 0 },
-				},
-				lutteContreDeficienceVisuelleRefractionAutomatiqueRealisation: {
-					data: { [codeRegion]: 0 },
-				},
+
+
 			},
-			maladieDepiste = await rapportData.getRapportByRegionAndYear(
-				region,
-				'maladieDepiste'
+			maladieDepiste = await maladieDepisteData.getMaladieDepisteByRegion(
+				region
 			);
 		// ------------------------
 		// maladieDepiste
@@ -256,30 +206,15 @@ async function dataRegion(region) {
 				maladieDepisteElement.raa.sansCardites.casPec;
 			data.raaSansCarditesReference.data[codeRegion] =
 				maladieDepisteElement.raa.sansCardites.reference;
-			data.cancerSeinCas.data[codeRegion] =
-				maladieDepisteElement.cancer.sein.cas;
-			data.cancerSeinCasPec.data[codeRegion] =
-				maladieDepisteElement.cancer.sein.casPec;
-			data.cancerSeinReference.data[codeRegion] =
-				maladieDepisteElement.cancer.sein.reference;
-			data.cancerColCas.data[codeRegion] =
-				maladieDepisteElement.cancer.col.cas;
-			data.cancerColCasPec.data[codeRegion] =
-				maladieDepisteElement.cancer.col.casPec;
-			data.cancerColReference.data[codeRegion] =
-				maladieDepisteElement.cancer.col.reference;
+
+
 			data.tuberculosePolmonaireCas.data[codeRegion] =
-				maladieDepisteElement.tuberculose.polmonaire.cas;
+				maladieDepisteElement.tuberculosePolmonaire.cas;
 			data.tuberculosePolmonaireCasPec.data[codeRegion] =
-				maladieDepisteElement.tuberculose.polmonaire.casPec;
+				maladieDepisteElement.tuberculosePolmonaire.casPec;
 			data.tuberculosePolmonaireReference.data[codeRegion] =
-				maladieDepisteElement.tuberculose.polmonaire.reference;
-			data.tuberculoseExtraPolmonaireCas.data[codeRegion] =
-				maladieDepisteElement.tuberculose.extraPolmonaire.cas;
-			data.tuberculoseExtraPolmonaireCasPec.data[codeRegion] =
-				maladieDepisteElement.tuberculose.extraPolmonaire.casPec;
-			data.tuberculoseExtraPolmonaireReference.data[codeRegion] =
-				maladieDepisteElement.tuberculose.extraPolmonaire.reference;
+				maladieDepisteElement.tuberculosePolmonaire.reference;
+
 		}
 		return data;
 	} catch (error) {
@@ -374,24 +309,6 @@ async function dataProvince(region, provinceList) {
 				raaSansCarditesReference: {
 					data: getDataInit(provinceList),
 				},
-				cancerSeinCas: {
-					data: getDataInit(provinceList),
-				},
-				cancerSeinCasPec: {
-					data: getDataInit(provinceList),
-				},
-				cancerSeinReference: {
-					data: getDataInit(provinceList),
-				},
-				cancerColCas: {
-					data: getDataInit(provinceList),
-				},
-				cancerColCasPec: {
-					data: getDataInit(provinceList),
-				},
-				cancerColReference: {
-					data: getDataInit(provinceList),
-				},
 				tuberculosePolmonaireCas: {
 					data: getDataInit(provinceList),
 				},
@@ -401,44 +318,10 @@ async function dataProvince(region, provinceList) {
 				tuberculosePolmonaireReference: {
 					data: getDataInit(provinceList),
 				},
-				tuberculoseExtraPolmonaireCas: {
-					data: getDataInit(provinceList),
-				},
-				tuberculoseExtraPolmonaireCasPec: {
-					data: getDataInit(provinceList),
-				},
-				tuberculoseExtraPolmonaireReference: {
-					data: getDataInit(provinceList),
-				},
 
-				visiteEtablissementVisite: {
-					data: getDataInit(provinceList),
-				},
-				visiteEleveVue: {
-					data: getDataInit(provinceList),
-				},
-				eleveExamineVmsCible: {
-					data: getDataInit(provinceList),
-				},
-				eleveExamineVmsRealisation: {
-					data: getDataInit(provinceList),
-				},
-				lutteContreDeficienceVisuelleEchelleMetriqueCible: {
-					data: getDataInit(provinceList),
-				},
-				lutteContreDeficienceVisuelleEchelleMetriqueRealisation: {
-					data: getDataInit(provinceList),
-				},
-				lutteContreDeficienceVisuelleRefractionAutomatiqueCible: {
-					data: getDataInit(provinceList),
-				},
-				lutteContreDeficienceVisuelleRefractionAutomatiqueRealisation: {
-					data: getDataInit(provinceList),
-				},
 			},
-			maladieDepiste = await rapportData.getRapportByRegionAndYear(
-				region,
-				'maladieDepiste'
+			maladieDepiste = await maladieDepisteData.getMaladieDepisteByRegion(
+				region
 			);
 		// ------------------------
 		// province
@@ -513,39 +396,19 @@ async function dataProvince(region, provinceList) {
 					data.raaSansCarditesReference.data[
 						provinceListElement
 					] = maladieDepisteElement.raa.sansCardites.reference;
-					data.cancerSeinCas.data[provinceListElement] =
-						maladieDepisteElement.cancer.sein.cas;
-					data.cancerSeinCasPec.data[provinceListElement] =
-						maladieDepisteElement.cancer.sein.casPec;
-					data.cancerSeinReference.data[
-						provinceListElement
-					] = maladieDepisteElement.cancer.sein.reference;
-					data.cancerColCas.data[provinceListElement] =
-						maladieDepisteElement.cancer.col.cas;
-					data.cancerColCasPec.data[provinceListElement] =
-						maladieDepisteElement.cancer.col.casPec;
-					data.cancerColReference.data[provinceListElement] =
-						maladieDepisteElement.cancer.col.reference;
+
+
+
 					data.tuberculosePolmonaireCas.data[
 						provinceListElement
-					] = maladieDepisteElement.tuberculose.polmonaire.cas;
+					] = maladieDepisteElement.tuberculosePolmonaire.cas;
 					data.tuberculosePolmonaireCasPec.data[
 						provinceListElement
-					] = maladieDepisteElement.tuberculose.polmonaire.casPec;
+					] = maladieDepisteElement.tuberculosePolmonaire.casPec;
 					data.tuberculosePolmonaireReference.data[
 						provinceListElement
-					] = maladieDepisteElement.tuberculose.polmonaire.reference;
-					data.tuberculoseExtraPolmonaireCas.data[
-						provinceListElement
-					] = maladieDepisteElement.tuberculose.extraPolmonaire.cas;
-					data.tuberculoseExtraPolmonaireCasPec.data[
-						provinceListElement
-					] =
-						maladieDepisteElement.tuberculose.extraPolmonaire.casPec;
-					data.tuberculoseExtraPolmonaireReference.data[
-						provinceListElement
-					] =
-						maladieDepisteElement.tuberculose.extraPolmonaire.reference;
+					] = maladieDepisteElement.tuberculosePolmonaire.reference;
+
 				}
 			}
 		}
@@ -581,7 +444,7 @@ async function maladieDepiste(req, res, next) {
 			data,
 			province,
 			provinceList,
-			page: 'dashboard',
+			page: 'prestation',
 			listItem: 'maladieDepiste',
 		});
 	} catch (error) {

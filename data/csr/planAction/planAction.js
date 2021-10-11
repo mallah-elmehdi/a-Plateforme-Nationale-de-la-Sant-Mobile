@@ -131,6 +131,28 @@ async function getPlanActionByProvince(province) {
 	}
 }
 
+// GET BY REGION
+async function getPlanActionByRegion(region) {
+	try {
+		var today = new Date(),
+			query = await planAction
+				.find({ year: today.getFullYear() })
+				.populate('csr population programme ressource ressourceHumain')
+				.select('-email');
+		resule = [];
+		for (let i = 0; i < query.length; i++) {
+			const element = query[i];
+			if (element.csr.region === region) {
+				resule.push(element);
+			}
+		}
+		return resule;
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getPlanActionByCsr,
@@ -138,8 +160,5 @@ module.exports = {
 	addDataToPlanAction,
 	submitPlanAction,
 	getPlanActionByProvince,
-	// addPlanAction,
-	// getPlanActionByYear,
-	// getPlanActionByRegionAndYear,
-	// getPlanActionByProvinceAndYear
+	getPlanActionByRegion
 };

@@ -15,14 +15,14 @@ block tail
 
 
 block main
-	.row.g-3#data(data-code=data.document.codeRegion data-region=data.document.region data-list=provinceList)
+	.row.g-3#data(data-code=data.document.codeRegion data-region=data.document.region data-list=provinceList data-trimestre=trimestre)
 		.col-12
 			include ../util/snippet/titleRapport
 		.col-12
 			.d-flex.flex-wrap
 				.dropdown.me-2
-					button#dropdownPreview.btn.btn-sm.text-dark.bg-3.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
-						| Preview
+					button#dropdownPreview.btn.btn-sm.text-dark.bg-8.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+						| Division de la carte
 					ul.dropdown-menu(aria-labelledby='dropdownPreview')
 						li.list-group-item.dropdown-item
 							input#previewZone1.form-check-input(type='radio' name='previewZone' value="regional" checked)
@@ -30,6 +30,8 @@ block main
 						li.list-group-item.dropdown-item
 							input#previewZone2.form-check-input(type='radio' name='previewZone' value="provincial")
 							label.form-check-label(for='previewZone2') provincial
+						li.list-group-item.dropdown-item
+							a.text-dark(href=url+'/csr') Centre de santé
 		//- ---------------- map
 		.col-12
 			.card.card-body
@@ -37,7 +39,9 @@ block main
 					.col-12
 						.d-flex.align-items-center.fs-7
 							<ion-icon name="stats-chart-outline"  class="me-2 text-1"></ion-icon>
-							span.text-dark#title= 'Taux de remplissage du rapport - Trimestre ' + trimestre  
+							span.text-dark Rapport des activités des Unités Médical Mobile (UMM)
+					.col-12
+						span#title.badge.bg-5= 'Taux de remplissage du rapport - Trimestre ' + trimestre 
 					.col-12.thisRegion
 						#dataRegion(data-carte=JSON.stringify(data.carte.region) data-rapport=JSON.stringify(data.rapport.region) data-trimestre=trimestre)
 							#region-map(style="width: 100%; height: 400px")

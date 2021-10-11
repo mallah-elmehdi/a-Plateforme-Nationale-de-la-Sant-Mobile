@@ -83,7 +83,7 @@ $(document).ready(function () {
 				$(this).next('label').text();
 
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
 		// change te data

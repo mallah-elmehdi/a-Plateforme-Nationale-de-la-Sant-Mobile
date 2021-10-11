@@ -5,8 +5,8 @@ $(document).ready(function () {
 		type = '',
 		// init data
 		dataEnfantPrisesCharge = wholeData.enfantPrisesCharge.data,
-		dataVaccinationDtc3Hib3 = wholeData.vaccinationDtc3Hib3.data,
-		dataVaccinationVar = wholeData.vaccinationVar.data,
+		dataVaccinationPentavalent = wholeData.vaccinationDtc3Hib3.data,
+		dataVaccinationRr = wholeData.vaccinationVar.data,
 		dataVitamineA = wholeData.vitamineA.data,
 		dataVitamineD = wholeData.vitamineD.data,
 		dataPesee = wholeData.pesee.data,
@@ -116,8 +116,8 @@ $(document).ready(function () {
 				var element = region[i];
 				data.data.push(
 					getData([
-						dataVaccinationDtc3Hib3[element.codeRegion],
-						dataVaccinationVar[element.codeRegion],
+						dataVaccinationPentavalent[element.codeRegion],
+						dataVaccinationRr[element.codeRegion],
 					])
 				);
 				data.categories.push(element.region);

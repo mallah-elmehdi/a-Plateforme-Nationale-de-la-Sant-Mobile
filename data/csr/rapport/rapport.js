@@ -59,6 +59,43 @@ async function getRapportByProvince(trimestre, province) {
 	}
 }
 
+
+// GET RAPPORT
+async function getRapportByRegion(trimestre, region) {
+	try {
+		// variables
+		var today = new Date(),
+			query = await rapport
+				.find({
+					trimestre,
+					year: today.getFullYear(),
+				})
+				.populate({
+					path: 'sortie csr',
+					populate: {
+						path: 'pdrVisite populationCible ressourceHumainMobile santeMaternelle santeInfantile planificationFamiliale santeScolaire detectionPrecoceCancer consultationMedical maladieDepiste autreActivite',
+						select: '-email',
+						populate: {
+							path: 'pdrVisite csr',
+							select: '-email',
+						},
+					},
+					select: '-email',
+				}),
+			out = [];
+		for (let i = 0; i < query.length; i++) {
+			const element = query[i];
+			if (element.csr.region === region) {
+				out.push(element);
+			}
+		}
+		return out;
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // // ADD
 // async function addRapport(csr, trimestre, body) {
 // 	try {
@@ -339,4 +376,5 @@ async function getRapportByProvince(trimestre, province) {
 module.exports = {
 	getRapportByTrimestre,
 	getRapportByProvince,
+	getRapportByRegion
 };

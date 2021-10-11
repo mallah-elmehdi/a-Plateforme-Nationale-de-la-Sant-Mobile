@@ -6,11 +6,15 @@ $(document).ready(function () {
 		type = '',
 		// init data
 		dataEnfantPrisesCharge = wholeData.enfantPrisesCharge.data,
-		dataVaccinationDtc3Hib3 = wholeData.vaccinationDtc3Hib3.data,
-		dataVaccinationVar = wholeData.vaccinationVar.data,
+		dataVaccinationPentavalent = wholeData.vaccinationPentavalent.data,
+		dataVaccinationRr = wholeData.vaccinationRr.data,
+		dataVaccinationBcg = wholeData.vaccinationBcg.data,
 		dataVitamineA = wholeData.vitamineA.data,
 		dataVitamineD = wholeData.vitamineD.data,
-		dataPesee = wholeData.pesee.data,
+		dataEnfantsAvecInsuffisancePonderale =
+			wholeData.enfantsAvecInsuffisancePonderale.data,
+		dataEnfantsAvecRetardCroissance =
+			wholeData.enfantsAvecRetardCroissance.data,
 		dataDiarrhe = wholeData.diarrhe.data,
 		dataIra = wholeData.ira.data,
 		dataReference = wholeData.reference.data,
@@ -22,8 +26,10 @@ $(document).ready(function () {
 	for (let i = 0; i < province.length; i++) {
 		const element = province[i];
 		if (provinceList.includes(element.codeProvince)) {
-		data.data.push(getData([dataEnfantPrisesCharge[element.codeProvince]]));
-		data.categories.push(element.province);
+			data.data.push(
+				getData([dataEnfantPrisesCharge[element.codeProvince]])
+			);
+			data.categories.push(element.province);
 		}
 	}
 	// SUM DATA
@@ -108,82 +114,98 @@ $(document).ready(function () {
 		if (this.value === 'enfantPrisesCharge') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([dataEnfantPrisesCharge[element.codeProvince]])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([dataEnfantPrisesCharge[element.codeProvince]])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'vaccination') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([
-						dataVaccinationDtc3Hib3[element.codeProvince],
-						dataVaccinationVar[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([
+							dataVaccinationPentavalent[element.codeProvince],
+							dataVaccinationRr[element.codeProvince],
+							dataVaccinationBcg[element.codeProvince],
+						])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'vitamineA') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(
-					getData([dataVitamineA[element.codeProvince]])
-				);
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([dataVitamineA[element.codeProvince]])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'vitamineD') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(getData([dataVitamineD[element.codeProvince]]));
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([dataVitamineD[element.codeProvince]])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
-		} else if (this.value === 'pesee') {
+		} else if (this.value === 'enfantsAvecInsuffisancePonderale') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(getData([dataPesee[element.codeProvince]]));
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(getData([dataEnfantsAvecInsuffisancePonderale[element.codeProvince]]));
+					data.categories.push(element.province);
+				}
+			}
+			type = '';
+		} else if (this.value === 'enfantsAvecRetardCroissance') {
+			for (let i = 0; i < province.length; i++) {
+				var element = province[i];
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(getData([dataEnfantsAvecRetardCroissance[element.codeProvince]]));
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'diarrhe') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(getData([dataDiarrhe[element.codeProvince]]));
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([dataDiarrhe[element.codeProvince]])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'ira') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(getData([dataIra[element.codeProvince]]));
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(getData([dataIra[element.codeProvince]]));
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		} else if (this.value === 'reference') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-		if (provinceList.includes(element.codeProvince)) {
-				data.data.push(getData([dataReference[element.codeProvince]]));
-				data.categories.push(element.province);
-		}
+				if (provinceList.includes(element.codeProvince)) {
+					data.data.push(
+						getData([dataReference[element.codeProvince]])
+					);
+					data.categories.push(element.province);
+				}
 			}
 			type = '';
 		}
@@ -193,5 +215,5 @@ $(document).ready(function () {
 			},
 		]);
 	});
-	$('.thisProvince').addClass('d-none')
+	$('.thisProvince').addClass('d-none');
 });

@@ -643,7 +643,7 @@ async function dataRegion() {
 					},
 				},
 
-				visiteEtablissementVisite: {
+				etablissementVisite: {
 					data: {
 						1: 0,
 						2: 0,
@@ -3967,7 +3967,7 @@ async function dataProvince() {
 					},
 				},
 
-				visiteEtablissementVisite: {
+				etablissementVisite: {
 					data: {
 						1: 0,
 						2: 0,

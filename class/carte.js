@@ -3,6 +3,9 @@ const fs = require('fs');
 const today = new Date();
 
 // JSON
+const regionJson = JSON.parse(
+	fs.readFileSync(`${__dirname}/../static/json/region.json`)
+);
 const provinceJson = JSON.parse(
 	fs.readFileSync(`${__dirname}/../static/json/province.json`)
 );
@@ -14,6 +17,15 @@ const csrJson = JSON.parse(
 class Carte {
 	constructor() {
 		this.year = today.getFullYear();
+	}
+	// GET THE CODE OF THE REGION
+	getCodeRegion(region) {
+		for (let i = 0; i < regionJson.length; i++) {
+			const regionElement = regionJson[i];
+			if (regionElement.region === region) {
+				return regionElement.codeRegion;
+			}
+		}
 	}
 	// GET THE CODE OF THE PROVINCE
 	getCodeProvince(province) {
@@ -42,6 +54,24 @@ class Carte {
 			}
 		}
 		return listCsr;
+	}
+	// GET THE LIST OF PROVINCE BY REGION
+	getProvinceListByRegion(region) {
+		// variable
+		var listProvince = [];
+		// loop
+		for (let i = 0; i < provinceJson.length; i++) {
+			const provinceElement = provinceJson[i];
+			if (provinceElement.region === region) {
+				listProvince.push({
+					region: provinceElement.region,
+					codeRegion: provinceElement.codeRegion,
+					province: provinceElement.province,
+					codeProvince: provinceElement.codeProvince,
+				});
+			}
+		}
+		return listProvince;
 	}
 	// INIT DATA
 	initCsrData(list) {

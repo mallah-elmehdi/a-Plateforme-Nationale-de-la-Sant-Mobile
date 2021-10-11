@@ -465,7 +465,7 @@ $(document).ready(function () {
 							</tr>
 							
 							<tr>
-								<th>Unité mobile</th>
+								<th>Unité Sanitaire Mobile (USM)</th>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
 									vehiculeTable[code].usm.ms.moins5ans
 								}</span></td>
