@@ -168,11 +168,15 @@ router
 	.route('/:id/trimestre/:trimestre')
 	.get(authHandler.protector, rapport.rapport, errorHandler.throwError);
 
-// // settings
-// router.route('/:id/settings').get(
-// 	authHandler.protector,
-// 	dashboardUtilHandler.settings,
-// 	errorHandler.throwError
-// );
+// SETTINGS
+router
+	.route('/:id/changer-le-mot-de-passe')
+	.get(authHandler.protector, generalHandler.changePassword, errorHandler.throwError)
+	.post(
+		authHandler.protector,
+		generalHandler.checkOldPassword,
+		generalHandler.updatePassword,
+		errorHandler.throwError
+	);
 
 module.exports = router;

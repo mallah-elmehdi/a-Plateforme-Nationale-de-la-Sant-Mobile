@@ -78,11 +78,7 @@ async function dataProvince(trimestre, province) {
 		var ressourceHumain =
 			await ressourceHumainData.getRessourceHumainByProvince(province);
 		data[codeProvince] = {
-			pdrVisite: await getGlobalPdrVisiteProvince(
-				item,
-				trimestre,
-				province
-			),
+			pdrVisite: await getGlobalPdrVisiteProvince(item, trimestre, province),
 			populationCible: global.globalPopulationCible(item),
 			ressourceHumainMobile:
 				global.globalRessourceHumain(ressourceHumain),
@@ -102,47 +98,38 @@ async function dataProvince(trimestre, province) {
 	}
 }
 
-async function tauxDataProvince(trimestre, province, csrList) {
+async function tauxDataProvince(trimestre, province) {
 	try {
 		var codeProvince = getProvinceCode(province),
 			data = {},
 			rapport = await rapportData.getRapportByProvince(
-				parseInt(trimestre),
+				trimestre,
 				province
 			),
 			listData = {
 				[codeProvince]: [],
 			};
-		for (let i = 0; i < rapport.length; i++) {
-			const rapportElement = rapport[i];
+		for (let i = 0; i < csr.length; i++) {
+			const csrElement = csr[i];
 			var exist = false;
-			for (let j = 0; j < csrList.length; j++) {
-				const csrElement = csrList[j];
-				if (rapportElement.csr.csr === csrElement.csr) {
-					exist = true;
+			if (csrElement.codeProvince == codeProvince) {
+				// rapport
+				for (let j = 0; j < rapport.length; j++) {
+					const rapportElement = rapport[j];
+					// -----------------------------------
+					if (
+						rapportElement.csr.region === csrElement.region &&
+						rapportElement.csr.province === csrElement.province &&
+						rapportElement.csr.csr === csrElement.name
+					) {
+						exist = true;
+					}
 				}
-			}
-			if (exist) {
-				
-			}
-		}
-		
-		listData[codeProvince]
-		
-		for (let i = 0; i < csrList.length; i++) {
-			const csrElement = csrList[i];
-			// rapport
-			for (let j = 0; j < rapport.sortie.length; j++) {
-				const rapportElement = rapport.sortie[j];
-				if (rapportElement.csr.csr === csrElement.name) {
+				if (exist) {
+					listData[csrElement.codeProvince].push(100);
+				} else {
+					listData[csrElement.codeProvince].push(0);
 				}
-				console.log(rapportElement);
-			}
-			if (exist) {
-				listData[csrElement.codeProvince].push(
-				);
-			} else {
-				listData[csrElement.codeProvince].push(0);
 			}
 		}
 		for (const key in listData) {
@@ -177,13 +164,12 @@ async function rapport(req, res, next) {
 			today = new Date();
 		// get the document of the region
 		data.document = await provinceData.getDocument(req.params.id);
-		var csrList = carte.getCsrListByProvince(data.document.province);
+		var csrList = carte.getCsrListByProvince(data.document.province)
 		// taux
 		data.carte = {
 			province: await tauxDataProvince(
 				parseInt(req.params.trimestre),
 				data.document.province,
-				csrList
 			),
 		};
 		// rapport
