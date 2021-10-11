@@ -7,28 +7,6 @@ header
 				button#aside-btn.btn.btn-sm.p-1.text-1
 					ion-icon.align-middle.fs-4(name='menu-outline')
 				.d-flex.align-items-center
-					//- notification
-					//- .dropdown
-						button#dropdownNotif.btn.bg-warning-light.rounded-circle.p-3.position-relative.me-2(type='button' data-bs-toggle='dropdown' aria-expanded='false')
-							.position-absolute.top-50.start-50.translate-middle
-								<ion-icon name="notifications-outline" class="fs-5 text-warning align-middle"></ion-icon>
-						ul.dropdown-menu(aria-labelledby='dropdownNotif')
-							a.dropdown-item.list-group-item.list-group-item-action(href='#') Notif 1
-							a.dropdown-item.list-group-item.list-group-item-action(href='#') Notif 2
-							a.dropdown-item.list-group-item.list-group-item-action(href='#') Notif 3
-
-					//- video
-					//- button.btn.bg-danger-light.rounded-circle.p-3.position-relative.me-2(type='button' data-bs-toggle='modal' data-bs-target='#videoTuto')
-						.position-absolute.top-50.start-50.translate-middle
-							<ion-icon name="play-outline" class="fs-5 text-danger align-middle"></ion-icon>
-					//- #videoTuto.modal.fade(tabindex='-1' aria-labelledby='videoTutoLabel' aria-hidden='true')
-						.modal-dialog.modal-dialog-centered.modal-lg.flex-column
-							button.align-self-end.position-relative.btn.btn-sm.btn-light.rounded-circle.p-3.mb-2(type="button" data-bs-dismiss='modal' aria-label='Close')
-								.position-absolute.top-50.start-50.translate-middle
-									<ion-icon name="close-outline" class="fs-5 text-dark align-middle"></ion-icon>
-							.modal-content
-								.ratio.ratio-16x9
-									iframe(src='https://www.youtube.com/embed/vcNAhUqH9U0?rel=0' title='YouTube video' allowfullscreen)
 					//- change password 
 					a.btn.btn-sm.bg-5.px-2.me-2(href= '/csr/' + data.document.id + '/changer-le-mot-de-passe')
 						.d-flex.align-items-center.text-white

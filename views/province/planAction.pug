@@ -1,37 +1,34 @@
 extends profile
-
+ 
 block tail
 	//- LIBRARY
-	script(src='/../js/province/jquery-jvectormap-2.0.5.min.js')
-	script(src='/../js/province/toggleMap.js')
+	script(src='/../js/util/jquery-jvectormap-2.0.5.min.js')
+	script(src='/../js/util/toggleMap.js')
 	//- MAP
-	script(src='/../js/province/province/map.js')
+	script(src='/../js/util/mapProvince.js')
 	//- CARTE
-	script(src='/../js/province/province/carte/planAction.js')
+	script(src='/../js/province/carte/planAction.js')
 	//- CHART
-	script(src='/../js/province/province/chart/planAction.js')
+	script(src='/../js/province/chart/planAction.js')
 
 block main
-	.row.g-3#data(data-code=codeProvince data-province=data.document.province data-region=data.document.region)
+	.row.g-3#data(data-provincedata=JSON.stringify(data.provinceData) data-code=codeProvince data-csrlist=csrList data-region=data.document.region data-province=data.document.province )
 		.col-12
-			include ../util/snippet/titlePlanAction
-
+			include ../util/snippet/titleDashboard
 		//- ---------------- map
 		.col-12
 			.card.card-body
 				.row.g-3
 					.col-12
-						.d-flex.align-items-center.fs-7
+						.d-flex.align-items-center.fs-6
 							<ion-icon name="stats-chart-outline"  class="me-2 text-1"></ion-icon>
-							span.text-dark#title Taux d'élaboration du plan d'action global
+							span.text-dark Plan d’action des unités médicales mobiles (UMM)
 					.col-12
-						#dataProvince(data-carte=JSON.stringify(data.carte.province) data-planAction=JSON.stringify(data.planAction.province))
-							#province-map(style="width: 100%; height: 400px;")
+						span#title.badge.bg-5 Taux de remplissage du plan d'action
 					.col-12
-						.d-flex.align-items-center.fs-7
-							<ion-icon name="bar-chart-outline"  class="me-2 text-1"></ion-icon>
-							span.text-dark Taux d'élaboration du plan d'action par CSR
+						#province-map(style="width: 100%; height: 400px;")
 					.col-12
-						#csr-chart(data-csr=JSON.stringify(data.chart.csr))
+						#csr-chart
+					.col-12
+						#modalPlace
 
-		#modalPlace

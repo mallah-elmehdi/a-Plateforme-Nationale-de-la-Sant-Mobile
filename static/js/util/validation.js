@@ -89,7 +89,7 @@ $(document).ready(function () {
 			}
 		});
 		// textarea leght
-		$('.lenghtValidationTextarea').each(function () {
+		$('.lenghtValidationTextarea:visible').each(function () {
 			if ($(this).val().length > 500) {
 				lengthErr($(this));
 			}

@@ -1,72 +1,104 @@
 // SET UP
-const fs = require('fs');
 const provinceData = require('../../../data/province');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const santeMaternelleData = require('../../../data/csr/rapport/santeMaternelle');
+const { Carte } = require('../../../class/carte');
+const carte = new Carte();
 
 // ERROR
 const { newError } = require('../../../util/error');
 
-// JSON
-const province = JSON.parse(
-	fs.readFileSync(`${__dirname}/../../../static/json/province.json`)
-);
-
-function getProvinceCode(pro) {
-	for (let i = 0; i < province.length; i++) {
-		const provinceElement = province[i];
-		if (provinceElement.province === pro) {
-			return provinceElement.codeProvince;
-		}
-	}
-}
-
-// DATA REGION
-async function dataProvince(province) {
+// CARTE PROVINCE
+async function carteSanteMaternelleProvince(province, csrList) {
 	try {
-		var codeProvince = getProvinceCode(province),
-			data = {
+		var data = {
 				femmePriseCharge: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
-				cpnNouvelleInscrite: {
-					data: { [codeProvince]: 0 },
+				cpnNouvelleInscriteT1: {
+					data: carte.initCsrData(csrList),
 				},
-				cpnAutreConsultation: {
-					data: { [codeProvince]: 0 },
+				cpnNouvelleInscriteT2: {
+					data: carte.initCsrData(csrList),
+				},
+				cpnNouvelleInscriteT3: {
+					data: carte.initCsrData(csrList),
+				},
+				cpnAncienneInscriteT1: {
+					data: carte.initCsrData(csrList),
+				},
+				cpnAncienneInscriteT2: {
+					data: carte.initCsrData(csrList),
+				},
+				cpnAncienneInscriteT3: {
+					data: carte.initCsrData(csrList),
+				},
+				autreConsultation: {
+					data: carte.initCsrData(csrList),
 				},
 				femmeExaminePostNatal: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
-				gahrDepiste: {
-					data: { [codeProvince]: 0 },
+				garDepiste: {
+					data: carte.initCsrData(csrList),
 				},
 				vat: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				reference: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 			},
-			santeMaternelle = await rapportData.getRapportByProvinceAndYear(
-				province,
-				'santeMaternelle'
-			);
-		// ------------------------
+			santeMaternelle =
+				await santeMaternelleData.getSanteMaternelleByProvince(
+					province
+				);
 		// santeMaternelle
 		for (let j = 0; j < santeMaternelle.length; j++) {
+			// santeMaternelle element
 			const santeMaternelleElement = santeMaternelle[j];
-			data.femmePriseCharge.data[codeProvince] +=
+			// sum
+			// femmePriseCharge
+			data.femmePriseCharge.data[santeMaternelleElement.csr.csr].value +=
 				santeMaternelleElement.femmePriseCharge;
-			data.cpnNouvelleInscrite.data[codeProvince] +=
-				santeMaternelleElement.cpn.nouvelleInscrite;
-			data.cpnAutreConsultation.data[codeProvince] +=
-				santeMaternelleElement.cpn.autreConsultation;
-			data.femmeExaminePostNatal.data[codeProvince] +=
+			// cpnNouvelleInscriteT1
+			data.cpnNouvelleInscriteT1.data[
+				santeMaternelleElement.csr.csr
+			].value += santeMaternelleElement.cpn.nouvelleInscrite.t1;
+			// cpnNouvelleInscriteT2
+			data.cpnNouvelleInscriteT2.data[
+				santeMaternelleElement.csr.csr
+			].value += santeMaternelleElement.cpn.nouvelleInscrite.t2;
+			// cpnNouvelleInscriteT3
+			data.cpnNouvelleInscriteT3.data[
+				santeMaternelleElement.csr.csr
+			].value += santeMaternelleElement.cpn.nouvelleInscrite.t3;
+			// cpnAncienneInscriteT1
+			data.cpnAncienneInscriteT1.data[
+				santeMaternelleElement.csr.csr
+			].value += santeMaternelleElement.cpn.ancienneInscrite.t1;
+			// cpnAncienneInscriteT2
+			data.cpnAncienneInscriteT2.data[
+				santeMaternelleElement.csr.csr
+			].value += santeMaternelleElement.cpn.ancienneInscrite.t2;
+			// cpnAncienneInscriteT3
+			data.cpnAncienneInscriteT3.data[
+				santeMaternelleElement.csr.csr
+			].value += santeMaternelleElement.cpn.ancienneInscrite.t3;
+			// autreConsultation
+			data.autreConsultation.data[santeMaternelleElement.csr.csr].value +=
+				santeMaternelleElement.autreConsultation;
+			// femmeExaminePostNatal
+			data.femmeExaminePostNatal.data[
+				santeMaternelleElement.csr.csr
+			].value += santeMaternelleElement.garDepiste;
+			// garDepiste
+			data.garDepiste.data[santeMaternelleElement.csr.csr].value +=
 				santeMaternelleElement.femmeExaminePostNatal;
-			data.gahrDepiste.data[codeProvince] +=
-				santeMaternelleElement.gahrDepiste;
-			data.vat.data[codeProvince] += santeMaternelleElement.vat;
-			data.reference.data[codeProvince] +=
+			// vat
+			data.vat.data[santeMaternelleElement.csr.csr].value +=
+				santeMaternelleElement.vat;
+			// reference
+			data.reference.data[santeMaternelleElement.csr.csr].value +=
 				santeMaternelleElement.reference;
 		}
 		return data;
@@ -76,30 +108,32 @@ async function dataProvince(province) {
 	}
 }
 
-// get the dashbord
+// GET
 async function santeMaternelle(req, res, next) {
 	try {
-		// collect data
+		// variable
 		var data = {},
 			today = new Date();
-		// get the document of the region
+		// get the document
 		data.document = await provinceData.getDocument(req.params.id);
-		// list province
-
-		// taux pdr visite
-		data.carte = {
-			province: await dataProvince(data.document.province),
-		};
+		// variable
+		var csrList = carte.getCsrListByProvince(data.document.province),
+			codeProvince = carte.getCodeProvince(data.document.province);
+		// carte
+		data.provinceData = await carteSanteMaternelleProvince(
+			data.document.province,
+			csrList
+		);
 		// render the page
 		res.status(200).render('province/dashboard/santeMaternelle', {
 			title:
-				'Tableau de bord | Santé maternelle | ' +
+				'Tableau de bord | Santé maternelle | ' +
 				today.getFullYear(),
 			url: req.originalUrl,
 			data,
-			province,
-			codeProvince: getProvinceCode(data.document.province),
-			page: 'dashboard',
+			codeProvince,
+			csrList,
+			page: 'prestation',
 			listItem: 'santeMaternelle',
 		});
 	} catch (error) {

@@ -37,6 +37,32 @@ async function addUpdatePopulation(body, csr, id) {
 	}
 }
 
+// GET BY PROVINCE
+async function getPopulationByProvince(province) {
+	try {
+		// variable
+		var today = new Date(),
+			result = [];
+		// get query
+		var query = await population
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+		// get only result fo the province
+		for (let i = 0; i < query.length;i++) {
+			const element = query[i];
+			if (element.csr.province === province) {
+				result.push(element)
+			}
+		}
+		return result
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
 
 // // GET
 // async function getPopulationByYear() {
@@ -76,34 +102,11 @@ async function addUpdatePopulation(body, csr, id) {
 // 		throw newError(500, "quelque chose s'est mal passé");
 // 	}
 // }
-// async function getPopulationByProvinceYear(province) {
-// 	try {
-// 		var today = new Date(),
-// 			all = await population
-// 				.find({ year: today.getFullYear() })
-// 				.populate({
-// 					path: 'csr',
-// 					select: '-password -email',
-// 				}),
-// 			out = [];
-// 		for (let i = 0; i < all.length; i++) {
-// 			const element = all[i];
-// 			if (element.csr.province === province) {
-// 				out.push(element)
-// 			}
-// 		}
-// 		return out
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
 
 // OUTPUT
 module.exports = {
 	getPopulationByCsr,
 	addUpdatePopulation,
-	// getPopulationByYear,
-	// getPopulationByRegionYear,
-	// getPopulationByProvinceYear
+
+	getPopulationByProvince,
 };

@@ -1,83 +1,79 @@
 // SET UP
-const fs = require('fs');
 const provinceData = require('../../../data/province');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const santeInfantileData = require('../../../data/csr/rapport/santeInfantile');
+const { Carte } = require('../../../class/carte');
+const carte = new Carte();
 
 // ERROR
 const { newError } = require('../../../util/error');
 
-// JSON
-const province = JSON.parse(
-	fs.readFileSync(`${__dirname}/../../../static/json/province.json`)
-);
-
-function getProvinceCode(pro) {
-	for (let i = 0; i < province.length; i++) {
-		const provinceElement = province[i];
-		if (provinceElement.province === pro) {
-			return provinceElement.codeProvince;
-		}
-	}
-}
-
-// DATA REGION
-async function dataProvince(province) {
+// CARTE PROVINCE
+async function carteSanteInfantileProvince(province, csrList) {
 	try {
-		var codeProvince = getProvinceCode(province),
-			data = {
+		var data = {
 				enfantPrisesCharge: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
-				vaccinationDtc3Hib3: {
-					data: { [codeProvince]: 0 },
+				vaccinationRr: {
+					data: carte.initCsrData(csrList),
 				},
-				vaccinationVar: {
-					data: { [codeProvince]: 0 },
+				vaccinationPentavalent: {
+					data: carte.initCsrData(csrList),
+				},
+				vaccinationBcg: {
+					data: carte.initCsrData(csrList),
 				},
 				vitamineA: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				vitamineD: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
-				pesee: {
-					data: { [codeProvince]: 0 },
+				enfantsAvecInsuffisancePonderale: {
+					data: carte.initCsrData(csrList),
+				},
+				enfantsAvecRetardCroissance: {
+					data: carte.initCsrData(csrList),
 				},
 				diarrhe: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				ira: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				reference: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 			},
-			santeInfantile = await rapportData.getRapportByProvinceAndYear(
-				province,
-				'santeInfantile'
-			);
-		// ------------------------
-		// province
-
+			santeInfantile =
+				await santeInfantileData.getSanteInfantileByProvince(province);
 		// santeInfantile
 		for (let j = 0; j < santeInfantile.length; j++) {
+			// santeInfantile element
 			const santeInfantileElement = santeInfantile[j];
-			data.enfantPrisesCharge.data[codeProvince] +=
-				santeInfantileElement.enfantPrisesCharge;
-			data.vaccinationDtc3Hib3.data[codeProvince] +=
-				santeInfantileElement.vaccination.dtc3Hib3;
-			data.vaccinationVar.data[codeProvince] +=
-				santeInfantileElement.vaccination.var;
-			data.vitamineA.data[codeProvince] +=
-				santeInfantileElement.vitamineA;
-			data.vitamineD.data[codeProvince] +=
-				santeInfantileElement.vitamineD;
-			data.pesee.data[codeProvince] += santeInfantileElement.pesee;
-			data.diarrhe.data[codeProvince] += santeInfantileElement.diarrhe;
-			data.ira.data[codeProvince] += santeInfantileElement.ira;
-			data.reference.data[codeProvince] +=
-				santeInfantileElement.reference;
+			// sum
+			// enfantPrisesCharge
+			data.enfantPrisesCharge.data[santeInfantileElement.csr.csr].value += santeInfantileElement.enfantPrisesCharge
+			// vaccinationRr
+			data.vaccinationRr.data[santeInfantileElement.csr.csr].value += santeInfantileElement.vaccination.pentavalent
+			// vaccinationPentavalent
+			data.vaccinationPentavalent.data[santeInfantileElement.csr.csr].value += santeInfantileElement.vaccination.rr
+			// vaccinationBcg
+			data.vaccinationBcg.data[santeInfantileElement.csr.csr].value += santeInfantileElement.vaccination.bcg
+			// vitamineA
+			data.vitamineA.data[santeInfantileElement.csr.csr].value += santeInfantileElement.vitamineA
+			// vitamineD
+			data.vitamineD.data[santeInfantileElement.csr.csr].value += santeInfantileElement.vitamineD
+			// enfantsAvecInsuffisancePonderale
+			data.enfantsAvecInsuffisancePonderale.data[santeInfantileElement.csr.csr].value += santeInfantileElement.enfantsAvecInsuffisancePonderale
+			// enfantsAvecRetardCroissance
+			data.enfantsAvecRetardCroissance.data[santeInfantileElement.csr.csr].value += santeInfantileElement.enfantsAvecRetardCroissance
+			// diarrhe
+			data.diarrhe.data[santeInfantileElement.csr.csr].value += santeInfantileElement.diarrhe
+			// ira
+			data.ira.data[santeInfantileElement.csr.csr].value += santeInfantileElement.ira
+			// reference
+			data.reference.data[santeInfantileElement.csr.csr].value += santeInfantileElement.reference
 		}
 		return data;
 	} catch (error) {
@@ -86,30 +82,31 @@ async function dataProvince(province) {
 	}
 }
 
-// get the dashbord
+// GET
 async function santeInfantile(req, res, next) {
 	try {
-		// collect data
+		// variable
 		var data = {},
 			today = new Date();
-		// get the document of the region
+		// get the document
 		data.document = await provinceData.getDocument(req.params.id);
-		// list province
-
-		// taux pdr visite
-		data.carte = {
-			province: await dataProvince(data.document.province),
-		};
+		// variable
+		var csrList = carte.getCsrListByProvince(data.document.province),
+			codeProvince = carte.getCodeProvince(data.document.province);
+		// carte
+		data.provinceData = await carteSanteInfantileProvince(
+			data.document.province,
+			csrList
+		);
 		// render the page
 		res.status(200).render('province/dashboard/santeInfantile', {
 			title:
-				'Tableau de bord | Santé infantile | ' +
-				today.getFullYear(),
+				'Tableau de bord | Santé infantile | ' + today.getFullYear(),
 			url: req.originalUrl,
 			data,
-			province,
-			codeProvince: getProvinceCode(data.document.province),
-			page: 'dashboard',
+			codeProvince,
+			csrList,
+			page: 'prestation',
 			listItem: 'santeInfantile',
 		});
 	} catch (error) {

@@ -148,7 +148,7 @@ block main
 													div(class=item.col)
 														label.form-label.text-dark.fs-7(for=item.id)= item.title
 														if (item.textarea)
-															textarea.form-control.form-control-sm(type=item.type id=item.id rows="4" placeholder=item.title name=item.name value=value)
+															textarea.lenghtValidationTextarea.form-control.form-control-sm(type=item.type id=item.id rows="4" placeholder=item.title name=item.name value=value)
 														else if (item.list)
 															ul.list-group.radioList
 																each setData in item.data

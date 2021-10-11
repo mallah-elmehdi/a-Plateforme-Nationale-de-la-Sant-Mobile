@@ -1,117 +1,143 @@
 // SET UP
-const fs = require('fs');
 const provinceData = require('../../../data/province');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const consultationMedicalData = require('../../../data/csr/rapport/consultationMedical');
+const { Carte } = require('../../../class/carte');
+const carte = new Carte();
 
 // ERROR
 const { newError } = require('../../../util/error');
 
-// JSON
-const province = JSON.parse(
-	fs.readFileSync(`${__dirname}/../../../static/json/province.json`)
-);
-
-function getProvinceCode(pro) {
-	for (let i = 0; i < province.length; i++) {
-		const provinceElement = province[i];
-		if (provinceElement.province === pro) {
-			return provinceElement.codeProvince;
-		}
-	}
-}
-
-// DATA REGION
-async function dataProvince(province) {
+// CARTE PROVINCE
+async function carteConsultationMedicalProvince(province, csrList) {
 	try {
-		var codeProvince = getProvinceCode(province),
-			data = {
+		var data = {
 				consultationRealiseMMoins5ans: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
-				consultationRealiseMPlus5ans: {
-					data: { [codeProvince]: 0 },
+				consultationRealiseMEntre5ans18ans: {
+					data: carte.initCsrData(csrList),
 				},
+				consultationRealiseMPlus18ans: {
+					data: carte.initCsrData(csrList),
+				},
+
 				consultationRealiseFMoins5ans: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
-				consultationRealiseFPlus5ans: {
-					data: { [codeProvince]: 0 },
+				consultationRealiseFEntre5ans18ans: {
+					data: carte.initCsrData(csrList),
 				},
+				consultationRealiseFPlus18ans: {
+					data: carte.initCsrData(csrList),
+				},
+
 				pecParPemMoins5ans: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
-				pecParPemPlus5ans: {
-					data: { [codeProvince]: 0 },
+				pecParPemEntre5ans18ans: {
+					data: carte.initCsrData(csrList),
 				},
+				pecParPemPlus18ans: {
+					data: carte.initCsrData(csrList),
+				},
+
 				referenceConsSpecMoins5ans: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
-				referenceConsSpecPlus5ans: {
-					data: { [codeProvince]: 0 },
+				referenceConsSpecEntre5ans18ans: {
+					data: carte.initCsrData(csrList),
 				},
-				referenceHospMoins5ans: {
-					data: { [codeProvince]: 0 },
+				referenceConsSpecPlus18ans: {
+					data: carte.initCsrData(csrList),
 				},
-				referenceHospPlus5ans: {
-					data: { [codeProvince]: 0 },
+
+				referenceUrgenceMoins5ans: {
+					data: carte.initCsrData(csrList),
 				},
+				referenceUrgenceEntre5ans18ans: {
+					data: carte.initCsrData(csrList),
+				},
+				referenceUrgencePlus18ans: {
+					data: carte.initCsrData(csrList),
+				},
+
 				referenceExLaboMoins5ans: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
-				referenceExLaboPlus5ans: {
-					data: { [codeProvince]: 0 },
+				referenceExLaboEntre5ans18ans: {
+					data: carte.initCsrData(csrList),
 				},
+				referenceExLaboPlus18ans: {
+					data: carte.initCsrData(csrList),
+				},
+
 				referenceExRadioMoins5ans: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
-				referenceExRadioPlus5ans: {
-					data: { [codeProvince]: 0 },
+				referenceExRadioEntre5ans18ans: {
+					data: carte.initCsrData(csrList),
 				},
+				referenceExRadioPlus18ans: {
+					data: carte.initCsrData(csrList),
+				},
+
 				budgetMedicamentDispenseEm: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 			},
-			consultationMedical = await rapportData.getRapportByProvinceAndYear(
-				province,
-				'consultationMedical'
-			);
-		// ------------------------
-		// province
-
+			consultationMedical =
+				await consultationMedicalData.getConsultationMedicalByProvince(
+					province
+				);
 		// consultationMedical
 		for (let j = 0; j < consultationMedical.length; j++) {
+			// consultationMedical element
 			const consultationMedicalElement = consultationMedical[j];
-
-			data.consultationRealiseMMoins5ans.data[codeProvince] +=
-				consultationMedicalElement.consultationRealise.m.moins5ans;
-			data.consultationRealiseMPlus5ans.data[codeProvince] +=
-				consultationMedicalElement.consultationRealise.m.plus5ans;
-			data.consultationRealiseFMoins5ans.data[codeProvince] +=
-				consultationMedicalElement.consultationRealise.f.moins5ans;
-			data.consultationRealiseFPlus5ans.data[codeProvince] +=
-				consultationMedicalElement.consultationRealise.f.plus5ans;
-			data.pecParPemMoins5ans.data[codeProvince] +=
-				consultationMedicalElement.pecParPem.moins5ans;
-			data.pecParPemPlus5ans.data[codeProvince] +=
-				consultationMedicalElement.pecParPem.plus5ans;
-			data.referenceConsSpecMoins5ans.data[codeProvince] +=
-				consultationMedicalElement.reference.consSpec.moins5ans;
-			data.referenceConsSpecPlus5ans.data[codeProvince] +=
-				consultationMedicalElement.reference.consSpec.plus5ans;
-			data.referenceHospMoins5ans.data[codeProvince] +=
-				consultationMedicalElement.reference.hosp.moins5ans;
-			data.referenceHospPlus5ans.data[codeProvince] +=
-				consultationMedicalElement.reference.hosp.plus5ans;
-			data.referenceExLaboMoins5ans.data[codeProvince] +=
-				consultationMedicalElement.reference.exLabo.moins5ans;
-			data.referenceExLaboPlus5ans.data[codeProvince] +=
-				consultationMedicalElement.reference.exLabo.plus5ans;
-			data.referenceExRadioMoins5ans.data[codeProvince] +=
-				consultationMedicalElement.reference.exRadio.moins5ans;
-			data.referenceExRadioPlus5ans.data[codeProvince] +=
-				consultationMedicalElement.reference.exRadio.plus5ans;
-			data.budgetMedicamentDispenseEm.data[codeProvince] +=
-				consultationMedicalElement.budgetMedicamentDispenseEm;
+			// sum
+			// consultationRealiseMMoins5ans
+			data.consultationRealiseMMoins5ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.consultationRealise.m.moins5ans
+			// consultationRealiseMEntre5ans18ans
+			data.consultationRealiseMEntre5ans18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.consultationRealise.m.entre5ans18ans
+			// consultationRealiseMPlus18ans
+			data.consultationRealiseMPlus18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.consultationRealise.m.plus18ans
+			// consultationRealiseFMoins5ans
+			data.consultationRealiseFMoins5ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.consultationRealise.f.moins5ans
+			// consultationRealiseFEntre5ans18ans
+			data.consultationRealiseFEntre5ans18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.consultationRealise.f.entre5ans18ans
+			// consultationRealiseFPlus18ans
+			data.consultationRealiseFPlus18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.consultationRealise.f.plus18ans
+			// pecParPemMoins5ans
+			data.pecParPemMoins5ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.pecParPem.moins5ans
+			// pecParPemEntre5ans18ans
+			data.pecParPemEntre5ans18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.pecParPem.entre5ans18ans
+			// pecParPemPlus18ans
+			data.pecParPemPlus18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.pecParPem.plus18ans
+			// referenceConsSpecMoins5ans
+			data.referenceConsSpecMoins5ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.reference.consSpec.moins5ans
+			// referenceConsSpecEntre5ans18ans
+			data.referenceConsSpecEntre5ans18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.reference.consSpec.entre5ans18ans
+			// referenceConsSpecPlus18ans
+			data.referenceConsSpecPlus18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.reference.consSpec.plus18ans
+			// referenceUrgenceMoins5ans
+			data.referenceUrgenceMoins5ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.reference.urgence.moins5ans
+			// referenceUrgenceEntre5ans18ans
+			data.referenceUrgenceEntre5ans18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.reference.urgence.entre5ans18ans
+			// referenceUrgencePlus18ans
+			data.referenceUrgencePlus18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.reference.urgence.plus18ans
+			// referenceExLaboMoins5ans
+			data.referenceExLaboMoins5ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.reference.exLabo.moins5ans
+			// referenceExLaboEntre5ans18ans
+			data.referenceExLaboEntre5ans18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.reference.exLabo.entre5ans18ans
+			// referenceExLaboPlus18ans
+			data.referenceExLaboPlus18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.reference.exLabo.plus18ans
+			// referenceExRadioMoins5ans
+			data.referenceExRadioMoins5ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.reference.exRadio.moins5ans
+			// referenceExRadioEntre5ans18ans
+			data.referenceExRadioEntre5ans18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.reference.exRadio.entre5ans18ans
+			// referenceExRadioPlus18ans
+			data.referenceExRadioPlus18ans.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.reference.exRadio.plus18ans
+			// budgetMedicamentDispenseEm
+			data.budgetMedicamentDispenseEm.data[consultationMedicalElement.csr.csr].value += consultationMedicalElement.budgetMedicamentDispenseEm
 		}
 		return data;
 	} catch (error) {
@@ -120,20 +146,22 @@ async function dataProvince(province) {
 	}
 }
 
-// get the dashbord
+// GET
 async function consultationMedical(req, res, next) {
 	try {
-		// collect data
+		// variable
 		var data = {},
 			today = new Date();
-		// get the document of the region
+		// get the document
 		data.document = await provinceData.getDocument(req.params.id);
-		// list province
-
-		// taux pdr visite
-		data.carte = {
-			province: await dataProvince(data.document.province),
-		};
+		// variable
+		var csrList = carte.getCsrListByProvince(data.document.province),
+			codeProvince = carte.getCodeProvince(data.document.province);
+		// carte
+		data.provinceData = await carteConsultationMedicalProvince(
+			data.document.province,
+			csrList
+		);
 		// render the page
 		res.status(200).render('province/dashboard/consultationMedical', {
 			title:
@@ -141,9 +169,9 @@ async function consultationMedical(req, res, next) {
 				today.getFullYear(),
 			url: req.originalUrl,
 			data,
-			province,
-			codeProvince: getProvinceCode(data.document.province),
-			page: 'dashboard',
+			codeProvince,
+			csrList,
+			page: 'prestation',
 			listItem: 'consultationMedical',
 		});
 	} catch (error) {

@@ -1,224 +1,206 @@
 // SET UP
-const fs = require('fs');
 const provinceData = require('../../../data/province');
 const ressourceData = require('../../../data/csr/planAction/ressource');
+const { Carte } = require('../../../class/carte');
+const carte = new Carte();
 
 // ERROR
 const { newError } = require('../../../util/error');
 
-// JSON
-const province = JSON.parse(
-	fs.readFileSync(`${__dirname}/../../../static/json/province.json`)
-);
-
-function getProvinceCode(pro) {
-	for (let i = 0; i < province.length; i++) {
-		const provinceElement = province[i];
-		if (provinceElement.province === pro) {
-			return provinceElement.codeProvince;
-		}
-	}
-}
-
-// DATA REGION
-async function dataProvince(province) {
+// CARTE PROVINCE
+async function carteRessourceProvince(province, csrList) {
 	try {
-		var codeProvince = getProvinceCode(province),
-			data = {
-				type: {
-					data: {
-						[codeProvince]: {
-							ambulance: {
-								appartenance: {
-									commune: {
-										age: {
-											moins5ans: 0,
-											plus5ans: 0,
-										},
-									},
-									ms: {
-										age: {
-											moins5ans: 0,
-											plus5ans: 0,
-										},
-									},
-								},
-							},
-							camionMobile: {
-								appartenance: {
-									commune: {
-										age: {
-											moins5ans: 0,
-											plus5ans: 0,
-										},
-									},
-									ms: {
-										age: {
-											moins5ans: 0,
-											plus5ans: 0,
-										},
-									},
-								},
-							},
-							uniteMobile: {
-								appartenance: {
-									commune: {
-										age: {
-											moins5ans: 0,
-											plus5ans: 0,
-										},
-									},
-									ms: {
-										age: {
-											moins5ans: 0,
-											plus5ans: 0,
-										},
-									},
-								},
-							},
-							vtt: {
-								appartenance: {
-									commune: {
-										age: {
-											moins5ans: 0,
-											plus5ans: 0,
-										},
-									},
-									ms: {
-										age: {
-											moins5ans: 0,
-											plus5ans: 0,
-										},
-									},
-								},
-							},
-						},
-					},
-				},
+		var data = {
 				budgetKmsParcourir: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				budgetBesoinCarburant: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				besoinUsm: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
+				},
+				vehicule: {
+					data: carte.vehicule(csrList),
 				},
 			},
-			ressource = await ressourceData.getRessourceByProvinceYear(province);
-		// ------------------------
-		// province
-
+			ressource = await ressourceData.getRessourceByProvince(province);
 		// ressource
 		for (let j = 0; j < ressource.length; j++) {
+			// ressourceData element
 			const ressourceElement = ressource[j];
-			data.besoinUsm.data[codeProvince] += ressourceElement.besoinUsm;
-			data.budgetKmsParcourir.data[codeProvince] +=
+			// sum
+			// budgetKmsParcourir
+			data.budgetKmsParcourir.data[ressourceElement.csr.csr].value +=
 				ressourceElement.budget.kmsParcourir;
-			data.budgetBesoinCarburant.data[codeProvince] +=
+			// budgetBesoinCarburant
+			data.budgetBesoinCarburant.data[ressourceElement.csr.csr].value +=
 				ressourceElement.budget.besoinCarburant;
-			// type
-			if (ressourceElement.type === 'Ambulance') {
-				// appartenance
-				if (ressourceElement.appartenance === 'Ministre de la santé') {
-					// age
-					if (ressourceElement.age <= 5) {
-						data.type.data[
-							codeProvince
-						].ambulance.appartenance.ms.age.moins5ans += 1;
-					} else {
-						data.type.data[
-							codeProvince
-						].ambulance.appartenance.ms.age.plus5ans += 1;
+			// besoinUsm
+			data.besoinUsm.data[ressourceElement.csr.csr].value +=
+				ressourceElement.besoinUsm;
+			// vehicule
+			for (let i = 0; i < ressourceElement.vehicule.length; i++) {
+				const element = ressourceElement.vehicule[i];
+				if (element.type === 'Ambulance') {
+					// appartenance
+					if (element.appartenance === 'Ministère de la Santé') {
+						// age
+						if (element.age <= 5) {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.ambulance.appartenance.ms.age.moins5ans += 1;
+						} else {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.ambulance.appartenance.ms.age.plus5ans += 1;
+						}
+					} else if (element.appartenance === 'Commune') {
+						// age
+						if (element.age <= 5) {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.ambulance.appartenance.commune.age.moins5ans += 1;
+						} else {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.ambulance.appartenance.commune.age.plus5ans += 1;
+						}
+					} else if (
+						element.appartenance ===
+						'Organisation Non Gouvernementale (ONG)'
+					) {
+						// age
+						if (element.age <= 5) {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.ambulance.appartenance.ong.age.moins5ans += 1;
+						} else {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.ambulance.appartenance.ong.age.plus5ans += 1;
+						}
 					}
-				} else if (ressourceElement.appartenance === 'Commune') {
-					// age
-					if (ressourceElement.age <= 5) {
-						data.type.data[
-							codeProvince
-						].ambulance.appartenance.commune.age.moins5ans += 1;
-					} else {
-						data.type.data[
-							codeProvince
-						].ambulance.appartenance.commune.age.plus5ans += 1;
+				} else if (element.type === 'Camion Mobile') {
+					// appartenance
+					if (element.appartenance === 'Ministère de la Santé') {
+						// age
+						if (element.age <= 5) {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.camionMobile.appartenance.ms.age.moins5ans += 1;
+						} else {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.camionMobile.appartenance.ms.age.plus5ans += 1;
+						}
+					} else if (element.appartenance === 'Commune') {
+						// age
+						if (element.age <= 5) {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.camionMobile.appartenance.commune.age.moins5ans += 1;
+						} else {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.camionMobile.appartenance.commune.age.plus5ans += 1;
+						}
+					} else if (
+						element.appartenance ===
+						'Organisation Non Gouvernementale (ONG)'
+					) {
+						// age
+						if (element.age <= 5) {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.camionMobile.appartenance.ong.age.moins5ans += 1;
+						} else {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.camionMobile.appartenance.ong.age.plus5ans += 1;
+						}
 					}
-				}
-			} else if (ressourceElement.type === 'Camion mobile') {
-				// appartenance
-				if (ressourceElement.appartenance === 'Ministre de la santé') {
-					// age
-					if (ressourceElement.age <= 5) {
-						data.type.data[
-							codeProvince
-						].camionMobile.appartenance.ms.age.moins5ans += 1;
-					} else {
-						data.type.data[
-							codeProvince
-						].camionMobile.appartenance.ms.age.plus5ans += 1;
+				} else if (element.type === 'Unité Sanitaire Mobile (USM)') {
+					// appartenance
+					if (element.appartenance === 'Ministère de la Santé') {
+						// age
+						if (element.age <= 5) {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.usm.appartenance.ms.age.moins5ans += 1;
+						} else {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.usm.appartenance.ms.age.plus5ans += 1;
+						}
+					} else if (element.appartenance === 'Commune') {
+						// age
+						if (element.age <= 5) {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.usm.appartenance.commune.age.moins5ans += 1;
+						} else {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.usm.appartenance.commune.age.plus5ans += 1;
+						}
+					} else if (
+						element.appartenance ===
+						'Organisation Non Gouvernementale (ONG)'
+					) {
+						// age
+						if (element.age <= 5) {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.usm.appartenance.ong.age.moins5ans += 1;
+						} else {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.usm.appartenance.ong.age.plus5ans += 1;
+						}
 					}
-				} else if (ressourceElement.appartenance === 'Commune') {
-					// age
-					if (ressourceElement.age <= 5) {
-						data.type.data[
-							codeProvince
-						].camionMobile.appartenance.commune.age.moins5ans += 1;
-					} else {
-						data.type.data[
-							codeProvince
-						].camionMobile.appartenance.commune.age.plus5ans += 1;
-					}
-				}
-			} else if (ressourceElement.type === 'Unité mobile') {
-				// appartenance
-				if (ressourceElement.appartenance === 'Ministre de la santé') {
-					// age
-					if (ressourceElement.age <= 5) {
-						data.type.data[
-							codeProvince
-						].uniteMobile.appartenance.ms.age.moins5ans += 1;
-					} else {
-						data.type.data[
-							codeProvince
-						].uniteMobile.appartenance.ms.age.plus5ans += 1;
-					}
-				} else if (ressourceElement.appartenance === 'Commune') {
-					// age
-					if (ressourceElement.age <= 5) {
-						data.type.data[
-							codeProvince
-						].uniteMobile.appartenance.commune.age.moins5ans += 1;
-					} else {
-						data.type.data[
-							codeProvince
-						].uniteMobile.appartenance.commune.age.plus5ans += 1;
-					}
-				}
-			} else if (ressourceElement.type === 'VTT') {
-				// appartenance
-				if (ressourceElement.appartenance === 'Ministre de la santé') {
-					// age
-					if (ressourceElement.age <= 5) {
-						data.type.data[
-							codeProvince
-						].vtt.appartenance.ms.age.moins5ans += 1;
-					} else {
-						data.type.data[
-							codeProvince
-						].vtt.appartenance.ms.age.plus5ans += 1;
-					}
-				} else if (ressourceElement.appartenance === 'Commune') {
-					// age
-					if (ressourceElement.age <= 5) {
-						data.type.data[
-							codeProvince
-						].vtt.appartenance.commune.age.moins5ans += 1;
-					} else {
-						data.type.data[
-							codeProvince
-						].vtt.appartenance.commune.age.plus5ans += 1;
+				} else if (element.type === 'Véhicule Tout Terrain (VTT)') {
+					// appartenance
+					if (element.appartenance === 'Ministère de la Santé') {
+						// age
+						if (element.age <= 5) {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.vtt.appartenance.ms.age.moins5ans += 1;
+						} else {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.vtt.appartenance.ms.age.plus5ans += 1;
+						}
+					} else if (element.appartenance === 'Commune') {
+						// age
+						if (element.age <= 5) {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.vtt.appartenance.commune.age.moins5ans += 1;
+						} else {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.vtt.appartenance.commune.age.plus5ans += 1;
+						}
+					} else if (
+						element.appartenance ===
+						'Organisation Non Gouvernementale (ONG)'
+					) {
+						// age
+						if (element.age <= 5) {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.vtt.appartenance.ong.age.moins5ans += 1;
+						} else {
+							data.vehicule.data[
+								ressourceElement.csr.csr
+							].value.vtt.appartenance.ong.age.plus5ans += 1;
+						}
 					}
 				}
 			}
+			// 
 		}
 		return data;
 	} catch (error) {
@@ -227,30 +209,31 @@ async function dataProvince(province) {
 	}
 }
 
-// get the dashbord
+// GET
 async function ressource(req, res, next) {
 	try {
-		// collect data
+		// variable
 		var data = {},
 			today = new Date();
-		// get the document of the region
+		// get the document
 		data.document = await provinceData.getDocument(req.params.id);
-		// list province
-
-		// taux pdr visite
-		data.carte = {
-			province: await dataProvince(data.document.province),
-		};
+		// variable
+		var csrList = carte.getCsrListByProvince(data.document.province),
+			codeProvince = carte.getCodeProvince(data.document.province);
+		// carte
+		data.provinceData = await carteRessourceProvince(
+			data.document.province,
+			csrList,
+		);
 		// render the page
 		res.status(200).render('province/dashboard/ressource', {
 			title:
-				'Tableau de bord | Ressource mobilisable | ' +
-				today.getFullYear(),
+				'Tableau de bord | Moyens de mobilité | ' + today.getFullYear(),
 			url: req.originalUrl,
 			data,
-			province,
-			codeProvince: getProvinceCode(data.document.province),
-			page: 'dashboard',
+			codeProvince,
+			csrList,
+			page: 'ressource',
 			listItem: 'ressource',
 		});
 	} catch (error) {

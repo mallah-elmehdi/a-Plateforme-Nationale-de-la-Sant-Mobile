@@ -2,7 +2,6 @@
 const csrData = require('../../../data/csr/csr');
 const trimestreData = require('../../../data/csr/rapport/trimestre');
 const trimestreClass = require('../../../class/trimestre');
-const rapportData = require('../../../data/csr/rapport/rapport');
 const pdrVisiteData = require('../../../data/csr/rapport/pdrVisite');
 const programmeData = require('../../../data/csr/planAction/programme');
 

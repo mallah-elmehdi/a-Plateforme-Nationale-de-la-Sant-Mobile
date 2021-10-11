@@ -140,6 +140,35 @@ async function deleteActivityById(id, subId, body) {
 	}
 }
 
+// ----------------------
+
+// GET BY PROVINCE
+async function getAutreActiviteByProvince(province) {
+	try {
+		// variable
+		var today = new Date(),
+			result = [];
+		// get query
+		var query = await autreActivite
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+		// get only result fo the province
+		for (let i = 0; i < query.length; i++) {
+			const element = query[i];
+			if (element.csr.province === province) {
+				result.push(element);
+			}
+		}
+		return result;
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getAutreActiviteBySortie,
@@ -151,4 +180,6 @@ module.exports = {
 	// ------------ ACTIVITY
 	editActivityById,
 	deleteActivityById,
+	// -------------
+	getAutreActiviteByProvince,
 };

@@ -202,6 +202,29 @@ class GlobalTable {
 		}
 		return objOut;
 	}
+	globalRessourceHumain(item) {
+		var objOut = {};
+		objOut = {
+			medecin: 0,
+			infirmier: 0,
+			sageFemme: 0,
+			technicien: 0,
+			chauffeur: 0,
+			appuie: 0,
+			emOperationnelle: 0
+		};
+		for (let i = 0; i < item.length; i++) {
+			const element = item[i].mobile;
+			objOut.medecin += element.medecin;
+			objOut.infirmier += element.infirmier;
+			objOut.sageFemme += element.sageFemme;
+			objOut.technicien += element.technicien;
+			objOut.chauffeur += element.chauffeur;
+			objOut.appuie += element.appuie;
+			objOut.emOperationnelle += element.emOperationnelle;
+		}
+		return objOut;
+	}
 	globalSanteMaternelle(item) {
 		var objOut = {};
 		objOut.femmePriseCharge = 0;
@@ -493,6 +516,22 @@ class GlobalTable {
 				for (let j = 0; j < element.length; j++) {
 					const ele = element[j];
 					objOut.activity.push(ele);
+				}
+			}
+		}
+		return objOut;
+	}
+	globalAutreActiviteAll(item) {
+		var objOut = {};
+		for (let i = 0; i < item.length; i++) {
+			if (item[i] && item[i].autreActivite && !item[i].ignore) {
+				const element = item[i].autreActivite;
+				objOut[element.csr.csr] = {
+					activity: [],
+				}
+				for (let j = 0; j < element.activity.length; j++) {
+					const ele = element.activity[j];
+					objOut[element.csr.csr].activity.push(ele);
 				}
 			}
 		}

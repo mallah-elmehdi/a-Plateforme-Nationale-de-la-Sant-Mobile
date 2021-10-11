@@ -5,10 +5,10 @@ const provinceData = require('../../data/province');
 const { newError } = require('../../util/error');
 
 // redirection
-async function dashboardRedirect(req, res, next) {
+async function redirection(req, res, next) {
 	try {
 		// collect data
-		return res.redirect(req.baseUrl + '/' + req.params.id + '/tableau-de-bord/taux-de-couverture-des-pdr')
+		return res.redirect(req.baseUrl + '/' + req.params.id + '/tableau-de-bord/population-cible')
 	} catch (error) {
 		console.log(error);
 		return next(newError(500, "quelque chose s'est mal passé"));
@@ -34,6 +34,6 @@ async function settings(req, res, next) {
 }
 
 module.exports = {
-	dashboardRedirect,
+	redirection,
 	settings
 };

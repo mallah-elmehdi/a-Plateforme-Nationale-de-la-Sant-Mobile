@@ -61,8 +61,33 @@ async function deletePlanificationFamilialeById(id) {
 	try {
 		// delete document
 		return await planificationFamiliale.findByIdAndDelete(id);
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
 
-
+// GET BY PROVINCE
+async function getPlanificationFamilialeByProvince(province) {
+	try {
+		// variable
+		var today = new Date(),
+			result = [];
+		// get query
+		var query = await planificationFamiliale
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+		// get only result fo the province
+		for (let i = 0; i < query.length; i++) {
+			const element = query[i];
+			if (element.csr.province === province) {
+				result.push(element);
+			}
+		}
+		return result;
 	} catch (error) {
 		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
@@ -76,4 +101,5 @@ module.exports = {
 	getPlanificationFamilialeById,
 	editPlanificationFamilialeById,
 	deletePlanificationFamilialeById,
+	getPlanificationFamilialeByProvince,
 };

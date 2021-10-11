@@ -1,117 +1,94 @@
 // SET UP
-const fs = require('fs');
+const csrData = require('../../../data/csr/csr');
 const provinceData = require('../../../data/province');
 const pdrVisiteData = require('../../../data/csr/rapport/pdrVisite');
 const programmeData = require('../../../data/csr/planAction/programme');
+const { Carte } = require('../../../class/carte');
+const carte = new Carte();
 
 // ERROR
 const { newError } = require('../../../util/error');
 
-const province = JSON.parse(
-	fs.readFileSync(`${__dirname}/../../../static/json/province.json`)
-);
-
-const csr = JSON.parse(
-	fs.readFileSync(`${__dirname}/../../../static/json/csr.json`)
-);
-
-function getCommuneDataInit(code) {
-	var list = {};
-	for (let i = 0; i < csr.length; i++) {
-		const csrElement = csr[i];
-		if (csrElement.codeProvince == code) {
-			list[csrElement.commune] = [];
-		}
-	}
-	return list;
-}
-
-function getProvinceCode(pro) {
-	for (let i = 0; i < province.length; i++) {
-		const provinceElement = province[i];
-		if (provinceElement.province === pro) {
-			return provinceElement.codeProvince;
-		}
-	}
-}
-
-// PDR COVER PROVINCE
-async function dataProvince(province) {
+// TAUX DE COVERTURE
+async function coverturePdr(trimestre, csr) {
 	try {
-		var codeProvince = getProvinceCode(province),
-			data = {
-				pdrVisite: {
-					data: { [codeProvince]: 0 },
+		// get all the pdr programme
+		const programme = await programmeData.getProgrammeByCsr(csr);
+		// get all pdr visite
+		const pdrVisite = await pdrVisiteData.getPdrVisiteByCsrAndTrimestre(
+			csr,
+			trimestre
+		);
+		// variable for calculation
+		var objOut = {
+			pdr: [],
+			tauxCover: 0,
+		};
+		// loop on all pdr
+		for (let i = 0; i < programme.length; i++) {
+			// pdr element
+			const programmeElement = programme[i];
+			// init pdr element and push to array
+			objOut.pdr[i] = {
+				id: programmeElement.id,
+				pdr: programmeElement.pdr,
+				year: programmeElement.year,
+				localite: programmeElement.localite,
+				sortieProgramme: programmeElement['t' + trimestre],
+				sortieEffectue: {
+					total: 0,
+					observation: [],
 				},
-			},
-			pdr = await programmeData.getProgrammeByProvinceAndYear(province),
-			pdrVisite = await pdrVisiteData.getPdrVisiteByProvinceAndYear(
-				province
-			),
-			list = {
-				[codeProvince]: [],
 			};
-		// ------------------------
-		// csr
-		for (let i = 0; i < csr.length; i++) {
-			var csrElement = csr[i],
-				pdrProgramme = 0,
-				pdrRealise = 0;
-			if (csrElement.codeProvince == codeProvince) {
-				// pdr
-				for (let j = 0; j < pdr.length; j++) {
-					var pdrElement = pdr[j];
-					if (
-						csrElement.region === pdrElement.csr.region &&
-						csrElement.province === pdrElement.csr.province &&
-						csrElement.name === pdrElement.csr.csr
-					) {
-						pdrProgramme +=
-							pdrElement.t1 +
-							pdrElement.t2 +
-							pdrElement.t3 +
-							pdrElement.t4;
-						// pdr visite
-						for (let k = 0; k < pdrVisite.length; k++) {
-							for (
-								let l = 0;
-								l < pdrVisite[k].pdrVisite.length;
-								l++
-							) {
-								var pdrVisiteElement =
-									pdrVisite[k].pdrVisite[l];
-								if (pdrElement.id === pdrVisiteElement.id) {
-									pdrRealise++;
-								}
-							}
-						}
-					}
-				}
-				if (!pdrRealise) {
-					list[codeProvince].push(0);
-				} else {
-					list[codeProvince].push(
-						parseFloat(pdrRealise / pdrProgramme) * 100
+			// loop on all pdr visite
+			for (let j = 0; j < pdrVisite.length; j++) {
+				const pdrVisiteElement = pdrVisite[j];
+				if (programmeElement.id === pdrVisiteElement.pdrVisite.id) {
+					objOut.pdr[i].sortieEffectue.total++;
+					objOut.pdr[i].sortieEffectue.observation.push(
+						pdrVisiteElement.observation.length
+							? pdrVisiteElement.observation
+							: 'Aucune'
 					);
 				}
 			}
+			objOut.tauxCover += Math.ceil(
+				parseFloat(
+					(objOut.pdr[i].sortieEffectue.total /
+						objOut.pdr[i].sortieProgramme) *
+						100
+				)
+			);
 		}
-		for (const key in list) {
-			var element = list[key],
-				sum = 0;
-			for (let n = 0; n < element.length; n++) {
-				sum += element[n];
-			}
-			if (element.length) {
-				var num = parseFloat(sum / element.length);
-				if (num < 1 && num > 0) {
-					data.pdrVisite.data[key] = num.toFixed(1);
-				} else {
-					data.pdrVisite.data[key] = parseInt(num);
-				}
-			} else {
-				data.pdrVisite.data[key] = 0;
-			}
+		if (objOut.pdr.length)
+			objOut.tauxCover = Math.ceil(
+				parseFloat(objOut.tauxCover / objOut.pdr.length)
+			);
+		return objOut;
+	} catch (error) {
+		console.log(error);
+		throw error;
+	}
+}
+
+// CARTE PROVINCE
+async function cartePdrVisiteProvince(province, csrList) {
+	try {
+		var data = {
+				tauxCoverturePdr: carte.pdr(csrList),
+			},
+			csr = await csrData.getCsrByProvince(province);
+		// pdrVisite
+		for (let j = 0; j < csr.length; j++) {
+			// pdrVisite element
+			const csrElement = csr[j];
+			// sum
+			// fixeMedecin
+			data.tauxCoverturePdr[csrElement.csr].t1 = await coverturePdr(1, csrElement.id);
+			data.tauxCoverturePdr[csrElement.csr].t2 = await coverturePdr(2, csrElement.id);
+			data.tauxCoverturePdr[csrElement.csr].t3 = await coverturePdr(3, csrElement.id);
+			data.tauxCoverturePdr[csrElement.csr].t4 = await coverturePdr(4, csrElement.id);
+			data.tauxCoverturePdr[csrElement.csr].category = csrElement.category;
 		}
 		return data;
 	} catch (error) {
@@ -120,27 +97,32 @@ async function dataProvince(province) {
 	}
 }
 
-// get the dashbord
+// GET
 async function pdrVisite(req, res, next) {
 	try {
-		// collect data
+		// variable
 		var data = {},
 			today = new Date();
-		// get the document of the region
+		// get the document
 		data.document = await provinceData.getDocument(req.params.id);
-		// taux pdr visite
-		data.carte = {
-			province: await dataProvince(data.document.province),
-		};
+		// variable
+		var csrList = carte.getCsrListByProvince(data.document.province),
+			codeProvince = carte.getCodeProvince(data.document.province);
+		// carte
+		data.provinceData = await cartePdrVisiteProvince(
+			data.document.province,
+			csrList
+		);
 		// render the page
 		res.status(200).render('province/dashboard/pdrVisite', {
 			title:
-				'Tableau de bord | Taux de couverture des pdr | ' +
+				'Tableau de bord | Point de rassemblement (PDR) | ' +
 				today.getFullYear(),
 			url: req.originalUrl,
 			data,
-			codeProvince: getProvinceCode(data.document.province),
-			page: 'dashboard',
+			codeProvince,
+			csrList,
+			page: 'performance',
 			listItem: 'pdrVisite',
 		});
 	} catch (error) {

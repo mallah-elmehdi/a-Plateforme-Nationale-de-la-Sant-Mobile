@@ -61,11 +61,11 @@ const detectionPrecoceCancer = require('./route/csr/rapport/detectionPrecoceCanc
 const maladieDepiste = require('./route/csr/rapport/maladieDepiste');
 const autreActivite = require('./route/csr/rapport/autreActivite');
 
+// PROVINCE
+const province = require('./route/province');
+
 // // REGION
 // const region = require('./route/region');
-
-// // PROVINCE
-// const province = require('./route/province');
 
 // // CENTRAL
 // const central = require('./route/central');
@@ -97,7 +97,7 @@ app.use(
 	maladieDepiste,
 	autreActivite
 );
-// app.use('/province', province);
+app.use('/province', province);
 // app.use('/region', region);
 // app.use('/central', central);
 app.use('*', errorPage);

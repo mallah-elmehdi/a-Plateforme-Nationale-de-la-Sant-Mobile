@@ -7,7 +7,7 @@ const { newError } = require('../../../util/error');
 // GET
 async function getRessourceByCsr(csr) {
 	try {
-		var today = new Date()
+		var today = new Date();
 		return await ressource
 			.findOne({ csr, year: today.getFullYear() })
 			.select('-csr');
@@ -94,36 +94,36 @@ async function addUpdateRessource(body, csr, id) {
 // 	}
 // }
 
-// // GET
-// async function getRessourceByProvinceYear(province) {
-// 	try {
-// 		var today = new Date(),
-// 			all = await ressource
-// 				.find({ year: today.getFullYear() })
-// 				.populate({
-// 					path: 'csr',
-// 					select: '-password -email',
-// 				}),
-// 			out = [];
-// 		for (let i = 0; i < all.length; i++) {
-// 			const element = all[i];
-// 			if (element.csr.province === province) {
-// 				out.push(element)
-// 			}
-// 		}
-// 		return out
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
+// GET BY PROVINCE
+async function getRessourceByProvince(province) {
+	try {
+		// variable
+		var today = new Date(),
+			result = [];
+		// get query
+		var query = await ressource
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+		// get only result fo the province
+		for (let i = 0; i < query.length; i++) {
+			const element = query[i];
+			if (element.csr.province === province) {
+				result.push(element);
+			}
+		}
+		return result;
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
 
 // OUTPUT
 module.exports = {
 	getRessourceByCsr,
 	addUpdateRessource,
-	// deleteRessourceById,
-	// getRessourceByYear,
-	// getRessourceByRegionYear,
-	// getRessourceByProvinceYear
+	getRessourceByProvince,
 };

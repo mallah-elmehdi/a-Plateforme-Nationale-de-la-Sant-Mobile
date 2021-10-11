@@ -1,202 +1,20 @@
 $(document).ready(function () {
-	// VARIABLES
-	var wholeData = $('#dataProvince').data('carte'),
-		title = $('#title').text().split(' - ')[1],
-		codeProvince = $('#data').data('code'),
-		// init data
-		dataVisiteEtablissementVisite =
-			wholeData.visiteEtablissementVisite.data,
-		dataVisiteEleveVue = wholeData.visiteEleveVue.data,
-		dataEleveExamineVmsCible = wholeData.eleveExamineVmsCible.data,
-		dataEleveExamineVmsRealisation =
-			wholeData.eleveExamineVmsRealisation.data,
-		dataLutteContreDeficienceVisuelleEchelleMetriqueCible =
-			wholeData.lutteContreDeficienceVisuelleEchelleMetriqueCible.data,
-		dataLutteContreDeficienceVisuelleEchelleMetriqueRealisation =
-			wholeData.lutteContreDeficienceVisuelleEchelleMetriqueRealisation
-				.data,
-		dataLutteContreDeficienceVisuelleRefractionAutomatiqueCible =
-			wholeData.lutteContreDeficienceVisuelleRefractionAutomatiqueCible
-				.data,
-		dataLutteContreDeficienceVisuelleRefractionAutomatiqueRealisation =
-			wholeData
-				.lutteContreDeficienceVisuelleRefractionAutomatiqueRealisation
-				.data,
-		// other
-		scale = ['#BDFFAD', '#187a00'],
-		data = getData([dataVisiteEtablissementVisite]),
-		max = getMax(data),
-		table = 1;
-
-	// MAP
-	$('#province-map').vectorMap({
-		map: 'province',
-		series: {
-			regions: [
-				{
-					values:  {[codeProvince] : data[codeProvince]},
-					scale,
-					normalizeFunction: 'polynomial',
-					max,
-min:0,
-					legend: {
-						horizontal: true,
-						labelRender: function (v) {
-							return v;
-						},
-					},
-				},
-			],
-		},
-		regionStyle: {
-			initial: {
-				stroke: '#000000',
-				'stroke-width': 3,
-				fill: '#c6cacd',
-			},
-			hover: {
-				stroke: '#000000',
-				'stroke-width': 3,
-				fill: '#6294ed',
-			},
-		},
-		backgroundColor: '#a5bfdd',
-		regionLabelStyle: {
-			initial: {
-				fill: '#000000',
-			},
-		},
-		onRegionTipShow: function (event, label, code) {
-			if (code == codeProvince) {
-				if (table === 1) {
-					label.html(
-						`
-					<div class="bg-white shadow-sm p-1 rounded">
-					<table class="table table-sm table-bordered fs-8 text-dark">
-						<tbody>
-							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
-							</tr>
-							
-							<tr>
-								<th colspan="2" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
-							data[code]
-						}</span></span></th>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-					`
-					);
-				} else if (table === 2) {
-					label.html(
-						`
-					<div class="bg-white shadow-sm p-1 rounded">
-					<table class="table table-sm table-bordered fs-8 text-dark">
-						<tbody>
-							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
-							</tr>
-							
-							<tr>
-								<th colspan="2" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
-							data[code]
-						}</span></span></th>
-							</tr>
-							
-							<tr>
-								<td>Cible</td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataEleveExamineVmsCible[code]
-								}</span></td>
-							</tr>
-							
-							<tr>
-								<td>Réalisation</td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataEleveExamineVmsRealisation[code]
-								}</span></td>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-					`
-					);
-				} else if (table === 4) {
-					label.html(
-						`
-					<div class="bg-white shadow-sm p-1 rounded">
-					<table class="table table-sm table-bordered fs-8 text-dark">
-						<tbody>
-							<tr>
-								<th colspan="3" class="text-center">${label.html()}</th>
-							</tr>
-							
-							<tr>
-								<th colspan="3" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
-							data[code]
-						}</span></span></th>
-							</tr>
-							<tr>
-								<th></th>
-								<th class="text-center">Echelle Métrique</th>
-								<th class="text-center">Réfraction automatique</th>
-							</tr>
-							<tr>
-								<td>Cible</td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataLutteContreDeficienceVisuelleEchelleMetriqueCible[
-										code
-									]
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataLutteContreDeficienceVisuelleRefractionAutomatiqueCible[
-										code
-									]
-								}</span></td>
-							</tr>
-							
-							<tr>
-								<td>Réalisation</td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataLutteContreDeficienceVisuelleEchelleMetriqueRealisation[
-										code
-									]
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataLutteContreDeficienceVisuelleRefractionAutomatiqueRealisation[
-										code
-									]
-								}</span></td>
-							</tr>
-							<tr>
-								<td>Total</td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataLutteContreDeficienceVisuelleEchelleMetriqueRealisation[
-										code
-									] +
-									dataLutteContreDeficienceVisuelleEchelleMetriqueCible[
-										code
-									]
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataLutteContreDeficienceVisuelleRefractionAutomatiqueCible[
-										code
-									] +
-									dataLutteContreDeficienceVisuelleRefractionAutomatiqueRealisation[
-										code
-									]
-								}</span></td>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-					`
-					);
-				}
+	// FUNCTION
+	// SUM DATA
+	function sumDataProvince(data, codeProvince) {
+		// VARIABLE
+		var ObjOut = {
+			[codeProvince]: 0,
+		};
+		// loop
+		for (const key in data) {
+			if (Object.hasOwnProperty.call(data, key)) {
+				const element = data[key];
+				ObjOut[codeProvince] += element.value;
 			}
-		},
-	});
+		}
+		return ObjOut;
+	}
 	// GET DATA
 	function getData(dataset) {
 		var data = {
@@ -285,14 +103,214 @@ min:0,
 		return data;
 	}
 	// GET THE MAX VALUE OF ARRAY
-	function getMax(data) {
+	function getMaxValue(data) {
 		var max = 0;
 		for (const key in data) {
 			var element = data[key];
 			if (element > max) max = element;
 		}
-		return max + 1
+		return max + 1;
 	}
+	// VARIABLES
+	var wholeData = $('#data').data('provincedata'),
+		codeProvince = $('#data').data('code'),
+		title = $('#title').text(),
+		// init data
+		// etablissementVisite
+		dataEtablissementVisite = sumDataProvince(wholeData.etablissementVisite.data, codeProvince),
+		// eleveExamineVmsCible
+		dataEleveExamineVmsCible = sumDataProvince(wholeData.eleveExamineVmsCible.data, codeProvince),
+		// eleveExamineVmsRealisation
+		dataEleveExamineVmsRealisation = sumDataProvince(wholeData.eleveExamineVmsRealisation.data, codeProvince),
+		// lutteContreDeficienceVisuelleEchelleMetriqueCible
+		dataLutteContreDeficienceVisuelleEchelleMetriqueCible = sumDataProvince(wholeData.lutteContreDeficienceVisuelleEchelleMetriqueCible.data, codeProvince),
+		// lutteContreDeficienceVisuelleEchelleMetriqueRealisation
+		dataLutteContreDeficienceVisuelleEchelleMetriqueRealisation = sumDataProvince(wholeData.lutteContreDeficienceVisuelleEchelleMetriqueRealisation.data, codeProvince),
+		// lutteContreDeficienceVisuelleRefractionAutomatiqueCible
+		dataLutteContreDeficienceVisuelleRefractionAutomatiqueCible = sumDataProvince(wholeData.lutteContreDeficienceVisuelleRefractionAutomatiqueCible.data, codeProvince),
+		// lutteContreDeficienceVisuelleRefractionAutomatiqueRealisation
+		dataLutteContreDeficienceVisuelleRefractionAutomatiqueRealisation = sumDataProvince(wholeData.lutteContreDeficienceVisuelleRefractionAutomatiqueRealisation.data, codeProvince),
+		// other
+		scale = [
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		],
+		data = getData([dataEtablissementVisite]),
+		max = getMaxValue(data),
+		table = 1;
+	// MAP
+	$('#province-map').vectorMap({
+		map: 'province',
+		series: {
+			regions: [
+				{
+					values: { [codeProvince]: data[codeProvince] },
+					scale,
+					normalizeFunction: 'polynomial',
+					max,
+					min: 0,
+					legend: {
+						horizontal: true,
+						labelRender: function (v) {
+							return v;
+						},
+					},
+				},
+			],
+		},
+		regionStyle: {
+			initial: {
+				stroke: '#000000',
+				'stroke-width': 3,
+				fill: '#c6cacd',
+			},
+			hover: {
+				stroke: '#000000',
+				'stroke-width': 3,
+				fill: '#6294ed',
+			},
+		},
+		backgroundColor: '#a5bfdd',
+		regionLabelStyle: {
+			initial: {
+				fill: '#000000',
+			},
+		},
+		onRegionTipShow: function (event, label, code) {
+			if (code == codeProvince) {
+				if (table === 1) {
+					label.html(
+						`
+					<div class="bg-white shadow-sm p-1 rounded">
+					<table class="table table-sm table-bordered fs-8 text-dark">
+						<tbody>
+							<tr>
+								<th colspan="2" class="text-center">Province :  ${label.html()}</th>
+							</tr>
+							
+							<tr>
+								<th colspan="2" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
+							data[code]
+						}</span></span></th>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+					`
+					);
+				} else if (table === 2) {
+					label.html(
+						`
+					<div class="bg-white shadow-sm p-1 rounded">
+					<table class="table table-sm table-bordered fs-8 text-dark">
+						<tbody>
+							<tr>
+								<th colspan="2" class="text-center">Province :  ${label.html()}</th>
+							</tr>
+							
+							<tr>
+								<th colspan="2" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
+							data[code]
+						}</span></span></th>
+							</tr>
+							
+							<tr>
+								<td>Cible</td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataEleveExamineVmsCible[code]
+								}</span></td>
+							</tr>
+							
+							<tr>
+								<td>Réalisation</td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataEleveExamineVmsRealisation[code]
+								}</span></td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+					`
+					);
+				} else if (table === 4) {
+					label.html(
+						`
+					<div class="bg-white shadow-sm p-1 rounded">
+					<table class="table table-sm table-bordered fs-8 text-dark">
+						<tbody>
+							<tr>
+								<th colspan="3" class="text-center">Province :  ${label.html()}</th>
+							</tr>
+							
+							<tr>
+								<th colspan="3" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
+							data[code]
+						}</span></span></th>
+							</tr>
+							<tr>
+								<th></th>
+								<th class="text-center">Echelle Métrique</th>
+								<th class="text-center">Réfraction automatique</th>
+							</tr>
+							<tr>
+								<td>Cible</td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataLutteContreDeficienceVisuelleEchelleMetriqueCible[
+										code
+									]
+								}</span></td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataLutteContreDeficienceVisuelleRefractionAutomatiqueCible[
+										code
+									]
+								}</span></td>
+							</tr>
+							
+							<tr>
+								<td>Réalisation</td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataLutteContreDeficienceVisuelleEchelleMetriqueRealisation[
+										code
+									]
+								}</span></td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataLutteContreDeficienceVisuelleRefractionAutomatiqueRealisation[
+										code
+									]
+								}</span></td>
+							</tr>
+							<tr>
+								<td>Total</td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataLutteContreDeficienceVisuelleEchelleMetriqueRealisation[
+										code
+									] +
+									dataLutteContreDeficienceVisuelleEchelleMetriqueCible[
+										code
+									]
+								}</span></td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataLutteContreDeficienceVisuelleRefractionAutomatiqueCible[
+										code
+									] +
+									dataLutteContreDeficienceVisuelleRefractionAutomatiqueRealisation[
+										code
+									]
+								}</span></td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+					`
+					);
+				}
+			}
+		},
+	});
 	// EVENT LISTNER
 	$('input[type=radio][name=data]').change(function () {
 		// get the map
@@ -300,16 +318,12 @@ min:0,
 		// get the title for tooltip /
 		title = $(this).next('span').text();
 		// change the title in the tooltip
-		$('#title').text($('#title').text().split(' - ')[0] + ' - ' + title);
+		$('#title').text(title);
 		// hide the dropdown
 		$('.dropdown-toggle').dropdown('hide');
-		// ----------------------------------------------------
 		// change te data
-		if (this.value === 'visiteEtablissementVisite') {
-			data = getData([dataVisiteEtablissementVisite]);
-			table = 1;
-		} else if (this.value === 'visiteEleveVue') {
-			data = getData([dataVisiteEleveVue]);
+		if (this.value === 'etablissementVisite') {
+			data = getData([dataEtablissementVisite]);
 			table = 1;
 		} else if (this.value === 'eleveExamineVms') {
 			data = getData([
@@ -326,12 +340,9 @@ min:0,
 			]);
 			table = 4;
 		}
-
-		// ----------------------------------------------------
 		// apply changes
-		map.series.regions[0].params.max = getMax(data);
-		map.series.regions[0].setValues({codeProvince: data[codeProvince]});
+		map.series.regions[0].params.max = getMaxValue(data);
+		map.series.regions[0].setValues({ codeProvince: data[codeProvince] });
 		map.series.regions[0].legend.render();
 	});
-	$('.thisProvince').addClass('d-none');
 });

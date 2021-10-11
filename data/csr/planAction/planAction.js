@@ -87,63 +87,49 @@ async function submitPlanAction(csr) {
 // 	}
 // }
 
-// // GET
-// async function getPlanActionByRegionAndYear(region) {
+// GET
+// async function getPlanActionByRegion(region) {
 // 	try {
 // 		var today = new Date(),
-// 			all = await planAction
+// 			query = await planAction
 // 				.find({ year: today.getFullYear() })
-// 				.populate({
-// 					path: 'csr population programme ressource ressourceHumain',
-// 					select: '-password -email -_id -__v -createdAt -updatedAt',
-// 					populate: {
-// 						path: 'localite',
-// 						select: '-password -email -_id -__v -createdAt -updatedAt -csr',
-// 					},
-// 				})
-// 				.select('-__v -_id -createdAt -updatedAt'),
-// 			out = [];
-// 		for (let i = 0; i < all.length; i++) {
-// 			const element = all[i];
+// 				.populate('csr population programme ressource ressourceHumain')
+// 				.select('-email');
+// 		resule = [];
+// 		for (let i = 0; i < query.length; i++) {
+// 			const element = query[i];
 // 			if (element.csr.region === region) {
-// 				out.push(element);
+// 				resule.push(element);
 // 			}
 // 		}
-// 		return out
+// 		return resule;
 // 	} catch (error) {
 // 		console.log(error);
 // 		throw newError(500, "quelque chose s'est mal passé");
 // 	}
 // }
 
-// // GET
-// async function getPlanActionByProvinceAndYear(province) {
-// 	try {
-// 		var today = new Date(),
-// 			all = await planAction
-// 				.find({ year: today.getFullYear() })
-// 				.populate({
-// 					path: 'csr population programme ressource ressourceHumain',
-// 					select: '-password -email -_id -__v -createdAt -updatedAt',
-// 					populate: {
-// 						path: 'localite',
-// 						select: '-password -email -_id -__v -createdAt -updatedAt -csr',
-// 					},
-// 				})
-// 				.select('-__v -_id -createdAt -updatedAt'),
-// 			out = [];
-// 		for (let i = 0; i < all.length; i++) {
-// 			const element = all[i];
-// 			if (element.csr.province === province) {
-// 				out.push(element);
-// 			}
-// 		}
-// 		return out
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
+// GET BY PROVINCE
+async function getPlanActionByProvince(province) {
+	try {
+		var today = new Date(),
+			query = await planAction
+				.find({ year: today.getFullYear() })
+				.populate('csr population programme ressource ressourceHumain')
+				.select('-email');
+		resule = [];
+		for (let i = 0; i < query.length; i++) {
+			const element = query[i];
+			if (element.csr.province === province) {
+				resule.push(element);
+			}
+		}
+		return resule;
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
 
 // OUTPUT
 module.exports = {
@@ -151,6 +137,7 @@ module.exports = {
 	getPlanActionSubmitedByCsr,
 	addDataToPlanAction,
 	submitPlanAction,
+	getPlanActionByProvince,
 	// addPlanAction,
 	// getPlanActionByYear,
 	// getPlanActionByRegionAndYear,

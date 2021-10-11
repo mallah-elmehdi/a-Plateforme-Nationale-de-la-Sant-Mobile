@@ -2,16 +2,16 @@ extends profile
 
 block tail
 	//- LIBRARY
-	script(src='/../js/province/jquery-jvectormap-2.0.5.min.js')
-	script(src='/../js/province/toggleMap.js')
+	script(src='/../js/util/jquery-jvectormap-2.0.5.min.js')
+	script(src='/../js/util/toggleMap.js')
 	//- MAP
-	script(src='/../js/province/province/map.js')
+	script(src='/../js/util/mapProvince.js')
 	//- CARTE
-	script(src='/../js/province/province/carte/rapport.js')
+	script(src='/../js/province/carte/rapport.js')
 
 
 block main
-	.row.g-3#data(data-code=codeProvince data-province=data.document.province data-region=data.document.region)
+	.row.g-3#data(data-code=codeProvince data-province=data.document.province data-region=data.document.region data-trimestre=trimestre)
 		.col-12
 			include ../util/snippet/titleRapport
 

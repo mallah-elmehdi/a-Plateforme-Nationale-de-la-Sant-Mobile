@@ -13,7 +13,17 @@ async function getDocument(id) {
     }
 }
 
+// PROVINCE
+async function getCsrByProvince(province) {
+    try {
+        return await csr.find({province}).select('-email');
+    } catch (error) {
+        throw newError(500, 'quelque chose s\'est mal passé')
+    }
+}
+
 // OUTPUT
 module.exports = {
     getDocument,
+	getCsrByProvince,
 };

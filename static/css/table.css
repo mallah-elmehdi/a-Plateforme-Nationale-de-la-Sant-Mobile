@@ -20,7 +20,10 @@ table#ressourceCommune,
 table#pdrProgrammeVisite,
 table#autreActivity,
 table#pdrVisite,
-table#detectionPrecoceCancer
+table#detectionPrecoceCancer,
+table#autreAvtiviteBenefier,
+table#autreAvtiviteActe,
+table#listPdr
 {
 	text-align: center;
 	vertical-align: middle;

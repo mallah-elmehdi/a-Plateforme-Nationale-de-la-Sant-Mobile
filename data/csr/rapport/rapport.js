@@ -16,7 +16,43 @@ async function getRapportByTrimestre(csr, trimestre) {
 				trimestre,
 				year: today.getFullYear(),
 			})
-			.select('-csr')
+			.select('-csr');
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
+// GET SUBMITED RAPPORT
+async function getRapportByProvince(trimestre, province) {
+	try {
+		// variables
+		var today = new Date(),
+			query = await rapport
+				.find({
+					trimestre,
+					year: today.getFullYear(),
+				})
+				.populate({
+					path: 'sortie csr',
+					populate: {
+						path: 'pdrVisite populationCible ressourceHumainMobile santeMaternelle santeInfantile planificationFamiliale santeScolaire detectionPrecoceCancer consultationMedical maladieDepiste autreActivite',
+						select: '-email',
+						populate: {
+							path: 'pdrVisite csr',
+							select: '-email',
+						},
+					},
+					select: '-email',
+				}),
+			out = [];
+		for (let i = 0; i < query.length; i++) {
+			const element = query[i];
+			if (element.csr.province === province) {
+				out.push(element);
+			}
+		}
+		return out;
 	} catch (error) {
 		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
@@ -158,7 +194,6 @@ async function getRapportByTrimestre(csr, trimestre) {
 // 	}
 // }
 
-
 // async function getRapportByProvinceAndYear(province, populateFeild) {
 // 	try {
 // 		// variables
@@ -226,7 +261,6 @@ async function getRapportByTrimestre(csr, trimestre) {
 // 	}
 // }
 
-
 // // GET SUBMITED RAPPORT
 // async function getSubmitedRapportByRegionAndYearDash(trimestre, region) {
 // 	try {
@@ -263,7 +297,6 @@ async function getRapportByTrimestre(csr, trimestre) {
 // 		throw newError(500, "quelque chose s'est mal passé");
 // 	}
 // }
-
 
 // // GET SUBMITED RAPPORT
 // async function getSubmitedRapportByProvinceAndYearDash(trimestre, province) {
@@ -305,4 +338,5 @@ async function getRapportByTrimestre(csr, trimestre) {
 // OUTPUT
 module.exports = {
 	getRapportByTrimestre,
+	getRapportByProvince,
 };

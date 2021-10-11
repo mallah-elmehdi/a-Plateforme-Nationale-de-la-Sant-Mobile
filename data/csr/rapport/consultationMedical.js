@@ -59,8 +59,35 @@ async function editConsultationMedicalById(id, body) {
 // DELETE
 async function deleteConsultationMedicalById(id) {
 	try {
-		// delete document 
+		// delete document
 		return await consultationMedical.findByIdAndDelete(id);
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
+// GET BY PROVINCE
+async function getConsultationMedicalByProvince(province) {
+	try {
+		// variable
+		var today = new Date(),
+			result = [];
+		// get query
+		var query = await consultationMedical
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+		// get only result fo the province
+		for (let i = 0; i < query.length; i++) {
+			const element = query[i];
+			if (element.csr.province === province) {
+				result.push(element);
+			}
+		}
+		return result;
 	} catch (error) {
 		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
@@ -74,4 +101,5 @@ module.exports = {
 	getConsultationMedicalById,
 	editConsultationMedicalById,
 	deleteConsultationMedicalById,
+	getConsultationMedicalByProvince
 };

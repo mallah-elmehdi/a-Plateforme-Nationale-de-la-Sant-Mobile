@@ -1,89 +1,76 @@
 // SET UP
-const fs = require('fs');
 const provinceData = require('../../../data/province');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const planificationFamilialeData = require('../../../data/csr/rapport/planificationFamiliale');
+const { Carte } = require('../../../class/carte');
+const carte = new Carte();
 
 // ERROR
 const { newError } = require('../../../util/error');
 
-// JSON
-const province = JSON.parse(
-	fs.readFileSync(`${__dirname}/../../../static/json/province.json`)
-);
-
-function getProvinceCode(pro) {
-	for (let i = 0; i < province.length; i++) {
-		const provinceElement = province[i];
-		if (provinceElement.province === pro) {
-			return provinceElement.codeProvince;
-		}
-	}
-}
-
-// DATA REGION
-async function dataProvince(province) {
+// CARTE PROVINCE
+async function cartePlanificationFamilialeProvince(province, csrList) {
 	try {
-		var codeProvince = getProvinceCode(province),
-			data = {
+		var data = {
 				piluleNa: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				piluleAa: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				injectableNa: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				injectableAa: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				diuNa: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				diuAa: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				condomNa: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				condomAa: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				referenceDiu: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				referenceLt: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 			},
 			planificationFamiliale =
-				await rapportData.getRapportByProvinceAndYear(
-				province,
-					'planificationFamiliale'
+				await planificationFamilialeData.getPlanificationFamilialeByProvince(
+					province
 				);
 		// planificationFamiliale
 		for (let j = 0; j < planificationFamiliale.length; j++) {
+			// planificationFamiliale element
 			const planificationFamilialeElement = planificationFamiliale[j];
-			data.piluleNa.data[codeProvince] +=
-				planificationFamilialeElement.pilule.na;
-			data.piluleAa.data[codeProvince] +=
-				planificationFamilialeElement.pilule.aa;
-			data.injectableNa.data[codeProvince] +=
-				planificationFamilialeElement.injectable.na;
-			data.injectableAa.data[codeProvince] +=
-				planificationFamilialeElement.injectable.aa;
-			data.diuNa.data[codeProvince] +=
-				planificationFamilialeElement.diu.na;
-			data.diuAa.data[codeProvince] +=
-				planificationFamilialeElement.diu.aa;
-			data.condomNa.data[codeProvince] +=
-				planificationFamilialeElement.condom.na;
-			data.condomAa.data[codeProvince] +=
-				planificationFamilialeElement.condom.aa;
-			data.referenceDiu.data[codeProvince] +=
-				planificationFamilialeElement.reference.diu;
-			data.referenceLt.data[codeProvince] +=
-				planificationFamilialeElement.reference.lt;
+			// sum
+			// piluleNa
+			data.piluleNa.data[planificationFamilialeElement.csr.csr].value += planificationFamilialeElement.pilule.na
+			// piluleAa
+			data.piluleAa.data[planificationFamilialeElement.csr.csr].value += planificationFamilialeElement.pilule.aa
+			// injectableNa
+			data.injectableNa.data[planificationFamilialeElement.csr.csr].value += planificationFamilialeElement.injectable.na
+			// injectableAa
+			data.injectableAa.data[planificationFamilialeElement.csr.csr].value += planificationFamilialeElement.injectable.aa
+			// diuNa
+			data.diuNa.data[planificationFamilialeElement.csr.csr].value += planificationFamilialeElement.diu.na
+			// diuAa
+			data.diuAa.data[planificationFamilialeElement.csr.csr].value += planificationFamilialeElement.diu.aa
+			// condomNa
+			data.condomNa.data[planificationFamilialeElement.csr.csr].value += planificationFamilialeElement.condom.na
+			// condomAa
+			data.condomAa.data[planificationFamilialeElement.csr.csr].value += planificationFamilialeElement.condom.aa
+			// referenceDiu
+			data.referenceDiu.data[planificationFamilialeElement.csr.csr].value += planificationFamilialeElement.reference.diu
+			// referenceLt
+			data.referenceLt.data[planificationFamilialeElement.csr.csr].value += planificationFamilialeElement.reference.lt
 		}
 		return data;
 	} catch (error) {
@@ -92,30 +79,31 @@ async function dataProvince(province) {
 	}
 }
 
-// get the dashbord
+// GET
 async function planificationFamiliale(req, res, next) {
 	try {
-		// collect data
+		// variable
 		var data = {},
 			today = new Date();
-		// get the document of the region
+		// get the document
 		data.document = await provinceData.getDocument(req.params.id);
-		// list province
-
-		// taux pdr visite
-		data.carte = {
-			province: await dataProvince(data.document.province),
-		};
+		// variable
+		var csrList = carte.getCsrListByProvince(data.document.province),
+			codeProvince = carte.getCodeProvince(data.document.province);
+		// carte
+		data.provinceData = await cartePlanificationFamilialeProvince(
+			data.document.province,
+			csrList
+		);
 		// render the page
 		res.status(200).render('province/dashboard/planificationFamiliale', {
 			title:
-				'Tableau de bord | Consultations médicales | ' +
-				today.getFullYear(),
+				'Tableau de bord | Planification familiale | ' + today.getFullYear(),
 			url: req.originalUrl,
 			data,
-			province,
-			codeProvince: getProvinceCode(data.document.province),
-			page: 'dashboard',
+			codeProvince,
+			csrList,
+			page: 'prestation',
 			listItem: 'planificationFamiliale',
 		});
 	} catch (error) {

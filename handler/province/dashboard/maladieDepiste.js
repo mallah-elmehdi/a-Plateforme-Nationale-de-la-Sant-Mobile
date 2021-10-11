@@ -1,258 +1,217 @@
 // SET UP
-const fs = require('fs');
 const provinceData = require('../../../data/province');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const maladieDepisteData = require('../../../data/csr/rapport/maladieDepiste');
+const { Carte } = require('../../../class/carte');
+const carte = new Carte();
 
 // ERROR
 const { newError } = require('../../../util/error');
 
-// JSON
-const province = JSON.parse(
-	fs.readFileSync(`${__dirname}/../../../static/json/province.json`)
-);
-
-function getProvinceCode(pro) {
-	for (let i = 0; i < province.length; i++) {
-		const provinceElement = province[i];
-		if (provinceElement.province === pro) {
-			return provinceElement.codeProvince;
-		}
-	}
-}
-
-// DATA REGION
-async function dataProvince(province) {
+// CARTE PROVINCE
+async function carteMaladieDepisteProvince(province, csrList) {
 	try {
-		var codeProvince = getProvinceCode(province),
-			data = {
+		var data = {
 				diabeteCas: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				diabeteCasPec: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				diabeteReference: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				htaCas: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				htaCasPec: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				htaReference: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				angineCas: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				angineCasPec: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				angineReference: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				carieCas: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				carieCasPec: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				carieReference: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				parodontopathieCas: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				parodontopathieCasPec: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				parodontopathieReference: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				maladieMentaleCas: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				maladieMentaleCasPec: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				maladieMentaleReference: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				istCas: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				istCasPec: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				istReference: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				raaAvecCarditesCas: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				raaAvecCarditesCasPec: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				raaAvecCarditesReference: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				raaSansCarditesCas: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				raaSansCarditesCasPec: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				raaSansCarditesReference: {
-					data: { [codeProvince]: 0 },
-				},
-				cancerSeinCas: {
-					data: { [codeProvince]: 0 },
-				},
-				cancerSeinCasPec: {
-					data: { [codeProvince]: 0 },
-				},
-				cancerSeinReference: {
-					data: { [codeProvince]: 0 },
-				},
-				cancerColCas: {
-					data: { [codeProvince]: 0 },
-				},
-				cancerColCasPec: {
-					data: { [codeProvince]: 0 },
-				},
-				cancerColReference: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				tuberculosePolmonaireCas: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				tuberculosePolmonaireCasPec: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				tuberculosePolmonaireReference: {
-					data: { [codeProvince]: 0 },
-				},
-				tuberculoseExtraPolmonaireCas: {
-					data: { [codeProvince]: 0 },
-				},
-				tuberculoseExtraPolmonaireCasPec: {
-					data: { [codeProvince]: 0 },
-				},
-				tuberculoseExtraPolmonaireReference: {
-					data: { [codeProvince]: 0 },
-				},
-
-				visiteEtablissementVisite: {
-					data: { [codeProvince]: 0 },
-				},
-				visiteEleveVue: {
-					data: { [codeProvince]: 0 },
-				},
-				eleveExamineVmsCible: {
-					data: { [codeProvince]: 0 },
-				},
-				eleveExamineVmsRealisation: {
-					data: { [codeProvince]: 0 },
-				},
-				lutteContreDeficienceVisuelleEchelleMetriqueCible: {
-					data: { [codeProvince]: 0 },
-				},
-				lutteContreDeficienceVisuelleEchelleMetriqueRealisation: {
-					data: { [codeProvince]: 0 },
-				},
-				lutteContreDeficienceVisuelleRefractionAutomatiqueCible: {
-					data: { [codeProvince]: 0 },
-				},
-				lutteContreDeficienceVisuelleRefractionAutomatiqueRealisation: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 			},
-			maladieDepiste = await rapportData.getRapportByProvinceAndYear(
-				province,
-				'maladieDepiste'
-			);
-		// ------------------------
-		// province
-
+			maladieDepiste =
+				await maladieDepisteData.getMaladieDepisteByProvince(
+					province
+				);
 		// maladieDepiste
 		for (let j = 0; j < maladieDepiste.length; j++) {
+			// maladieDepiste element
 			const maladieDepisteElement = maladieDepiste[j];
-			data.diabeteCas.data[codeProvince] =
+			// sum
+			// diabeteCas
+			data.diabeteCas.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.diabete.cas;
-			data.diabeteCasPec.data[codeProvince] =
+			// diabeteCasPec
+			data.diabeteCasPec.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.diabete.casPec;
-			data.diabeteReference.data[codeProvince] =
+			// diabeteReference
+			data.diabeteReference.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.diabete.reference;
-			data.htaCas.data[codeProvince] = maladieDepisteElement.hta.cas;
-			data.htaCasPec.data[codeProvince] =
+			// htaCas
+			data.htaCas.data[maladieDepisteElement.csr.csr].value +=
+				maladieDepisteElement.hta.cas;
+			// htaCasPec
+			data.htaCasPec.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.hta.casPec;
-			data.htaReference.data[codeProvince] =
+			// htaReference
+			data.htaReference.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.hta.reference;
-			data.angineCas.data[codeProvince] =
+			// angineCas
+			data.angineCas.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.angine.cas;
-			data.angineCasPec.data[codeProvince] =
+			// angineCasPec
+			data.angineCasPec.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.angine.casPec;
-			data.angineReference.data[codeProvince] =
+			// angineReference
+			data.angineReference.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.angine.reference;
-			data.carieCas.data[codeProvince] = maladieDepisteElement.carie.cas;
-			data.carieCasPec.data[codeProvince] =
+			// carieCas
+			data.carieCas.data[maladieDepisteElement.csr.csr].value +=
+				maladieDepisteElement.carie.cas;
+			// carieCasPec
+			data.carieCasPec.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.carie.casPec;
-			data.carieReference.data[codeProvince] =
+			// carieReference
+			data.carieReference.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.carie.reference;
-			data.parodontopathieCas.data[codeProvince] =
+			// parodontopathieCas
+			data.parodontopathieCas.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.parodontopathie.cas;
-			data.parodontopathieCasPec.data[codeProvince] =
-				maladieDepisteElement.parodontopathie.casPec;
-			data.parodontopathieReference.data[codeProvince] =
-				maladieDepisteElement.parodontopathie.reference;
-			data.maladieMentaleCas.data[codeProvince] =
+			// parodontopathieCasPec
+			data.parodontopathieCasPec.data[
+				maladieDepisteElement.csr.csr
+			].value += maladieDepisteElement.parodontopathie.casPec;
+			// parodontopathieReference
+			data.parodontopathieReference.data[
+				maladieDepisteElement.csr.csr
+			].value += maladieDepisteElement.parodontopathie.reference;
+			// maladieMentaleCas
+			data.maladieMentaleCas.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.maladieMentale.cas;
-			data.maladieMentaleCasPec.data[codeProvince] =
-				maladieDepisteElement.maladieMentale.casPec;
-			data.maladieMentaleReference.data[codeProvince] =
-				maladieDepisteElement.maladieMentale.reference;
-			data.istCas.data[codeProvince] = maladieDepisteElement.ist.cas;
-			data.istCasPec.data[codeProvince] =
+			// maladieMentaleCasPec
+			data.maladieMentaleCasPec.data[
+				maladieDepisteElement.csr.csr
+			].value += maladieDepisteElement.maladieMentale.casPec;
+			// maladieMentaleReference
+			data.maladieMentaleReference.data[
+				maladieDepisteElement.csr.csr
+			].value += maladieDepisteElement.maladieMentale.reference;
+			// istCas
+			data.istCas.data[maladieDepisteElement.csr.csr].value +=
+				maladieDepisteElement.ist.cas;
+			// istCasPec
+			data.istCasPec.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.ist.casPec;
-			data.istReference.data[codeProvince] =
+			// istReference
+			data.istReference.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.ist.reference;
-			data.raaAvecCarditesCas.data[codeProvince] =
+			// raaAvecCarditesCas
+			data.raaAvecCarditesCas.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.raa.avecCardites.cas;
-			data.raaAvecCarditesCasPec.data[codeProvince] =
-				maladieDepisteElement.raa.avecCardites.casPec;
-			data.raaAvecCarditesReference.data[codeProvince] =
-				maladieDepisteElement.raa.avecCardites.reference;
-			data.raaSansCarditesCas.data[codeProvince] =
+			// raaAvecCarditesCasPec
+			data.raaAvecCarditesCasPec.data[
+				maladieDepisteElement.csr.csr
+			].value += maladieDepisteElement.raa.avecCardites.casPec;
+			// raaAvecCarditesReference
+			data.raaAvecCarditesReference.data[
+				maladieDepisteElement.csr.csr
+			].value += maladieDepisteElement.raa.avecCardites.reference;
+			// raaSansCarditesCas
+			data.raaSansCarditesCas.data[maladieDepisteElement.csr.csr].value +=
 				maladieDepisteElement.raa.sansCardites.cas;
-			data.raaSansCarditesCasPec.data[codeProvince] =
-				maladieDepisteElement.raa.sansCardites.casPec;
-			data.raaSansCarditesReference.data[codeProvince] =
-				maladieDepisteElement.raa.sansCardites.reference;
-			data.cancerSeinCas.data[codeProvince] =
-				maladieDepisteElement.cancer.sein.cas;
-			data.cancerSeinCasPec.data[codeProvince] =
-				maladieDepisteElement.cancer.sein.casPec;
-			data.cancerSeinReference.data[codeProvince] =
-				maladieDepisteElement.cancer.sein.reference;
-			data.cancerColCas.data[codeProvince] =
-				maladieDepisteElement.cancer.col.cas;
-			data.cancerColCasPec.data[codeProvince] =
-				maladieDepisteElement.cancer.col.casPec;
-			data.cancerColReference.data[codeProvince] =
-				maladieDepisteElement.cancer.col.reference;
-			data.tuberculosePolmonaireCas.data[codeProvince] =
-				maladieDepisteElement.tuberculose.polmonaire.cas;
-			data.tuberculosePolmonaireCasPec.data[codeProvince] =
-				maladieDepisteElement.tuberculose.polmonaire.casPec;
-			data.tuberculosePolmonaireReference.data[codeProvince] =
-				maladieDepisteElement.tuberculose.polmonaire.reference;
-			data.tuberculoseExtraPolmonaireCas.data[codeProvince] =
-				maladieDepisteElement.tuberculose.extraPolmonaire.cas;
-			data.tuberculoseExtraPolmonaireCasPec.data[codeProvince] =
-				maladieDepisteElement.tuberculose.extraPolmonaire.casPec;
-			data.tuberculoseExtraPolmonaireReference.data[codeProvince] =
-				maladieDepisteElement.tuberculose.extraPolmonaire.reference;
+			// raaSansCarditesCasPec
+			data.raaSansCarditesCasPec.data[
+				maladieDepisteElement.csr.csr
+			].value += maladieDepisteElement.raa.sansCardites.casPec;
+			// raaSansCarditesReference
+			data.raaSansCarditesReference.data[
+				maladieDepisteElement.csr.csr
+			].value += maladieDepisteElement.raa.sansCardites.reference;
+			// tuberculosePolmonaireCas
+			data.tuberculosePolmonaireCas.data[
+				maladieDepisteElement.csr.csr
+			].value += maladieDepisteElement.tuberculosePolmonaire.cas;
+			// tuberculosePolmonaireCasPec
+			data.tuberculosePolmonaireCasPec.data[
+				maladieDepisteElement.csr.csr
+			].value += maladieDepisteElement.tuberculosePolmonaire.casPec;
+			// tuberculosePolmonaireReference
+			data.tuberculosePolmonaireReference.data[
+				maladieDepisteElement.csr.csr
+			].value += maladieDepisteElement.tuberculosePolmonaire.reference;
 		}
 		return data;
 	} catch (error) {
@@ -261,20 +220,22 @@ async function dataProvince(province) {
 	}
 }
 
-// get the dashbord
+// GET
 async function maladieDepiste(req, res, next) {
 	try {
-		// collect data
+		// variable
 		var data = {},
 			today = new Date();
-		// get the document of the region
+		// get the document
 		data.document = await provinceData.getDocument(req.params.id);
-		// list province
-
-		// taux pdr visite
-		data.carte = {
-			province: await dataProvince(data.document.province),
-		};
+		// variable
+		var csrList = carte.getCsrListByProvince(data.document.province),
+			codeProvince = carte.getCodeProvince(data.document.province);
+		// carte
+		data.provinceData = await carteMaladieDepisteProvince(
+			data.document.province,
+			csrList
+		);
 		// render the page
 		res.status(200).render('province/dashboard/maladieDepiste', {
 			title:
@@ -282,9 +243,9 @@ async function maladieDepiste(req, res, next) {
 				today.getFullYear(),
 			url: req.originalUrl,
 			data,
-			province,
-			codeProvince: getProvinceCode(data.document.province),
-			page: 'dashboard',
+			codeProvince,
+			csrList,
+			page: 'prestation',
 			listItem: 'maladieDepiste',
 		});
 	} catch (error) {

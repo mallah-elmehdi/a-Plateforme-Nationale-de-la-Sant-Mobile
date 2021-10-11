@@ -1,89 +1,61 @@
 // SET UP
-const fs = require('fs');
 const provinceData = require('../../../data/province');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const santeScolaireData = require('../../../data/csr/rapport/santeScolaire');
+const { Carte } = require('../../../class/carte');
+const carte = new Carte();
 
 // ERROR
 const { newError } = require('../../../util/error');
 
-// JSON
-const province = JSON.parse(
-	fs.readFileSync(`${__dirname}/../../../static/json/province.json`)
-);
-
-function getProvinceCode(pro) {
-	for (let i = 0; i < province.length; i++) {
-		const provinceElement = province[i];
-		if (provinceElement.province === pro) {
-			return provinceElement.codeProvince;
-		}
-	}
-}
-
-// DATA REGION
-async function dataProvince(province) {
+// CARTE PROVINCE
+async function carteSanteScolaireProvince(province, csrList) {
 	try {
-		var codeProvince = getProvinceCode(province),
-			data = {
-				visiteEtablissementVisite: {
-					data: { [codeProvince]: 0 },
-				},
-				visiteEleveVue: {
-					data: { [codeProvince]: 0 },
+		var data = {
+				etablissementVisite: {
+					data: carte.initCsrData(csrList),
 				},
 				eleveExamineVmsCible: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				eleveExamineVmsRealisation: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				lutteContreDeficienceVisuelleEchelleMetriqueCible: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				lutteContreDeficienceVisuelleEchelleMetriqueRealisation: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				lutteContreDeficienceVisuelleRefractionAutomatiqueCible: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				lutteContreDeficienceVisuelleRefractionAutomatiqueRealisation: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 			},
-			santeScolaire = await rapportData.getRapportByProvinceAndYear(
-				province,
-				'santeScolaire'
-			);
-		// ------------------------
-		// province
-
+			santeScolaire =
+				await santeScolaireData.getSanteScolaireByProvince(
+					province
+				);
 		// santeScolaire
 		for (let j = 0; j < santeScolaire.length; j++) {
+			// santeScolaire element
 			const santeScolaireElement = santeScolaire[j];
-			data.visiteEtablissementVisite.data[codeProvince] +=
-				santeScolaireElement.visite.etablissementVisite;
-			data.visiteEleveVue.data[codeProvince] +=
-				santeScolaireElement.visite.eleveVue;
-			data.eleveExamineVmsCible.data[codeProvince] +=
-				santeScolaireElement.eleveExamineVms.cible;
-			data.eleveExamineVmsRealisation.data[codeProvince] +=
-				santeScolaireElement.eleveExamineVms.realisation;
-			data.lutteContreDeficienceVisuelleEchelleMetriqueCible.data[
-				codeProvince
-			] +=
-				santeScolaireElement.lutteContreDeficienceVisuelle.echelleMetrique.cible;
-			data.lutteContreDeficienceVisuelleEchelleMetriqueRealisation.data[
-				codeProvince
-			] +=
-				santeScolaireElement.lutteContreDeficienceVisuelle.echelleMetrique.realisation;
-			data.lutteContreDeficienceVisuelleRefractionAutomatiqueCible.data[
-				codeProvince
-			] +=
-				santeScolaireElement.lutteContreDeficienceVisuelle.refractionAutomatique.cible;
-			data.lutteContreDeficienceVisuelleRefractionAutomatiqueRealisation.data[
-				codeProvince
-			] +=
-				santeScolaireElement.lutteContreDeficienceVisuelle.refractionAutomatique.realisation;
+			// sum
+			// etablissementVisite
+			data.etablissementVisite.data[santeScolaireElement.csr.csr].value += santeScolaireElement.etablissementVisite
+			// eleveExamineVmsCible
+			data.eleveExamineVmsCible.data[santeScolaireElement.csr.csr].value += santeScolaireElement.eleveExamineVms.cible
+			// eleveExamineVmsRealisation
+			data.eleveExamineVmsRealisation.data[santeScolaireElement.csr.csr].value += santeScolaireElement.eleveExamineVms.realisation
+			// lutteContreDeficienceVisuelleEchelleMetriqueCible
+			data.lutteContreDeficienceVisuelleEchelleMetriqueCible.data[santeScolaireElement.csr.csr].value += santeScolaireElement.lutteContreDeficienceVisuelle.echelleMetrique.cible
+			// lutteContreDeficienceVisuelleEchelleMetriqueRealisation
+			data.lutteContreDeficienceVisuelleEchelleMetriqueRealisation.data[santeScolaireElement.csr.csr].value += santeScolaireElement.lutteContreDeficienceVisuelle.echelleMetrique.realisation
+			// lutteContreDeficienceVisuelleRefractionAutomatiqueCible
+			data.lutteContreDeficienceVisuelleRefractionAutomatiqueCible.data[santeScolaireElement.csr.csr].value += santeScolaireElement.lutteContreDeficienceVisuelle.refractionAutomatique.cible  
+			// lutteContreDeficienceVisuelleRefractionAutomatiqueRealisation
+			data.lutteContreDeficienceVisuelleRefractionAutomatiqueRealisation.data[santeScolaireElement.csr.csr].value += santeScolaireElement.lutteContreDeficienceVisuelle.refractionAutomatique.realisation 
 		}
 		return data;
 	} catch (error) {
@@ -92,30 +64,31 @@ async function dataProvince(province) {
 	}
 }
 
-// get the dashbord
+// GET
 async function santeScolaire(req, res, next) {
 	try {
-		// collect data
+		// variable
 		var data = {},
 			today = new Date();
-		// get the document of the region
+		// get the document
 		data.document = await provinceData.getDocument(req.params.id);
-		// list province
-
-		// taux pdr visite
-		data.carte = {
-			province: await dataProvince(data.document.province),
-		};
+		// variable
+		var csrList = carte.getCsrListByProvince(data.document.province),
+			codeProvince = carte.getCodeProvince(data.document.province);
+		// carte
+		data.provinceData = await carteSanteScolaireProvince(
+			data.document.province,
+			csrList
+		);
 		// render the page
 		res.status(200).render('province/dashboard/santeScolaire', {
 			title:
-				'Tableau de bord | Santé scolaire | ' +
-				today.getFullYear(),
+				'Tableau de bord | Santé scolaire | ' + today.getFullYear(),
 			url: req.originalUrl,
 			data,
-			province,
-			codeProvince: getProvinceCode(data.document.province),
-			page: 'dashboard',
+			codeProvince,
+			csrList,
+			page: 'prestation',
 			listItem: 'santeScolaire',
 		});
 	} catch (error) {

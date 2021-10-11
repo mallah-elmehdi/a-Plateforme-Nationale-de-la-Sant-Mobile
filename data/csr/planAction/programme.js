@@ -41,29 +41,29 @@ async function addUpdateProgramme(body, csr, id) {
 // DELETE
 async function deleteProgrammeById(id) {
 	try {
-		return await programme.findByIdAndDelete(id)
+		return await programme.findByIdAndDelete(id);
 	} catch (error) {
 		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
 	}
 }
 
-// async function getProgrammeByYear() {
-// 	try {
-// 		var today = new Date();
-// 		return await programme
-// 			.find({
-// 				year: today.getFullYear(),
-// 			})
-// 			.populate({
-// 				path: 'csr',
-// 				select: '-email -password',
-// 			});
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
+async function getProgrammeByYear() {
+	try {
+		var today = new Date();
+		return await programme
+			.find({
+				year: today.getFullYear(),
+			})
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
 
 // async function getProgrammeByRegionAndYear(region) {
 // 	try {
@@ -90,30 +90,57 @@ async function deleteProgrammeById(id) {
 // 	}
 // }
 
-// async function getProgrammeByProvinceAndYear(province) {
-// 	try {
-// 		var today = new Date(),
-// 			all = await programme
-// 				.find({
-// 					year: today.getFullYear(),
-// 				})
-// 				.populate({
-// 					path: 'csr',
-// 					select: '-email -password',
-// 				}),
-// 			out = [];
-// 		for (let i = 0; i < all.length; i++) {
-// 			const element = all[i];
-// 			if (element.csr.province === province) {
-// 				out.push(element);
-// 			}
-// 		}
-// 		return out
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
+// GET BY PROVINCE
+async function getProgrammeByProvince(province) {
+	try {
+		// variable
+		var today = new Date(),
+			result = [];
+		// get query
+		var query = await programme
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+		// get only result fo the province
+		for (let i = 0; i < query.length; i++) {
+			const element = query[i];
+			if (element.csr.province === province) {
+				result.push(element);
+			}
+		}
+		return result;
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
+async function getProgrammeByProvinceAndYear(province) {
+	try {
+		var today = new Date(),
+			all = await programme
+				.find({
+					year: today.getFullYear(),
+				})
+				.populate({
+					path: 'csr',
+					select: '-email -password',
+				}),
+			out = [];
+		for (let i = 0; i < all.length; i++) {
+			const element = all[i];
+			if (element.csr.province === province) {
+				out.push(element);
+			}
+		}
+		return out;
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
 
 // // GET BY LOCALITE
 // async function getProgrammeByCsrAndLocaliteAndYear(csr, localite, year) {
@@ -167,9 +194,9 @@ module.exports = {
 	getProgrammeByCsr,
 	addUpdateProgramme,
 	deleteProgrammeById,
+	getProgrammeByProvince,
 	// getProgrammeByCsrAndLocaliteAndYear,
 	// getProgrammeByRegionAndYear,
 	// getProgrammeByProvinceAndYear,
-	// getProgrammeByYear,
 	// addUpdateLocalite,
 };

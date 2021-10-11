@@ -1,106 +1,100 @@
 // SET UP
-const fs = require('fs');
 const provinceData = require('../../../data/province');
 const populationData = require('../../../data/csr/planAction/population');
+const { Carte } = require('../../../class/carte');
+const carte = new Carte();
 
 // ERROR
 const { newError } = require('../../../util/error');
 
-// JSON
-const province = JSON.parse(
-	fs.readFileSync(`${__dirname}/../../../static/json/province.json`)
-);
-
-function getProvinceCode(pro) {
-	for (let i = 0; i < province.length; i++) {
-		const provinceElement = province[i];
-		if (provinceElement.province === pro) {
-			return provinceElement.codeProvince;
-		}
-	}
-}
-
-// DATA REGION
-async function dataProvince(province) {
+// CARTE PROVINCE
+async function cartePopulationCibleProvince(province, csrList) {
 	try {
-		var codeProvince = getProvinceCode(province),
-			data = {
+		var data = {
+				populationRurale: {
+					data: carte.initCsrData(csrList),
+				},
 				populationCible: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				populationHabitantMoins3km: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				populationHabitantEntre3km6km: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				populationHabitantEntre6km10km: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				populationHabitantPlus10km: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
+				},
+				enfantNaissancesAttendues: {
+					data: carte.initCsrData(csrList),
 				},
 				enfantMoins1ans: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
 				enfantMoins5ans: {
-					data: { [codeProvince]: 0 },
+					data: carte.initCsrData(csrList),
 				},
-				naissancesAttendues: {
-					data: { [codeProvince]: 0 },
+				femmeFar: {
+					data: carte.initCsrData(csrList),
 				},
-				far: {
-					data: { [codeProvince]: 0 },
+				femmeFmar: {
+					data: carte.initCsrData(csrList),
 				},
-				fmar: {
-					data: { [codeProvince]: 0 },
-				},
-				femmeEnceinte: {
-					data: { [codeProvince]: 0 },
-				},
-				distanceMoyenneRouteProche: {
-					data: { [codeProvince]: 0 },
-				},
-				indiceSynthetiqueFecondite: {
-					data: { [codeProvince]: 0 },
-				},
-				personneAge: {
-					data: { [codeProvince]: 0 },
+				femmeFemmeEnceinte: {
+					data: carte.initCsrData(csrList),
 				},
 			},
-			population = await populationData.getPopulationByProvinceYear(
-				province
-			);
-		// ------------------------
+			population = await populationData.getPopulationByProvince(province);
 		// population
 		for (let j = 0; j < population.length; j++) {
+			// population element
 			const populationElement = population[j];
-			data.populationCible.data[codeProvince] +=
+			// sum
+			// populationRurale
+			data.populationRurale.data[populationElement.csr.csr].value +=
+				populationElement.population.rurale;
+			// populationCible
+			data.populationCible.data[populationElement.csr.csr].value +=
 				populationElement.population.cible;
-			data.populationHabitantMoins3km.data[codeProvince] +=
-				populationElement.population.habitantMoins3km;
-			data.populationHabitantEntre3km6km.data[codeProvince] +=
-				populationElement.population.habitantEntre3km6km;
-			data.populationHabitantEntre6km10km.data[codeProvince] +=
-				populationElement.population.habitantEntre6km10km;
-			data.populationHabitantPlus10km.data[codeProvince] +=
-				populationElement.population.habitantPlus10km;
-			data.enfantMoins1ans.data[codeProvince] +=
+			// populationHabitantMoins3km
+			data.populationHabitantMoins3km.data[
+				populationElement.csr.csr
+			].value += populationElement.population.habitantMoins3km;
+			// populationHabitantEntre3km6km
+			data.populationHabitantEntre3km6km.data[
+				populationElement.csr.csr
+			].value += populationElement.population.habitantEntre3km6km;
+			// populationHabitantEntre6km10km
+			data.populationHabitantEntre6km10km.data[
+				populationElement.csr.csr
+			].value += populationElement.population.habitantEntre6km10km;
+			// populationHabitantPlus10km
+			data.populationHabitantPlus10km.data[
+				populationElement.csr.csr
+			].value += populationElement.population.habitantPlus10km;
+			// enfantNaissancesAttendues
+			data.enfantNaissancesAttendues.data[
+				populationElement.csr.csr
+			].value += populationElement.enfant.naissancesAttendues;
+			// enfantMoins1ans
+			data.enfantMoins1ans.data[populationElement.csr.csr].value +=
 				populationElement.enfant.moins1ans;
-			data.enfantMoins5ans.data[codeProvince] +=
+			// enfantMoins5ans
+			data.enfantMoins5ans.data[populationElement.csr.csr].value +=
 				populationElement.enfant.moins5ans;
-			data.naissancesAttendues.data[codeProvince] +=
-				populationElement.naissancesAttendues;
-			data.far.data[codeProvince] += populationElement.far;
-			data.fmar.data[codeProvince] += populationElement.fmar;
-			data.femmeEnceinte.data[codeProvince] +=
-				populationElement.femmeEnceinte;
-			data.distanceMoyenneRouteProche.data[codeProvince] +=
-				populationElement.distanceMoyenneRouteProche;
-			data.indiceSynthetiqueFecondite.data[codeProvince] +=
-				populationElement.indiceSynthetiqueFecondite;
-			data.personneAge.data[codeProvince] +=
-				populationElement.personneAge;
+			// femmeFar
+			data.femmeFar.data[populationElement.csr.csr].value +=
+				populationElement.femme.far;
+			// femmeFmar
+			data.femmeFmar.data[populationElement.csr.csr].value +=
+				populationElement.femme.fmar;
+			// femmeFemmeEnceinte
+			data.femmeFemmeEnceinte.data[populationElement.csr.csr].value +=
+				populationElement.femme.femmeEnceinte;
 		}
 		return data;
 	} catch (error) {
@@ -109,28 +103,30 @@ async function dataProvince(province) {
 	}
 }
 
-// get the dashbord
+// GET
 async function populationCible(req, res, next) {
 	try {
-		// collect data
+		// variable
 		var data = {},
 			today = new Date();
-		// get the document of the region
+		// get the document
 		data.document = await provinceData.getDocument(req.params.id);
-		// taux pdr visite
-		data.carte = {
-			
-			province: await dataProvince(data.document.province),
-		};
+		// variable
+		var csrList = carte.getCsrListByProvince(data.document.province),
+			codeProvince = carte.getCodeProvince(data.document.province);
+		// carte
+		data.provinceData = await cartePopulationCibleProvince(
+			data.document.province,
+			csrList
+		);
 		// render the page
 		res.status(200).render('province/dashboard/populationCible', {
 			title:
-				'Tableau de bord | Population ciblée | ' +
-				today.getFullYear(),
+				'Tableau de bord | Population ciblée | ' + today.getFullYear(),
 			url: req.originalUrl,
 			data,
-			province,
-			codeProvince: getProvinceCode(data.document.province),
+			codeProvince,
+			csrList,
 			page: 'dashboard',
 			listItem: 'populationCible',
 		});

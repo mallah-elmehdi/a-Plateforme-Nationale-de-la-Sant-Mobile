@@ -40,7 +40,29 @@ block main
 						span.fs-7 La date limite pour terminer le plan d'action est déjà passée.
 		else
 			//- ------------------------------ DEADLINE COUNTER (TEST MODE)
-
+			//- SUBMIT FORM
+			if (population && programme.length && ressource && ressourceHumain)
+				.col-12.sticky-top
+					.card.alert-warning
+						.card-body
+							.d-flex.align-items-center
+								<ion-icon name="information-circle-outline" class="fs-5 me-2"></ion-icon>
+								span Si vous avez terminé de remplir votre plan d'action, veuillez vérifier les informations et le soumettre
+						.card-body
+							button.btn.btn-lg.bg-5.text-white(type='button' data-bs-toggle='modal' data-bs-target='#submitPlanAction') Soumettre le plan d'action
+				#submitPlanAction.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='submitPlanActionLabel' aria-hidden='true')
+					.modal-dialog.modal-dialog-centered
+						.modal-content
+							.modal-header
+								.text-dark.fs-7#submitPlanActionLabel Veuillez confirmer
+								button.btn.btn-sm(type='button' data-bs-dismiss='modal' aria-label='Close')
+									<ion-icon name="close-outline" class="align-middle fs-5"></ion-icon>
+							.modal-body
+								.text-danger Veuillez noter que cette action est irréversible, après votre soumission, vous ne pouvez plus modifier le plan d'action
+							.modal-footer
+								button.btn.btn-light.btn-sm(type='button' data-bs-dismiss='modal') Annuler
+								form(action=url+'/submit' method="post")
+									button.btn.btn-sm.bg-5.text-white(type='submit') Soumettre
 			//- if (!deadLineOver)
 			.col-12
 				//- variables
@@ -93,29 +115,6 @@ block main
 							<ion-icon name="reader-outline" class="text-1 me-2"></ion-icon>
 							.fs-7.text-dark le taux de remplissage du plan d'action
 						include ../../util/snippet/table/planAction/planAction
-			//- SUBMIT FORM
-			if (population && programme.length && ressource && ressourceHumain)
-				.col-12.sticky-top
-					.card.alert-warning
-						.card-body
-							.d-flex.align-items-center
-								<ion-icon name="information-circle-outline" class="fs-5 me-2"></ion-icon>
-								span Si vous avez terminé de remplir votre plan d'action, veuillez vérifier les informations et le soumettre
-						.card-body
-							button.btn.btn-lg.bg-5.text-white(type='button' data-bs-toggle='modal' data-bs-target='#submitPlanAction') Soumettre le plan d'action
-				#submitPlanAction.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='submitPlanActionLabel' aria-hidden='true')
-					.modal-dialog.modal-dialog-centered
-						.modal-content
-							.modal-header
-								.text-dark.fs-7#submitPlanActionLabel Veuillez confirmer
-								button.btn.btn-sm(type='button' data-bs-dismiss='modal' aria-label='Close')
-									<ion-icon name="close-outline" class="align-middle fs-5"></ion-icon>
-							.modal-body
-								.text-danger Veuillez noter que cette action est irréversible, après votre soumission, vous ne pouvez plus modifier le plan d'action
-							.modal-footer
-								button.btn.btn-light.btn-sm(type='button' data-bs-dismiss='modal') Annuler
-								form(action=url+'/submit' method="post")
-									button.btn.btn-sm.bg-5.text-white(type='submit') Soumettre
 		if (population || programme.length || ressource || ressourceHumain)
 			.col-12
 				.d-flex.align-items-center.justify-content-between

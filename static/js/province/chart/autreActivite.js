@@ -1,18 +1,46 @@
 $(document).ready(function () {
-	// VARIABLES
-	var wholeData = $('#csr-chart').data('csr'),
-		// init data
-		data = {
-			data: [],
-			categories: [],
-		};
-	// DATA LOADING
-	for (const key in wholeData) {
-		const element = wholeData[key];
-		data.categories.push(key);
-		data.data.push(element.rempli);
+	// FUNCTION
+	function getData(data, csrList) {
+		// variable
+		var objOut = {
+				data: [],
+				categories: [],
+			},
+			listTemp = {};
+		for (let i = 0; i < csrList.length; i++) {
+			const element = csrList[i];
+			listTemp[element.csr] = 0;
+		}
+		// loop
+		for (let i = 0; i < data.length; i++) {
+			const dataeElement = data[i];
+			for (const key in dataeElement.data) {
+				if (Object.hasOwnProperty.call(dataeElement.data, key)) {
+					const element = dataeElement.data[key];
+					listTemp[key] += element.value;
+				}
+			}
+		}
+		for (const key in listTemp) {
+			if (Object.hasOwnProperty.call(listTemp, key)) {
+				const element = listTemp[key];
+				objOut.data.push(element);
+				objOut.categories.push(key);
+			}
+		}
+		return objOut;
 	}
-	console.log(data);
+	// VARIABLES
+	var wholeData = $('#data').data('provincedata'),
+		csrList = $('#data').data('csrlist'),
+		// init data
+		// DATA LOADING
+		data = getData(
+			[
+				wholeData.autreActivite
+			],
+			csrList
+		), extraText = '';
 	// CHART OPTION
 	var options = {
 		series: [
@@ -38,7 +66,7 @@ $(document).ready(function () {
 				colors: ['#000'],
 			},
 			formatter: function (val, opt) {
-				return val + '%';
+				return val + extraText;
 			},
 			offsetX: 0,
 		},
@@ -47,7 +75,6 @@ $(document).ready(function () {
 		},
 		yaxis: {
 			min: 0,
-			max: 100,
 		},
 		colors: ['#6294ed'],
 		tooltip: {
@@ -64,7 +91,7 @@ $(document).ready(function () {
 					value,
 					{ series, seriesIndex, dataPointIndex, w }
 				) {
-					return value + '%' + (wholeData[data.categories[dataPointIndex]].submited ? ' (soumis)' : ' (non soumis)');
+					return value + extraText;
 				},
 
 				title: {
