@@ -25,6 +25,9 @@ router
 // redirection
 router.route('/article').get(handler.redirection, errorHandler.throwError);
 
+// cms
+router.route('/cms').get(handler.cms, errorHandler.throwError);
+
 // article
 router
 	.route('/article/:article')

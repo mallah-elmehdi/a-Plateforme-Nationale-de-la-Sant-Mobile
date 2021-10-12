@@ -3,10 +3,18 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+// const helmet = require("helmet");
+// const mongoSanitize = require("express-mongo-sanitize");
+// const xss = require("xss-clean");
 const flash = require('express-flash-messages');
 const { sessionSecret } = require('./conf');
 // CREAT APPLICATION
 const app = express();
+
+// security
+// app.use(helmet());
+// app.use(xss());
+// app.use(mongoSanitize());
 
 // DATABASE
 require('./db');

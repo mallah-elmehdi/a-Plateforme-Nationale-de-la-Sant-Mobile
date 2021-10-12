@@ -35,6 +35,26 @@ async function landingPage(req, res, next) {
 	}
 }
 
+// LANDING PAGE
+async function cms(req, res, next) {
+	try {
+		// get data
+		var data = {};
+		// get articles
+		data.articles = await articleData.getArticles(parseInt(req.query.page));
+		// get current user
+		data.user = req.cookies.welcome ? true : false;
+		// render page
+		return res.status(200).render('index/cms', {
+			title: 'Plateforme nationale de la santé mobile',
+			data,
+		});
+	} catch (error) {
+		console.log(error);
+		return next(newError(500, "quelque chose s'est mal passé"));
+	}
+}
+
 // SIGN IN
 function signIn(req, res, next) {
 	try {
@@ -76,4 +96,5 @@ module.exports = {
 	landingPage,
 	signIn,
 	article,
+	cms
 };

@@ -3,9 +3,11 @@ const { newError } = require('../util/error');
 
 function pageNotFound(req, res, next) {
 	try {
-        return next(404)
+		return res.status(200).render('./util/page/404', {
+			title: 'Page non trouvée',
+		});
 	} catch (error) {        
-        return next(500)
+        return next(newError(500, "quelque chose s'est mal passé"));
 	}
 }
 
