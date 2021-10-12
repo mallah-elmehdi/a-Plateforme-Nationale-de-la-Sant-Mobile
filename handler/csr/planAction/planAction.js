@@ -1,10 +1,6 @@
 // SET UP
 const csrData = require('../../../data/csr/csr');
 const planActionData = require('../../../data/csr/planAction/planAction');
-// const populationData = require('../../../data/csr/planAction/population');
-// const programmeData = require('../../../data/csr/planAction/programme');
-// const ressourceData = require('../../../data/csr/planAction/ressource');
-// const ressourceHumainData = require('../../../data/csr/planAction/ressourceHumain');
 
 // GET
 async function planAction(req, res, next) {

@@ -455,14 +455,18 @@ $(document).ready(function () {
 			table = 2;
 		} else if (this.value === 'reference') {
 			data = getData([
-				dataReferenceConsSpecMoins,
-				dataReferenceConsSpecPlus,
-				dataReferenceUrgenceMoins,
-				dataReferenceUrgencePlus,
-				dataReferenceExLaboMoins,
-				dataReferenceExLaboPlus,
-				dataReferenceExRadioMoins,
-				dataReferenceExRadioPlus,
+				dataReferenceConsSpecMoins5ans,
+				dataReferenceConsSpecEntre5ans18ans,
+				dataReferenceConsSpecPlus18ans,
+				dataReferenceUrgenceMoins5ans,
+				dataReferenceUrgenceEntre5ans18ans,
+				dataReferenceUrgencePlus18ans,
+				dataReferenceExLaboMoins5ans,
+				dataReferenceExLaboEntre5ans18ans,
+				dataReferenceExLaboPlus18ans,
+				dataReferenceExRadioMoins5ans,
+				dataReferenceExRadioEntre5ans18ans,
+				dataReferenceExRadioPlus18ans,
 			]);
 			table = 8;
 		} else if (this.value === 'budgetMedicamentDispenseEm') {

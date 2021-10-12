@@ -72,6 +72,15 @@ $(document).ready(function () {
 				$(this).removeClass('is-invalid');
 			}
 		});
+		// input image visible
+		$('input[type=file][required]:visible').each(function () {
+			console.log($(this).val());
+			if (!$(this).val()) {
+				requiredField($(this));
+			} else {
+				$(this).removeClass('is-invalid');
+			}
+		});
 		// select visible
 		$('select[required]:visible').each(function () {
 			if (!$(this).val()) {

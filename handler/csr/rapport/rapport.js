@@ -13,22 +13,22 @@ async function rapport(req, res, next) {
 		// init rapport
 		data.rapport = {};
 		// get the trimestre 1 of this year
-		data.rapport.trimestre1 = await rapportData.getRapportByTrimestre(
+		data.rapport.trimestre1 = await rapportData.getRapportByCsr(
 			req.params.id,
 			1
 		);
 		// get the trimestre 2 of this year
-		data.rapport.trimestre2 = await rapportData.getRapportByTrimestre(
+		data.rapport.trimestre2 = await rapportData.getRapportByCsr(
 			req.params.id,
 			2
 		);
 		// get the trimestre 3 of this year
-		data.rapport.trimestre3 = await rapportData.getRapportByTrimestre(
+		data.rapport.trimestre3 = await rapportData.getRapportByCsr(
 			req.params.id,
 			3
 		);
 		// get the trimestre 4 of this year
-		data.rapport.trimestre4 = await rapportData.getRapportByTrimestre(
+		data.rapport.trimestre4 = await rapportData.getRapportByCsr(
 			req.params.id,
 			4
 		);

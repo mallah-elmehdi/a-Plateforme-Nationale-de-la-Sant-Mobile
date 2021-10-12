@@ -43,57 +43,6 @@ async function addUpdateRessource(body, csr, id) {
 	}
 }
 
-// // DELETE
-// async function deleteRessourceById(id) {
-// 	try {
-// 		// delete the localite
-// 		return await ressource.findByIdAndDelete(id);
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
-
-// // GET
-// async function getRessourceByYear() {
-// 	try {
-// 		var today = new Date();
-// 		return await ressource
-// 			.find({ year: today.getFullYear() })
-// 			.populate({
-// 				path: 'csr',
-// 				select: '-password -email',
-// 			});
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
-
-// GET
-async function getRessourceByRegion(region) {
-	try {
-		var today = new Date(),
-			all = await ressource
-				.find({ year: today.getFullYear() })
-				.populate({
-					path: 'csr',
-					select: '-email',
-				}),
-			out = [];
-		for (let i = 0; i < all.length; i++) {
-			const element = all[i];
-			if (element.csr.region === region) {
-				out.push(element)
-			}
-		}
-		return out
-	} catch (error) {
-		console.log(error);
-		throw newError(500, "quelque chose s'est mal passé");
-	}
-}
-
 // GET BY PROVINCE
 async function getRessourceByProvince(province) {
 	try {
@@ -121,10 +70,47 @@ async function getRessourceByProvince(province) {
 	}
 }
 
+// GET
+async function getRessourceByRegion(region) {
+	try {
+		var today = new Date(),
+			all = await ressource.find({ year: today.getFullYear() }).populate({
+				path: 'csr',
+				select: '-email',
+			}),
+			out = [];
+		for (let i = 0; i < all.length; i++) {
+			const element = all[i];
+			if (element.csr.region === region) {
+				out.push(element);
+			}
+		}
+		return out;
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
+// GET
+async function getRessource() {
+	try {
+		var today = new Date();
+		return await ressource.find({ year: today.getFullYear() }).populate({
+			path: 'csr',
+			select: '-email',
+		});
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getRessourceByCsr,
 	addUpdateRessource,
 	getRessourceByProvince,
-	getRessourceByRegion
+	getRessourceByRegion,
+	getRessource
 };

@@ -4,15 +4,27 @@ $(document).ready(function () {
 		title = $('#title').text(),
 		// init data
 		dataFemmePriseCharge = wholeData.femmePriseCharge.data,
-		dataCpnNouvelleInscrite = wholeData.cpnNouvelleInscrite.data,
-		dataCpnAutreConsultation = wholeData.cpnAutreConsultation.data,
+		dataCpnNouvelleInscriteT1 = wholeData.cpnNouvelleInscriteT1.data,
+		dataCpnNouvelleInscriteT2 = wholeData.cpnNouvelleInscriteT2.data,
+		dataCpnNouvelleInscriteT3 = wholeData.cpnNouvelleInscriteT3.data,
+		dataCpnAncienneInscriteT1 = wholeData.cpnAncienneInscriteT1.data,
+		dataCpnAncienneInscriteT2 = wholeData.cpnAncienneInscriteT2.data,
+		dataCpnAncienneInscriteT3 = wholeData.cpnAncienneInscriteT3.data,
+		dataAutreConsultation = wholeData.autreConsultation.data,
 		dataFemmeExaminePostNatal = wholeData.femmeExaminePostNatal.data,
 		dataGahrDepiste = wholeData.garDepiste.data,
 		dataVat = wholeData.vat.data,
 		dataReference = wholeData.reference.data,
 		// other
+		scale = [
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		],
 		max = undefined,
-		scale = ['#BDFFAD', '#187a00'],
 		data = getData([dataFemmePriseCharge]),
 		table = 1;
 	// MAP
@@ -59,7 +71,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Région : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -75,36 +87,57 @@ $(document).ready(function () {
 			} else if (table === 2) {
 				label.html(
 					`
-					<div class="bg-white shadow-sm p-1 rounded">
-					<table class="table table-sm table-bordered fs-8 text-dark">
-						<tbody>
-							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
-							</tr>
-							
-							<tr>
-								<th colspan="2" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
+				<div class="bg-white shadow-sm p-1 rounded">
+				<table class="table table-sm table-bordered fs-8 text-dark">
+					<tbody>
+						<tr>
+							<th colspan="3" class="text-center">Province : ${label.html()}</th>
+						</tr>
+						
+						<tr>
+							<th colspan="3" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
 						data[code]
 					}</span></span></th>
-							</tr>
-							
-							<tr>
-								<td>Nouvelles inscrites</td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataCpnNouvelleInscrite[code]
-								}</span></td>
-							</tr>
-							
-							<tr>
-								<td>Autres consultations</td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataCpnAutreConsultation[code]
-								}</span></td>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-					`
+						</tr>
+						
+						<tr>
+							<th></th>
+							<th>Nouvelles inscrites</th>
+							<th>Anciennes inscrites</th>
+						</tr>
+						
+						<tr>
+							<td>T1</td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataCpnNouvelleInscriteT1[code]
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataCpnAncienneInscriteT1[code]
+							}</span></td>
+						</tr>
+						
+						<tr>
+							<td>T2</td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataCpnNouvelleInscriteT2[code]
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataCpnAncienneInscriteT2[code]
+							}</span></td>
+						</tr>
+						<tr>
+							<td>T3</td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataCpnNouvelleInscriteT3[code]
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataCpnAncienneInscriteT3[code]
+							}</span></td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				`
 				);
 			}
 		},
@@ -157,7 +190,14 @@ $(document).ready(function () {
 			data = getData([dataFemmePriseCharge]);
 			table = 1;
 		} else if (this.value === 'cpn') {
-			data = getData([dataCpnAutreConsultation, dataCpnNouvelleInscrite]);
+			data = getData([
+				dataCpnNouvelleInscriteT1,
+				dataCpnNouvelleInscriteT2,
+				dataCpnNouvelleInscriteT3,
+				dataCpnAncienneInscriteT1,
+				dataCpnAncienneInscriteT2,
+				dataCpnAncienneInscriteT3,
+			]);
 			table = 2;
 		} else if (this.value === 'femmeExaminePostNatal') {
 			data = getData([dataFemmeExaminePostNatal]);
@@ -165,8 +205,12 @@ $(document).ready(function () {
 		} else if (this.value === 'garDepiste') {
 			data = getData([dataGahrDepiste]);
 			table = 1;
-		} else if (this.value === 'vat') {
+		}
+		else if (this.value === 'vat') {
 			data = getData([dataVat]);
+			table = 1;
+		} else if (this.value === 'autreConsultation') {
+			data = getData([dataAutreConsultation]);
 			table = 1;
 		} else if (this.value === 'reference') {
 			data = getData([dataReference]);

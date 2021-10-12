@@ -121,6 +121,24 @@ async function getPlanificationFamilialeByRegion(region) {
 	}
 }
 
+// GET BY REGION
+async function getPlanificationFamiliale() {
+	try {
+		// variable
+		var today = new Date();
+		// get query
+		return await planificationFamiliale
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getPlanificationFamilialeBySortie,
@@ -129,5 +147,6 @@ module.exports = {
 	editPlanificationFamilialeById,
 	deletePlanificationFamilialeById,
 	getPlanificationFamilialeByProvince,
-	getPlanificationFamilialeByRegion
+	getPlanificationFamilialeByRegion,
+	getPlanificationFamiliale
 };

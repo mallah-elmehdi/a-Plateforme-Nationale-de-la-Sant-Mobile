@@ -9,7 +9,14 @@ $(document).ready(function () {
 		dataType = wholeData.type.data,
 		// other
 		max = undefined,
-		scale = ['#BDFFAD', '#187a00'],
+				scale = [
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		],
 		data = getDataType([dataType]),
 		table = 4;
 	// MAP
@@ -52,208 +59,258 @@ $(document).ready(function () {
 			if (table === 4) {
 				label.html(
 					`
-					<div class="bg-white rounded shadow-sm p-1">
-					<table class="table table-sm table-bordered fs-8 text-dark">
-						<tbody>
-							<tr>
-								<th colspan="6" class="text-center">${label.html()}</th>
-							</tr>
-							
-							<tr>
-								<th colspan="6" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
+				<div class="bg-white rounded shadow-sm p-1">
+				<table class="table table-sm table-bordered fs-8 text-dark">
+					<tbody>
+						<tr>
+							<th colspan="8" class="text-center">Région : ${label.html()}</th>
+						</tr>
+						
+						<tr>
+							<th colspan="8" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
 						data[code]
 					}</span></span></th>
-							</tr>
-							
-							<tr>
-								<th></th>
-								<th colspan="2" class="text-center">Ministère de la Santé</th>
-								<th colspan="2" class="text-center">Commune</th>
-								<th rowspan="2" class="text-center" style="vertical-align:middle;">Total</th>
-							</tr>
-							
-							<tr>
-								<th></th>
-								<th class="text-center">Moins 5ans</th>
-								<th class="text-center">Plus 5ans</th>
-								<th class="text-center">Moins 5ans</th>
-								<th class="text-center">Plus 5ans</th>
-							</tr>
-							
-							<tr>
-								<th>Ambulance</th>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].ambulance.appartenance.ms.age
-										.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].ambulance.appartenance.ms.age
-										.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].ambulance.appartenance
-										.commune.age.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].ambulance.appartenance
-										.commune.age.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].ambulance.appartenance.ms.age
-										.moins5ans +
-									dataType[code].ambulance.appartenance.ms.age
-										.plus5ans +
-									dataType[code].ambulance.appartenance
-										.commune.age.moins5ans +
-									dataType[code].ambulance.appartenance
-										.commune.age.plus5ans
-								}</span></td>
-							</tr>
-							
-							<tr>
-								<th>Camion mobile</th>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].camionMobile.appartenance.ms
-										.age.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].camionMobile.appartenance.ms
-										.age.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].camionMobile.appartenance
-										.commune.age.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].camionMobile.appartenance
-										.commune.age.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].camionMobile.appartenance.ms
-										.age.moins5ans +
-									dataType[code].camionMobile.appartenance.ms
-										.age.plus5ans +
-									dataType[code].camionMobile.appartenance
-										.commune.age.moins5ans +
-									dataType[code].camionMobile.appartenance
-										.commune.age.plus5ans
-								}</span></td>
-							</tr>
-							
-							<tr>
-								<th>Unité Sanitaire Mobile (USM)</th>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].usm.appartenance.ms
-										.age.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].usm.appartenance.ms
-										.age.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].usm.appartenance
-										.commune.age.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].usm.appartenance
-										.commune.age.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].usm.appartenance.ms
-										.age.moins5ans +
-									dataType[code].usm.appartenance.ms
-										.age.plus5ans +
-									dataType[code].usm.appartenance
-										.commune.age.moins5ans +
-									dataType[code].usm.appartenance
-										.commune.age.plus5ans
-								}</span></td>
-							</tr>
-							
-							<tr>
-								<th>VTT</th>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].vtt.appartenance.ms.age
-										.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].vtt.appartenance.ms.age
-										.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].vtt.appartenance.commune.age
-										.moins5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].vtt.appartenance.commune.age
-										.plus5ans
-								}</span></td>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataType[code].vtt.appartenance.ms.age
-										.moins5ans +
-									dataType[code].vtt.appartenance.ms.age
-										.plus5ans +
-									dataType[code].vtt.appartenance.commune.age
-										.moins5ans +
-									dataType[code].vtt.appartenance.commune.age
-										.plus5ans
-								}</span></td>
-							</tr>
-							
-						</tbody>
-					</table>
-					</div>
-					`
+						</tr>
+						
+						<tr>
+							<th></th>
+							<th colspan="2" class="text-center">Ministère de la Santé</th>
+							<th colspan="2" class="text-center">Commune</th>
+							<th colspan="2" class="text-center">Organisation Non Gouvernementale (ONG)</th>
+							<th rowspan="2" class="text-center" style="vertical-align:middle;">Total</th>
+						</tr>
+						
+						<tr>
+							<th></th>
+							<th class="text-center">Moins 5ans</th>
+							<th class="text-center">Plus 5ans</th>
+							<th class="text-center">Moins 5ans</th>
+							<th class="text-center">Plus 5ans</th>
+							<th class="text-center">Moins 5ans</th>
+							<th class="text-center">Plus 5ans</th>
+						</tr>
+						
+						<tr>
+							<th>Ambulance</th>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].ambulance.appartenance.ms.age
+									.moins5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].ambulance.appartenance.ms.age
+									.plus5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].ambulance.appartenance
+									.commune.age.moins5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].ambulance.appartenance
+									.commune.age.plus5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].ambulance.appartenance.ong
+									.age.moins5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].ambulance.appartenance.ong
+									.age.plus5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].ambulance.appartenance.ms.age
+									.moins5ans +
+								dataType[code].ambulance.appartenance.ms.age
+									.plus5ans +
+								dataType[code].ambulance.appartenance
+									.commune.age.moins5ans +
+								dataType[code].ambulance.appartenance
+									.commune.age.plus5ans +
+								dataType[code].ambulance.appartenance.ong
+									.age.moins5ans +
+								dataType[code].ambulance.appartenance.ong
+									.age.plus5ans
+							}</span></td>
+						</tr>
+						
+						<tr>
+							<th>Camion mobile</th>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].camionMobile.appartenance.ms
+									.age.moins5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].camionMobile.appartenance.ms
+									.age.plus5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].camionMobile.appartenance
+									.commune.age.moins5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].camionMobile.appartenance
+									.commune.age.plus5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].camionMobile.appartenance.ong
+									.age.moins5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].camionMobile.appartenance.ong
+									.age.plus5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].camionMobile.appartenance.ms
+									.age.moins5ans +
+								dataType[code].camionMobile.appartenance.ms
+									.age.plus5ans +
+								dataType[code].camionMobile.appartenance
+									.commune.age.moins5ans +
+								dataType[code].camionMobile.appartenance
+									.commune.age.plus5ans +
+								dataType[code].camionMobile.appartenance.ong
+									.age.moins5ans +
+								dataType[code].camionMobile.appartenance.ong
+									.age.plus5ans
+							}</span></td>
+						</tr>
+						
+						<tr>
+							<th>Unité Sanitaire Mobile (USM)</th>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].usm.appartenance.ms.age
+									.moins5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].usm.appartenance.ms.age
+									.plus5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].usm.appartenance.commune.age
+									.moins5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].usm.appartenance.commune.age
+									.plus5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].usm.appartenance.ong.age
+									.moins5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].usm.appartenance.ong.age
+									.plus5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].usm.appartenance.ms.age
+									.moins5ans +
+								dataType[code].usm.appartenance.ms.age
+									.plus5ans +
+								dataType[code].usm.appartenance.commune.age
+									.moins5ans +
+								dataType[code].usm.appartenance.commune.age
+									.plus5ans +
+								dataType[code].usm.appartenance.ong.age
+									.moins5ans +
+								dataType[code].usm.appartenance.ong.age
+									.plus5ans
+							}</span></td>
+						</tr>
+						
+						<tr>
+							<th>Véhicule Tout Terrain (VTT)</th>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].vtt.appartenance.ms.age
+									.moins5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].vtt.appartenance.ms.age
+									.plus5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].vtt.appartenance.commune.age
+									.moins5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].vtt.appartenance.commune.age
+									.plus5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].vtt.appartenance.ong.age
+									.moins5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].vtt.appartenance.ong.age
+									.plus5ans
+							}</span></td>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataType[code].vtt.appartenance.ms.age
+									.moins5ans +
+								dataType[code].vtt.appartenance.ms.age
+									.plus5ans +
+								dataType[code].vtt.appartenance.commune.age
+									.moins5ans +
+								dataType[code].vtt.appartenance.commune.age
+									.plus5ans +
+								dataType[code].vtt.appartenance.ong.age
+									.moins5ans +
+								dataType[code].vtt.appartenance.ong.age
+									.plus5ans
+							}</span></td>
+						</tr>
+						
+					</tbody>
+				</table>
+				</div>
+				`
 				);
 			} else if (table === 2) {
 				label.html(
 					`
-					<div class="bg-white rounded shadow-sm p-1">
-					<table class="table table-sm table-bordered fs-8 text-dark">
-						<tbody>
-							<tr>
-								<th colspan="6" class="text-center">${label.html()}</th>
-							</tr>
-							
-							<tr>
-								<th>Total kilométrage à parcourir</th>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataBudgetKmsParcourir[code]
-								} km</span></td>
-							</tr>
-							
-							<tr>
-								<th>Besoin en carburant</th>
-								<td class="fs-7 text-center"><span class="badge bg-5">${
-									dataBudgetBesoinCarburant[code]
-								} DH</span></td>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-					`
+				<div class="bg-white rounded shadow-sm p-1">
+				<table class="table table-sm table-bordered fs-8 text-dark">
+					<tbody>
+						<tr>
+							<th colspan="6" class="text-center">Région : ${label.html()}</th>
+						</tr>
+						
+						<tr>
+							<th>Total kilométrage à parcourir</th>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataBudgetKmsParcourir[code]
+							} km</span></td>
+						</tr>
+						
+						<tr>
+							<th>Besoin en carburant</th>
+							<td class="fs-7 text-center"><span class="badge bg-5">${
+								dataBudgetBesoinCarburant[code]
+							} MAD</span></td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				`
 				);
-			}
-			else if (table === 1) {
+			} else if (table === 1) {
 				label.html(
 					`
-					<div class="bg-white rounded shadow-sm p-1">
-					<table class="table table-sm table-bordered fs-8 text-dark">
-						<tbody>							
-							<tr>
-								<th colspan="6" class="text-center">${label.html()}</th>
-							</tr>
-							
-							<tr>
-								<th colspan="6" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
+				<div class="bg-white rounded shadow-sm p-1">
+				<table class="table table-sm table-bordered fs-8 text-dark">
+					<tbody>							
+						<tr>
+							<th colspan="6" class="text-center">Région : ${label.html()}</th>
+						</tr>
+						
+						<tr>
+							<th colspan="6" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
 						data[code]
 					}</span></span></th>
-							</tr>
-						
-						</tbody>
-					</table>
-					</div>
-					`
+						</tr>
+					
+					</tbody>
+				</table>
+				</div>
+				`
 				);
 			}
 		},
@@ -279,12 +336,14 @@ $(document).ready(function () {
 			for (const key in dataElement) {
 				for (const key1 in dataElement[key]) {
 					data[key] +=
-						dataElement[key][key1].appartenance.ms.age.moins5ans +
-						dataElement[key][key1].appartenance.ms.age.plus5ans +
-						dataElement[key][key1].appartenance.commune.age
-							.moins5ans +
-						dataElement[key][key1].appartenance.commune.age
-							.plus5ans;
+					dataElement[key][key1].appartenance.ms.age.moins5ans +
+					dataElement[key][key1].appartenance.ms.age.plus5ans +
+					dataElement[key][key1].appartenance.commune.age
+						.moins5ans +
+					dataElement[key][key1].appartenance.commune.age
+						.plus5ans +
+					dataElement[key][key1].appartenance.ong.age.moins5ans +
+					dataElement[key][key1].appartenance.ong.age.plus5ans;
 				}
 			}
 		}

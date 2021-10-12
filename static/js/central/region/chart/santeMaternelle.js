@@ -5,8 +5,13 @@ $(document).ready(function () {
 		type = '',
 		// init data
 		dataFemmePriseCharge = wholeData.femmePriseCharge.data,
-		dataCpnNouvelleInscrite = wholeData.cpnNouvelleInscrite.data,
-		dataCpnAutreConsultation = wholeData.cpnAutreConsultation.data,
+		dataCpnNouvelleInscriteT1 = wholeData.cpnNouvelleInscriteT1.data,
+		dataCpnNouvelleInscriteT2 = wholeData.cpnNouvelleInscriteT2.data,
+		dataCpnNouvelleInscriteT3 = wholeData.cpnNouvelleInscriteT3.data,
+		dataCpnAncienneInscriteT1 = wholeData.cpnAncienneInscriteT1.data,
+		dataCpnAncienneInscriteT2 = wholeData.cpnAncienneInscriteT2.data,
+		dataCpnAncienneInscriteT3 = wholeData.cpnAncienneInscriteT3.data,
+		dataAutreConsultation = wholeData.autreConsultation.data,
 		dataFemmeExaminePostNatal = wholeData.femmeExaminePostNatal.data,
 		dataGahrDepiste = wholeData.garDepiste.data,
 		dataVat = wholeData.vat.data,
@@ -114,8 +119,12 @@ $(document).ready(function () {
 				var element = region[i];
 				data.data.push(
 					getData([
-						dataCpnAutreConsultation[element.codeRegion],
-						dataCpnNouvelleInscrite[element.codeRegion],
+						dataCpnNouvelleInscriteT1[element.codeRegion],
+						dataCpnNouvelleInscriteT2[element.codeRegion],
+						dataCpnNouvelleInscriteT3[element.codeRegion],
+						dataCpnAncienneInscriteT1[element.codeRegion],
+						dataCpnAncienneInscriteT2[element.codeRegion],
+						dataCpnAncienneInscriteT3[element.codeRegion],
 					])
 				);
 				data.categories.push(element.region);
@@ -125,9 +134,7 @@ $(document).ready(function () {
 			for (let i = 0; i < region.length; i++) {
 				var element = region[i];
 				data.data.push(
-					getData([
-						dataFemmeExaminePostNatal[element.codeRegion],
-					])
+					getData([dataFemmeExaminePostNatal[element.codeRegion]])
 				);
 				data.categories.push(element.region);
 			}
@@ -135,22 +142,21 @@ $(document).ready(function () {
 		} else if (this.value === 'garDepiste') {
 			for (let i = 0; i < region.length; i++) {
 				var element = region[i];
-				data.data.push(
-					getData([
-						dataGahrDepiste[element.codeRegion],
-					])
-				);
+				data.data.push(getData([dataGahrDepiste[element.codeRegion]]));
+				data.categories.push(element.region);
+			}
+			type = '';
+		} else if (this.value === 'autreConsultation') {
+			for (let i = 0; i < region.length; i++) {
+				var element = region[i];
+				data.data.push(getData([dataAutreConsultation[element.codeRegion]]));
 				data.categories.push(element.region);
 			}
 			type = '';
 		} else if (this.value === 'vat') {
 			for (let i = 0; i < region.length; i++) {
 				var element = region[i];
-				data.data.push(
-					getData([
-						dataVat[element.codeRegion],
-					])
-				);
+				data.data.push(getData([dataVat[element.codeRegion]]));
 				data.categories.push(element.region);
 			}
 			type = '';

@@ -59,9 +59,6 @@ block main
 							input.form-check-input.me-1(type='radio' name='data' value='raa')
 							span RAA
 						li.list-group-item.dropdown-item
-							input.form-check-input.me-1(type='radio' name='data' value='cancer')
-							span Cancer
-						li.list-group-item.dropdown-item
 							input.form-check-input.me-1(type='radio' name='data' value='tuberculose')
 							span Tuberculose
 		//- ---------------- map
@@ -71,17 +68,15 @@ block main
 					.col-12
 						.d-flex.align-items-center.fs-7
 							<ion-icon name="stats-chart-outline"  class="me-2 text-1"></ion-icon>
-							span.text-dark  Maladies dépistées - Diabète
+							span.text-dark  Maladies dépistées
 					.col-12
-						span#title.badge.bg-5 
+						span#title.badge.bg-5 Diabète
 					.col-12.thisRegion
 						#dataRegion(data-carte=JSON.stringify(data.carte.region))
 							#region-map(style="width: 100%; height: 400px")
 					.col-12.thisProvince
 						#dataProvince(data-carte=JSON.stringify(data.carte.province))
 							#province-map(style="width: 100%; height: 400px;")
-					.col-12
-						span#title.badge.bg-5 
 					.col-12.thisRegion
 						#region-chart(data-region=JSON.stringify(region))
 					.col-12.thisProvince

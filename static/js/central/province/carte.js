@@ -10,7 +10,15 @@ $(document).ready(function () {
 		max = type === '%' ? 100 : undefined,
 		scale =
 			type === '%'
-				? ['#FE8989', '#FCFE89', '#6ED369']
+				? [
+			'#FF4646',
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		];
 				: ['#BDFFAD', '#187a00'];
 	// MAP
 	$('#province-map').vectorMap({

@@ -126,7 +126,7 @@ $(document).ready(function () {
 				);
 				data.categories.push(element.region);
 			}
-			type = ' DH';
+			type = ' MAD';
 		} else if (this.value === 'besoinUsm') {
 			for (let i = 0; i < region.length; i++) {
 				var element = region[i];

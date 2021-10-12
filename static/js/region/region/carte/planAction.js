@@ -549,7 +549,15 @@ $(document).ready(function () {
 		title = "Taux de remplissage du plan d'action",
 		// other
 		max = 100,
-		scale = ['#FE8989', '#FCFE89', '#6ED369'];
+		scale = [
+			'#FF4646',
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		];;
 	// MAP
 	$('#region-map').vectorMap({
 		map: 'region',

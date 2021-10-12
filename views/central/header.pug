@@ -1,14 +1,32 @@
 header
-	nav.bg-white.p-2.w-100
-		.container-fluid.d-flex.justify-content-between
-			button#aside-btn.btn.p-0.m-0.text-1
-				ion-icon.fs-4(name='menu-outline')
-			div
-				a.btn.btn-sm.bg-5.me-2(href= '/central/' + data.document.id + '/settings')
-					.d-flex.align-items-center.text-white
-						ion-icon.fs-7(name='cog-outline')
-						span.ms-1.fs-8.rm-mobile paramètres
-				a.btn.btn-sm.bg-5(href='/sign-out')
-					.d-flex.align-items-center.text-white
-						ion-icon.fs-7(name='log-out-outline')
-						span.ms-1.fs-8.rm-mobile se déconnecter
+	-var today = new Date()
+	-var thisYear = today.getFullYear()
+	nav.card.w-100
+		.card-body.border-bottom
+			.d-flex.justify-content-between.align-items-center
+				button#aside-btn.btn.btn-sm.p-1.text-1
+					ion-icon.align-middle.fs-4(name='menu-outline')
+				.d-flex.align-items-center
+					//- change password 
+					a.btn.btn-sm.bg-5.px-2.me-2(href= '/central/' + data.document.id + '/changer-le-mot-de-passe')
+						.d-flex.align-items-center.text-white
+							ion-icon.fs-7(name='cog-outline' class="align-middle")
+							span.ms-1.fs-8.rm-mobile changer le mot de passe
+					//- log out
+					a.btn.btn-sm.bg-5.px-2(href='/sign-out')
+						.d-flex.align-items-center.text-white
+							ion-icon.fs-7(name='log-out-outline' class="align-middle")
+							span.ms-1.fs-8.rm-mobile se déconnecter
+		.card-body.pb-1
+			.d-flex.align-items-center.flex-wrap
+				if (data.document.region)
+					span.rounded.bg-3.p-1.fs-8.text-dark.me-2.fw-normal.lh-1.mb-2= 'Direction Régionale de la Santé  : ' + data.document.region 
+					if (data.document.province)
+						span.rounded.bg-3.p-1.fs-8.text-dark.me-2.fw-normal.lh-1.mb-2= 'Délégation du Ministère de la Santé : ' + data.document.province
+					if (data.document.csr)
+						span.rounded.bg-3.p-1.fs-8.text-dark.me-2.fw-normal.lh-1.mb-2= 'Centre de santé (' + data.document.category + ') : ' + data.document.csr
+				else
+					span.rounded.bg-3.p-1.fs-8.text-dark.me-2.fw-normal.mb-2.lh-1= 'Ministère de la Santé'
+					span.rounded.bg-3.p-1.fs-8.text-dark.me-2.fw-normal.mb-2.lh-1= 'Direction de la Population'
+					span.rounded.bg-3.p-1.fs-8.text-dark.me-2.fw-normal.mb-2.lh-1= 'Service de la Coordination et de la Collaboration Intersectorielle'
+				span.rounded.bg-3.p-1.fs-8.text-dark.me-2.fw-normal.lh-1.mb-2= 'Année : ' + thisYear

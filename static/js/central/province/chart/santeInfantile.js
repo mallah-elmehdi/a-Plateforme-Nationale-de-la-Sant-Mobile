@@ -5,11 +5,15 @@ $(document).ready(function () {
 		type = '',
 		// init data
 		dataEnfantPrisesCharge = wholeData.enfantPrisesCharge.data,
-		dataVaccinationPentavalent = wholeData.vaccinationDtc3Hib3.data,
-		dataVaccinationRr = wholeData.vaccinationVar.data,
+		dataVaccinationPentavalent = wholeData.vaccinationPentavalent.data,
+		dataVaccinationRr = wholeData.vaccinationRr.data,
+		dataVaccinationBcg = wholeData.vaccinationBcg.data,
 		dataVitamineA = wholeData.vitamineA.data,
 		dataVitamineD = wholeData.vitamineD.data,
-		dataPesee = wholeData.pesee.data,
+		dataEnfantsAvecInsuffisancePonderale =
+			wholeData.enfantsAvecInsuffisancePonderale.data,
+		dataEnfantsAvecRetardCroissance =
+			wholeData.enfantsAvecRetardCroissance.data,
 		dataDiarrhe = wholeData.diarrhe.data,
 		dataIra = wholeData.ira.data,
 		dataReference = wholeData.reference.data,
@@ -118,6 +122,7 @@ $(document).ready(function () {
 					getData([
 						dataVaccinationPentavalent[element.codeProvince],
 						dataVaccinationRr[element.codeProvince],
+						dataVaccinationBcg[element.codeProvince]
 					])
 				);
 				data.categories.push(element.province);
@@ -126,9 +131,7 @@ $(document).ready(function () {
 		} else if (this.value === 'vitamineA') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-				data.data.push(
-					getData([dataVitamineA[element.codeProvince]])
-				);
+				data.data.push(getData([dataVitamineA[element.codeProvince]]));
 				data.categories.push(element.province);
 			}
 			type = '';
@@ -139,10 +142,17 @@ $(document).ready(function () {
 				data.categories.push(element.province);
 			}
 			type = '';
-		} else if (this.value === 'pesee') {
+		} else if (this.value === 'enfantsAvecInsuffisancePonderale') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-				data.data.push(getData([dataPesee[element.codeProvince]]));
+				data.data.push(getData([dataEnfantsAvecInsuffisancePonderale[element.codeProvince]]));
+				data.categories.push(element.province);
+			}
+			type = '';
+		} else if (this.value === 'enfantsAvecRetardCroissance') {
+			for (let i = 0; i < province.length; i++) {
+				var element = province[i];
+				data.data.push(getData([dataEnfantsAvecRetardCroissance[element.codeProvince]]));
 				data.categories.push(element.province);
 			}
 			type = '';
@@ -174,5 +184,5 @@ $(document).ready(function () {
 			},
 		]);
 	});
-	$('.thisProvince').addClass('d-none')
+	$('.thisProvince').addClass('d-none');
 });

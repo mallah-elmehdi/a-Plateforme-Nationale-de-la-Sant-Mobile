@@ -1,0 +1,53 @@
+extends profile
+
+block head
+
+block tail
+	script(type="module" src="/../../js/util/validation.js")
+	script(type="module" src="/../../js/central/addImage.js")
+
+block main
+	//- FUNCTION
+	-function getValue(object, key) {var list = key.split('[');if (!object) return '';for (let i = 0; i < list.length; i++) {if (list[i].includes(']')) {list[i] = list[i].slice(0, -1);}object = object[list[i]];}return object;}
+	//- VARIABLES
+	-var document = data.document
+	//- LAYOUTS
+	.row.g-3
+		.col-12
+			.card.bg-grd.p-2.fs-7.text-white.fw-bold.text-center Article et Actualité
+		.col-12
+			section.card.card-body
+				//- *** form *** -//
+				form(action=url, method="post" enctype="multipart/form-data")
+					.row.g-3
+						//- *** title *** -//
+						.col-12
+							.d-flex.align-items-center
+								<ion-icon name="reader-outline" class="fs-5 me-2 text-1"></ion-icon>
+								.fs-6.text-dark Ajouter un article
+						//- *** inputs *** -//
+						.col-12
+							.d-flex.align-items-center.mb-2
+								.d-flex.align-items-center.me-2
+									<ion-icon name="ellipse" class="text-1 me-1 fs-9"></ion-icon>
+									.badge.p-0.text-dark.fs-7 article
+								hr.my-1.w-100
+							.row.g-3
+								.col-md-6
+									label.form-label.text-dark.fs-7(for='title') Titre de l'article
+									input.form-control.form-control-sm(type='text' id='title' placeholder='Titre de l\'article' name='title' required)
+									.invalid-feedback.fs-8
+								.col-12
+									label.form-label.text-dark.fs-7(for='text') Détails de l'article
+									textarea.form-control.form-control-sm(type='text' id='text' rows="5" placeholder='Détails de l\'article' name='text' required)
+									.invalid-feedback.fs-8
+								.col-md-6 
+									label.form-label.text-dark.fs-7(for='image') Ajouter une image
+									<input class="form-control form-control-sm" id="image" name="image" type="file" required>
+									.invalid-feedback.fs-8
+								.col-12#preview.d-none
+									.border.rounded.card-body
+										img.w-100#imagePreview(src="", alt="image")
+									button#remove.btn.text-danger.p-0.mt-2(type="button") supprimer l'image
+						.col-12
+							button.btn.btn-sm.bg-grd(type="submit") Enregistrer 

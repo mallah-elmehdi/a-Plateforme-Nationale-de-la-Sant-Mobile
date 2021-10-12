@@ -1,7 +1,7 @@
 // SET UP
 const fs = require('fs');
 const centralData = require('../../../data/central');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const planificationFamilialeData = require('../../../data/csr/rapport/planificationFamiliale');
 
 // ERROR
 const { newError } = require('../../../util/error');
@@ -179,7 +179,7 @@ async function dataRegion() {
 					},
 				},
 			},
-			planificationFamiliale = await rapportData.getRapportByYear('planificationFamiliale');
+			planificationFamiliale = await planificationFamilialeData.getPlanificationFamiliale();
 		// ------------------------
 		// region
 		for (let i = 0; i < region.length; i++) {
@@ -1004,7 +1004,7 @@ async function dataProvince() {
 				},
 
 			},
-			planificationFamiliale = await rapportData.getRapportByYear('planificationFamiliale');
+			planificationFamiliale = await planificationFamilialeData.getPlanificationFamiliale();
 		// ------------------------
 		// province
 		for (let i = 0; i < province.length; i++) {
@@ -1055,7 +1055,7 @@ async function planificationFamiliale(req, res, next) {
 			data,
 			region,
 			province,
-			page: 'dashboard',
+			page: 'prestation',
 			listItem: 'planificationFamiliale',
 		});
 	} catch (error) {

@@ -39,8 +39,8 @@ async function dataRegion() {
 					},
 				},
 			},
-			pdr = await programmeData.getProgrammeByYear(),
-			pdrVisite = await pdrVisiteData.getPdrVisiteByYear(),
+			pdr = await programmeData.getProgramme(),
+			pdrVisite = await pdrVisiteData.getPdrVisite(),
 			listRegion = {
 				1: [],
 				2: [],
@@ -56,19 +56,15 @@ async function dataRegion() {
 				12: [],
 			};
 		// ------------------------
-		// csr
-		for (let i = 0; i < csr.length; i++) {
-			var csrElement = csr[i],
-				pdrProgramme = 0,
+		// region
+		for (let i = 0; i < region.length; i++) {
+			const regionElement = region[i];
+			var pdrProgramme = 0,
 				pdrRealise = 0;
 			// pdr
 			for (let j = 0; j < pdr.length; j++) {
 				var pdrElement = pdr[j];
-				if (
-					csrElement.region === pdrElement.csr.region &&
-					csrElement.province === pdrElement.csr.province &&
-					csrElement.name === pdrElement.csr.csr
-				) {
+				if (regionElement.region == pdrElement.csr.region) {
 					pdrProgramme +=
 						pdrElement.t1 +
 						pdrElement.t2 +
@@ -76,39 +72,29 @@ async function dataRegion() {
 						pdrElement.t4;
 					// pdr visite
 					for (let k = 0; k < pdrVisite.length; k++) {
-						for (
-							let l = 0;
-							l < pdrVisite[k].pdrVisite.length;
-							l++
-						) {
-							var pdrVisiteElement = pdrVisite[k].pdrVisite[l];
-							if (pdrElement.id === pdrVisiteElement.id) {
-								pdrRealise++;
-							}
+						var pdrVisiteElement = pdrVisite[k].pdrVisite;
+						if (pdrElement.id === pdrVisiteElement.id) {
+							pdrRealise++;
 						}
 					}
 				}
 			}
-			for (let m = 0; m < region.length; m++) {
-				var regionElement = region[m];
-				if (csrElement.region === regionElement.region) {
-					if (!pdrRealise) {
-						listRegion[regionElement.codeRegion].push(0);
-					} else {
-						listRegion[regionElement.codeRegion].push(
-							parseFloat(pdrRealise / pdrProgramme) * 100
-						);
-					}
-				}
+			if (!pdrRealise || !pdrElement) {
+				listRegion[regionElement.codeRegion].push(0);
+			} else {
+				listRegion[regionElement.codeRegion].push(
+					Math.ceil((pdrRealise / pdrProgramme) * 100)
+				);
 			}
 		}
 		for (const key in listRegion) {
 			var element = listRegion[key],
-				sum = 0;
+				sum = 0,
+				num = 0;
 			for (let n = 0; n < element.length; n++) {
 				sum += element[n];
 			}
-			var num = parseFloat(sum / element.length);
+			if (element.length) num = Math.ceil(sum / element.length);
 			if (num < 1 && num > 0) {
 				data.pdrVisite.data[key] = num.toFixed(1);
 			} else {
@@ -205,9 +191,9 @@ async function dataProvince() {
 					},
 				},
 			},
-			pdr = await programmeData.getProgrammeByYear(),
-			pdrVisite = await pdrVisiteData.getPdrVisiteByYear(),
-			listProvince = {
+			pdr = await programmeData.getProgramme(),
+			pdrVisite = await pdrVisiteData.getPdrVisite(),
+			listRegion = {
 				1: [],
 				2: [],
 				3: [],
@@ -285,19 +271,15 @@ async function dataProvince() {
 				75: [],
 			};
 		// ------------------------
-		// csr
-		for (let i = 0; i < csr.length; i++) {
-			var csrElement = csr[i],
-				pdrProgramme = 0,
+		// province
+		for (let i = 0; i < province.length; i++) {
+			const provinceElement = province[i];
+			var pdrProgramme = 0,
 				pdrRealise = 0;
 			// pdr
 			for (let j = 0; j < pdr.length; j++) {
 				var pdrElement = pdr[j];
-				if (
-					csrElement.region === pdrElement.csr.region &&
-					csrElement.province === pdrElement.csr.province &&
-					csrElement.name === pdrElement.csr.csr
-				) {
+				if (provinceElement.province == pdrElement.csr.province) {
 					pdrProgramme +=
 						pdrElement.t1 +
 						pdrElement.t2 +
@@ -305,47 +287,33 @@ async function dataProvince() {
 						pdrElement.t4;
 					// pdr visite
 					for (let k = 0; k < pdrVisite.length; k++) {
-						for (
-							let l = 0;
-							l < pdrVisite[k].pdrVisite.length;
-							l++
-						) {
-							var pdrVisiteElement = pdrVisite[k].pdrVisite[l];
-							if (pdrElement.id === pdrVisiteElement.id) {
-								pdrRealise++;
-							}
+						var pdrVisiteElement = pdrVisite[k].pdrVisite;
+						if (pdrElement.id === pdrVisiteElement.id) {
+							pdrRealise++;
 						}
 					}
 				}
 			}
-			for (let m = 0; m < province.length; m++) {
-				var provinceElement = province[m];
-				if (csrElement.province === provinceElement.province) {
-					if (!pdrRealise) {
-						listProvince[provinceElement.codeProvince].push(0);
-					} else {
-						listProvince[provinceElement.codeProvince].push(
-							parseFloat(pdrRealise / pdrProgramme) * 100
-						);
-					}
-				}
+			if (!pdrRealise || !pdrElement) {
+				listRegion[provinceElement.codeProvince].push(0);
+			} else {
+				listRegion[provinceElement.codeProvince].push(
+					Math.ceil((pdrRealise / pdrProgramme) * 100)
+				);
 			}
 		}
-		for (const key in listProvince) {
-			var element = listProvince[key],
-				sum = 0;
+		for (const key in listRegion) {
+			var element = listRegion[key],
+				sum = 0,
+				num = 0;
 			for (let n = 0; n < element.length; n++) {
 				sum += element[n];
 			}
-			if (element.length) {
-				var num = parseFloat(sum / element.length);
-				if (num < 1 && num > 0) {
-					data.pdrVisite.data[key] = num.toFixed(1);
-				} else {
-					data.pdrVisite.data[key] = parseInt(num);
-				}
+			if (element.length) num = Math.ceil(sum / element.length);
+			if (num < 1 && num > 0) {
+				data.pdrVisite.data[key] = num.toFixed(1);
 			} else {
-				data.pdrVisite.data[key] = 0;
+				data.pdrVisite.data[key] = parseInt(num);
 			}
 		}
 		return data;
@@ -377,7 +345,7 @@ async function pdrVisite(req, res, next) {
 			data,
 			region,
 			province,
-			page: 'dashboard',
+			page: 'performance',
 			listItem: 'pdrVisite',
 		});
 	} catch (error) {

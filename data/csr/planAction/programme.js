@@ -48,31 +48,6 @@ async function deleteProgrammeById(id) {
 	}
 }
 
-async function getProgrammeByRegion(region) {
-	try {
-		var today = new Date(),
-			all = await programme
-				.find({
-					year: today.getFullYear(),
-				})
-				.populate({
-					path: 'csr',
-					select: '-email',
-				}),
-			out = [];
-		for (let i = 0; i < all.length; i++) {
-			const element = all[i];
-			if (element.csr.region === region) {
-				out.push(element);
-			}
-		}
-		return out
-	} catch (error) {
-		console.log(error);
-		throw newError(500, "quelque chose s'est mal passé");
-	}
-}
-
 // GET BY PROVINCE
 async function getProgrammeByProvince(province) {
 	try {
@@ -100,7 +75,7 @@ async function getProgrammeByProvince(province) {
 	}
 }
 
-async function getProgrammeByProvinceAndYear(province) {
+async function getProgrammeByRegion(region) {
 	try {
 		var today = new Date(),
 			all = await programme
@@ -109,12 +84,12 @@ async function getProgrammeByProvinceAndYear(province) {
 				})
 				.populate({
 					path: 'csr',
-					select: '-email -password',
+					select: '-email',
 				}),
 			out = [];
 		for (let i = 0; i < all.length; i++) {
 			const element = all[i];
-			if (element.csr.province === province) {
+			if (element.csr.region === region) {
 				out.push(element);
 			}
 		}
@@ -125,52 +100,23 @@ async function getProgrammeByProvinceAndYear(province) {
 	}
 }
 
-// // GET BY LOCALITE
-// async function getProgrammeByCsrAndLocaliteAndYear(csr, localite, year) {
-// 	try {
-// 		return await programme
-// 			.find({
-// 				csr,
-// 				year,
-// 				localite,
-// 			})
-// 			.select('-csr')
-// 			.populate('localite');
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
-
-// // ADD LOCALTE
-// async function addUpdateLocalite(body, csr, id) {
-// 	try {
-// 		var today = new Date();
-// 		// add csr to the body object
-// 		body.csr = csr;
-// 		body.year = today.getFullYear();
-// 		// check if the id is null
-// 		if (id) {
-// 			return await localite.findByIdAndUpdate(id, body);
-// 		}
-// 		// check if the id is not null
-// 		return await localite.create(body);
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
-
-// // DELETE LOCALTE
-// async function deleteLocaliteById(id) {
-// 	try {
-// 		// delete the localite
-// 		return await localite.findByIdAndDelete(id);
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
+// R
+async function getProgramme() {
+	try {
+		var today = new Date();
+		return await programme
+			.find({
+				year: today.getFullYear(),
+			})
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
 
 // OUTPUT
 module.exports = {
@@ -179,7 +125,5 @@ module.exports = {
 	deleteProgrammeById,
 	getProgrammeByProvince,
 	getProgrammeByRegion,
-	// getProgrammeByCsrAndLocaliteAndYear,
-	// getProgrammeByProvinceAndYear,
-	// addUpdateLocalite,
+	getProgramme
 };

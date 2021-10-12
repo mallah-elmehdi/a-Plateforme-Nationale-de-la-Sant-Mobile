@@ -31,23 +31,11 @@ $(document).ready(function () {
 		dataRaaSansCarditesCas = wholeData.raaSansCarditesCas.data,
 		dataRaaSansCarditesCasPec = wholeData.raaSansCarditesCasPec.data,
 		dataRaaSansCarditesReference = wholeData.raaSansCarditesReference.data,
-		dataCancerSeinCas = wholeData.cancerSeinCas.data,
-		dataCancerSeinCasPec = wholeData.cancerSeinCasPec.data,
-		dataCancerSeinReference = wholeData.cancerSeinReference.data,
-		dataCancerColCas = wholeData.cancerColCas.data,
-		dataCancerColCasPec = wholeData.cancerColCasPec.data,
-		dataCancerColReference = wholeData.cancerColReference.data,
 		dataTuberculosePolmonaireCas = wholeData.tuberculosePolmonaireCas.data,
 		dataTuberculosePolmonaireCasPec =
 			wholeData.tuberculosePolmonaireCasPec.data,
 		dataTuberculosePolmonaireReference =
 			wholeData.tuberculosePolmonaireReference.data,
-		dataTuberculoseExtraPolmonaireCas =
-			wholeData.tuberculoseExtraPolmonaireCas.data,
-		dataTuberculoseExtraPolmonaireCasPec =
-			wholeData.tuberculoseExtraPolmonaireCasPec.data,
-		dataTuberculoseExtraPolmonaireReference =
-			wholeData.tuberculoseExtraPolmonaireReference.data,
 		data = {
 			data: [],
 			categories: [],
@@ -255,24 +243,7 @@ $(document).ready(function () {
 				data.categories.push(element.region);
 			}
 			type = ''
-		} else if (this.value === 'cancer') {
-			
-			for (let i = 0; i < region.length; i++) {
-				var element = region[i];
-				data.data.push(
-					getData([
-						dataCancerSeinCas[element.codeRegion],
-						dataCancerSeinCasPec[element.codeRegion],
-						dataCancerSeinReference[element.codeRegion],
-						dataCancerColCas[element.codeRegion],
-						dataCancerColCasPec[element.codeRegion],
-						dataCancerColReference[element.codeRegion],
-					])
-				);
-				data.categories.push(element.region);
-			}
-			type = ''
-		} else if (this.value === 'tuberculose') {
+		}  else if (this.value === 'tuberculose') {
 			for (let i = 0; i < region.length; i++) {
 				var element = region[i];
 				data.data.push(
@@ -280,9 +251,6 @@ $(document).ready(function () {
 						dataTuberculosePolmonaireCas[element.codeRegion],
 						dataTuberculosePolmonaireCasPec[element.codeRegion],
 						dataTuberculosePolmonaireReference[element.codeRegion],
-						dataTuberculoseExtraPolmonaireCas[element.codeRegion],
-						dataTuberculoseExtraPolmonaireCasPec[element.codeRegion],
-						dataTuberculoseExtraPolmonaireReference[element.codeRegion],
 					])
 				);
 				data.categories.push(element.region);

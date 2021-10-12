@@ -4,6 +4,7 @@ $(document).ready(function () {
 		title = $('#title').text(),
 		// init data
 		dataPopulationCible = wholeData.populationCible.data,
+		dataPopulationRurale = wholeData.populationRurale.data,
 		dataPopulationHabitantMoins3km =
 			wholeData.populationHabitantMoins3km.data,
 		dataPopulationHabitantEntre3km6km =
@@ -24,7 +25,14 @@ $(document).ready(function () {
 		
 		// other
 		max = undefined,
-		scale = ['#BDFFAD', '#187a00'],
+				scale = [
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		],
 		data = getData([dataPopulationCible]),
 		table = 5;
 	// MAP
@@ -71,13 +79,20 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
 								<th colspan="2" class="text-center">${title} : <span class="fs-7"><span class="badge bg-5">${
 						data[code]
 					}</span></span></th>
+							</tr>
+							
+							<tr>
+								<td>Population Rurale</td>
+								<td class="fs-7 text-center"><span class="badge bg-5">${
+									dataPopulationRurale[code]
+								}</span></td>
 							</tr>
 							
 							<tr>
@@ -119,7 +134,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -160,7 +175,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -201,7 +216,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-center text-dark">
 						<tbody>
 							<tr>
-								<th colspan="3">${label.html()}</th>
+								<th colspan="3">Province : ${label.html()}</th>
 							</tr>
 							<tr>
 								<th colspan="3">${title} : <span class="fs-7"> <span class="badge bg-5">${
@@ -220,7 +235,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-center text-dark">
 						<tbody>
 							<tr>
-								<th colspan="3">${label.html()}</th>
+								<th colspan="3">Province : ${label.html()}</th>
 							</tr>
 							<tr>
 								<th colspan="3">${title} : <span class="fs-7"> <span class="badge bg-5">${
@@ -239,7 +254,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-center text-dark">
 						<tbody>
 							<tr>
-								<th colspan="3">${label.html()}</th>
+								<th colspan="3">Province : ${label.html()}</th>
 							</tr>
 							<tr>
 								<th colspan="3">${title} : <span class="fs-7"> <span class="badge bg-5">${

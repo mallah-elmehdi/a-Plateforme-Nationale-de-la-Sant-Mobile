@@ -121,6 +121,23 @@ async function getConsultationMedicalByRegion(region) {
 	}
 }
 
+// GET
+async function getConsultationMedical() {
+	try {
+		// variable
+		var today = new Date();
+		return await consultationMedical
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getConsultationMedicalBySortie,
@@ -129,5 +146,6 @@ module.exports = {
 	editConsultationMedicalById,
 	deleteConsultationMedicalById,
 	getConsultationMedicalByProvince,
-	getConsultationMedicalByRegion
+	getConsultationMedicalByRegion,
+	getConsultationMedical
 };

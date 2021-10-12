@@ -18,6 +18,22 @@ const province = JSON.parse(
 async function dataRegion() {
 	try {
 		var data = {
+			populationRurale: {
+				data: {
+					1: 0,
+					2: 0,
+					3: 0,
+					4: 0,
+					5: 0,
+					6: 0,
+					7: 0,
+					8: 0,
+					9: 0,
+					10: 0,
+					11: 0,
+					12: 0,
+				},
+			},
 				populationCible: {
 					data: {
 						1: 0,
@@ -210,40 +226,8 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
-				indiceSynthetiqueFecondite: {
-					data: {
-						1: 0,
-						2: 0,
-						3: 0,
-						4: 0,
-						5: 0,
-						6: 0,
-						7: 0,
-						8: 0,
-						9: 0,
-						10: 0,
-						11: 0,
-						12: 0,
-					},
-				},
-				personneAge: {
-					data: {
-						1: 0,
-						2: 0,
-						3: 0,
-						4: 0,
-						5: 0,
-						6: 0,
-						7: 0,
-						8: 0,
-						9: 0,
-						10: 0,
-						11: 0,
-						12: 0,
-					},
-				},
 			},
-			population = await populationData.getPopulationByYear();
+			population = await populationData.getPopulation();
 		// ------------------------
 		// region
 		for (let i = 0; i < region.length; i++) {
@@ -252,6 +236,8 @@ async function dataRegion() {
 			for (let j = 0; j < population.length; j++) {
 				const populationElement = population[j];
 				if (regionElement.region === populationElement.csr.region) {
+					data.populationRurale.data[regionElement.codeRegion] +=
+						populationElement.population.rurale;
 					data.populationCible.data[regionElement.codeRegion] +=
 						populationElement.population.cible;
 					data.populationHabitantMoins3km.data[
@@ -271,21 +257,16 @@ async function dataRegion() {
 					data.enfantMoins5ans.data[regionElement.codeRegion] +=
 						populationElement.enfant.moins5ans;
 					data.naissancesAttendues.data[regionElement.codeRegion] +=
-						populationElement.naissancesAttendues;
+						populationElement.enfant.naissancesAttendues;
 					data.far.data[regionElement.codeRegion] +=
-						populationElement.far;
+						populationElement.femme.far;
 					data.fmar.data[regionElement.codeRegion] +=
-						populationElement.fmar;
+						populationElement.femme.fmar;
 					data.femmeEnceinte.data[regionElement.codeRegion] +=
-						populationElement.femmeEnceinte;
-					data.distanceMoyenneRouteProche.data[
-						regionElement.codeRegion
-					] += populationElement.distanceMoyenneRouteProche;
-					data.indiceSynthetiqueFecondite.data[
-						regionElement.codeRegion
-					] += populationElement.indiceSynthetiqueFecondite;
-					data.personneAge.data[regionElement.codeRegion] +=
-						populationElement.personneAge;
+						populationElement.femme.femmeEnceinte;
+
+						data.distanceMoyenneRouteProche.data[regionElement.codeRegion] +=
+						populationElement.distanceMoyenneRouteProche;
 				}
 			}
 		}
@@ -300,6 +281,85 @@ async function dataRegion() {
 async function dataProvince() {
 	try {
 		var data = {
+			populationRurale: {
+				data: {
+					1: 0,
+					2: 0,
+					3: 0,
+					4: 0,
+					5: 0,
+					6: 0,
+					7: 0,
+					8: 0,
+					9: 0,
+					10: 0,
+					11: 0,
+					12: 0,
+					13: 0,
+					14: 0,
+					15: 0,
+					16: 0,
+					17: 0,
+					18: 0,
+					19: 0,
+					20: 0,
+					21: 0,
+					22: 0,
+					23: 0,
+					24: 0,
+					25: 0,
+					26: 0,
+					27: 0,
+					28: 0,
+					29: 0,
+					30: 0,
+					31: 0,
+					32: 0,
+					33: 0,
+					34: 0,
+					35: 0,
+					36: 0,
+					37: 0,
+					38: 0,
+					39: 0,
+					40: 0,
+					41: 0,
+					42: 0,
+					43: 0,
+					44: 0,
+					45: 0,
+					46: 0,
+					47: 0,
+					48: 0,
+					49: 0,
+					50: 0,
+					51: 0,
+					52: 0,
+					53: 0,
+					54: 0,
+					55: 0,
+					56: 0,
+					57: 0,
+					58: 0,
+					59: 0,
+					60: 0,
+					61: 0,
+					62: 0,
+					63: 0,
+					64: 0,
+					65: 0,
+					66: 0,
+					67: 0,
+					68: 0,
+					69: 0,
+					70: 0,
+					71: 0,
+					72: 0,
+					73: 0,
+					74: 0,
+					75: 0,
+				},
+			},
 				populationCible: {
 					data: {
 						1: 0,
@@ -1247,167 +1307,9 @@ async function dataProvince() {
 						74: 0,
 						75: 0,
 					},
-				},
-				indiceSynthetiqueFecondite: {
-					data: {
-						1: 0,
-						2: 0,
-						3: 0,
-						4: 0,
-						5: 0,
-						6: 0,
-						7: 0,
-						8: 0,
-						9: 0,
-						10: 0,
-						11: 0,
-						12: 0,
-						13: 0,
-						14: 0,
-						15: 0,
-						16: 0,
-						17: 0,
-						18: 0,
-						19: 0,
-						20: 0,
-						21: 0,
-						22: 0,
-						23: 0,
-						24: 0,
-						25: 0,
-						26: 0,
-						27: 0,
-						28: 0,
-						29: 0,
-						30: 0,
-						31: 0,
-						32: 0,
-						33: 0,
-						34: 0,
-						35: 0,
-						36: 0,
-						37: 0,
-						38: 0,
-						39: 0,
-						40: 0,
-						41: 0,
-						42: 0,
-						43: 0,
-						44: 0,
-						45: 0,
-						46: 0,
-						47: 0,
-						48: 0,
-						49: 0,
-						50: 0,
-						51: 0,
-						52: 0,
-						53: 0,
-						54: 0,
-						55: 0,
-						56: 0,
-						57: 0,
-						58: 0,
-						59: 0,
-						60: 0,
-						61: 0,
-						62: 0,
-						63: 0,
-						64: 0,
-						65: 0,
-						66: 0,
-						67: 0,
-						68: 0,
-						69: 0,
-						70: 0,
-						71: 0,
-						72: 0,
-						73: 0,
-						74: 0,
-						75: 0,
-					},
-				},
-				personneAge: {
-					data: {
-						1: 0,
-						2: 0,
-						3: 0,
-						4: 0,
-						5: 0,
-						6: 0,
-						7: 0,
-						8: 0,
-						9: 0,
-						10: 0,
-						11: 0,
-						12: 0,
-						13: 0,
-						14: 0,
-						15: 0,
-						16: 0,
-						17: 0,
-						18: 0,
-						19: 0,
-						20: 0,
-						21: 0,
-						22: 0,
-						23: 0,
-						24: 0,
-						25: 0,
-						26: 0,
-						27: 0,
-						28: 0,
-						29: 0,
-						30: 0,
-						31: 0,
-						32: 0,
-						33: 0,
-						34: 0,
-						35: 0,
-						36: 0,
-						37: 0,
-						38: 0,
-						39: 0,
-						40: 0,
-						41: 0,
-						42: 0,
-						43: 0,
-						44: 0,
-						45: 0,
-						46: 0,
-						47: 0,
-						48: 0,
-						49: 0,
-						50: 0,
-						51: 0,
-						52: 0,
-						53: 0,
-						54: 0,
-						55: 0,
-						56: 0,
-						57: 0,
-						58: 0,
-						59: 0,
-						60: 0,
-						61: 0,
-						62: 0,
-						63: 0,
-						64: 0,
-						65: 0,
-						66: 0,
-						67: 0,
-						68: 0,
-						69: 0,
-						70: 0,
-						71: 0,
-						72: 0,
-						73: 0,
-						74: 0,
-						75: 0,
-					},
-				},
+				}
 			},
-			population = await populationData.getPopulationByYear();
+			population = await populationData.getPopulation();
 		// ------------------------
 		// province
 		for (let i = 0; i < province.length; i++) {
@@ -1418,6 +1320,8 @@ async function dataProvince() {
 				if (
 					provinceElement.province === populationElement.csr.province
 				) {
+					data.populationRurale.data[provinceElement.codeProvince] +=
+						populationElement.population.rurale;
 					data.populationCible.data[provinceElement.codeProvince] +=
 						populationElement.population.cible;
 					data.populationHabitantMoins3km.data[
@@ -1438,21 +1342,16 @@ async function dataProvince() {
 						populationElement.enfant.moins5ans;
 					data.naissancesAttendues.data[
 						provinceElement.codeProvince
-					] += populationElement.naissancesAttendues;
+					] += populationElement.enfant.naissancesAttendues;
 					data.far.data[provinceElement.codeProvince] +=
-						populationElement.far;
+						populationElement.femme.far;
 					data.fmar.data[provinceElement.codeProvince] +=
-						populationElement.fmar;
+						populationElement.femme.fmar;
 					data.femmeEnceinte.data[provinceElement.codeProvince] +=
-						populationElement.femmeEnceinte;
+						populationElement.femme.femmeEnceinte;
 					data.distanceMoyenneRouteProche.data[
 						provinceElement.codeProvince
 					] += populationElement.distanceMoyenneRouteProche;
-					data.indiceSynthetiqueFecondite.data[
-						provinceElement.codeProvince
-					] += populationElement.indiceSynthetiqueFecondite;
-					data.personneAge.data[provinceElement.codeProvince] +=
-						populationElement.personneAge;
 				}
 			}
 		}

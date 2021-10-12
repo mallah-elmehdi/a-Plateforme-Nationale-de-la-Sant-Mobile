@@ -92,10 +92,29 @@ async function getRessourceHumainByRegion(region) {
 	}
 }
 
+// GET BY REGION
+async function getRessourceHumain() {
+	try {
+		// variable
+		var today = new Date();
+		// get query
+		return await ressourceHumain
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getRessourceHumainByCsr,
 	addUpdateRessourceHumain,
 	getRessourceHumainByProvince,
 	getRessourceHumainByRegion,
+	getRessourceHumain
 };

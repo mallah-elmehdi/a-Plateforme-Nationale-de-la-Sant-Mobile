@@ -1,5 +1,5 @@
 // DATA
-const indexData = require('../data/index');
+const articleData = require('../data/article');
 
 // ERROR
 const { newError } = require('../util/error');
@@ -21,7 +21,7 @@ async function landingPage(req, res, next) {
 		// get data
 		var data = {};
 		// get articles
-		data.articles = await indexData.getArticle(parseInt(req.query.page));
+		data.articles = await articleData.getArticles(parseInt(req.query.page));
 		// get current user
 		data.user = req.cookies.welcome ? true : false;
 		// render page
@@ -55,7 +55,7 @@ async function article(req, res, next) {
 		// get data
 		var data = {};
 		// get article
-		data.article = await indexData.getArticleById(req.params.article);
+		data.article = await articleData.getArticleById(req.params.article);
 		// get current user
 		data.user = req.cookies.welcome ? true : false;
 		// render page

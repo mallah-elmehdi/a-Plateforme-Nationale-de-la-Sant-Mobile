@@ -1080,7 +1080,7 @@ $(document).ready(function () {
 														}</td>
 													</tr>
 													<tr>
-														<th colspan="7">Budget en médicaments dispensés par l’équipe mobile</th>
+														<th colspan="7">Budget estimé en médicaments dispensés</th>
 														<td>${rapport[code].consultationMedical.budgetMedicamentDispenseEm}</td>
 													</tr>
 												</tbody>

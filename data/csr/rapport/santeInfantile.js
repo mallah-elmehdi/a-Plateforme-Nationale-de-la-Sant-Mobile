@@ -142,6 +142,24 @@ async function getSanteInfantileByRegion(region) {
 	}
 }
 
+// GET 
+async function getSanteInfantile() {
+	try {
+		// variable
+		var today = new Date();
+		return await santeInfantile
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
+
 // OUTPUT
 module.exports = {
 	getSanteInfantileBySortie,
@@ -150,5 +168,6 @@ module.exports = {
 	editSanteInfantileById,
 	deleteSanteInfantileById,
 	getSanteInfantileByProvince,
-	getSanteInfantileByRegion
+	getSanteInfantileByRegion,
+	getSanteInfantile
 };

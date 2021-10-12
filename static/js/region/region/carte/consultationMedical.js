@@ -315,7 +315,7 @@ $(document).ready(function () {
 							<tr>
 								<th colspan="3">${title} : <span class="fs-7"> <span class="badge bg-5">${
 							dataBudgetMedicamentDispenseEm[code]
-						} DH</span></span></th>
+						} MAD</span></span></th>
 							</tr>
 						</tbody>
 					</table>

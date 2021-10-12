@@ -61,7 +61,6 @@ async function deleteMaladieDepisteById(id) {
 	try {
 		// delete document
 		return await maladieDepiste.findByIdAndDelete(id);
-
 	} catch (error) {
 		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
@@ -122,6 +121,23 @@ async function getMaladieDepisteByRegion(region) {
 	}
 }
 
+// GET BY REGION
+async function getMaladieDepiste() {
+	try {
+		// variable
+		var today = new Date();
+		return await maladieDepiste
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getMaladieDepisteBySortie,
@@ -131,4 +147,5 @@ module.exports = {
 	deleteMaladieDepisteById,
 	getMaladieDepisteByProvince,
 	getMaladieDepisteByRegion,
+	getMaladieDepiste
 };

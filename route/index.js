@@ -4,16 +4,12 @@ const router = express.Router();
 
 // --- HANDLER
 const handler = require('../handler/index');
+const articleHandler = require('../handler/');
 const authHandler = require('../handler/auth');
 const errorHandler = require('../handler/error');
 
 // landing page
-router
-	.route('/')
-	.get(
-		handler.landingPage,
-		errorHandler.throwError
-	);
+router.route('/').get(handler.landingPage, errorHandler.throwError);
 
 // sign in
 router
@@ -27,14 +23,12 @@ router
 	);
 
 // redirection
-router
-	.route('/article')
-	.get(handler.redirection, errorHandler.throwError);
+router.route('/article').get(handler.redirection, errorHandler.throwError);
 
 // article
 router
 	.route('/article/:article')
-	.get(handler.article, errorHandler.throwError);
+	.get(handler.article, articleHandler.article, errorHandler.throwError);
 
 // sign out
 router.route('/sign-out').get(authHandler.signOut, errorHandler.throwError);

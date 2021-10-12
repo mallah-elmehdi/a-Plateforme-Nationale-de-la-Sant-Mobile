@@ -5,8 +5,13 @@ $(document).ready(function () {
 		type = '',
 		// init data
 		dataFemmePriseCharge = wholeData.femmePriseCharge.data,
-		dataCpnNouvelleInscrite = wholeData.cpnNouvelleInscrite.data,
-		dataCpnAutreConsultation = wholeData.cpnAutreConsultation.data,
+		dataCpnNouvelleInscriteT1 = wholeData.cpnNouvelleInscriteT1.data,
+		dataCpnNouvelleInscriteT2 = wholeData.cpnNouvelleInscriteT2.data,
+		dataCpnNouvelleInscriteT3 = wholeData.cpnNouvelleInscriteT3.data,
+		dataCpnAncienneInscriteT1 = wholeData.cpnAncienneInscriteT1.data,
+		dataCpnAncienneInscriteT2 = wholeData.cpnAncienneInscriteT2.data,
+		dataCpnAncienneInscriteT3 = wholeData.cpnAncienneInscriteT3.data,
+		dataAutreConsultation = wholeData.autreConsultation.data,
 		dataFemmeExaminePostNatal = wholeData.femmeExaminePostNatal.data,
 		dataGahrDepiste = wholeData.garDepiste.data,
 		dataVat = wholeData.vat.data,
@@ -114,8 +119,12 @@ $(document).ready(function () {
 				var element = province[i];
 				data.data.push(
 					getData([
-						dataCpnAutreConsultation[element.codeProvince],
-						dataCpnNouvelleInscrite[element.codeProvince],
+						dataCpnNouvelleInscriteT1[element.codeProvince],
+						dataCpnNouvelleInscriteT2[element.codeProvince],
+						dataCpnNouvelleInscriteT3[element.codeProvince],
+						dataCpnAncienneInscriteT1[element.codeProvince],
+						dataCpnAncienneInscriteT2[element.codeProvince],
+						dataCpnAncienneInscriteT3[element.codeProvince],
 					])
 				);
 				data.categories.push(element.province);
@@ -125,9 +134,7 @@ $(document).ready(function () {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
 				data.data.push(
-					getData([
-						dataFemmeExaminePostNatal[element.codeProvince],
-					])
+					getData([dataFemmeExaminePostNatal[element.codeProvince]])
 				);
 				data.categories.push(element.province);
 			}
@@ -135,22 +142,21 @@ $(document).ready(function () {
 		} else if (this.value === 'garDepiste') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-				data.data.push(
-					getData([
-						dataGahrDepiste[element.codeProvince],
-					])
-				);
+				data.data.push(getData([dataGahrDepiste[element.codeProvince]]));
+				data.categories.push(element.province);
+			}
+			type = '';
+		} else if (this.value === 'autreConsultation') {
+			for (let i = 0; i < province.length; i++) {
+				var element = province[i];
+				data.data.push(getData([dataAutreConsultation[element.codeProvince]]));
 				data.categories.push(element.province);
 			}
 			type = '';
 		} else if (this.value === 'vat') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
-				data.data.push(
-					getData([
-						dataVat[element.codeProvince],
-					])
-				);
+				data.data.push(getData([dataVat[element.codeProvince]]));
 				data.categories.push(element.province);
 			}
 			type = '';

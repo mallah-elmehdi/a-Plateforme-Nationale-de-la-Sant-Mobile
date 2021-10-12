@@ -288,7 +288,7 @@ $(document).ready(function () {
 								<th>Besoin en carburant</th>
 								<td class="fs-7 text-center"><span class="badge bg-5">${
 									dataBudgetBesoinCarburant[code]
-								} DH</span></td>
+								} MAD</span></td>
 							</tr>
 						</tbody>
 					</table>

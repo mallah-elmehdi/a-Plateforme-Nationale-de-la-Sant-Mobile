@@ -5,6 +5,7 @@ $(document).ready(function () {
 		type = '',
 		// init data
 		dataPopulationCible = wholeData.populationCible.data,
+		dataPopulationRurale = wholeData.populationRurale.data,
 		dataPopulationHabitantMoins3km =
 			wholeData.populationHabitantMoins3km.data,
 		dataPopulationHabitantEntre3km6km =

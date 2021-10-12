@@ -1,0 +1,44 @@
+extends profile
+
+block head
+
+block tail
+
+block main
+	//- VARIABLES
+	-var document = data.document
+	//- LAYOUTS
+	.row.g-3
+		.col-12
+			.card.bg-grd.p-2.fs-7.text-white.fw-bold.text-center Article et Actualité
+		.col-12
+			a.btn.btn-sm.bg-3(href="/central/" + document._id + '/article/' + data.article._id + '/edit' ) modifier
+		.col-12
+			img.w-100.rounded(src='/../../image/article/'+data.article.image alt=data.article.title)
+		.col-12
+			.card.card-body
+				.row.g-3
+					.col-12
+						span.fs-4.fw-bold.text-dark= data.article.title
+					.col-12
+						-var textList = data.article.text.split('\n')
+						span.fs-5.text-dark.lh-lg
+							-for(var i = 0; i < textList.length; i++)
+								if (textList[i] != '\n' && textList[i] && textList[i].trim())
+									span= textList[i]
+									if (i + 1 < textList.length)
+										br
+										br
+		.col-12
+			button.btn-sm.btn.link-danger.p-0(type='button' data-bs-toggle='modal' data-bs-target='#deleteArticle') Supprimer l'article
+			#deleteArticle.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='deleteArticle' aria-hidden='true')
+				.modal-dialog.modal-dialog-centered
+					.modal-content
+						.modal-header.border-0
+							span#deleteArticle.modal-title.text-danger.fs-7 Voulez-vous supprimer l'article ?
+							button.btn.btn-sm(type='button' data-bs-dismiss='modal' aria-label='Close')
+								<ion-icon name="close-outline" class="align-middle fs-5"></ion-icon>
+						.modal-footer
+							button.btn.btn-light.btn-sm(type='button' data-bs-dismiss='modal') Annuler
+							form(action=url+'/delete', method="post")
+								button.btn.btn-sm.btn-danger(type="submit") Supprimer

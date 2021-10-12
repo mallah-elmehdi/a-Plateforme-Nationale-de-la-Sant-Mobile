@@ -5,11 +5,15 @@ $(document).ready(function () {
 		type = '',
 		// init data
 		dataEnfantPrisesCharge = wholeData.enfantPrisesCharge.data,
-		dataVaccinationPentavalent = wholeData.vaccinationDtc3Hib3.data,
-		dataVaccinationRr = wholeData.vaccinationVar.data,
+		dataVaccinationPentavalent = wholeData.vaccinationPentavalent.data,
+		dataVaccinationRr = wholeData.vaccinationRr.data,
+		dataVaccinationBcg = wholeData.vaccinationBcg.data,
 		dataVitamineA = wholeData.vitamineA.data,
 		dataVitamineD = wholeData.vitamineD.data,
-		dataPesee = wholeData.pesee.data,
+		dataEnfantsAvecInsuffisancePonderale =
+			wholeData.enfantsAvecInsuffisancePonderale.data,
+		dataEnfantsAvecRetardCroissance =
+			wholeData.enfantsAvecRetardCroissance.data,
 		dataDiarrhe = wholeData.diarrhe.data,
 		dataIra = wholeData.ira.data,
 		dataReference = wholeData.reference.data,
@@ -118,6 +122,7 @@ $(document).ready(function () {
 					getData([
 						dataVaccinationPentavalent[element.codeRegion],
 						dataVaccinationRr[element.codeRegion],
+						dataVaccinationBcg[element.codeRegion],
 					])
 				);
 				data.categories.push(element.region);
@@ -126,9 +131,7 @@ $(document).ready(function () {
 		} else if (this.value === 'vitamineA') {
 			for (let i = 0; i < region.length; i++) {
 				var element = region[i];
-				data.data.push(
-					getData([dataVitamineA[element.codeRegion]])
-				);
+				data.data.push(getData([dataVitamineA[element.codeRegion]]));
 				data.categories.push(element.region);
 			}
 			type = '';
@@ -139,10 +142,17 @@ $(document).ready(function () {
 				data.categories.push(element.region);
 			}
 			type = '';
-		} else if (this.value === 'pesee') {
+		} else if (this.value === 'enfantsAvecInsuffisancePonderale') {
 			for (let i = 0; i < region.length; i++) {
 				var element = region[i];
-				data.data.push(getData([dataPesee[element.codeRegion]]));
+				data.data.push(getData([dataEnfantsAvecInsuffisancePonderale[element.codeRegion]]));
+				data.categories.push(element.region);
+			}
+			type = '';
+		} else if (this.value === 'enfantsAvecRetardCroissance') {
+			for (let i = 0; i < region.length; i++) {
+				var element = region[i];
+				data.data.push(getData([dataEnfantsAvecRetardCroissance[element.codeRegion]]));
 				data.categories.push(element.region);
 			}
 			type = '';

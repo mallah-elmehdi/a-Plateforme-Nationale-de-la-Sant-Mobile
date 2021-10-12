@@ -121,6 +121,23 @@ async function getDetectionPrecoceCancerByRegion(region) {
 	}
 }
 
+// GET
+async function getDetectionPrecoceCancer() {
+	try {
+		// variable
+		var today = new Date();
+		return await detectionPrecoceCancer
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getDetectionPrecoceCancerBySortie,
@@ -129,5 +146,6 @@ module.exports = {
 	editDetectionPrecoceCancerById,
 	deleteDetectionPrecoceCancerById,
 	getDetectionPrecoceCancerByProvince,
-	getDetectionPrecoceCancerByRegion
+	getDetectionPrecoceCancerByRegion,
+	getDetectionPrecoceCancer
 };

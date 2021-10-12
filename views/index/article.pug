@@ -9,14 +9,15 @@ block body
 						a(href="/")
 							img.img-logo(src="/../../image/logo-test.png", alt="umm")
 						a.btn.btn-sm.bg-5.text-white(href='/sign-in')= data.user ? 'mon profil' : 'se connecter'
-				.py-md-5.py-3.text-white
-					h1.display-2.fw-bold.mb-3 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-					span Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga quas necessitatibus ut! Illo nostrum fugit dolorem possimus, quas id obcaecati voluptatem neque suscipit delectus molestias praesentium aut, voluptas, nam magni!
+				.py-md-5.py-3.text-white.text-center
+					h1.display-6.fw-bold.mb-3 Lancement de la Plateforme Nationale de la Santé Mobile - Ministère de la santé.
+					span Le Ministère de la Santé en collaboration avec l’Université Mohammed VI Polytechnique lance la nouvelle plateforme nationale digitale pour la santé mobile, visant l’optimisation et l’amélioration de l’offre de soin en relation avec la santé mobile dans la zone rurale.
+				
 		section.card-body
 			.container
 				.row.g-3
 					.col-12
-						img.w-100.rounded(src='/../../image/news/'+data.article.image alt=data.article.title)
+						img.w-100.rounded(src='/../../image/article/'+data.article.image alt=data.article.title)
 					.col-12
 						span.fs-4.fw-bold.text-dark= data.article.title
 					.col-12

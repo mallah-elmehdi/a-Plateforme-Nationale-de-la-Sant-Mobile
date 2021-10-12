@@ -67,8 +67,8 @@ const province = require('./route/province');
 // // REGION
 const region = require('./route/region');
 
-// // CENTRAL
-// const central = require('./route/central');
+// CENTRAL
+const central = require('./route/central');
 
 // ERROR
 const errorPage = require('./route/errorPage');
@@ -99,7 +99,7 @@ app.use(
 );
 app.use('/province', province);
 app.use('/region', region);
-// app.use('/central', central);
+app.use('/central', central);
 app.use('*', errorPage);
 
 // SERVER

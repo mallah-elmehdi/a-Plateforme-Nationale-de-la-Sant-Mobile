@@ -29,7 +29,15 @@ $(document).ready(function () {
 						values: data,
 						min: 0,
 						max: 100,
-						scale: ['#FE8989', '#FCFE89', '#6ED369'],
+						scale: [
+			'#FF4646',
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		];,
 						normalizeFunction: 'polynomial',
 						legend: {
 							vertical: true,

@@ -31,23 +31,11 @@ $(document).ready(function () {
 		dataRaaSansCarditesCas = wholeData.raaSansCarditesCas.data,
 		dataRaaSansCarditesCasPec = wholeData.raaSansCarditesCasPec.data,
 		dataRaaSansCarditesReference = wholeData.raaSansCarditesReference.data,
-		dataCancerSeinCas = wholeData.cancerSeinCas.data,
-		dataCancerSeinCasPec = wholeData.cancerSeinCasPec.data,
-		dataCancerSeinReference = wholeData.cancerSeinReference.data,
-		dataCancerColCas = wholeData.cancerColCas.data,
-		dataCancerColCasPec = wholeData.cancerColCasPec.data,
-		dataCancerColReference = wholeData.cancerColReference.data,
 		dataTuberculosePolmonaireCas = wholeData.tuberculosePolmonaireCas.data,
 		dataTuberculosePolmonaireCasPec =
 			wholeData.tuberculosePolmonaireCasPec.data,
 		dataTuberculosePolmonaireReference =
 			wholeData.tuberculosePolmonaireReference.data,
-		dataTuberculoseExtraPolmonaireCas =
-			wholeData.tuberculoseExtraPolmonaireCas.data,
-		dataTuberculoseExtraPolmonaireCasPec =
-			wholeData.tuberculoseExtraPolmonaireCasPec.data,
-		dataTuberculoseExtraPolmonaireReference =
-			wholeData.tuberculoseExtraPolmonaireReference.data,
 		data = {
 			data: [],
 			categories: [],
@@ -255,24 +243,7 @@ $(document).ready(function () {
 				data.categories.push(element.province);
 			}
 			type = ''
-		} else if (this.value === 'cancer') {
-			
-			for (let i = 0; i < province.length; i++) {
-				var element = province[i];
-				data.data.push(
-					getData([
-						dataCancerSeinCas[element.codeProvince],
-						dataCancerSeinCasPec[element.codeProvince],
-						dataCancerSeinReference[element.codeProvince],
-						dataCancerColCas[element.codeProvince],
-						dataCancerColCasPec[element.codeProvince],
-						dataCancerColReference[element.codeProvince],
-					])
-				);
-				data.categories.push(element.province);
-			}
-			type = ''
-		} else if (this.value === 'tuberculose') {
+		}  else if (this.value === 'tuberculose') {
 			for (let i = 0; i < province.length; i++) {
 				var element = province[i];
 				data.data.push(
@@ -280,9 +251,6 @@ $(document).ready(function () {
 						dataTuberculosePolmonaireCas[element.codeProvince],
 						dataTuberculosePolmonaireCasPec[element.codeProvince],
 						dataTuberculosePolmonaireReference[element.codeProvince],
-						dataTuberculoseExtraPolmonaireCas[element.codeProvince],
-						dataTuberculoseExtraPolmonaireCasPec[element.codeProvince],
-						dataTuberculoseExtraPolmonaireReference[element.codeProvince],
 					])
 				);
 				data.categories.push(element.province);

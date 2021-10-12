@@ -41,6 +41,9 @@ block main
 							input.form-check-input.me-1(type='radio' name='data' value='cpn')
 							span Nombre de consultations prénatales (CPN)
 						li.list-group-item.dropdown-item
+							input.form-check-input.me-1(type='radio' name='data' value='autreConsultation')
+							span Nombre d'autres consultations
+						li.list-group-item.dropdown-item
 							input.form-check-input.me-1(type='radio' name='data' value='femmeExaminePostNatal')
 							span Nombre de femmes examinées en post natal
 						li.list-group-item.dropdown-item
@@ -60,17 +63,15 @@ block main
 					.col-12
 						.d-flex.align-items-center.fs-7
 							<ion-icon name="stats-chart-outline"  class="me-2 text-1"></ion-icon>
-							span.text-dark  Santé maternelle - Nombre de femmes prises en charge
+							span.text-dark  Santé maternelle
 					.col-12
-						span#title.badge.bg-5 
+						span#title.badge.bg-5 Nombre de femmes prises en charge
 					.col-12.thisRegion
 						#dataRegion(data-carte=JSON.stringify(data.carte.region) )
 							#region-map(style="width: 100%; height: 400px")
 					.col-12.thisProvince
 						#dataProvince(data-carte=JSON.stringify(data.carte.province) )
 							#province-map(style="width: 100%; height: 400px;")
-					.col-12
-						span#title.badge.bg-5 
 					.col-12.thisRegion
 						#region-chart(data-region=JSON.stringify(region))
 					.col-12.thisProvince

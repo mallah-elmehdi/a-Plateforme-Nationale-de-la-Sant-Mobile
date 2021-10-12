@@ -1,0 +1,65 @@
+extends ../profile
+ 
+block tail
+	//- LIBRARY
+	script(src='/../../js/central/jquery-jvectormap-2.0.5.min.js')
+	script(src='/../../js/central/toggleMap.js')
+	//- MAP
+	script(src='/../../js/central/region/map.js')
+	script(src='/../../js/central/province/map.js')
+	//- CARTE
+	script(src='/../../js/central/region/carte/ressourceHumain.js')
+	script(src='/../../js/central/province/carte/ressourceHumain.js')
+	//- CHART
+	script(src='/../../js/central/region/chart/ressourceHumain.js')
+	script(src='/../../js/central/province/chart/ressourceHumain.js')
+
+block main
+	.row.g-3
+		.col-12
+			include ../../util/snippet/titleDashboard
+		.col-12
+			.d-flex.flex-wrap
+				.dropdown.me-2
+					button#dropdownPreview.btn.btn-sm.text-dark.bg-8.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+						| Division de la carte
+					ul.dropdown-menu(aria-labelledby='dropdownPreview')
+						li.list-group-item.dropdown-item
+							input#previewZone1.form-check-input(type='radio' name='previewZone' value="regional" checked)
+							label.form-check-label(for='previewZone1') régional
+						li.list-group-item.dropdown-item
+							input#previewZone2.form-check-input(type='radio' name='previewZone' value="provincial")
+							label.form-check-label(for='previewZone2') provincial
+				.dropdown
+					button#dropdownPreview.btn.btn-sm.text-dark.bg-8.dropdown-toggle(type='button' data-bs-toggle='dropdown' data-bs-auto-close="outside" aria-expanded='false')
+						| data
+					ul.dropdown-menu(aria-labelledby='dropdownPreview')
+						li.list-group-item.dropdown-item
+							input.form-check-input.me-1(type='radio' name='data' value='fixe' checked)
+							span Mode Fixe
+						li.list-group-item.dropdown-item
+							input.form-check-input.me-1(type='radio' name='data' value='mobile')
+							span Mode Mobile
+						li.list-group-item.dropdown-item
+							input.form-check-input.me-1(type='radio' name='data' value='emOperationnelle')
+							span Nombre d’équipes mobile opérationnelle 
+		//- ---------------- map
+		.col-12
+			.card.card-body
+				.row.g-3
+					.col-12
+						.d-flex.align-items-center.fs-7
+							<ion-icon name="stats-chart-outline"  class="me-2 text-1"></ion-icon>
+							span.text-dark Ressources humaines
+					.col-12
+						span#title.badge.bg-5 Mode Fixe
+					.col-12.thisRegion
+						#dataRegion(data-carte=JSON.stringify(data.carte.region))
+							#region-map(style="width: 100%; height: 400px")
+					.col-12.thisProvince
+						#dataProvince(data-carte=JSON.stringify(data.carte.province))
+							#province-map(style="width: 100%; height: 400px;")
+					.col-12.thisRegion
+						#region-chart(data-region=JSON.stringify(region))
+					.col-12.thisProvince
+						#province-chart(data-province=JSON.stringify(province))

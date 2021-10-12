@@ -1,7 +1,7 @@
 // SET UP
 const fs = require('fs');
 const centralData = require('../../../data/central');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const consultationMedicalData = require('../../../data/csr/rapport/consultationMedical');
 
 // ERROR
 const { newError } = require('../../../util/error');
@@ -34,6 +34,22 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
+				consultationRealiseMEntre5ans18ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+					},
+				},
 				consultationRealiseMPlus18ans: {
 					data: {
 						1: 0,
@@ -50,7 +66,24 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
+
 				consultationRealiseFMoins5ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+					},
+				},
+				consultationRealiseFEntre5ans18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -82,7 +115,24 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
+
 				pecParPemMoins5ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+					},
+				},
+				pecParPemEntre5ans18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -114,7 +164,24 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
+
 				referenceConsSpecMoins5ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+					},
+				},
+				referenceConsSpecEntre5ans18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -146,7 +213,24 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
+
 				referenceUrgenceMoins5ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+					},
+				},
+				referenceUrgenceEntre5ans18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -178,7 +262,24 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
+
 				referenceExLaboMoins5ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+					},
+				},
+				referenceExLaboEntre5ans18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -210,7 +311,24 @@ async function dataRegion() {
 						12: 0,
 					},
 				},
+
 				referenceExRadioMoins5ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+					},
+				},
+				referenceExRadioEntre5ans18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -259,7 +377,7 @@ async function dataRegion() {
 					},
 				},
 			},
-			consultationMedical = await rapportData.getRapportByYear('consultationMedical');
+			consultationMedical = await consultationMedicalData.getConsultationMedical()
 		// ------------------------
 		// region
 		for (let i = 0; i < region.length; i++) {
@@ -267,8 +385,8 @@ async function dataRegion() {
 			// consultationMedical
 			for (let j = 0; j < consultationMedical.length; j++) {
 				const consultationMedicalElement = consultationMedical[j];
-			console.log(consultationMedicalElement);
-			if (
+				console.log(consultationMedicalElement);
+				if (
 					regionElement.region ===
 					consultationMedicalElement.csr.region
 				) {
@@ -276,46 +394,95 @@ async function dataRegion() {
 						regionElement.codeRegion
 					] +=
 						consultationMedicalElement.consultationRealise.m.moins5ans;
+
+					data.consultationRealiseMEntre5ans18ans.data[
+						regionElement.codeRegion
+					] +=
+						consultationMedicalElement.consultationRealise.m.entre5ans18ans;
+
 					data.consultationRealiseMPlus18ans.data[
 						regionElement.codeRegion
 					] +=
-						consultationMedicalElement.consultationRealise.m.plus5ans;
+						consultationMedicalElement.consultationRealise.m.plus18ans;
+
 					data.consultationRealiseFMoins5ans.data[
 						regionElement.codeRegion
 					] +=
 						consultationMedicalElement.consultationRealise.f.moins5ans;
+
+					data.consultationRealiseFEntre5ans18ans.data[
+						regionElement.codeRegion
+					] +=
+						consultationMedicalElement.consultationRealise.f.entre5ans18ans;
+
 					data.consultationRealiseFPlus18ans.data[
 						regionElement.codeRegion
 					] +=
-						consultationMedicalElement.consultationRealise.f.plus5ans;
+						consultationMedicalElement.consultationRealise.f.plus18ans;
+
 					data.pecParPemMoins5ans.data[regionElement.codeRegion] +=
 						consultationMedicalElement.pecParPem.moins5ans;
+					data.pecParPemEntre5ans18ans.data[
+						regionElement.codeRegion
+					] += consultationMedicalElement.pecParPem.entre5ans18ans;
+
 					data.pecParPemPlus18ans.data[regionElement.codeRegion] +=
-						consultationMedicalElement.pecParPem.plus5ans;
+						consultationMedicalElement.pecParPem.plus18ans;
+
 					data.referenceConsSpecMoins5ans.data[
 						regionElement.codeRegion
 					] +=
 						consultationMedicalElement.reference.consSpec.moins5ans;
+
+					data.referenceConsSpecEntre5ans18ans.data[
+						regionElement.codeRegion
+					] +=
+						consultationMedicalElement.reference.consSpec.entre5ans18ans;
+
 					data.referenceConsSpecPlus18ans.data[
 						regionElement.codeRegion
-					] += consultationMedicalElement.reference.consSpec.plus5ans;
+					] +=
+						consultationMedicalElement.reference.consSpec.plus18ans;
+
 					data.referenceUrgenceMoins5ans.data[
 						regionElement.codeRegion
 					] += consultationMedicalElement.reference.urgence.moins5ans;
-					data.referenceUrgencePlus18ans.data[regionElement.codeRegion] +=
-						consultationMedicalElement.reference.urgence.plus5ans;
+
+					data.referenceUrgenceEntre5ans18ans.data[
+						regionElement.codeRegion
+					] +=
+						consultationMedicalElement.reference.urgence.entre5ans18ans;
+
+					data.referenceUrgencePlus18ans.data[
+						regionElement.codeRegion
+					] += consultationMedicalElement.reference.urgence.plus18ans;
+
 					data.referenceExLaboMoins5ans.data[
 						regionElement.codeRegion
 					] += consultationMedicalElement.reference.exLabo.moins5ans;
+
+					data.referenceExLaboEntre5ans18ans.data[
+						regionElement.codeRegion
+					] +=
+						consultationMedicalElement.reference.exLabo.entre5ans18ans;
+
 					data.referenceExLaboPlus18ans.data[
 						regionElement.codeRegion
-					] += consultationMedicalElement.reference.exLabo.plus5ans;
+					] += consultationMedicalElement.reference.exLabo.plus18ans;
+
 					data.referenceExRadioMoins5ans.data[
 						regionElement.codeRegion
 					] += consultationMedicalElement.reference.exRadio.moins5ans;
+
+					data.referenceExRadioEntre5ans18ans.data[
+						regionElement.codeRegion
+					] +=
+						consultationMedicalElement.reference.exRadio.entre5ans18ans;
+
 					data.referenceExRadioPlus18ans.data[
 						regionElement.codeRegion
-					] += consultationMedicalElement.reference.exRadio.plus5ans;
+					] += consultationMedicalElement.reference.exRadio.plus18ans;
+
 					data.budgetMedicamentDispenseEm.data[
 						regionElement.codeRegion
 					] += consultationMedicalElement.budgetMedicamentDispenseEm;
@@ -412,6 +579,85 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
+				consultationRealiseMEntre5ans18ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+						13: 0,
+						14: 0,
+						15: 0,
+						16: 0,
+						17: 0,
+						18: 0,
+						19: 0,
+						20: 0,
+						21: 0,
+						22: 0,
+						23: 0,
+						24: 0,
+						25: 0,
+						26: 0,
+						27: 0,
+						28: 0,
+						29: 0,
+						30: 0,
+						31: 0,
+						32: 0,
+						33: 0,
+						34: 0,
+						35: 0,
+						36: 0,
+						37: 0,
+						38: 0,
+						39: 0,
+						40: 0,
+						41: 0,
+						42: 0,
+						43: 0,
+						44: 0,
+						45: 0,
+						46: 0,
+						47: 0,
+						48: 0,
+						49: 0,
+						50: 0,
+						51: 0,
+						52: 0,
+						53: 0,
+						54: 0,
+						55: 0,
+						56: 0,
+						57: 0,
+						58: 0,
+						59: 0,
+						60: 0,
+						61: 0,
+						62: 0,
+						63: 0,
+						64: 0,
+						65: 0,
+						66: 0,
+						67: 0,
+						68: 0,
+						69: 0,
+						70: 0,
+						71: 0,
+						72: 0,
+						73: 0,
+						74: 0,
+						75: 0,
+					},
+				},
 				consultationRealiseMPlus18ans: {
 					data: {
 						1: 0,
@@ -491,7 +737,87 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
+
 				consultationRealiseFMoins5ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+						13: 0,
+						14: 0,
+						15: 0,
+						16: 0,
+						17: 0,
+						18: 0,
+						19: 0,
+						20: 0,
+						21: 0,
+						22: 0,
+						23: 0,
+						24: 0,
+						25: 0,
+						26: 0,
+						27: 0,
+						28: 0,
+						29: 0,
+						30: 0,
+						31: 0,
+						32: 0,
+						33: 0,
+						34: 0,
+						35: 0,
+						36: 0,
+						37: 0,
+						38: 0,
+						39: 0,
+						40: 0,
+						41: 0,
+						42: 0,
+						43: 0,
+						44: 0,
+						45: 0,
+						46: 0,
+						47: 0,
+						48: 0,
+						49: 0,
+						50: 0,
+						51: 0,
+						52: 0,
+						53: 0,
+						54: 0,
+						55: 0,
+						56: 0,
+						57: 0,
+						58: 0,
+						59: 0,
+						60: 0,
+						61: 0,
+						62: 0,
+						63: 0,
+						64: 0,
+						65: 0,
+						66: 0,
+						67: 0,
+						68: 0,
+						69: 0,
+						70: 0,
+						71: 0,
+						72: 0,
+						73: 0,
+						74: 0,
+						75: 0,
+					},
+				},
+				consultationRealiseFEntre5ans18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -649,7 +975,87 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
+
 				pecParPemMoins5ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+						13: 0,
+						14: 0,
+						15: 0,
+						16: 0,
+						17: 0,
+						18: 0,
+						19: 0,
+						20: 0,
+						21: 0,
+						22: 0,
+						23: 0,
+						24: 0,
+						25: 0,
+						26: 0,
+						27: 0,
+						28: 0,
+						29: 0,
+						30: 0,
+						31: 0,
+						32: 0,
+						33: 0,
+						34: 0,
+						35: 0,
+						36: 0,
+						37: 0,
+						38: 0,
+						39: 0,
+						40: 0,
+						41: 0,
+						42: 0,
+						43: 0,
+						44: 0,
+						45: 0,
+						46: 0,
+						47: 0,
+						48: 0,
+						49: 0,
+						50: 0,
+						51: 0,
+						52: 0,
+						53: 0,
+						54: 0,
+						55: 0,
+						56: 0,
+						57: 0,
+						58: 0,
+						59: 0,
+						60: 0,
+						61: 0,
+						62: 0,
+						63: 0,
+						64: 0,
+						65: 0,
+						66: 0,
+						67: 0,
+						68: 0,
+						69: 0,
+						70: 0,
+						71: 0,
+						72: 0,
+						73: 0,
+						74: 0,
+						75: 0,
+					},
+				},
+				pecParPemEntre5ans18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -807,7 +1213,87 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
+
 				referenceConsSpecMoins5ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+						13: 0,
+						14: 0,
+						15: 0,
+						16: 0,
+						17: 0,
+						18: 0,
+						19: 0,
+						20: 0,
+						21: 0,
+						22: 0,
+						23: 0,
+						24: 0,
+						25: 0,
+						26: 0,
+						27: 0,
+						28: 0,
+						29: 0,
+						30: 0,
+						31: 0,
+						32: 0,
+						33: 0,
+						34: 0,
+						35: 0,
+						36: 0,
+						37: 0,
+						38: 0,
+						39: 0,
+						40: 0,
+						41: 0,
+						42: 0,
+						43: 0,
+						44: 0,
+						45: 0,
+						46: 0,
+						47: 0,
+						48: 0,
+						49: 0,
+						50: 0,
+						51: 0,
+						52: 0,
+						53: 0,
+						54: 0,
+						55: 0,
+						56: 0,
+						57: 0,
+						58: 0,
+						59: 0,
+						60: 0,
+						61: 0,
+						62: 0,
+						63: 0,
+						64: 0,
+						65: 0,
+						66: 0,
+						67: 0,
+						68: 0,
+						69: 0,
+						70: 0,
+						71: 0,
+						72: 0,
+						73: 0,
+						74: 0,
+						75: 0,
+					},
+				},
+				referenceConsSpecEntre5ans18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -965,7 +1451,87 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
+
 				referenceUrgenceMoins5ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+						13: 0,
+						14: 0,
+						15: 0,
+						16: 0,
+						17: 0,
+						18: 0,
+						19: 0,
+						20: 0,
+						21: 0,
+						22: 0,
+						23: 0,
+						24: 0,
+						25: 0,
+						26: 0,
+						27: 0,
+						28: 0,
+						29: 0,
+						30: 0,
+						31: 0,
+						32: 0,
+						33: 0,
+						34: 0,
+						35: 0,
+						36: 0,
+						37: 0,
+						38: 0,
+						39: 0,
+						40: 0,
+						41: 0,
+						42: 0,
+						43: 0,
+						44: 0,
+						45: 0,
+						46: 0,
+						47: 0,
+						48: 0,
+						49: 0,
+						50: 0,
+						51: 0,
+						52: 0,
+						53: 0,
+						54: 0,
+						55: 0,
+						56: 0,
+						57: 0,
+						58: 0,
+						59: 0,
+						60: 0,
+						61: 0,
+						62: 0,
+						63: 0,
+						64: 0,
+						65: 0,
+						66: 0,
+						67: 0,
+						68: 0,
+						69: 0,
+						70: 0,
+						71: 0,
+						72: 0,
+						73: 0,
+						74: 0,
+						75: 0,
+					},
+				},
+				referenceUrgenceEntre5ans18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -1123,7 +1689,87 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
+
 				referenceExLaboMoins5ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+						13: 0,
+						14: 0,
+						15: 0,
+						16: 0,
+						17: 0,
+						18: 0,
+						19: 0,
+						20: 0,
+						21: 0,
+						22: 0,
+						23: 0,
+						24: 0,
+						25: 0,
+						26: 0,
+						27: 0,
+						28: 0,
+						29: 0,
+						30: 0,
+						31: 0,
+						32: 0,
+						33: 0,
+						34: 0,
+						35: 0,
+						36: 0,
+						37: 0,
+						38: 0,
+						39: 0,
+						40: 0,
+						41: 0,
+						42: 0,
+						43: 0,
+						44: 0,
+						45: 0,
+						46: 0,
+						47: 0,
+						48: 0,
+						49: 0,
+						50: 0,
+						51: 0,
+						52: 0,
+						53: 0,
+						54: 0,
+						55: 0,
+						56: 0,
+						57: 0,
+						58: 0,
+						59: 0,
+						60: 0,
+						61: 0,
+						62: 0,
+						63: 0,
+						64: 0,
+						65: 0,
+						66: 0,
+						67: 0,
+						68: 0,
+						69: 0,
+						70: 0,
+						71: 0,
+						72: 0,
+						73: 0,
+						74: 0,
+						75: 0,
+					},
+				},
+				referenceExLaboEntre5ans18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -1281,7 +1927,87 @@ async function dataProvince() {
 						75: 0,
 					},
 				},
+
 				referenceExRadioMoins5ans: {
+					data: {
+						1: 0,
+						2: 0,
+						3: 0,
+						4: 0,
+						5: 0,
+						6: 0,
+						7: 0,
+						8: 0,
+						9: 0,
+						10: 0,
+						11: 0,
+						12: 0,
+						13: 0,
+						14: 0,
+						15: 0,
+						16: 0,
+						17: 0,
+						18: 0,
+						19: 0,
+						20: 0,
+						21: 0,
+						22: 0,
+						23: 0,
+						24: 0,
+						25: 0,
+						26: 0,
+						27: 0,
+						28: 0,
+						29: 0,
+						30: 0,
+						31: 0,
+						32: 0,
+						33: 0,
+						34: 0,
+						35: 0,
+						36: 0,
+						37: 0,
+						38: 0,
+						39: 0,
+						40: 0,
+						41: 0,
+						42: 0,
+						43: 0,
+						44: 0,
+						45: 0,
+						46: 0,
+						47: 0,
+						48: 0,
+						49: 0,
+						50: 0,
+						51: 0,
+						52: 0,
+						53: 0,
+						54: 0,
+						55: 0,
+						56: 0,
+						57: 0,
+						58: 0,
+						59: 0,
+						60: 0,
+						61: 0,
+						62: 0,
+						63: 0,
+						64: 0,
+						65: 0,
+						66: 0,
+						67: 0,
+						68: 0,
+						69: 0,
+						70: 0,
+						71: 0,
+						72: 0,
+						73: 0,
+						74: 0,
+						75: 0,
+					},
+				},
+				referenceExRadioEntre5ans18ans: {
 					data: {
 						1: 0,
 						2: 0,
@@ -1519,7 +2245,7 @@ async function dataProvince() {
 					},
 				},
 			},
-			consultationMedical = await rapportData.getRapportByYear('consultationMedical');
+			consultationMedical = await consultationMedicalData.getConsultationMedical()
 		// ------------------------
 		// province
 		for (let i = 0; i < province.length; i++) {
@@ -1535,48 +2261,97 @@ async function dataProvince() {
 						provinceElement.codeProvince
 					] +=
 						consultationMedicalElement.consultationRealise.m.moins5ans;
+
+					data.consultationRealiseMEntre5ans18ans.data[
+						provinceElement.codeProvince
+					] +=
+						consultationMedicalElement.consultationRealise.m.entre5ans18ans;
+
 					data.consultationRealiseMPlus18ans.data[
 						provinceElement.codeProvince
 					] +=
-						consultationMedicalElement.consultationRealise.m.plus5ans;
+						consultationMedicalElement.consultationRealise.m.plus18ans;
+
 					data.consultationRealiseFMoins5ans.data[
 						provinceElement.codeProvince
 					] +=
 						consultationMedicalElement.consultationRealise.f.moins5ans;
+
+					data.consultationRealiseFEntre5ans18ans.data[
+						provinceElement.codeProvince
+					] +=
+						consultationMedicalElement.consultationRealise.f.entre5ans18ans;
+
 					data.consultationRealiseFPlus18ans.data[
 						provinceElement.codeProvince
 					] +=
-						consultationMedicalElement.consultationRealise.f.plus5ans;
+						consultationMedicalElement.consultationRealise.f.plus18ans;
+
 					data.pecParPemMoins5ans.data[
 						provinceElement.codeProvince
 					] += consultationMedicalElement.pecParPem.moins5ans;
-					data.pecParPemPlus18ans.data[provinceElement.codeProvince] +=
-						consultationMedicalElement.pecParPem.plus5ans;
+					data.pecParPemEntre5ans18ans.data[
+						provinceElement.codeProvince
+					] += consultationMedicalElement.pecParPem.entre5ans18ans;
+
+					data.pecParPemPlus18ans.data[
+						provinceElement.codeProvince
+					] += consultationMedicalElement.pecParPem.plus18ans;
+
 					data.referenceConsSpecMoins5ans.data[
 						provinceElement.codeProvince
 					] +=
 						consultationMedicalElement.reference.consSpec.moins5ans;
+
+					data.referenceConsSpecEntre5ans18ans.data[
+						provinceElement.codeProvince
+					] +=
+						consultationMedicalElement.reference.consSpec.entre5ans18ans;
+
 					data.referenceConsSpecPlus18ans.data[
 						provinceElement.codeProvince
-					] += consultationMedicalElement.reference.consSpec.plus5ans;
+					] +=
+						consultationMedicalElement.reference.consSpec.plus18ans;
+
 					data.referenceUrgenceMoins5ans.data[
 						provinceElement.codeProvince
 					] += consultationMedicalElement.reference.urgence.moins5ans;
+
+					data.referenceUrgenceEntre5ans18ans.data[
+						provinceElement.codeProvince
+					] +=
+						consultationMedicalElement.reference.urgence.entre5ans18ans;
+
 					data.referenceUrgencePlus18ans.data[
 						provinceElement.codeProvince
-					] += consultationMedicalElement.reference.urgence.plus5ans;
+					] += consultationMedicalElement.reference.urgence.plus18ans;
+
 					data.referenceExLaboMoins5ans.data[
 						provinceElement.codeProvince
 					] += consultationMedicalElement.reference.exLabo.moins5ans;
+
+					data.referenceExLaboEntre5ans18ans.data[
+						provinceElement.codeProvince
+					] +=
+						consultationMedicalElement.reference.exLabo.entre5ans18ans;
+
 					data.referenceExLaboPlus18ans.data[
 						provinceElement.codeProvince
-					] += consultationMedicalElement.reference.exLabo.plus5ans;
+					] += consultationMedicalElement.reference.exLabo.plus18ans;
+
 					data.referenceExRadioMoins5ans.data[
 						provinceElement.codeProvince
 					] += consultationMedicalElement.reference.exRadio.moins5ans;
+
+					data.referenceExRadioEntre5ans18ans.data[
+						provinceElement.codeProvince
+					] +=
+						consultationMedicalElement.reference.exRadio.entre5ans18ans;
+
 					data.referenceExRadioPlus18ans.data[
 						provinceElement.codeProvince
-					] += consultationMedicalElement.reference.exRadio.plus5ans;
+					] += consultationMedicalElement.reference.exRadio.plus18ans;
+
 					data.budgetMedicamentDispenseEm.data[
 						provinceElement.codeProvince
 					] += consultationMedicalElement.budgetMedicamentDispenseEm;

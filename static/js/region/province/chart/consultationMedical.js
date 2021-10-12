@@ -199,7 +199,7 @@ $(document).ready(function () {
 					data.categories.push(element.province);
 				}
 			}
-			type = ' DH';
+			type = ' MAD';
 		}
 		chart.updateSeries([
 			{

@@ -143,6 +143,23 @@ async function getSanteMaternelleByRegion(region) {
 	}
 }
 
+// GET
+async function getSanteMaternelle() {
+	try {
+		// variable
+		var today = new Date();
+		return await santeMaternelle
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getSanteMaternelleBySortie,
@@ -151,5 +168,6 @@ module.exports = {
 	editSanteMaternelleById,
 	deleteSanteMaternelleById,
 	getSanteMaternelleByProvince,
-	getSanteMaternelleByRegion
+	getSanteMaternelleByRegion,
+	getSanteMaternelle
 };

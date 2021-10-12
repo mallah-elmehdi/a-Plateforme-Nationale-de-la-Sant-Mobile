@@ -1,7 +1,7 @@
 // SET UP
 const fs = require('fs');
 const centralData = require('../../../data/central');
-const rapportData = require('../../../data/csr/rapport/rapport');
+const maladieDepisteData = require('../../../data/csr/rapport/maladieDepiste');
 
 // ERROR
 const { newError } = require('../../../util/error');
@@ -772,7 +772,7 @@ async function dataRegion() {
 					},
 				},
 			},
-			maladieDepiste = await rapportData.getRapportByYear('maladieDepiste');
+			maladieDepiste = await maladieDepisteData.getMaladieDepiste()
 		// ------------------------
 		// region
 		for (let i = 0; i < region.length; i++) {
@@ -839,38 +839,16 @@ async function dataRegion() {
 					data.raaSansCarditesReference.data[
 						regionElement.codeRegion
 					] = maladieDepisteElement.raa.sansCardites.reference;
-					data.cancerSeinCas.data[regionElement.codeRegion] =
-						maladieDepisteElement.cancer.sein.cas;
-					data.cancerSeinCasPec.data[regionElement.codeRegion] =
-						maladieDepisteElement.cancer.sein.casPec;
-					data.cancerSeinReference.data[regionElement.codeRegion] =
-						maladieDepisteElement.cancer.sein.reference;
-					data.cancerColCas.data[regionElement.codeRegion] =
-						maladieDepisteElement.cancer.col.cas;
-					data.cancerColCasPec.data[regionElement.codeRegion] =
-						maladieDepisteElement.cancer.col.casPec;
-					data.cancerColReference.data[regionElement.codeRegion] =
-						maladieDepisteElement.cancer.col.reference;
+
 					data.tuberculosePolmonaireCas.data[
 						regionElement.codeRegion
-					] = maladieDepisteElement.tuberculose.polmonaire.cas;
+					] = maladieDepisteElement.tuberculosePolmonaire.cas;
 					data.tuberculosePolmonaireCasPec.data[
 						regionElement.codeRegion
-					] = maladieDepisteElement.tuberculose.polmonaire.casPec;
+					] = maladieDepisteElement.tuberculosePolmonaire.casPec;
 					data.tuberculosePolmonaireReference.data[
 						regionElement.codeRegion
-					] = maladieDepisteElement.tuberculose.polmonaire.reference;
-					data.tuberculoseExtraPolmonaireCas.data[
-						regionElement.codeRegion
-					] = maladieDepisteElement.tuberculose.extraPolmonaire.cas;
-					data.tuberculoseExtraPolmonaireCasPec.data[
-						regionElement.codeRegion
-					] =
-						maladieDepisteElement.tuberculose.extraPolmonaire.casPec;
-					data.tuberculoseExtraPolmonaireReference.data[
-						regionElement.codeRegion
-					] =
-						maladieDepisteElement.tuberculose.extraPolmonaire.reference;
+					] = maladieDepisteElement.tuberculosePolmonaire.reference;
 				}
 			}
 		}
@@ -4600,7 +4578,7 @@ async function dataProvince() {
 					},
 				},
 			},
-			maladieDepiste = await rapportData.getRapportByYear('maladieDepiste');
+			maladieDepiste = await maladieDepisteData.getMaladieDepiste()
 		// ------------------------
 		// province
 		for (let i = 0; i < province.length; i++) {
@@ -4608,7 +4586,10 @@ async function dataProvince() {
 			// maladieDepiste
 			for (let j = 0; j < maladieDepiste.length; j++) {
 				const maladieDepisteElement = maladieDepiste[j];
-				if (provinceElement.province === maladieDepisteElement.csr.province) {
+				if (
+					provinceElement.province ===
+					maladieDepisteElement.csr.province
+				) {
 					data.diabeteCas.data[provinceElement.codeProvince] =
 						maladieDepisteElement.diabete.cas;
 					data.diabeteCasPec.data[provinceElement.codeProvince] =
@@ -4635,15 +4616,17 @@ async function dataProvince() {
 						maladieDepisteElement.carie.reference;
 					data.parodontopathieCas.data[provinceElement.codeProvince] =
 						maladieDepisteElement.parodontopathie.cas;
-					data.parodontopathieCasPec.data[provinceElement.codeProvince] =
-						maladieDepisteElement.parodontopathie.casPec;
+					data.parodontopathieCasPec.data[
+						provinceElement.codeProvince
+					] = maladieDepisteElement.parodontopathie.casPec;
 					data.parodontopathieReference.data[
 						provinceElement.codeProvince
 					] = maladieDepisteElement.parodontopathie.reference;
 					data.maladieMentaleCas.data[provinceElement.codeProvince] =
 						maladieDepisteElement.maladieMentale.cas;
-					data.maladieMentaleCasPec.data[provinceElement.codeProvince] =
-						maladieDepisteElement.maladieMentale.casPec;
+					data.maladieMentaleCasPec.data[
+						provinceElement.codeProvince
+					] = maladieDepisteElement.maladieMentale.casPec;
 					data.maladieMentaleReference.data[
 						provinceElement.codeProvince
 					] = maladieDepisteElement.maladieMentale.reference;
@@ -4655,50 +4638,29 @@ async function dataProvince() {
 						maladieDepisteElement.ist.reference;
 					data.raaAvecCarditesCas.data[provinceElement.codeProvince] =
 						maladieDepisteElement.raa.avecCardites.cas;
-					data.raaAvecCarditesCasPec.data[provinceElement.codeProvince] =
-						maladieDepisteElement.raa.avecCardites.casPec;
+					data.raaAvecCarditesCasPec.data[
+						provinceElement.codeProvince
+					] = maladieDepisteElement.raa.avecCardites.casPec;
 					data.raaAvecCarditesReference.data[
 						provinceElement.codeProvince
 					] = maladieDepisteElement.raa.avecCardites.reference;
 					data.raaSansCarditesCas.data[provinceElement.codeProvince] =
 						maladieDepisteElement.raa.sansCardites.cas;
-					data.raaSansCarditesCasPec.data[provinceElement.codeProvince] =
-						maladieDepisteElement.raa.sansCardites.casPec;
+					data.raaSansCarditesCasPec.data[
+						provinceElement.codeProvince
+					] = maladieDepisteElement.raa.sansCardites.casPec;
 					data.raaSansCarditesReference.data[
 						provinceElement.codeProvince
 					] = maladieDepisteElement.raa.sansCardites.reference;
-					data.cancerSeinCas.data[provinceElement.codeProvince] =
-						maladieDepisteElement.cancer.sein.cas;
-					data.cancerSeinCasPec.data[provinceElement.codeProvince] =
-						maladieDepisteElement.cancer.sein.casPec;
-					data.cancerSeinReference.data[provinceElement.codeProvince] =
-						maladieDepisteElement.cancer.sein.reference;
-					data.cancerColCas.data[provinceElement.codeProvince] =
-						maladieDepisteElement.cancer.col.cas;
-					data.cancerColCasPec.data[provinceElement.codeProvince] =
-						maladieDepisteElement.cancer.col.casPec;
-					data.cancerColReference.data[provinceElement.codeProvince] =
-						maladieDepisteElement.cancer.col.reference;
 					data.tuberculosePolmonaireCas.data[
 						provinceElement.codeProvince
-					] = maladieDepisteElement.tuberculose.polmonaire.cas;
+					] = maladieDepisteElement.tuberculosePolmonaire.cas;
 					data.tuberculosePolmonaireCasPec.data[
 						provinceElement.codeProvince
-					] = maladieDepisteElement.tuberculose.polmonaire.casPec;
+					] = maladieDepisteElement.tuberculosePolmonaire.casPec;
 					data.tuberculosePolmonaireReference.data[
 						provinceElement.codeProvince
-					] = maladieDepisteElement.tuberculose.polmonaire.reference;
-					data.tuberculoseExtraPolmonaireCas.data[
-						provinceElement.codeProvince
-					] = maladieDepisteElement.tuberculose.extraPolmonaire.cas;
-					data.tuberculoseExtraPolmonaireCasPec.data[
-						provinceElement.codeProvince
-					] =
-						maladieDepisteElement.tuberculose.extraPolmonaire.casPec;
-					data.tuberculoseExtraPolmonaireReference.data[
-						provinceElement.codeProvince
-					] =
-						maladieDepisteElement.tuberculose.extraPolmonaire.reference;
+					] = maladieDepisteElement.tuberculosePolmonaire.reference;
 				}
 			}
 		}
@@ -4725,13 +4687,12 @@ async function maladieDepiste(req, res, next) {
 		// render the page
 		res.status(200).render('central/dashboard/maladieDepiste', {
 			title:
-				'Tableau de bord | Maladies dépistées | ' +
-				today.getFullYear(),
+				'Tableau de bord | Maladies dépistées | ' + today.getFullYear(),
 			url: req.originalUrl,
 			data,
 			region,
 			province,
-			page: 'dashboard',
+			page: 'prestation',
 			listItem: 'maladieDepiste',
 		});
 	} catch (error) {

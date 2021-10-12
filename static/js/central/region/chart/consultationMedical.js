@@ -4,24 +4,43 @@ $(document).ready(function () {
 		region = $('#region-chart').data('region'),
 		type = '',
 		// init data
-		dataConsultationRealiseMMoins =
+		dataConsultationRealiseMMoins5ans =
 			wholeData.consultationRealiseMMoins5ans.data,
-		dataConsultationRealiseMPlus =
+		dataConsultationRealiseMEntre5ans18ans =
+			wholeData.consultationRealiseMEntre5ans18ans.data,
+		dataConsultationRealiseMPlus18ans =
 			wholeData.consultationRealiseMPlus18ans.data,
-		dataConsultationRealiseFMoins =
+		dataConsultationRealiseFMoins5ans =
 			wholeData.consultationRealiseFMoins5ans.data,
-		dataConsultationRealiseFPlus =
+		dataConsultationRealiseFEntre5ans18ans =
+			wholeData.consultationRealiseFEntre5ans18ans.data,
+		dataConsultationRealiseFPlus18ans =
 			wholeData.consultationRealiseFPlus18ans.data,
-		dataPecParPemMoins = wholeData.pecParPemMoins5ans.data,
-		dataPecParPemPlus = wholeData.pecParPemPlus18ans.data,
-		dataReferenceConsSpecMoins = wholeData.referenceConsSpecMoins5ans.data,
-		dataReferenceConsSpecPlus = wholeData.referenceConsSpecPlus18ans.data,
-		dataReferenceUrgenceMoins = wholeData.referenceUrgenceMoins5ans.data,
-		dataReferenceUrgencePlus = wholeData.referenceUrgencePlus18ans.data,
-		dataReferenceExLaboMoins = wholeData.referenceExLaboMoins5ans.data,
-		dataReferenceExLaboPlus = wholeData.referenceExLaboPlus18ans.data,
-		dataReferenceExRadioMoins = wholeData.referenceExRadioMoins5ans.data,
-		dataReferenceExRadioPlus = wholeData.referenceExRadioPlus18ans.data,
+		dataPecParPemMoins5ans = wholeData.pecParPemMoins5ans.data,
+		dataPecParPemEntre5ans18ans = wholeData.pecParPemEntre5ans18ans.data,
+		dataPecParPemPlus18ans = wholeData.pecParPemPlus18ans.data,
+		dataReferenceConsSpecMoins5ans =
+			wholeData.referenceConsSpecMoins5ans.data,
+		dataReferenceConsSpecEntre5ans18ans =
+			wholeData.referenceConsSpecEntre5ans18ans.data,
+		dataReferenceConsSpecPlus18ans =
+			wholeData.referenceConsSpecPlus18ans.data,
+		dataReferenceUrgenceMoins5ans =
+			wholeData.referenceUrgenceMoins5ans.data,
+		dataReferenceUrgenceEntre5ans18ans =
+			wholeData.referenceUrgenceEntre5ans18ans.data,
+		dataReferenceUrgencePlus18ans =
+			wholeData.referenceUrgencePlus18ans.data,
+		dataReferenceExLaboMoins5ans = wholeData.referenceExLaboMoins5ans.data,
+		dataReferenceExLaboEntre5ans18ans =
+			wholeData.referenceExLaboEntre5ans18ans.data,
+		dataReferenceExLaboPlus18ans = wholeData.referenceExLaboPlus18ans.data,
+		dataReferenceExRadioMoins5ans =
+			wholeData.referenceExRadioMoins5ans.data,
+		dataReferenceExRadioEntre5ans18ans =
+			wholeData.referenceExRadioEntre5ans18ans.data,
+		dataReferenceExRadioPlus18ans =
+			wholeData.referenceExRadioPlus18ans.data,
 		dataBudgetMedicamentDispenseEm =
 			wholeData.budgetMedicamentDispenseEm.data,
 		data = {
@@ -33,10 +52,12 @@ $(document).ready(function () {
 		var element = region[i];
 		data.data.push(
 			getData([
-				dataConsultationRealiseMMoins[element.codeRegion],
-				dataConsultationRealiseMPlus[element.codeRegion],
-				dataConsultationRealiseFMoins[element.codeRegion],
-				dataConsultationRealiseFPlus[element.codeRegion],
+				dataConsultationRealiseMMoins5ans[element.codeRegion],
+				dataConsultationRealiseMEntre5ans18ans[element.codeRegion],
+				dataConsultationRealiseMPlus18ans[element.codeRegion],
+				dataConsultationRealiseFMoins5ans[element.codeRegion],
+				dataConsultationRealiseFEntre5ans18ans[element.codeRegion],
+				dataConsultationRealiseFPlus18ans[element.codeRegion],
 			])
 		);
 		data.categories.push(element.region);
@@ -125,10 +146,12 @@ $(document).ready(function () {
 				var element = region[i];
 				data.data.push(
 					getData([
-						dataConsultationRealiseMMoins[element.codeRegion],
-						dataConsultationRealiseMPlus[element.codeRegion],
-						dataConsultationRealiseFMoins[element.codeRegion],
-						dataConsultationRealiseFPlus[element.codeRegion],
+						dataConsultationRealiseMMoins5ans[element.codeRegion],
+						dataConsultationRealiseMEntre5ans18ans[element.codeRegion],
+						dataConsultationRealiseMPlus18ans[element.codeRegion],
+						dataConsultationRealiseFMoins5ans[element.codeRegion],
+						dataConsultationRealiseFEntre5ans18ans[element.codeRegion],
+						dataConsultationRealiseFPlus18ans[element.codeRegion],
 					])
 				);
 				data.categories.push(element.region);
@@ -139,8 +162,9 @@ $(document).ready(function () {
 				var element = region[i];
 				data.data.push(
 					getData([
-						dataPecParPemMoins[element.codeRegion],
-						dataPecParPemPlus[element.codeRegion],
+						dataPecParPemMoins5ans[element.codeRegion],
+						dataPecParPemEntre5ans18ans[element.codeRegion],
+						dataPecParPemPlus18ans[element.codeRegion],
 					])
 				);
 				data.categories.push(element.region);
@@ -151,14 +175,18 @@ $(document).ready(function () {
 				var element = region[i];
 				data.data.push(
 					getData([
-						dataReferenceConsSpecMoins[element.codeRegion],
-						dataReferenceConsSpecPlus[element.codeRegion],
-						dataReferenceUrgenceMoins[element.codeRegion],
-						dataReferenceUrgencePlus[element.codeRegion],
-						dataReferenceExLaboMoins[element.codeRegion],
-						dataReferenceExLaboPlus[element.codeRegion],
-						dataReferenceExRadioMoins[element.codeRegion],
-						dataReferenceExRadioPlus[element.codeRegion],
+						dataReferenceConsSpecMoins5ans[element.codeRegion],
+						dataReferenceConsSpecEntre5ans18ans[element.codeRegion],
+						dataReferenceConsSpecPlus18ans[element.codeRegion],
+						dataReferenceUrgenceMoins5ans[element.codeRegion],
+						dataReferenceUrgenceEntre5ans18ans[element.codeRegion],
+						dataReferenceUrgencePlus18ans[element.codeRegion],
+						dataReferenceExLaboMoins5ans[element.codeRegion],
+						dataReferenceExLaboEntre5ans18ans[element.codeRegion],
+						dataReferenceExLaboPlus18ans[element.codeRegion],
+						dataReferenceExRadioMoins5ans[element.codeRegion],
+						dataReferenceExRadioEntre5ans18ans[element.codeRegion],
+						dataReferenceExRadioPlus18ans[element.codeRegion],
 					])
 				);
 				data.categories.push(element.region);
@@ -174,7 +202,7 @@ $(document).ready(function () {
 				);
 				data.categories.push(element.region);
 			}
-			type = ' DH';
+			type = ' MAD';
 		}
 		chart.updateSeries([
 			{

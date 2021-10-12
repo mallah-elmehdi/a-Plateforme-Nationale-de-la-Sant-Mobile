@@ -66,49 +66,6 @@ async function submitPlanAction(csr) {
 	}
 }
 
-// // GET
-// async function getPlanActionByYear() {
-// 	try {
-// 		var today = new Date();
-// 		return await planAction
-// 			.find({ year: today.getFullYear() })
-// 			.populate({
-// 				path: 'csr population programme ressource ressourceHumain',
-// 				select: '-password -email -_id -__v -createdAt -updatedAt',
-// 				populate: {
-// 					path: 'localite',
-// 					select: '-password -email -_id -__v -createdAt -updatedAt -csr',
-// 				},
-// 			})
-// 			.select('-__v -_id -createdAt -updatedAt');
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
-
-// GET
-// async function getPlanActionByRegion(region) {
-// 	try {
-// 		var today = new Date(),
-// 			query = await planAction
-// 				.find({ year: today.getFullYear() })
-// 				.populate('csr population programme ressource ressourceHumain')
-// 				.select('-email');
-// 		resule = [];
-// 		for (let i = 0; i < query.length; i++) {
-// 			const element = query[i];
-// 			if (element.csr.region === region) {
-// 				resule.push(element);
-// 			}
-// 		}
-// 		return resule;
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
-
 // GET BY PROVINCE
 async function getPlanActionByProvince(province) {
 	try {
@@ -153,6 +110,20 @@ async function getPlanActionByRegion(region) {
 	}
 }
 
+// GET
+async function getPlanAction() {
+	try {
+		var today = new Date();
+		return await planAction
+			.find({ year: today.getFullYear() })
+			.populate('csr population programme ressource ressourceHumain')
+			.select('-email');
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getPlanActionByCsr,
@@ -160,5 +131,6 @@ module.exports = {
 	addDataToPlanAction,
 	submitPlanAction,
 	getPlanActionByProvince,
-	getPlanActionByRegion
+	getPlanActionByRegion,
+	getPlanAction
 };

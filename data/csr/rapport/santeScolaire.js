@@ -123,6 +123,23 @@ async function getSanteScolaireByRegion(region) {
 	}
 }
 
+// GET BY REGION
+async function getSanteScolaire() {
+	try {
+		// variable
+		var today = new Date();
+		return await santeScolaire
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getSanteScolaireBySortie,
@@ -131,5 +148,6 @@ module.exports = {
 	editSanteScolaireById,
 	deleteSanteScolaireById,
 	getSanteScolaireByProvince,
-	getSanteScolaireByRegion
+	getSanteScolaireByRegion,
+	getSanteScolaire,
 };

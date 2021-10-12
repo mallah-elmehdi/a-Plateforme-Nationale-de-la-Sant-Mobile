@@ -15,7 +15,14 @@ $(document).ready(function () {
 		dataReferenceLt = wholeData.referenceLt.data,
 		// other
 		max = undefined,
-		scale = ['#BDFFAD', '#187a00'],
+				scale = [
+			'#FFF891',
+			'#fcf75a',
+			'#a9a403',
+			'#7DFE69',
+			'#169a01',
+			'#0a4600',
+		],
 		data = getData([dataPiluleAa, dataPiluleNa]),
 		table = 2;
 	// MAP
@@ -62,7 +69,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -96,7 +103,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -130,7 +137,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -164,7 +171,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>
@@ -198,7 +205,7 @@ $(document).ready(function () {
 					<table class="table table-sm table-bordered fs-8 text-dark">
 						<tbody>
 							<tr>
-								<th colspan="2" class="text-center">${label.html()}</th>
+								<th colspan="2" class="text-center">Province : ${label.html()}</th>
 							</tr>
 							
 							<tr>

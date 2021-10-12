@@ -84,7 +84,6 @@ async function deletePdrVisiteById(id) {
 	try {
 		// delete document
 		return await pdrVisite.findByIdAndDelete(id);
-
 	} catch (error) {
 		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
@@ -110,72 +109,29 @@ async function getPdrVisiteByRegion(region) {
 				out.push(element);
 			}
 		}
-		return out
+		return out;
 	} catch (error) {
 		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
 	}
 }
 
-// // GET
-// async function getPdrVisiteByYear() {
-// 	try {
-// 		var today = new Date();
-// 		return await pdrVisite
-// 			.find({
-// 				year: today.getFullYear(),
-// 			})
-// 			.populate({ path: 'pdrVisite csr', select: '-email -password' });
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
+// GET
+async function getPdrVisite() {
+	try {
+		var today = new Date();
+		return await pdrVisite
+			.find({
+				year: today.getFullYear(),
+			})
+			.populate({ path: 'pdrVisite csr', select: '-email' });
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
 
 
-
-// async function getPdrVisiteByProvinceAndYear(province) {
-// 	try {
-// 		var today = new Date(),
-// 			all = await pdrVisite
-// 				.find({
-// 					year: today.getFullYear(),
-// 				})
-// 				.populate({
-// 					path: 'pdrVisite csr',
-// 					select: '-email -password',
-// 				});
-// 		out = [];
-// 		for (let i = 0; i < all.length; i++) {
-// 			const element = all[i];
-// 			if (element.csr.province === province) {
-// 				out.push(element);
-// 			}
-// 		}
-// 		return out
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
-
-// // DELETE
-// async function deletePdrVisite(_id, csr, sortie, trimestre) {
-// 	try {
-// 		// delete document
-// 		var document = await pdrVisite.findOneAndDelete({
-// 			_id,
-// 			csr,
-// 			sortie,
-// 			trimestre,
-// 		});
-// 		// return the id of document
-// 		return document.id;
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
 
 // OUTPUT
 module.exports = {
@@ -185,5 +141,6 @@ module.exports = {
 	editPdrVisiteById,
 	getPdrVisiteBySortie,
 	deletePdrVisiteById,
-	getPdrVisiteByRegion
+	getPdrVisiteByRegion,
+	getPdrVisite
 };

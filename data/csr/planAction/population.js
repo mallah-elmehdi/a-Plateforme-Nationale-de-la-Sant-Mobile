@@ -64,21 +64,6 @@ async function getPopulationByProvince(province) {
 	}
 }
 
-// // GET
-// async function getPopulationByYear() {
-// 	try {
-// 		var today = new Date();
-// 		return await population
-// 			.find({ year: today.getFullYear() })
-// 			.populate({
-// 				path: 'csr',
-// 				select: '-password -email',
-// 			});
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw newError(500, "quelque chose s'est mal passé");
-// 	}
-// }
 // GET
 async function getPopulationByRegion(region) {
 	try {
@@ -103,10 +88,27 @@ async function getPopulationByRegion(region) {
 	}
 }
 
+// GET
+async function getPopulation() {
+	try {
+		var today = new Date();
+		return await population
+			.find({ year: today.getFullYear() })
+			.populate({
+				path: 'csr',
+				select: '-email',
+			});
+	} catch (error) {
+		console.log(error);
+		throw newError(500, "quelque chose s'est mal passé");
+	}
+}
+
 // OUTPUT
 module.exports = {
 	getPopulationByCsr,
 	addUpdatePopulation,
 	getPopulationByRegion,
 	getPopulationByProvince,
+	getPopulation
 };
