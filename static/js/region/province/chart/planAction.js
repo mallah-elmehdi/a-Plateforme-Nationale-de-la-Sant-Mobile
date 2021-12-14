@@ -24,6 +24,9 @@ $(document).ready(function () {
 			},
 		],
 		chart: {
+			toolbar: {
+				show: false,
+			},
 			type: 'bar',
 			height: 40 * provinceList.length,
 		},

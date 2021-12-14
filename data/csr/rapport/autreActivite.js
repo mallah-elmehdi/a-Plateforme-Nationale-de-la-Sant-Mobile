@@ -23,6 +23,7 @@ async function addAutreActivite(csr, sortie, trimestre, body) {
 		body.csr = csr;
 		body.trimestre = trimestre;
 		body.sortie = sortie;
+		body.ignore = false;
 		// add document
 		var document = await autreActivite.create(body);
 		// return the id of document
@@ -71,7 +72,7 @@ async function deleteAutreActiviteById(id) {
 async function ignoreAutreActivite(csr, trimestre, sortie) {
 	try {
 		// delete document
-		return await autreActivite.findOneAndUpdate(
+		const doc = await autreActivite.findOneAndUpdate(
 			{
 				csr,
 				trimestre,
@@ -87,6 +88,7 @@ async function ignoreAutreActivite(csr, trimestre, sortie) {
 				setDefaultsOnInsert: true,
 			}
 		);
+		return doc.id
 	} catch (error) {
 		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");

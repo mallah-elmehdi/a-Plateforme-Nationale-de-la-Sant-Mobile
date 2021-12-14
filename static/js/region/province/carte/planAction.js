@@ -178,7 +178,7 @@ $(document).ready(function () {
 		}
 		if (strOut === '') {
 			strOut =
-				'<tr><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>0</td><td>0</td><td>0</td><td>0</td><td>Aucune</td></tr>';
+				'<tr><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>0</td></tr>';
 		}
 		return strOut;
 	}
@@ -218,7 +218,7 @@ $(document).ready(function () {
 		}
 		if (strOut === '') {
 			strOut =
-				'<tr><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>0</td><td>Aucune</td><td>Aucune</td></tr>';
+				'<tr><td>Aucune</td><td>Aucune</td><td>Aucune</td></tr>';
 		}
 		return strOut;
 	}
@@ -265,7 +265,7 @@ $(document).ready(function () {
 					<div class="modal-dialog modal-fullscreen">
 						<div class="modal-content">
 							<div class="modal-header border-0 p-2 bg-5">
-								<span class="modal-title text-white fw-bold fs-7" id="modalTableLabel">Plan d’action des unités médicales mobiles (UMM)</span>
+								<span class="modal-title text-white fw-bold fs-7" id="modalTableLabel">Plan d’action des unités médicales mobiles (UMM) de la province ${pro}</span>
 								<button type="button" class="btn btn-sm p-1 text-white" data-bs-dismiss="modal" aria-label="Close"><ion-icon class="fs-5 align-middle" name="close-outline"></ion-icon></button>
 							</div>
 							<div class="modal-body bg-body">

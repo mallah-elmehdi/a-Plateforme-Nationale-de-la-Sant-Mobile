@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const favicon = require('express-favicon');
 const flash = require('express-flash-messages');
 const { sessionSecret } = require('./conf');
 // CREAT APPLICATION
@@ -29,6 +30,8 @@ app.use(
 	})
 );
 app.use(flash());
+app.use(favicon(__dirname + '/static/image/logo-test.png'));
+
 
 // ROUTING
 

@@ -17,6 +17,16 @@ async function redirectTodata(req, res, next) {
 	}
 }
 
+// REDIRECT
+async function redirect(req, res, next) {
+	try {
+		return res.redirect('..');
+	} catch (error) {
+		console.log(error);
+		return next(error);
+	}
+}
+
 // FORM PAGE
 async function autreActivite(req, res, next) {
 	try {
@@ -143,23 +153,18 @@ async function deleteAutreActivite(req, res, next) {
 // IGNORE
 async function ignoreAutreActivite(req, res, next) {
 	try {
-		await autreActiviteData.ignoreAutreActivite(
-			req.params.id,
-			req.params.trimestre,
-			req.params.sortie
-		);
-		// notif
-		req.flash('succ', 'Informations ajoutées avec succès');
-		// redirect
-		return res.redirect(
-			req.baseUrl +
-				'/' +
-				req.params.id +
-				'/trimestre/' +
-				req.params.trimestre +
-				'/sortie/' +
-				req.params.sortie
-		);
+		res.locals = {
+			sortie: {
+				body: {
+					autreActivite: await autreActiviteData.ignoreAutreActivite(
+						req.params.id,
+						req.params.trimestre,
+						req.params.sortie
+					)
+				},
+			},
+		};
+		return next();
 	} catch (error) {
 		console.log(error);
 		return next(error);
@@ -238,6 +243,7 @@ async function deleteActivity(req, res, next) {
 
 // OUTPUT
 module.exports = {
+	redirect,
 	redirectTodata,
 	autreActivite,
 	addAutreActivite,

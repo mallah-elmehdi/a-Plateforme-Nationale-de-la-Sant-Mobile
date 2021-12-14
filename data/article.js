@@ -6,8 +6,10 @@ const { newError } = require('../util/error');
 // get the user document
 async function addArticle(body) {
 	try {
+		console.log(body);
 		return await article.create(body);
 	} catch (error) {
+		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
 	}
 }
@@ -23,6 +25,7 @@ async function getArticles(page) {
 			}
 		);
 	} catch (error) {
+		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
 	}
 }
@@ -31,6 +34,7 @@ async function getArticleById(id) {
 	try {
 		return await article.findById(id);
 	} catch (error) {
+		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
 	}
 }
@@ -39,6 +43,7 @@ async function editArticleById(id, body) {
 	try {
 		return await article.findByIdAndUpdate(id, body);
 	} catch (error) {
+		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
 	}
 }
@@ -47,6 +52,7 @@ async function deleteArticleById(id) {
 	try {
 		return await article.findByIdAndDelete(id);
 	} catch (error) {
+		console.log(error);
 		throw newError(500, "quelque chose s'est mal passé");
 	}
 }

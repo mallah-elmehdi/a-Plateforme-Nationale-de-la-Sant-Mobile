@@ -80,19 +80,6 @@ async function addArticleData(req, res, next) {
 	}
 }
 
-async function addArticleData(req, res, next) {
-	try {
-		req.body.image = req.file.filename;
-		const article = await articleData.editArticleById(req.params.article);
-		return res.redirect(
-			req.baseUrl + '/' + req.params.id + '/article/' + article.id
-		);
-	} catch (error) {
-		console.log(error);
-		return next(newError(500, "quelque chose s'est mal passé"));
-	}
-}
-
 // redirection
 async function getArticles(req, res, next) {
 	try {

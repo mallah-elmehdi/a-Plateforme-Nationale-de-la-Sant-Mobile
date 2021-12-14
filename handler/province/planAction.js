@@ -67,6 +67,7 @@ async function dataProvince(province) {
 		// planAction
 		for (let j = 0; j < planAction.length; j++) {
 			const planActionElement = planAction[j];
+			if (planActionElement.population) {
 			// POPULATION
 			// --
 			data[codeProvince].population.population.rurale +=
@@ -108,6 +109,8 @@ async function dataProvince(province) {
 			data[codeProvince].population.femme.femmeEnceinte +=
 				planActionElement.population.femme.femmeEnceinte;
 			// --
+			}
+			if (planActionElement.ressource) {
 			// RESSOURCE
 			for (
 				let r = 0;
@@ -216,9 +219,11 @@ async function dataProvince(province) {
 					}
 				}
 			}
+		}
 			// ressource humain
 			// --
-			data[codeProvince].ressourceHumain.fixe.medecin +=
+			if (planActionElement.ressourceHumain) {
+				data[codeProvince].ressourceHumain.fixe.medecin +=
 				planActionElement.ressourceHumain.fixe.medecin;
 			// --
 			data[codeProvince].ressourceHumain.fixe.infirmier +=
@@ -259,6 +264,7 @@ async function dataProvince(province) {
 			// --
 			data[codeProvince].ressourceHumain.mobile.emOperationnelle +=
 				planActionElement.ressourceHumain.mobile.emOperationnelle;
+			}
 			// PDR
 			for (let p = 0; p < planActionElement.programme.length; p++) {
 				const programmeElement = planActionElement.programme[p];

@@ -5,29 +5,29 @@ block tail
 	script(type="module" src="/../../js/util/validation.js")
 
 block body
-	section.min-vh-100.d-flex.align-items-center.justify-content-center
-		.rounded-3.shadow-sm.w-max-3.bg-sign.p-3
+	section.min-vh-100.d-flex.align-items-center.justify-content-center.flex-column
+		.mb-4.text-white.d-flex.align-items-center
+			img(src="/../../image/ms-logo.png", alt="MS" width="300px")
+		.rounded-3.shadow-sm.w-max-3.bg-sign.p-4
 			.d-flex.flex-column.justify-content-between.align-items-center
-				a(href="/") 
-					img.mb-3(src="/../../image/logo-test.png", alt="umm" width="200px")
+				a.mb-4(href="/") 
+					img.mb-4(src="/../../image/logo-test-white.png", alt="umm" width="250px")
 				.card.card-body.w-100
 					form(action=url method="post" autocomplete="off")
-						.row.g-3
+						.row.g-4
 							.col-12
-								label.form-label.text-body.fs-8(for='username') Email d'utilisateur
-								input#username.form-control.form-control-sm(type='email' name='email' placeholder='utilisateur' required)
+								label.form-label.text-dark(for='username') Email d'utilisateur
+								input#username.form-control(type='email' name='email' placeholder='utilisateur' required)
 								.invalid-feedback.fs-8
 							.col-12
-								label.form-label.text-body.fs-8(for='password') Mot de passe
-								.input-group.input-group-sm
+								label.form-label.text-dark(for='password') Mot de passe
+								.input-group
 									input.form-control(type='password' name='password' placeholder='Mot de passe' aria-label='password' aria-describedby='show-password' required)
-									.invalid-feedback.fs-8.mt-4
+									.invalid-feedback.fs-8(style="margin-top:35px;")
 									button.show-password.input-group-text.bg-transparent(type='button')
 										ion-icon(name='eye-outline')
 							//- .col-12
 								a.text-decoration-none.fs-8(href="/forgot-password") Mot de passe oublié ?
 							.col-12
-								button.btn.btn-sm.bg-grd.w-100(type='submit') Se connecter
-				.mt-3.text-white.d-flex.align-items-center
-					img.me-2(src="/../../image/ms-logo.png", alt="MS", width="20px")
-					.fs-8 &copy; 2021 Ministère de la Santé. Tous droits réservés.
+								button.btn.bg-grd.w-100(type='submit') Se connecter
+				.fs-8.mt-4.text-white &copy; 2021 Ministère de la Santé et de la Protection Sociale. Tous droits réservés.

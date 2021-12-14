@@ -60,7 +60,7 @@
 			{
 				"name": "distanceMoyenneRouteProche",
 				"id": "distanceMoyenneRouteProche",
-				"title": "Distance moyenne entre le centre de santé et la route goudronnée la plus proche",
+				"title": "Distance moyenne entre le centre de santé et la route goudronnée la plus proche (km)",
 				"col": "col-sm-6",
 				"type": "number"
 			}

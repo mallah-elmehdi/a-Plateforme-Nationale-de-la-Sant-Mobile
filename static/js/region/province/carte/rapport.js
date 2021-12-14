@@ -389,7 +389,7 @@ $(document).ready(function () {
 	// SHOW TABLE
 	function showModal(code) {
 		var title =
-			'Rapport des activités des Unités Médical Mobile (UMM)', provinceElement;
+			'Rapport des activités des Unités Médical Mobile (UMM) de la province ', provinceElement;
 			for (let i = 0; i < province.length; i++) {
 				const element = province[i];
 				if (code == element.codeProvince) {
@@ -401,7 +401,7 @@ $(document).ready(function () {
 			<div class="modal-dialog modal-fullscreen">
 				<div class="modal-content">
 					<div class="modal-header border-0 p-2 bg-5">
-						<span class="modal-title text-white fw-bold fs-7" id="modalTableLabel">${title}</span>
+						<span class="modal-title text-white fw-bold fs-7" id="modalTableLabel">${title + provinceElement}</span>
 						<button type="button" class="btn btn-sm p-1 text-white" data-bs-dismiss="modal" aria-label="Close"><ion-icon class="fs-5 align-middle" name="close-outline"></ion-icon></button>
 					</div>
 					<div class="modal-body bg-body">

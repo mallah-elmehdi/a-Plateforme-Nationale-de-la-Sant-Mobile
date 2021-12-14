@@ -291,7 +291,7 @@ $(document).ready(function () {
 	// SHOW TABLE
 	function showModal(code) {
 		var title =
-			'Rapport des activités des Unités Médical Mobile (UMM)'
+			'Rapport des activités des Unités Médical Mobile (UMM) de la région ' +  $('#data').data('region')
 
 		$('#modalPlace').empty().append(`
 	<div class="modal fade p-0 m-0" id="modalTable" tabindex="-1" aria-labelledby="modalTableLabel" aria-hidden="true">

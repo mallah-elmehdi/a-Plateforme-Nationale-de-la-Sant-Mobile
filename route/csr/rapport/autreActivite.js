@@ -35,12 +35,18 @@ router
 // IGNORE
 router
 	.route('/:id/trimestre/:trimestre/sortie/:sortie/autre-activite/ignore')
+	.get(
+		authHandler.protector,
+		handler.redirect,
+		errorHandler.throwError
+	)
 	.post(
 		authHandler.protector,
 		trimestreHandler.trimestreUrl,
 		// trimestreHandler.trimestreDead,
 		sortieHandler.sortieSubmited,
 		handler.ignoreAutreActivite,
+		sortieHandler.addDataToSortie,
 		errorHandler.throwError
 	);
 

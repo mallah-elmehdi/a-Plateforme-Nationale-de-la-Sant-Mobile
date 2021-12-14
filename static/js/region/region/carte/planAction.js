@@ -173,7 +173,7 @@ $(document).ready(function () {
 		}
 		if (strOut === '') {
 			strOut =
-				'<tr><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>0</td><td>0</td><td>0</td><td>0</td><td>Aucune</td></tr>';
+				'<tr><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>0</td></tr>';
 		}
 		return strOut;
 	}
@@ -213,7 +213,7 @@ $(document).ready(function () {
 		}
 		if (strOut === '') {
 			strOut =
-				'<tr><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>0</td><td>Aucune</td><td>Aucune</td></tr>';
+				'<tr><td>Aucune</td><td>Aucune</td><td>Aucune</td></tr>';
 		}
 		return strOut;
 	}
@@ -254,7 +254,7 @@ $(document).ready(function () {
 					<div class="modal-dialog modal-fullscreen">
 						<div class="modal-content">
 							<div class="modal-header border-0 p-2 bg-5">
-								<span class="modal-title text-white fw-bold fs-7" id="modalTableLabel">Plan d’action des unités médicales mobiles (UMM)</span>
+								<span class="modal-title text-white fw-bold fs-7" id="modalTableLabel">Plan d’action des unités médicales mobiles (UMM) de la région ${$('#data').data('region')}</span>
 								<button type="button" class="btn btn-sm p-1 text-white" data-bs-dismiss="modal" aria-label="Close"><ion-icon class="fs-5 align-middle" name="close-outline"></ion-icon></button>
 							</div>
 							<div class="modal-body bg-body">
@@ -553,7 +553,6 @@ $(document).ready(function () {
 			'#FF4646',
 			'#FFF891',
 			'#fcf75a',
-			'#a9a403',
 			'#7DFE69',
 			'#169a01',
 			'#0a4600',
@@ -567,7 +566,8 @@ $(document).ready(function () {
 					values: { [codeRegion]: data[codeRegion] },
 					scale,
 					normalizeFunction: 'polynomial',
-					max,
+					max: 100,
+					min: 0,
 					legend: {
 						horizontal: true,
 						labelRender: function (v) {

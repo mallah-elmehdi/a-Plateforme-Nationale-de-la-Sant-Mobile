@@ -50,6 +50,15 @@ $(document).ready(function () {
 			},
 		],
 		chart: {
+			toolbar: {
+				show: false,
+			},
+			toolbar: {
+				show: false,
+			},
+			toolbar: {
+				show: false,
+			},
 			type: 'bar',
 			height: 1500,
 		},

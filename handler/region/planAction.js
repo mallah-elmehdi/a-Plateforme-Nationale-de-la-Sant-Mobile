@@ -164,192 +164,203 @@ async function dataRegion(region) {
 		for (let j = 0; j < planAction.length; j++) {
 			const planActionElement = planAction[j];
 			// POPULATION
-			data[codeRegion].population.population.rurale +=
-				planActionElement.population.population.rurale;
-			// --
-			data[codeRegion].population.population.cible +=
-				planActionElement.population.population.cible;
-			// --
-			data[codeRegion].population.population.habitantMoins3km +=
-				planActionElement.population.population.habitantMoins3km;
-			// --
-			data[codeRegion].population.population.habitantEntre3km6km +=
-				planActionElement.population.population.habitantEntre3km6km;
-			// --
-			data[codeRegion].population.population.habitantEntre6km10km +=
-				planActionElement.population.population.habitantEntre6km10km;
-			// --
-			data[codeRegion].population.population.habitantPlus10km +=
-				planActionElement.population.population.habitantPlus10km;
-			// --
-			data[codeRegion].population.distanceMoyenneRouteProche +=
-				planActionElement.population.distanceMoyenneRouteProche;
-			// --
-			data[codeRegion].population.enfant.naissancesAttendues +=
-				planActionElement.population.enfant.naissancesAttendues;
-			// --
-			data[codeRegion].population.enfant.moins1ans +=
-				planActionElement.population.enfant.moins1ans;
-			// --
-			data[codeRegion].population.enfant.moins5ans +=
-				planActionElement.population.enfant.moins5ans;
-			// --
-			data[codeRegion].population.femme.far +=
-				planActionElement.population.femme.far;
-			// --
-			data[codeRegion].population.femme.fmar +=
-				planActionElement.population.femme.fmar;
-			// --
-			data[codeRegion].population.femme.femmeEnceinte +=
-				planActionElement.population.femme.femmeEnceinte;
-			// --
+			if (planActionElement.population) {
+				data[codeRegion].population.population.rurale +=
+					planActionElement.population.population.rurale;
+				// --
+				data[codeRegion].population.population.cible +=
+					planActionElement.population.population.cible;
+				// --
+				data[codeRegion].population.population.habitantMoins3km +=
+					planActionElement.population.population.habitantMoins3km;
+				// --
+				data[codeRegion].population.population.habitantEntre3km6km +=
+					planActionElement.population.population.habitantEntre3km6km;
+				// --
+				data[codeRegion].population.population.habitantEntre6km10km +=
+					planActionElement.population.population.habitantEntre6km10km;
+				// --
+				data[codeRegion].population.population.habitantPlus10km +=
+					planActionElement.population.population.habitantPlus10km;
+				// --
+				data[codeRegion].population.distanceMoyenneRouteProche +=
+					planActionElement.population.distanceMoyenneRouteProche;
+				// --
+				data[codeRegion].population.enfant.naissancesAttendues +=
+					planActionElement.population.enfant.naissancesAttendues;
+				// --
+				data[codeRegion].population.enfant.moins1ans +=
+					planActionElement.population.enfant.moins1ans;
+				// --
+				data[codeRegion].population.enfant.moins5ans +=
+					planActionElement.population.enfant.moins5ans;
+				// --
+				data[codeRegion].population.femme.far +=
+					planActionElement.population.femme.far;
+				// --
+				data[codeRegion].population.femme.fmar +=
+					planActionElement.population.femme.fmar;
+				// --
+				data[codeRegion].population.femme.femmeEnceinte +=
+					planActionElement.population.femme.femmeEnceinte;
+				// --
+			}
 			// RESSOURCE
-			for (
-				let r = 0;
-				r < planActionElement.ressource.vehicule.length;
-				r++
-			) {
-				const vehiculeElement = planActionElement.ressource.vehicule[r];
-				console.log(vehiculeElement);
-				if (vehiculeElement.appartenance === 'Commune') {
-					if (
-						data[codeRegion].ressource.commune[
-							planActionElement.csr.cs
-						]
-					) {
-						data[codeRegion].ressource.commune[
-							planActionElement.csr.cs
-						].push({
-							type: vehiculeElement.type,
-							age: vehiculeElement.age,
-							csr: {
-								name: planActionElement.csr.csr,
-								category: planActionElement.csr.category,
-							},
-						});
-					} else {
-						data[codeRegion].ressource.commune[
-							planActionElement.csr.cs
-						] = [];
-						data[codeRegion].ressource.commune[
-							planActionElement.csr.cs
-						].push({
-							type: vehiculeElement.type,
-							age: vehiculeElement.age,
-							csr: {
-								name: planActionElement.csr.csr,
-								category: planActionElement.csr.category,
-							},
-						});
-					}
-				} else if (
-					vehiculeElement.appartenance === 'Ministère de la Santé'
+			if (planActionElement.ressource) {
+				for (
+					let r = 0;
+					r < planActionElement.ressource.vehicule.length;
+					r++
 				) {
-					if (
-						data[codeRegion].ressource.ms[planActionElement.csr.cs]
+					const vehiculeElement =
+						planActionElement.ressource.vehicule[r];
+					console.log(vehiculeElement);
+					if (vehiculeElement.appartenance === 'Commune') {
+						if (
+							data[codeRegion].ressource.commune[
+								planActionElement.csr.cs
+							]
+						) {
+							data[codeRegion].ressource.commune[
+								planActionElement.csr.cs
+							].push({
+								type: vehiculeElement.type,
+								age: vehiculeElement.age,
+								csr: {
+									name: planActionElement.csr.csr,
+									category: planActionElement.csr.category,
+								},
+							});
+						} else {
+							data[codeRegion].ressource.commune[
+								planActionElement.csr.cs
+							] = [];
+							data[codeRegion].ressource.commune[
+								planActionElement.csr.cs
+							].push({
+								type: vehiculeElement.type,
+								age: vehiculeElement.age,
+								csr: {
+									name: planActionElement.csr.csr,
+									category: planActionElement.csr.category,
+								},
+							});
+						}
+					} else if (
+						vehiculeElement.appartenance === 'Ministère de la Santé'
 					) {
-						data[codeRegion].ressource.ms[
-							planActionElement.csr.cs
-						].push({
-							type: vehiculeElement.type,
-							age: vehiculeElement.age,
-							csr: {
-								name: planActionElement.csr.csr,
-								category: planActionElement.csr.category,
-							},
-						});
-					} else {
-						data[codeRegion].ressource.ms[
-							planActionElement.csr.cs
-						] = [];
-						data[codeRegion].ressource.ms[
-							planActionElement.csr.cs
-						].push({
-							type: vehiculeElement.type,
-							age: vehiculeElement.age,
-							csr: {
-								name: planActionElement.csr.csr,
-								category: planActionElement.csr.category,
-							},
-						});
-					}
-				} else if (
-					vehiculeElement.appartenance ===
-					'Organisation Non Gouvernementale (ONG)'
-				) {
-					if (
-						data[codeRegion].ressource.ong[planActionElement.csr.cs]
+						if (
+							data[codeRegion].ressource.ms[
+								planActionElement.csr.cs
+							]
+						) {
+							data[codeRegion].ressource.ms[
+								planActionElement.csr.cs
+							].push({
+								type: vehiculeElement.type,
+								age: vehiculeElement.age,
+								csr: {
+									name: planActionElement.csr.csr,
+									category: planActionElement.csr.category,
+								},
+							});
+						} else {
+							data[codeRegion].ressource.ms[
+								planActionElement.csr.cs
+							] = [];
+							data[codeRegion].ressource.ms[
+								planActionElement.csr.cs
+							].push({
+								type: vehiculeElement.type,
+								age: vehiculeElement.age,
+								csr: {
+									name: planActionElement.csr.csr,
+									category: planActionElement.csr.category,
+								},
+							});
+						}
+					} else if (
+						vehiculeElement.appartenance ===
+						'Organisation Non Gouvernementale (ONG)'
 					) {
-						data[codeRegion].ressource.ong[
-							planActionElement.csr.cs
-						].push({
-							type: vehiculeElement.type,
-							age: vehiculeElement.age,
-							csr: {
-								name: planActionElement.csr.csr,
-								category: planActionElement.csr.category,
-							},
-						});
-					} else {
-						data[codeRegion].ressource.ong[
-							planActionElement.csr.cs
-						] = [];
-						data[codeRegion].ressource.ong[
-							planActionElement.csr.cs
-						].push({
-							type: vehiculeElement.type,
-							age: vehiculeElement.age,
-							csr: {
-								name: planActionElement.csr.csr,
-								category: planActionElement.csr.category,
-							},
-						});
+						if (
+							data[codeRegion].ressource.ong[
+								planActionElement.csr.cs
+							]
+						) {
+							data[codeRegion].ressource.ong[
+								planActionElement.csr.cs
+							].push({
+								type: vehiculeElement.type,
+								age: vehiculeElement.age,
+								csr: {
+									name: planActionElement.csr.csr,
+									category: planActionElement.csr.category,
+								},
+							});
+						} else {
+							data[codeRegion].ressource.ong[
+								planActionElement.csr.cs
+							] = [];
+							data[codeRegion].ressource.ong[
+								planActionElement.csr.cs
+							].push({
+								type: vehiculeElement.type,
+								age: vehiculeElement.age,
+								csr: {
+									name: planActionElement.csr.csr,
+									category: planActionElement.csr.category,
+								},
+							});
+						}
 					}
 				}
 			}
 			// ressource humain
-			// --
-			data[codeRegion].ressourceHumain.fixe.medecin +=
-				planActionElement.ressourceHumain.fixe.medecin;
-			// --
-			data[codeRegion].ressourceHumain.fixe.infirmier +=
-				planActionElement.ressourceHumain.fixe.infirmier;
-			// --
-			data[codeRegion].ressourceHumain.fixe.sageFemme +=
-				planActionElement.ressourceHumain.fixe.sageFemme;
-			// --
-			data[codeRegion].ressourceHumain.fixe.technicien +=
-				planActionElement.ressourceHumain.fixe.technicien;
-			// --
-			data[codeRegion].ressourceHumain.fixe.chauffeur +=
-				planActionElement.ressourceHumain.fixe.chauffeur;
-			// --
-			data[codeRegion].ressourceHumain.fixe.appuie +=
-				planActionElement.ressourceHumain.fixe.appuie;
-			// --
-			data[codeRegion].ressourceHumain.mobile.medecin +=
-				planActionElement.ressourceHumain.mobile.medecin;
-			// --
-			data[codeRegion].ressourceHumain.mobile.infirmier +=
-				planActionElement.ressourceHumain.mobile.infirmier;
-			// --
-			data[codeRegion].ressourceHumain.mobile.sageFemme +=
-				planActionElement.ressourceHumain.mobile.sageFemme;
-			// --
-			data[codeRegion].ressourceHumain.mobile.technicien +=
-				planActionElement.ressourceHumain.mobile.technicien;
-			// --
-			data[codeRegion].ressourceHumain.mobile.chauffeur +=
-				planActionElement.ressourceHumain.mobile.chauffeur;
-			// --
-			data[codeRegion].ressourceHumain.mobile.appuie +=
-				planActionElement.ressourceHumain.mobile.appuie;
-			// --
-			data[codeRegion].ressourceHumain.mobile.appuie +=
-				planActionElement.ressourceHumain.mobile.appuie;
-			// --
-			data[codeRegion].ressourceHumain.mobile.emOperationnelle +=
-				planActionElement.ressourceHumain.mobile.emOperationnelle;
+			if (planActionElement.ressourceHumain) {
+				// --
+				data[codeRegion].ressourceHumain.fixe.medecin +=
+					planActionElement.ressourceHumain.fixe.medecin;
+				// --
+				data[codeRegion].ressourceHumain.fixe.infirmier +=
+					planActionElement.ressourceHumain.fixe.infirmier;
+				// --
+				data[codeRegion].ressourceHumain.fixe.sageFemme +=
+					planActionElement.ressourceHumain.fixe.sageFemme;
+				// --
+				data[codeRegion].ressourceHumain.fixe.technicien +=
+					planActionElement.ressourceHumain.fixe.technicien;
+				// --
+				data[codeRegion].ressourceHumain.fixe.chauffeur +=
+					planActionElement.ressourceHumain.fixe.chauffeur;
+				// --
+				data[codeRegion].ressourceHumain.fixe.appuie +=
+					planActionElement.ressourceHumain.fixe.appuie;
+				// --
+				data[codeRegion].ressourceHumain.mobile.medecin +=
+					planActionElement.ressourceHumain.mobile.medecin;
+				// --
+				data[codeRegion].ressourceHumain.mobile.infirmier +=
+					planActionElement.ressourceHumain.mobile.infirmier;
+				// --
+				data[codeRegion].ressourceHumain.mobile.sageFemme +=
+					planActionElement.ressourceHumain.mobile.sageFemme;
+				// --
+				data[codeRegion].ressourceHumain.mobile.technicien +=
+					planActionElement.ressourceHumain.mobile.technicien;
+				// --
+				data[codeRegion].ressourceHumain.mobile.chauffeur +=
+					planActionElement.ressourceHumain.mobile.chauffeur;
+				// --
+				data[codeRegion].ressourceHumain.mobile.appuie +=
+					planActionElement.ressourceHumain.mobile.appuie;
+				// --
+				data[codeRegion].ressourceHumain.mobile.appuie +=
+					planActionElement.ressourceHumain.mobile.appuie;
+				// --
+				data[codeRegion].ressourceHumain.mobile.emOperationnelle +=
+					planActionElement.ressourceHumain.mobile.emOperationnelle;
+			}
 			// PDR
 			for (let p = 0; p < planActionElement.programme.length; p++) {
 				const programmeElement = planActionElement.programme[p];
@@ -421,226 +432,252 @@ async function dataProvince(region, provinceList) {
 				) {
 					// POPULATION;
 					// --
-					data[provinceListElement].population.population.rurale +=
-						planActionElement.population.population.rurale;
-					// --
-					data[provinceListElement].population.population.cible +=
-						planActionElement.population.population.cible;
-					// --
-					data[
-						provinceListElement
-					].population.population.habitantMoins3km +=
-						planActionElement.population.population.habitantMoins3km;
-					// --
-					data[
-						provinceListElement
-					].population.population.habitantEntre3km6km +=
-						planActionElement.population.population.habitantEntre3km6km;
-					// --
-					data[
-						provinceListElement
-					].population.population.habitantEntre6km10km +=
-						planActionElement.population.population.habitantEntre6km10km;
-					// --
-					data[
-						provinceListElement
-					].population.population.habitantPlus10km +=
-						planActionElement.population.population.habitantPlus10km;
-					// --
-					data[
-						provinceListElement
-					].population.distanceMoyenneRouteProche +=
-						planActionElement.population.distanceMoyenneRouteProche;
-					// --
-					data[
-						provinceListElement
-					].population.enfant.naissancesAttendues +=
-						planActionElement.population.enfant.naissancesAttendues;
-					// --
-					data[provinceListElement].population.enfant.moins1ans +=
-						planActionElement.population.enfant.moins1ans;
-					// --
-					data[provinceListElement].population.enfant.moins5ans +=
-						planActionElement.population.enfant.moins5ans;
-					// --
-					data[provinceListElement].population.femme.far +=
-						planActionElement.population.femme.far;
-					// --
-					data[provinceListElement].population.femme.fmar +=
-						planActionElement.population.femme.fmar;
-					// --
-					data[provinceListElement].population.femme.femmeEnceinte +=
-						planActionElement.population.femme.femmeEnceinte;
+					if (planActionElement.population) {
+						data[
+							provinceListElement
+						].population.population.rurale +=
+							planActionElement.population.population.rurale;
+						// --
+						data[provinceListElement].population.population.cible +=
+							planActionElement.population.population.cible;
+						// --
+						data[
+							provinceListElement
+						].population.population.habitantMoins3km +=
+							planActionElement.population.population.habitantMoins3km;
+						// --
+						data[
+							provinceListElement
+						].population.population.habitantEntre3km6km +=
+							planActionElement.population.population.habitantEntre3km6km;
+						// --
+						data[
+							provinceListElement
+						].population.population.habitantEntre6km10km +=
+							planActionElement.population.population.habitantEntre6km10km;
+						// --
+						data[
+							provinceListElement
+						].population.population.habitantPlus10km +=
+							planActionElement.population.population.habitantPlus10km;
+						// --
+						data[
+							provinceListElement
+						].population.distanceMoyenneRouteProche +=
+							planActionElement.population.distanceMoyenneRouteProche;
+						// --
+						data[
+							provinceListElement
+						].population.enfant.naissancesAttendues +=
+							planActionElement.population.enfant.naissancesAttendues;
+						// --
+						data[provinceListElement].population.enfant.moins1ans +=
+							planActionElement.population.enfant.moins1ans;
+						// --
+						data[provinceListElement].population.enfant.moins5ans +=
+							planActionElement.population.enfant.moins5ans;
+						// --
+						data[provinceListElement].population.femme.far +=
+							planActionElement.population.femme.far;
+						// --
+						data[provinceListElement].population.femme.fmar +=
+							planActionElement.population.femme.fmar;
+						// --
+						data[
+							provinceListElement
+						].population.femme.femmeEnceinte +=
+							planActionElement.population.femme.femmeEnceinte;
+					}
 					// --
 					// RESSOURCE
-					for (
-						let r = 0;
-						r < planActionElement.ressource.vehicule.length;
-						r++
-					) {
-						const vehiculeElement =
-							planActionElement.ressource.vehicule[r];
-						console.log(vehiculeElement);
-						if (vehiculeElement.appartenance === 'Commune') {
-							if (
-								data[provinceListElement].ressource.commune[
-									planActionElement.csr.cs
-								]
-							) {
-								data[provinceListElement].ressource.commune[
-									planActionElement.csr.cs
-								].push({
-									type: vehiculeElement.type,
-									age: vehiculeElement.age,
-									csr: {
-										name: planActionElement.csr.csr,
-										category:
-											planActionElement.csr.category,
-									},
-								});
-							} else {
-								data[provinceListElement].ressource.commune[
-									planActionElement.csr.cs
-								] = [];
-								data[provinceListElement].ressource.commune[
-									planActionElement.csr.cs
-								].push({
-									type: vehiculeElement.type,
-									age: vehiculeElement.age,
-									csr: {
-										name: planActionElement.csr.csr,
-										category:
-											planActionElement.csr.category,
-									},
-								});
-							}
-						} else if (
-							vehiculeElement.appartenance ===
-							'Ministère de la Santé'
+					if (planActionElement.ressource) {
+						for (
+							let r = 0;
+							r < planActionElement.ressource.vehicule.length;
+							r++
 						) {
-							if (
-								data[provinceListElement].ressource.ms[
-									planActionElement.csr.cs
-								]
+							const vehiculeElement =
+								planActionElement.ressource.vehicule[r];
+							console.log(vehiculeElement);
+							if (vehiculeElement.appartenance === 'Commune') {
+								if (
+									data[provinceListElement].ressource.commune[
+										planActionElement.csr.cs
+									]
+								) {
+									data[provinceListElement].ressource.commune[
+										planActionElement.csr.cs
+									].push({
+										type: vehiculeElement.type,
+										age: vehiculeElement.age,
+										csr: {
+											name: planActionElement.csr.csr,
+											category:
+												planActionElement.csr.category,
+										},
+									});
+								} else {
+									data[provinceListElement].ressource.commune[
+										planActionElement.csr.cs
+									] = [];
+									data[provinceListElement].ressource.commune[
+										planActionElement.csr.cs
+									].push({
+										type: vehiculeElement.type,
+										age: vehiculeElement.age,
+										csr: {
+											name: planActionElement.csr.csr,
+											category:
+												planActionElement.csr.category,
+										},
+									});
+								}
+							} else if (
+								vehiculeElement.appartenance ===
+								'Ministère de la Santé'
 							) {
-								data[provinceListElement].ressource.ms[
-									planActionElement.csr.cs
-								].push({
-									type: vehiculeElement.type,
-									age: vehiculeElement.age,
-									csr: {
-										name: planActionElement.csr.csr,
-										category:
-											planActionElement.csr.category,
-									},
-								});
-							} else {
-								data[provinceListElement].ressource.ms[
-									planActionElement.csr.cs
-								] = [];
-								data[provinceListElement].ressource.ms[
-									planActionElement.csr.cs
-								].push({
-									type: vehiculeElement.type,
-									age: vehiculeElement.age,
-									csr: {
-										name: planActionElement.csr.csr,
-										category:
-											planActionElement.csr.category,
-									},
-								});
-							}
-						} else if (
-							vehiculeElement.appartenance ===
-							'Organisation Non Gouvernementale (ONG)'
-						) {
-							if (
-								data[provinceListElement].ressource.ong[
-									planActionElement.csr.cs
-								]
+								if (
+									data[provinceListElement].ressource.ms[
+										planActionElement.csr.cs
+									]
+								) {
+									data[provinceListElement].ressource.ms[
+										planActionElement.csr.cs
+									].push({
+										type: vehiculeElement.type,
+										age: vehiculeElement.age,
+										csr: {
+											name: planActionElement.csr.csr,
+											category:
+												planActionElement.csr.category,
+										},
+									});
+								} else {
+									data[provinceListElement].ressource.ms[
+										planActionElement.csr.cs
+									] = [];
+									data[provinceListElement].ressource.ms[
+										planActionElement.csr.cs
+									].push({
+										type: vehiculeElement.type,
+										age: vehiculeElement.age,
+										csr: {
+											name: planActionElement.csr.csr,
+											category:
+												planActionElement.csr.category,
+										},
+									});
+								}
+							} else if (
+								vehiculeElement.appartenance ===
+								'Organisation Non Gouvernementale (ONG)'
 							) {
-								data[provinceListElement].ressource.ong[
-									planActionElement.csr.cs
-								].push({
-									type: vehiculeElement.type,
-									age: vehiculeElement.age,
-									csr: {
-										name: planActionElement.csr.csr,
-										category:
-											planActionElement.csr.category,
-									},
-								});
-							} else {
-								data[provinceListElement].ressource.ong[
-									planActionElement.csr.cs
-								] = [];
-								data[provinceListElement].ressource.ong[
-									planActionElement.csr.cs
-								].push({
-									type: vehiculeElement.type,
-									age: vehiculeElement.age,
-									csr: {
-										name: planActionElement.csr.csr,
-										category:
-											planActionElement.csr.category,
-									},
-								});
+								if (
+									data[provinceListElement].ressource.ong[
+										planActionElement.csr.cs
+									]
+								) {
+									data[provinceListElement].ressource.ong[
+										planActionElement.csr.cs
+									].push({
+										type: vehiculeElement.type,
+										age: vehiculeElement.age,
+										csr: {
+											name: planActionElement.csr.csr,
+											category:
+												planActionElement.csr.category,
+										},
+									});
+								} else {
+									data[provinceListElement].ressource.ong[
+										planActionElement.csr.cs
+									] = [];
+									data[provinceListElement].ressource.ong[
+										planActionElement.csr.cs
+									].push({
+										type: vehiculeElement.type,
+										age: vehiculeElement.age,
+										csr: {
+											name: planActionElement.csr.csr,
+											category:
+												planActionElement.csr.category,
+										},
+									});
+								}
 							}
 						}
 					}
 					// ressource humain
 					// --
-					data[provinceListElement].ressourceHumain.fixe.medecin +=
-						planActionElement.ressourceHumain.fixe.medecin;
-					// --
-					data[provinceListElement].ressourceHumain.fixe.infirmier +=
-						planActionElement.ressourceHumain.fixe.infirmier;
-					// --
-					data[provinceListElement].ressourceHumain.fixe.sageFemme +=
-						planActionElement.ressourceHumain.fixe.sageFemme;
-					// --
-					data[provinceListElement].ressourceHumain.fixe.technicien +=
-						planActionElement.ressourceHumain.fixe.technicien;
-					// --
-					data[provinceListElement].ressourceHumain.fixe.chauffeur +=
-						planActionElement.ressourceHumain.fixe.chauffeur;
-					// --
-					data[provinceListElement].ressourceHumain.fixe.appuie +=
-						planActionElement.ressourceHumain.fixe.appuie;
-					// --
-					data[provinceListElement].ressourceHumain.mobile.medecin +=
-						planActionElement.ressourceHumain.mobile.medecin;
-					// --
-					data[
-						provinceListElement
-					].ressourceHumain.mobile.infirmier +=
-						planActionElement.ressourceHumain.mobile.infirmier;
-					// --
-					data[
-						provinceListElement
-					].ressourceHumain.mobile.sageFemme +=
-						planActionElement.ressourceHumain.mobile.sageFemme;
-					// --
-					data[
-						provinceListElement
-					].ressourceHumain.mobile.technicien +=
-						planActionElement.ressourceHumain.mobile.technicien;
-					// --
-					data[
-						provinceListElement
-					].ressourceHumain.mobile.chauffeur +=
-						planActionElement.ressourceHumain.mobile.chauffeur;
-					// --
-					data[provinceListElement].ressourceHumain.mobile.appuie +=
-						planActionElement.ressourceHumain.mobile.appuie;
-					// --
-					data[provinceListElement].ressourceHumain.mobile.appuie +=
-						planActionElement.ressourceHumain.mobile.appuie;
-					// --
-					data[
-						provinceListElement
-					].ressourceHumain.mobile.emOperationnelle +=
-						planActionElement.ressourceHumain.mobile.emOperationnelle;
+					if (planActionElement.ressourceHumain) {
+						data[
+							provinceListElement
+						].ressourceHumain.fixe.medecin +=
+							planActionElement.ressourceHumain.fixe.medecin;
+						// --
+						data[
+							provinceListElement
+						].ressourceHumain.fixe.infirmier +=
+							planActionElement.ressourceHumain.fixe.infirmier;
+						// --
+						data[
+							provinceListElement
+						].ressourceHumain.fixe.sageFemme +=
+							planActionElement.ressourceHumain.fixe.sageFemme;
+						// --
+						data[
+							provinceListElement
+						].ressourceHumain.fixe.technicien +=
+							planActionElement.ressourceHumain.fixe.technicien;
+						// --
+						data[
+							provinceListElement
+						].ressourceHumain.fixe.chauffeur +=
+							planActionElement.ressourceHumain.fixe.chauffeur;
+						// --
+						data[provinceListElement].ressourceHumain.fixe.appuie +=
+							planActionElement.ressourceHumain.fixe.appuie;
+						// --
+						data[
+							provinceListElement
+						].ressourceHumain.mobile.medecin +=
+							planActionElement.ressourceHumain.mobile.medecin;
+						// --
+						data[
+							provinceListElement
+						].ressourceHumain.mobile.infirmier +=
+							planActionElement.ressourceHumain.mobile.infirmier;
+						// --
+						data[
+							provinceListElement
+						].ressourceHumain.mobile.sageFemme +=
+							planActionElement.ressourceHumain.mobile.sageFemme;
+						// --
+						data[
+							provinceListElement
+						].ressourceHumain.mobile.technicien +=
+							planActionElement.ressourceHumain.mobile.technicien;
+						// --
+						data[
+							provinceListElement
+						].ressourceHumain.mobile.chauffeur +=
+							planActionElement.ressourceHumain.mobile.chauffeur;
+						// --
+						data[
+							provinceListElement
+						].ressourceHumain.mobile.appuie +=
+							planActionElement.ressourceHumain.mobile.appuie;
+						// --
+						data[
+							provinceListElement
+						].ressourceHumain.mobile.appuie +=
+							planActionElement.ressourceHumain.mobile.appuie;
+						// --
+						data[
+							provinceListElement
+						].ressourceHumain.mobile.emOperationnelle +=
+							planActionElement.ressourceHumain.mobile.emOperationnelle;
+					}
 					// PDR
 					for (
 						let p = 0;

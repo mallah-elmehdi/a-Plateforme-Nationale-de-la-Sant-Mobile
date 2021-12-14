@@ -7,7 +7,8 @@ $(document).ready(function () {
 			data: [],
 			categories: [],
 		},
-	keyOne = Object.keys(wholeData)[0], carte = wholeData[keyOne].data;
+		keyOne = Object.keys(wholeData)[0],
+		carte = wholeData[keyOne].data;
 	// DATA LOADING
 	for (let i = 0; i < province.length; i++) {
 		const element = province[i];
@@ -22,6 +23,15 @@ $(document).ready(function () {
 			},
 		],
 		chart: {
+			toolbar: {
+				show: false,
+			},
+			toolbar: {
+				show: false,
+			},
+			toolbar: {
+				show: false,
+			},
 			type: 'bar',
 			height: 1500,
 		},
@@ -80,9 +90,9 @@ $(document).ready(function () {
 	chart.render();
 	// EVENT LISTNER
 	$('input[type=radio][name=data]').change(function () {
-		carte = wholeData[this.value].data
-		data.data = []
-		data.categories = []
+		carte = wholeData[this.value].data;
+		data.data = [];
+		data.categories = [];
 		for (let i = 0; i < province.length; i++) {
 			const element = province[i];
 			data.data.push(carte[element.codeProvince]);

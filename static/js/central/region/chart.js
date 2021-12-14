@@ -22,6 +22,9 @@ $(document).ready(function () {
 			},
 		],
 		chart: {
+			toolbar: {
+				show: false,
+			},
 			type: 'bar',
 			height: 350,
 		},

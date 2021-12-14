@@ -173,7 +173,7 @@ $(document).ready(function () {
 		}
 		if (strOut === '') {
 			strOut =
-				'<tr><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>0</td><td>0</td><td>0</td><td>0</td><td>Aucune</td></tr>';
+				'<tr><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>0</td></tr>';
 		}
 		return strOut;
 	}
@@ -213,7 +213,7 @@ $(document).ready(function () {
 		}
 		if (strOut === '') {
 			strOut =
-				'<tr><td>Aucune</td><td>Aucune</td><td>Aucune</td><td>0</td><td>Aucune</td><td>Aucune</td></tr>';
+				'<tr><td>Aucune</td><td>Aucune</td><td>Aucune</td></tr>';
 		}
 		return strOut;
 	}

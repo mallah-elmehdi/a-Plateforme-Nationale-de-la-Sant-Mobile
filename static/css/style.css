@@ -9,9 +9,9 @@
 }
 .bg-sign {
 	background-image: url('../image/aside.jpg');
-	background-position: bottom left;
-	background-repeat: repeat-x;
-	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .bg-med {
 	background-image: url('../image/bg-sign.png');
@@ -40,8 +40,12 @@
 	max-width: 350px !important;
 }
 
+ion-icon {
+	pointer-events: none;
+}
+
 .w-max-3 {
-	max-width: 380px !important;
+	max-width: 550px !important;
 }
 
 .rounded-6 {

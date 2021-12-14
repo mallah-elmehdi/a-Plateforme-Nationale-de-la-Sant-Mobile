@@ -73,6 +73,15 @@ $(document).ready(function () {
 			},
 		],
 		chart: {
+			toolbar: {
+				show: false,
+			},
+			toolbar: {
+				show: false,
+			},
+			toolbar: {
+				show: false,
+			},
 			type: 'bar',
 			height: 40 * provinceList.length,
 		},

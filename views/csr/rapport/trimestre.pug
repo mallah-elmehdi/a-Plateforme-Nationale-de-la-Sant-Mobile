@@ -100,7 +100,7 @@ block main
 											-var itemTime = item.createdAt
 											-var rempli = remplissage(item)
 											tr
-												th(scope='row')= 'Rapport de sortie : '+ itemTime.getDate() + '/' + itemTime.getMonth() + '/' + itemTime.getFullYear()
+												th(scope='row')= 'Rapport de sortie : '+ itemTime.getDate() + '/' + (itemTime.getMonth() + 1) + '/' + itemTime.getFullYear()
 												td.text-center
 													if (rempli === 100)
 														span.badge.bg-success= rempli + ' %'

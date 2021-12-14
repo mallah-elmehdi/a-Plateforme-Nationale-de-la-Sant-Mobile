@@ -20,6 +20,16 @@ block main
 							.fs-6.card-title.fw-bold.text-1= article.title
 							.fs-7.card-title.text-dark= article.text.length > 200 ? article.text.substring(0,200) + '...' : article.text
 							a.btn.btn-sm.text-dark.bg-8(href='/central/'+ data.document._id + '/article/' +article._id) Détails
+			//- pagination
+			.col-12.text-center
+				.btn-group.shadow-0
+					if (data.articles.hasPrevPage)
+						a.btn.btn-sm.bg-5.text-white(href=url.split('?')[0] + '?page=' + data.articles.prevPage)
+							<ion-icon name="chevron-back-outline" class="align-middle"></ion-icon>
+					a.btn.btn-sm.bg-5.text-white(href=url.split('?')[0] + '?page=' + data.articles.page)= data.articles.page
+					if (data.articles.hasNextPage)
+						a.btn.btn-sm.bg-5.text-white(href=url.split('?')[0] + '?page=' + data.articles.nextPage)
+							<ion-icon name="chevron-forward-outline" class="align-middle"></ion-icon>
 		else 
 			.col-12
 				.card.card-body 
@@ -31,13 +41,3 @@ block main
 									span.fs-7 Aucun article n'a été ajouté
 						.col-12
 							a.btn.btn-sm.btn-success(href="/central/" + document._id + '/add-article') ajouter
-			//- pagination
-			.col-12.text-center
-				.btn-group.shadow-0
-					if (data.articles.hasPrevPage)
-						a.btn.btn-sm.bg-5.text-white(href='#')
-							<ion-icon name="chevron-back-outline" class="align-middle"></ion-icon>
-					a.btn.btn-sm.bg-5.text-white(href='#')= data.articles.page
-					if (data.articles.hasNextPage)
-						a.btn.btn-sm.bg-5.text-white(href='#')
-							<ion-icon name="chevron-forward-outline" class="align-middle"></ion-icon>
