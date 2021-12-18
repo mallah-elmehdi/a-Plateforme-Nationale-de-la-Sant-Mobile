@@ -8,26 +8,22 @@ const schema = mongoose.Schema(
 			type: String,
 			required: true,
 		},
-		codeRegion: String,
 		province: {
 			type: String,
 			required: true,
 		},
-		codeProvince: String,
-        cs: {
-            type: String,
-            required: true,
-        },
+		cs: {
+			type: String,
+			required: true,
+		},
 		commune: {
 			type: String,
 			required: true,
-        },
-		codeCommune: String,
+		},
 		csr: {
 			type: String,
 			required: true,
 		},
-		codeCsr: String,
 		category: {
 			type: String,
 			required: true,
@@ -38,6 +34,8 @@ const schema = mongoose.Schema(
 			required: true,
 			unique: true,
 		},
+		codeRegion: String,
+		codeProvince: String,
 	},
 	{ timestamps: true }
 );

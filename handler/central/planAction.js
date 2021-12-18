@@ -4834,7 +4834,7 @@ async function dataProvince() {
 				}
 				// ressource humain
 				// --
-				if (provinceElement.ressourceHumain) {
+				if (planActionElement.ressourceHumain) {
 					data[
 						provinceElement.codeProvince
 					].ressourceHumain.fixe.medecin +=

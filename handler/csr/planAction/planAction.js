@@ -30,7 +30,7 @@ async function planAction(req, res, next) {
 async function planActionDead(req, res, next) {
 	try {
 		var today = new Date();
-		if (today.getMonth() != 9) {
+		if (today.getMonth() != 11) {
 			req.flash(
 				'err',
 				"la date limite pour remplir le plan d'action est déjà passée"

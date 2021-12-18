@@ -8,13 +8,13 @@ const schema = mongoose.Schema(
 			type: String,
 			required: true,
         },
-		codeRegion: String,
 		email: {
 			type: String,
 			lowercase: true,
 			required: true,
 			unique: true,
 		},
+		codeRegion: String,
 	},
 	{ timestamps: true }
 );
